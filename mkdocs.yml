@@ -1,0 +1,22 @@
+site_name: Smart Building Ontology (LinkML)
+site_url: https://example.github.io/smart-building-ontology/
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Home: index.md
+  - Generated Docs:
+      - Classes (after first build): classes/index.md
+      - Slots (after first build): slots/index.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/smart-building-ontology
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - tables
+  - attr_list

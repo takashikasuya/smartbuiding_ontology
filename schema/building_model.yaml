@@ -1,0 +1,173 @@
+id: https://example.org/building-model
+name: building_model
+description: >
+  Smart-building oriented LinkML schema. Defines Site, Building, Level, Space, Equipment, Point and their relationships.
+  This YAML is the single source of truth from which OWL/SHACL/JSON Schema/Docs are generated.
+prefixes:
+  ex: https://example.org/onto/
+  linkml: https://w3id.org/linkml/
+default_prefix: ex
+default_range: string
+
+imports:
+  - linkml:types
+
+types:
+  integer:
+    base: int
+    uri: xsd:integer
+  string:
+    base: str
+    uri: xsd:string
+  boolean:
+    base: bool
+    uri: xsd:boolean
+
+# ---- Slots (properties) ----
+slots:
+  id:
+    identifier: true
+    range: string
+    description: A unique identifier (URI, GUID, or local id)
+  name:
+    range: string
+    required: true
+    description: Human-readable name
+  description:
+    range: string
+    required: false
+
+  # topology / containment
+  buildings:
+    range: Building
+    multivalued: true
+    inlined_as_list: true
+    description: Buildings located at this site
+  site:
+    range: Site
+    required: true
+    description: Site this building belongs to
+  levels:
+    range: Level
+    multivalued: true
+    inlined_as_list: true
+    description: Levels (floors) in this building
+  building:
+    range: Building
+    required: true
+    description: Building this level is part of
+  spaces:
+    range: Space
+    multivalued: true
+    inlined_as_list: true
+    description: Spaces on this level
+  level:
+    range: Level
+    required: true
+    description: Level this space is on
+  equipment_list:
+    range: Equipment
+    multivalued: true
+    inlined_as_list: true
+    description: Equipment installed in this space
+  installed_in:
+    range: Space
+    required: true
+    description: Space where this equipment is installed
+  points:
+    range: Point
+    multivalued: true
+    inlined_as_list: true
+    description: Points (sensors/actuators) connected to this equipment
+  equipment:
+    range: Equipment
+    required: true
+    description: Equipment associated with this point
+
+  # optional metadata
+  custom_tags:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+    description: Free-form tags
+  enabled:
+    range: boolean
+    description: Whether the entity is active/enabled
+
+  # for Campus root
+  sites:
+    range: Site
+    multivalued: true
+    inlined_as_list: true
+    description: Sites that belong to this campus
+
+# ---- Classes (entities) ----
+classes:
+  Site:
+    description: A site or campus containing one or more buildings.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - buildings
+
+  Building:
+    description: A building which is part of a site.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - site
+      - levels
+
+  Level:
+    description: A level (floor) of a building.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - building
+      - spaces
+
+  Space:
+    description: A space (room or area) within a level.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - level
+      - equipment_list
+
+  Equipment:
+    description: An equipment/device installed in a space.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - installed_in
+      - points
+      - enabled
+
+  Point:
+    description: A sensor, actuator, or data point associated with equipment.
+    slots:
+      - id
+      - name
+      - description
+      - custom_tags
+      - equipment
+      - enabled
+
+  Campus:
+    description: Top-level container for a campus with sites (optional helper class).
+    tree_root: true
+    slots:
+      - id
+      - name
+      - description
+      - sites

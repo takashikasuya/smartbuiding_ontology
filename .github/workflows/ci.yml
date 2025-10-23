@@ -1,0 +1,39 @@
+name: build-validate-deploy
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-validate-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate artifacts from LinkML
+        run: |
+          mkdir -p output
+          linkml generate owl --schema schema/building_model.yaml --output output/building_model.owl.ttl
+          linkml generate shacl --schema schema/building_model.yaml --output output/building_model.shacl.ttl
+          linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
+          # Generate docs into docs/ (in-place)
+          linkml generate doc --directory docs schema/building_model.yaml
+
+      - name: Build docs (MkDocs)
+        run: mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
