@@ -31,7 +31,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -41,7 +41,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:dateTime |
-| native | ex:datetime |
+| native | sbco:datetime |
 | exact | schema:DateTime |
 
 

@@ -35,7 +35,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -45,7 +45,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:anyURI |
-| native | ex:uri |
+| native | sbco:uri |
 | close | schema:URL |
 
 

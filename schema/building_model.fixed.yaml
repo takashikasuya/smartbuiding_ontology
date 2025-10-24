@@ -16,7 +16,6 @@ prefixes:
 imports:
   - linkml:types
 
-
 enums:
   UnitEnum:
     description: Allowed measurement units
@@ -49,141 +48,141 @@ enums:
 
 slots:
   id:
-    description: Stable identifier (local or global)
+    description: "Stable identifier (local or global)"
     required: true
     identifier: true
 
   name:
-    description: Human-readable name
+    description: "Human-readable name"
 
-  description:
-    description: Description (English). For multilingual, use annotations: description_ja, etc.
+  description_text:
+    description: "Description (English). For multilingual, see annotations on each object."
 
   # Generic tags for extensibility
   custom_tags:
-    description: Arbitrary tags
+    description: "Arbitrary tags"
     multivalued: true
 
   # Hierarchy/navigation
   sites:
-    description: Sites contained by a higher-level container (rarely used)
+    description: "Sites contained by a higher-level container (rarely used)"
     range: Site
     multivalued: true
     inlined_as_list: true
 
   buildings:
-    description: Buildings in a site
+    description: "Buildings in a site"
     range: Building
     multivalued: true
     inlined_as_list: true
 
   levels:
-    description: Levels in a building
+    description: "Levels in a building"
     range: Level
     multivalued: true
     inlined_as_list: true
 
   spaces:
-    description: Spaces within a building or level
+    description: "Spaces within a building or level"
     range: Space
     multivalued: true
     inlined_as_list: true
 
   equipment_list:
-    description: Equipment installed in a space
+    description: "Equipment installed in a space"
     range: Equipment
     multivalued: true
     inlined_as_list: true
 
   points:
-    description: Points (sensors/actuators) attached to equipment
+    description: "Points (sensors/actuators) attached to equipment"
     range: Point
     multivalued: true
     inlined_as_list: true
 
   # Relations
   site:
-    description: Parent site
+    description: "Parent site"
     range: Site
 
   building:
-    description: Parent building
+    description: "Parent building"
     range: Building
 
   level:
-    description: Parent level
+    description: "Parent level"
     range: Level
 
   space:
-    description: Parent space
+    description: "Parent space"
     range: Space
 
   equipment:
-    description: Parent equipment
+    description: "Parent equipment"
     range: Equipment
 
   # Equipment properties
   manufacturer:
-    description: Manufacturer name
+    description: "Manufacturer name"
 
   model_number:
-    description: Manufacturer model number
+    description: "Manufacturer model number"
 
   serial_number:
-    description: Manufacturer serial number
+    description: "Manufacturer serial number"
 
   ip_address:
-    description: IPv4 address
+    description: "IPv4 address"
     pattern: "^((25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1?\\d?\\d)$"
     slot_uri: rec:ipAddress
 
   # Point properties
   enabled:
-    description: Whether the point is enabled/active
+    description: "Whether the point is enabled/active"
     range: boolean
     ifabsent: true
 
   point_type:
-    description: Point type (e.g., Temperature, Humidity, CO2)
+    description: "Point type (e.g., Temperature, Humidity, CO2)"
     range: PointTypeEnum
     required: true
 
   unit:
-    description: Measurement unit (enum key; symbol can be taken from annotations)
+    description: "Measurement unit (enum key; symbol can be taken from annotations)"
     range: UnitEnum
 
   min_pres_value:
-    description: Minimum plausible reading
+    description: "Minimum plausible reading"
     range: float
 
   max_pres_value:
-    description: Maximum plausible reading
+    description: "Maximum plausible reading"
     range: float
 
 classes:
   Site:
     class_uri: bot:Site
-    description: A site, which may contain buildings.
+    description: "A site, which may contain buildings."
     annotations:
       - tag: description_ja
-        value: サイト。複数の建物を含みうる。
+        value: "サイト。複数の建物を含みうる。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - buildings
 
   Building:
     class_uri: bot:Building
-    description: A building which is part of a site.
+    description: "A building which is part of a site."
     annotations:
       - tag: description_ja
-        value: サイトの一部である建物。
+        value: "サイトの一部である建物。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - site
       - levels
@@ -191,28 +190,28 @@ classes:
 
   Level:
     class_uri: bot:Storey
-    description: A building storey. Levels can also be treated as a kind of space.
+    description: "A building storey. Levels can also be treated as a kind of space."
     annotations:
       - tag: description_ja
-        value: 建物のフロア。スペースの一種として扱える。
+        value: "建物のフロア。スペースの一種として扱える。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - building
       - spaces
 
   Space:
     class_uri: bot:Space
-    description: A spatial unit (room/zone) that may contain equipment.
+    description: "A spatial unit (room/zone) that may contain equipment."
     annotations:
       - tag: description_ja
-        value: 室やゾーンなどの空間単位。設備を含みうる。
+        value: "室やゾーンなどの空間単位。設備を含みうる。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - building
       - level
@@ -220,14 +219,14 @@ classes:
 
   Equipment:
     class_uri: rec:Equipment
-    description: An equipment asset installed in a space.
+    description: "An equipment asset installed in a space."
     annotations:
       - tag: description_ja
-        value: 空間に設置された設備アセット。
+        value: "空間に設置された設備アセット。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - space
       - manufacturer
@@ -238,14 +237,14 @@ classes:
 
   Point:
     class_uri: rec:Point
-    description: A sensor, actuator, or data point associated with equipment.
+    description: "A sensor, actuator, or data point associated with equipment."
     annotations:
       - tag: description_ja
-        value: 設備に紐づくセンサー/アクチュエータ/データポイント。
+        value: "設備に紐づくセンサー/アクチュエータ/データポイント。"
     slots:
       - id
       - name
-      - description
+      - description_text
       - custom_tags
       - equipment
       - enabled
@@ -254,56 +253,39 @@ classes:
       - min_pres_value
       - max_pres_value
 
-    # ルールはクラス配下へ（LinkML 1.9.5 動作安定）
     rules:
-      # Temperature の既定
-      - description: Temperature points should have reasonable range and Celsius unit
+      - description: "Temperature points should have reasonable range and Celsius unit"
         preconditions:
           slot_conditions:
             point_type: Temperature
         postconditions:
           slot_conditions:
-            unit: celsius
+            unit:
+              equals_string: celsius
             max_pres_value:
-              value_range:
-                minimum_value: -50
-                maximum_value: 100
+              maximum_value: 100
+              minimum_value: -50
 
-      # Humidity の既定
-      - description: Humidity points must be 0–100% range
+      - description: "Humidity points must be 0–100% range"
         preconditions:
           slot_conditions:
             point_type: Humidity
         postconditions:
           slot_conditions:
-            unit: percent
+            unit:
+              equals_string: percent
             max_pres_value:
-              value_range:
-                minimum_value: 0
-                maximum_value: 100
+              maximum_value: 100
+              minimum_value: 0
 
-      # CO2 の既定
-      - description: CO2 points should have a reasonable ppm range
+      - description: "CO2 points should have a reasonable ppm range"
         preconditions:
           slot_conditions:
             point_type: CO2
         postconditions:
           slot_conditions:
-            unit: ppm
+            unit:
+              equals_string: ppm
             max_pres_value:
-              value_range:
-                minimum_value: 0
-                maximum_value: 10000
-
-      # min/max の整合性
-      - description: Maximum value must be greater than minimum value
-        preconditions:
-          slot_conditions:
-            min_pres_value:
-              not_null: true
-            max_pres_value:
-              not_null: true
-        postconditions:
-          slot_conditions:
-            max_pres_value:
-              greater_than: min_pres_value
+              maximum_value: 10000
+              minimum_value: 0

@@ -1,16 +1,16 @@
 
 
-# Slot: space 
+# Slot: ip_address 
 
 
-_Parent space_
+_IPv4 address_
 
 
 
 
 
-URI: [sbco:space](https://www.sbco.or.jp/ont/space)
-Alias: space
+URI: [rec:ipAddress](https://w3id.org/rec/ipAddress)
+Alias: ip_address
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,9 @@ Alias: space
 
 ## Properties
 
-* Range: [Space](Space.md)
+* Range: [String](String.md)
+
+* Regex pattern: `^((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)$`
 
 
 
@@ -55,8 +57,8 @@ Alias: space
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:space |
-| native | sbco:space |
+| self | rec:ipAddress |
+| native | sbco:ip_address |
 
 
 
@@ -65,14 +67,16 @@ Alias: space
 
 <details>
 ```yaml
-name: space
-description: Parent space
+name: ip_address
+description: IPv4 address
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: space
+slot_uri: rec:ipAddress
+alias: ip_address
 domain_of:
 - Equipment
-range: Space
+range: string
+pattern: ^((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)$
 
 ```
 </details>

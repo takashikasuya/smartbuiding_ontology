@@ -9,7 +9,7 @@ _Human-readable name_
 
 
 
-URI: [ex:name](https://example.org/onto/name)
+URI: [sbco:name](https://www.sbco.or.jp/ont/name)
 Alias: name
 
 <!-- no inheritance hierarchy -->
@@ -22,12 +22,11 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Campus](Campus.md) | Top-level container for a campus with sites (optional helper class) |  no  |
-| [Equipment](Equipment.md) | An equipment/device installed in a space |  no  |
-| [Space](Space.md) | A space (room or area) within a level |  no  |
-| [Site](Site.md) | A site or campus containing one or more buildings |  no  |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Level](Level.md) | A level (floor) of a building |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
+| [Site](Site.md) | A site, which may contain buildings |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 
 
@@ -38,8 +37,6 @@ Alias: name
 ## Properties
 
 * Range: [String](String.md)
-
-* Required: True
 
 
 
@@ -54,7 +51,7 @@ Alias: name
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -63,8 +60,8 @@ Alias: name
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:name |
-| native | ex:name |
+| self | sbco:name |
+| native | sbco:name |
 
 
 
@@ -75,7 +72,7 @@ Alias: name
 ```yaml
 name: name
 description: Human-readable name
-from_schema: https://example.org/building-model
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: name
 domain_of:
@@ -85,9 +82,7 @@ domain_of:
 - Space
 - Equipment
 - Point
-- Campus
 range: string
-required: true
 
 ```
 </details>

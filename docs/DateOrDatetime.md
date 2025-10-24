@@ -31,7 +31,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -41,6 +41,6 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | linkml:DateOrDatetime |
-| native | ex:date_or_datetime |
+| native | sbco:date_or_datetime |
 
 

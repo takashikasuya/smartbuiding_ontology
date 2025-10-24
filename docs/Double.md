@@ -30,7 +30,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -40,7 +40,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:double |
-| native | ex:double |
+| native | sbco:double |
 | close | schema:Float |
 
 

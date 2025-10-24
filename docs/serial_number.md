@@ -1,16 +1,16 @@
 
 
-# Slot: equipment 
+# Slot: serial_number 
 
 
-_Parent equipment_
+_Manufacturer serial number_
 
 
 
 
 
-URI: [sbco:equipment](https://www.sbco.or.jp/ont/equipment)
-Alias: equipment
+URI: [sbco:serial_number](https://www.sbco.or.jp/ont/serial_number)
+Alias: serial_number
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: equipment
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 
 
@@ -31,7 +31,7 @@ Alias: equipment
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [String](String.md)
 
 
 
@@ -55,8 +55,8 @@ Alias: equipment
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:equipment |
-| native | sbco:equipment |
+| self | sbco:serial_number |
+| native | sbco:serial_number |
 
 
 
@@ -65,14 +65,14 @@ Alias: equipment
 
 <details>
 ```yaml
-name: equipment
-description: Parent equipment
+name: serial_number
+description: Manufacturer serial number
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: equipment
+alias: serial_number
 domain_of:
-- Point
-range: Equipment
+- Equipment
+range: string
 
 ```
 </details>

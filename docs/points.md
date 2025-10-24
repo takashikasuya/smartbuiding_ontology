@@ -3,13 +3,13 @@
 # Slot: points 
 
 
-_Points (sensors/actuators) connected to this equipment_
+_Points (sensors/actuators) attached to equipment_
 
 
 
 
 
-URI: [ex:points](https://example.org/onto/points)
+URI: [sbco:points](https://www.sbco.or.jp/ont/points)
 Alias: points
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,7 @@ Alias: points
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Equipment](Equipment.md) | An equipment/device installed in a space |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 
 
@@ -48,7 +48,7 @@ Alias: points
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +57,8 @@ Alias: points
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:points |
-| native | ex:points |
+| self | sbco:points |
+| native | sbco:points |
 
 
 
@@ -68,8 +68,8 @@ Alias: points
 <details>
 ```yaml
 name: points
-description: Points (sensors/actuators) connected to this equipment
-from_schema: https://example.org/building-model
+description: Points (sensors/actuators) attached to equipment
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: points
 domain_of:

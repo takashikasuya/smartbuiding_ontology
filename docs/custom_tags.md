@@ -3,13 +3,13 @@
 # Slot: custom_tags 
 
 
-_Free-form tags_
+_Arbitrary tags_
 
 
 
 
 
-URI: [ex:custom_tags](https://example.org/onto/custom_tags)
+URI: [sbco:custom_tags](https://www.sbco.or.jp/ont/custom_tags)
 Alias: custom_tags
 
 <!-- no inheritance hierarchy -->
@@ -22,11 +22,11 @@ Alias: custom_tags
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Equipment](Equipment.md) | An equipment/device installed in a space |  no  |
-| [Space](Space.md) | A space (room or area) within a level |  no  |
-| [Site](Site.md) | A site or campus containing one or more buildings |  no  |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Level](Level.md) | A level (floor) of a building |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
+| [Site](Site.md) | A site, which may contain buildings |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 
 
@@ -53,7 +53,7 @@ Alias: custom_tags
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -62,8 +62,8 @@ Alias: custom_tags
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:custom_tags |
-| native | ex:custom_tags |
+| self | sbco:custom_tags |
+| native | sbco:custom_tags |
 
 
 
@@ -73,8 +73,8 @@ Alias: custom_tags
 <details>
 ```yaml
 name: custom_tags
-description: Free-form tags
-from_schema: https://example.org/building-model
+description: Arbitrary tags
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: custom_tags
 domain_of:
@@ -86,8 +86,6 @@ domain_of:
 - Point
 range: string
 multivalued: true
-inlined: true
-inlined_as_list: true
 
 ```
 </details>

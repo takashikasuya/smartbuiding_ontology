@@ -1,16 +1,16 @@
 
 
-# Slot: equipment 
+# Slot: unit 
 
 
-_Parent equipment_
+_Measurement unit (enum key; symbol can be taken from annotations)_
 
 
 
 
 
-URI: [sbco:equipment](https://www.sbco.or.jp/ont/equipment)
-Alias: equipment
+URI: [sbco:unit](https://www.sbco.or.jp/ont/unit)
+Alias: unit
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,7 @@ Alias: equipment
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [UnitEnum](UnitEnum.md)
 
 
 
@@ -55,8 +55,8 @@ Alias: equipment
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:equipment |
-| native | sbco:equipment |
+| self | sbco:unit |
+| native | sbco:unit |
 
 
 
@@ -65,14 +65,14 @@ Alias: equipment
 
 <details>
 ```yaml
-name: equipment
-description: Parent equipment
+name: unit
+description: Measurement unit (enum key; symbol can be taken from annotations)
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: equipment
+alias: unit
 domain_of:
 - Point
-range: Equipment
+range: UnitEnum
 
 ```
 </details>

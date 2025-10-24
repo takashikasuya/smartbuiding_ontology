@@ -3,13 +3,13 @@
 # Slot: level 
 
 
-_Level this space is on_
+_Parent level_
 
 
 
 
 
-URI: [ex:level](https://example.org/onto/level)
+URI: [sbco:level](https://www.sbco.or.jp/ont/level)
 Alias: level
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,7 @@ Alias: level
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Space](Space.md) | A space (room or area) within a level |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
 
 
 
@@ -32,8 +32,6 @@ Alias: level
 ## Properties
 
 * Range: [Level](Level.md)
-
-* Required: True
 
 
 
@@ -48,7 +46,7 @@ Alias: level
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +55,8 @@ Alias: level
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:level |
-| native | ex:level |
+| self | sbco:level |
+| native | sbco:level |
 
 
 
@@ -68,14 +66,13 @@ Alias: level
 <details>
 ```yaml
 name: level
-description: Level this space is on
-from_schema: https://example.org/building-model
+description: Parent level
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: level
 domain_of:
 - Space
 range: Level
-required: true
 
 ```
 </details>

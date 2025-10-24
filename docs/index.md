@@ -1,9 +1,9 @@
-# building_model
+# Smart Building Model
 
-Smart-building oriented LinkML schema. Defines Site, Building, Level, Space, Equipment, Point and their relationships. This YAML is the single source of truth from which OWL/SHACL/JSON Schema/Docs are generated.
+A LinkML schema for sites, buildings, spaces, equipment, and points used in smart-building data exchanges.
 
 
-URI: https://example.org/building-model
+URI: https://www.sbco.or.jp/ont/schema
 
 Name: building_model
 
@@ -14,12 +14,11 @@ Name: building_model
 | Class | Description |
 | --- | --- |
 | [Building](Building.md) | A building which is part of a site |
-| [Campus](Campus.md) | Top-level container for a campus with sites (optional helper class) |
-| [Equipment](Equipment.md) | An equipment/device installed in a space |
-| [Level](Level.md) | A level (floor) of a building |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |
+| [Level](Level.md) | A building storey |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |
-| [Site](Site.md) | A site or campus containing one or more buildings |
-| [Space](Space.md) | A space (room or area) within a level |
+| [Site](Site.md) | A site, which may contain buildings |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |
 
 
 
@@ -27,35 +26,45 @@ Name: building_model
 
 | Slot | Description |
 | --- | --- |
-| [building](building.md) | Building this level is part of |
-| [buildings](buildings.md) | Buildings located at this site |
-| [custom_tags](custom_tags.md) | Free-form tags |
-| [description](description.md) |  |
-| [enabled](enabled.md) | Whether the entity is active/enabled |
-| [equipment](equipment.md) | Equipment associated with this point |
-| [equipment_list](equipment_list.md) | Equipment installed in this space |
-| [id](id.md) | A unique identifier (URI, GUID, or local id) |
-| [installed_in](installed_in.md) | Space where this equipment is installed |
-| [level](level.md) | Level this space is on |
-| [levels](levels.md) | Levels (floors) in this building |
+| [building](building.md) | Parent building |
+| [buildings](buildings.md) | Buildings in a site |
+| [custom_tags](custom_tags.md) | Arbitrary tags |
+| [description_text](description_text.md) | Description (English) |
+| [enabled](enabled.md) | Whether the point is enabled/active |
+| [equipment](equipment.md) | Parent equipment |
+| [equipment_list](equipment_list.md) | Equipment installed in a space |
+| [id](id.md) | Stable identifier (local or global) |
+| [ip_address](ip_address.md) | IPv4 address |
+| [level](level.md) | Parent level |
+| [levels](levels.md) | Levels in a building |
+| [manufacturer](manufacturer.md) | Manufacturer name |
+| [max_pres_value](max_pres_value.md) | Maximum plausible reading |
+| [min_pres_value](min_pres_value.md) | Minimum plausible reading |
+| [model_number](model_number.md) | Manufacturer model number |
 | [name](name.md) | Human-readable name |
-| [points](points.md) | Points (sensors/actuators) connected to this equipment |
-| [site](site.md) | Site this building belongs to |
-| [sites](sites.md) | Sites that belong to this campus |
-| [spaces](spaces.md) | Spaces on this level |
+| [point_type](point_type.md) | Point type (e |
+| [points](points.md) | Points (sensors/actuators) attached to equipment |
+| [serial_number](serial_number.md) | Manufacturer serial number |
+| [site](site.md) | Parent site |
+| [sites](sites.md) | Sites contained by a higher-level container (rarely used) |
+| [space](space.md) | Parent space |
+| [spaces](spaces.md) | Spaces within a building or level |
+| [unit](unit.md) | Measurement unit (enum key; symbol can be taken from annotations) |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
+| [PointTypeEnum](PointTypeEnum.md) | Point kind |
+| [UnitEnum](UnitEnum.md) | Allowed measurement units |
 
 
 ## Types
 
 | Type | Description |
 | --- | --- |
-| [Boolean](Boolean.md) |  |
+| [Boolean](Boolean.md) | A binary (true or false) value |
 | [Curie](Curie.md) | a compact URI |
 | [Date](Date.md) | a date (year, month and day) in an idealized calendar |
 | [DateOrDatetime](DateOrDatetime.md) | Either a date or a datetime |
@@ -63,14 +72,14 @@ Name: building_model
 | [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
-| [Integer](Integer.md) |  |
+| [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
 | [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |
 | [Ncname](Ncname.md) | Prefix part of CURIE |
 | [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
 | [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |
 | [Sparqlpath](Sparqlpath.md) | A string encoding a SPARQL Property Path |
-| [String](String.md) |  |
+| [String](String.md) | A character string |
 | [Time](Time.md) | A time object represents a (local) time of day, independent of any particular... |
 | [Uri](Uri.md) | a complete URI |
 | [Uriorcurie](Uriorcurie.md) | a URI or a CURIE |

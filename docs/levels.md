@@ -3,13 +3,13 @@
 # Slot: levels 
 
 
-_Levels (floors) in this building_
+_Levels in a building_
 
 
 
 
 
-URI: [ex:levels](https://example.org/onto/levels)
+URI: [sbco:levels](https://www.sbco.or.jp/ont/levels)
 Alias: levels
 
 <!-- no inheritance hierarchy -->
@@ -48,7 +48,7 @@ Alias: levels
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +57,8 @@ Alias: levels
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:levels |
-| native | ex:levels |
+| self | sbco:levels |
+| native | sbco:levels |
 
 
 
@@ -68,8 +68,8 @@ Alias: levels
 <details>
 ```yaml
 name: levels
-description: Levels (floors) in this building
-from_schema: https://example.org/building-model
+description: Levels in a building
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: levels
 domain_of:

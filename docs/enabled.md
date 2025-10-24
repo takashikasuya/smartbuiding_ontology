@@ -3,13 +3,13 @@
 # Slot: enabled 
 
 
-_Whether the entity is active/enabled_
+_Whether the point is enabled/active_
 
 
 
 
 
-URI: [ex:enabled](https://example.org/onto/enabled)
+URI: [sbco:enabled](https://www.sbco.or.jp/ont/enabled)
 Alias: enabled
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,6 @@ Alias: enabled
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Equipment](Equipment.md) | An equipment/device installed in a space |  no  |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 
 
@@ -47,7 +46,7 @@ Alias: enabled
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -56,8 +55,8 @@ Alias: enabled
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:enabled |
-| native | ex:enabled |
+| self | sbco:enabled |
+| native | sbco:enabled |
 
 
 
@@ -67,12 +66,12 @@ Alias: enabled
 <details>
 ```yaml
 name: enabled
-description: Whether the entity is active/enabled
-from_schema: https://example.org/building-model
+description: Whether the point is enabled/active
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
+ifabsent: 'True'
 alias: enabled
 domain_of:
-- Equipment
 - Point
 range: boolean
 

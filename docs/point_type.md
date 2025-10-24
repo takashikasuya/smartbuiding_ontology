@@ -1,16 +1,16 @@
 
 
-# Slot: equipment 
+# Slot: point_type 
 
 
-_Parent equipment_
+_Point type (e.g., Temperature, Humidity, CO2)_
 
 
 
 
 
-URI: [sbco:equipment](https://www.sbco.or.jp/ont/equipment)
-Alias: equipment
+URI: [sbco:point_type](https://www.sbco.or.jp/ont/point_type)
+Alias: point_type
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,9 @@ Alias: equipment
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [PointTypeEnum](PointTypeEnum.md)
+
+* Required: True
 
 
 
@@ -55,8 +57,8 @@ Alias: equipment
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:equipment |
-| native | sbco:equipment |
+| self | sbco:point_type |
+| native | sbco:point_type |
 
 
 
@@ -65,14 +67,15 @@ Alias: equipment
 
 <details>
 ```yaml
-name: equipment
-description: Parent equipment
+name: point_type
+description: Point type (e.g., Temperature, Humidity, CO2)
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: equipment
+alias: point_type
 domain_of:
 - Point
-range: Equipment
+range: PointTypeEnum
+required: true
 
 ```
 </details>

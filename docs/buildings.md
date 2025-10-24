@@ -3,13 +3,13 @@
 # Slot: buildings 
 
 
-_Buildings located at this site_
+_Buildings in a site_
 
 
 
 
 
-URI: [ex:buildings](https://example.org/onto/buildings)
+URI: [sbco:buildings](https://www.sbco.or.jp/ont/buildings)
 Alias: buildings
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,7 @@ Alias: buildings
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Site](Site.md) | A site or campus containing one or more buildings |  no  |
+| [Site](Site.md) | A site, which may contain buildings |  no  |
 
 
 
@@ -48,7 +48,7 @@ Alias: buildings
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +57,8 @@ Alias: buildings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:buildings |
-| native | ex:buildings |
+| self | sbco:buildings |
+| native | sbco:buildings |
 
 
 
@@ -68,8 +68,8 @@ Alias: buildings
 <details>
 ```yaml
 name: buildings
-description: Buildings located at this site
-from_schema: https://example.org/building-model
+description: Buildings in a site
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: buildings
 domain_of:

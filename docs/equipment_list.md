@@ -3,13 +3,13 @@
 # Slot: equipment_list 
 
 
-_Equipment installed in this space_
+_Equipment installed in a space_
 
 
 
 
 
-URI: [ex:equipment_list](https://example.org/onto/equipment_list)
+URI: [sbco:equipment_list](https://www.sbco.or.jp/ont/equipment_list)
 Alias: equipment_list
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,7 @@ Alias: equipment_list
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Space](Space.md) | A space (room or area) within a level |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
 
 
 
@@ -48,7 +48,7 @@ Alias: equipment_list
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +57,8 @@ Alias: equipment_list
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:equipment_list |
-| native | ex:equipment_list |
+| self | sbco:equipment_list |
+| native | sbco:equipment_list |
 
 
 
@@ -68,8 +68,8 @@ Alias: equipment_list
 <details>
 ```yaml
 name: equipment_list
-description: Equipment installed in this space
-from_schema: https://example.org/building-model
+description: Equipment installed in a space
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: equipment_list
 domain_of:

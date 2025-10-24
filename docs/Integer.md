@@ -2,6 +2,11 @@
 
 
 
+
+_An integer_
+
+
+
 URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 * [base](https://w3id.org/linkml/base): int
@@ -25,7 +30,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -35,6 +40,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:integer |
-| native | ex:integer |
+| native | sbco:integer |
+| exact | schema:Integer |
 
 

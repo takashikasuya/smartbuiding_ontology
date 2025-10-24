@@ -2,12 +2,18 @@
 
 
 
+
+_A binary (true or false) value_
+
+
+
 URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 
-* [base](https://w3id.org/linkml/base): bool
+* [base](https://w3id.org/linkml/base): Bool
 
 * [uri](https://w3id.org/linkml/uri): xsd:boolean
 
+* [repr](https://w3id.org/linkml/repr): bool
 
 
 
@@ -25,7 +31,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -35,6 +41,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:boolean |
-| native | ex:boolean |
+| native | sbco:boolean |
+| exact | schema:Boolean |
 
 

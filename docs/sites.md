@@ -3,26 +3,17 @@
 # Slot: sites 
 
 
-_Sites that belong to this campus_
+_Sites contained by a higher-level container (rarely used)_
 
 
 
 
 
-URI: [ex:sites](https://example.org/onto/sites)
+URI: [sbco:sites](https://www.sbco.or.jp/ont/sites)
 Alias: sites
 
 <!-- no inheritance hierarchy -->
 
-
-
-
-
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Campus](Campus.md) | Top-level container for a campus with sites (optional helper class) |  no  |
 
 
 
@@ -48,7 +39,7 @@ Alias: sites
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +48,8 @@ Alias: sites
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:sites |
-| native | ex:sites |
+| self | sbco:sites |
+| native | sbco:sites |
 
 
 
@@ -68,15 +59,12 @@ Alias: sites
 <details>
 ```yaml
 name: sites
-description: Sites that belong to this campus
-from_schema: https://example.org/building-model
+description: Sites contained by a higher-level container (rarely used)
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: sites
-domain_of:
-- Campus
 range: Site
 multivalued: true
-inlined: true
 inlined_as_list: true
 
 ```

@@ -1,16 +1,16 @@
 
 
-# Slot: equipment 
+# Slot: max_pres_value 
 
 
-_Parent equipment_
+_Maximum plausible reading_
 
 
 
 
 
-URI: [sbco:equipment](https://www.sbco.or.jp/ont/equipment)
-Alias: equipment
+URI: [sbco:max_pres_value](https://www.sbco.or.jp/ont/max_pres_value)
+Alias: max_pres_value
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,7 @@ Alias: equipment
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [Float](Float.md)
 
 
 
@@ -55,8 +55,8 @@ Alias: equipment
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:equipment |
-| native | sbco:equipment |
+| self | sbco:max_pres_value |
+| native | sbco:max_pres_value |
 
 
 
@@ -65,14 +65,14 @@ Alias: equipment
 
 <details>
 ```yaml
-name: equipment
-description: Parent equipment
+name: max_pres_value
+description: Maximum plausible reading
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: equipment
+alias: max_pres_value
 domain_of:
 - Point
-range: Equipment
+range: float
 
 ```
 </details>

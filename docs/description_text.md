@@ -1,16 +1,16 @@
 
 
-# Slot: id 
+# Slot: description_text 
 
 
-_Stable identifier (local or global)_
+_Description (English). For multilingual, see annotations on each object._
 
 
 
 
 
-URI: [sbco:id](https://www.sbco.or.jp/ont/id)
-Alias: id
+URI: [sbco:description_text](https://www.sbco.or.jp/ont/description_text)
+Alias: description_text
 
 <!-- no inheritance hierarchy -->
 
@@ -38,8 +38,6 @@ Alias: id
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -62,8 +60,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:id |
-| native | sbco:id |
+| self | sbco:description_text |
+| native | sbco:description_text |
 
 
 
@@ -72,12 +70,11 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-description: Stable identifier (local or global)
+name: description_text
+description: Description (English). For multilingual, see annotations on each object.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-identifier: true
-alias: id
+alias: description_text
 domain_of:
 - Site
 - Building
@@ -86,7 +83,6 @@ domain_of:
 - Equipment
 - Point
 range: string
-required: true
 
 ```
 </details>

@@ -3,13 +3,13 @@
 # Slot: spaces 
 
 
-_Spaces on this level_
+_Spaces within a building or level_
 
 
 
 
 
-URI: [ex:spaces](https://example.org/onto/spaces)
+URI: [sbco:spaces](https://www.sbco.or.jp/ont/spaces)
 Alias: spaces
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,8 @@ Alias: spaces
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Level](Level.md) | A level (floor) of a building |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [Level](Level.md) | A building storey |  no  |
 
 
 
@@ -48,7 +49,7 @@ Alias: spaces
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +58,8 @@ Alias: spaces
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:spaces |
-| native | ex:spaces |
+| self | sbco:spaces |
+| native | sbco:spaces |
 
 
 
@@ -68,11 +69,12 @@ Alias: spaces
 <details>
 ```yaml
 name: spaces
-description: Spaces on this level
-from_schema: https://example.org/building-model
+description: Spaces within a building or level
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: spaces
 domain_of:
+- Building
 - Level
 range: Space
 multivalued: true

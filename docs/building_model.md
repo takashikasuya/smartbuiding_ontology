@@ -1,6 +1,6 @@
 # building_model 
 
-Smart-building oriented LinkML schema. Defines Site, Building, Level, Space, Equipment, Point and their relationships. This YAML is the single source of truth from which OWL/SHACL/JSON Schema/Docs are generated.
+A LinkML schema for sites, buildings, spaces, equipment, and points used in smart-building data exchanges.
 
 
-URI: https://example.org/building-model
+URI: https://www.sbco.or.jp/ont/schema

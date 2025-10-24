@@ -1,16 +1,16 @@
 
 
-# Slot: equipment 
+# Slot: min_pres_value 
 
 
-_Parent equipment_
+_Minimum plausible reading_
 
 
 
 
 
-URI: [sbco:equipment](https://www.sbco.or.jp/ont/equipment)
-Alias: equipment
+URI: [sbco:min_pres_value](https://www.sbco.or.jp/ont/min_pres_value)
+Alias: min_pres_value
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,7 @@ Alias: equipment
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [Float](Float.md)
 
 
 
@@ -55,8 +55,8 @@ Alias: equipment
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:equipment |
-| native | sbco:equipment |
+| self | sbco:min_pres_value |
+| native | sbco:min_pres_value |
 
 
 
@@ -65,14 +65,14 @@ Alias: equipment
 
 <details>
 ```yaml
-name: equipment
-description: Parent equipment
+name: min_pres_value
+description: Minimum plausible reading
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: equipment
+alias: min_pres_value
 domain_of:
 - Point
-range: Equipment
+range: float
 
 ```
 </details>

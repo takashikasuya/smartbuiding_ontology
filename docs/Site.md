@@ -3,13 +3,13 @@
 # Slot: site 
 
 
-_Site this building belongs to_
+_Parent site_
 
 
 
 
 
-URI: [ex:site](https://example.org/onto/site)
+URI: [sbco:site](https://www.sbco.or.jp/ont/site)
 Alias: site
 
 <!-- no inheritance hierarchy -->
@@ -33,8 +33,6 @@ Alias: site
 
 * Range: [Site](Site.md)
 
-* Required: True
-
 
 
 
@@ -48,7 +46,7 @@ Alias: site
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +55,8 @@ Alias: site
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:site |
-| native | ex:site |
+| self | sbco:site |
+| native | sbco:site |
 
 
 
@@ -68,14 +66,13 @@ Alias: site
 <details>
 ```yaml
 name: site
-description: Site this building belongs to
-from_schema: https://example.org/building-model
+description: Parent site
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: site
 domain_of:
 - Building
 range: Site
-required: true
 
 ```
 </details>

@@ -3,13 +3,13 @@
 # Slot: building 
 
 
-_Building this level is part of_
+_Parent building_
 
 
 
 
 
-URI: [ex:building](https://example.org/onto/building)
+URI: [sbco:building](https://www.sbco.or.jp/ont/building)
 Alias: building
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +22,8 @@ Alias: building
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Level](Level.md) | A level (floor) of a building |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
+| [Level](Level.md) | A building storey |  no  |
 
 
 
@@ -32,8 +33,6 @@ Alias: building
 ## Properties
 
 * Range: [Building](Building.md)
-
-* Required: True
 
 
 
@@ -48,7 +47,7 @@ Alias: building
 ### Schema Source
 
 
-* from schema: https://example.org/building-model
+* from schema: https://www.sbco.or.jp/ont/schema
 
 
 
@@ -57,8 +56,8 @@ Alias: building
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ex:building |
-| native | ex:building |
+| self | sbco:building |
+| native | sbco:building |
 
 
 
@@ -68,14 +67,14 @@ Alias: building
 <details>
 ```yaml
 name: building
-description: Building this level is part of
-from_schema: https://example.org/building-model
+description: Parent building
+from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: building
 domain_of:
 - Level
+- Space
 range: Building
-required: true
 
 ```
 </details>
