@@ -1,7 +1,4 @@
 .venv/
 __pycache__/
 site/
-output/*.owl.ttl
-output/*.shacl.ttl
-output/*.schema.json
 .DS_Store
