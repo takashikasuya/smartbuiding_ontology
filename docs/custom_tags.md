@@ -22,12 +22,12 @@ Alias: custom_tags
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
 | [Site](Site.md) | A site, which may contain buildings |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
+| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
 
 
 

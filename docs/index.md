@@ -15,6 +15,11 @@ Name: building_model
 | --- | --- |
 | [Building](Building.md) | A building which is part of a site |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |
+| [Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |
+| [Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |
+| [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) の1エントリ |
+| [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) の1エントリ |
+| [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) の1エントリ |
 | [Level](Level.md) | A building storey |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |
 | [Site](Site.md) | A site, which may contain buildings |
@@ -29,12 +34,24 @@ Name: building_model
 | [building](building.md) | Parent building |
 | [buildings](buildings.md) | Buildings in a site |
 | [custom_tags](custom_tags.md) | Arbitrary tags |
+| [customProperties](customProperties.md) | map(string -> map(string -> string)) |
+| [customTags](customTags.md) | map(string -> boolean) |
 | [description_text](description_text.md) | Description (English) |
+| [dtmi](dtmi.md) |  |
 | [enabled](enabled.md) | Whether the point is enabled/active |
+| [entries](entries.md) | 内側の string->string エントリ |
 | [equipment](equipment.md) | Parent equipment |
 | [equipment_list](equipment_list.md) | Equipment installed in a space |
+| [flag](flag.md) |  |
+| [geometry](geometry.md) |  |
+| [georeference](georeference.md) |  |
+| [hasPart](hasPart.md) |  |
 | [id](id.md) | Stable identifier (local or global) |
+| [identifiers](identifiers.md) | map(string -> string) |
 | [ip_address](ip_address.md) | IPv4 address |
+| [isLocationOf](isLocationOf.md) | 多様な対象を許容（必要に応じて共通上位クラスに） |
+| [isPartOf](isPartOf.md) |  |
+| [key](key.md) |  |
 | [level](level.md) | Parent level |
 | [levels](levels.md) | Levels in a building |
 | [manufacturer](manufacturer.md) | Manufacturer name |
@@ -50,6 +67,7 @@ Name: building_model
 | [space](space.md) | Parent space |
 | [spaces](spaces.md) | Spaces within a building or level |
 | [unit](unit.md) | Measurement unit (enum key; symbol can be taken from annotations) |
+| [value](value.md) |  |
 
 
 ## Enumerations
@@ -71,6 +89,7 @@ Name: building_model
 | [Datetime](Datetime.md) | The combination of a date and time |
 | [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
+| [Dtmi](Dtmi.md) | Digital Twin Model Identifier (DTMI) format |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |

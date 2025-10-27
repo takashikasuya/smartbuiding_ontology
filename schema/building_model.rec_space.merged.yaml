@@ -1,0 +1,342 @@
+id: https://www.sbco.or.jp/ont/schema
+name: building_model
+title: Smart Building Model
+description: 'A LinkML schema for sites, buildings, spaces, equipment, and points
+  used in smart-building data exchanges.
+
+  '
+default_prefix: sbco
+default_range: string
+prefixes:
+  linkml: https://w3id.org/linkml/
+  sbco: https://www.sbco.or.jp/ont/
+  gutp: https://smart-building-ontology.org/gutp/
+  rec: https://w3id.org/rec/
+  bot: https://w3id.org/bot#
+  xsd: http://www.w3.org/2001/XMLSchema#
+imports:
+- linkml:types
+enums:
+  UnitEnum:
+    description: Allowed measurement units
+    permissible_values:
+      celsius:
+        description: Degree Celsius
+        annotations:
+        - tag: text
+          value: °C
+      percent:
+        description: Percent
+        annotations:
+        - tag: text
+          value: '%'
+      ppm:
+        description: Parts per million
+        annotations:
+        - tag: text
+          value: ppm
+  PointTypeEnum:
+    description: Point kind
+    permissible_values:
+      Temperature:
+        description: Temperature sensor/point
+      Humidity:
+        description: Relative humidity sensor/point
+      CO2:
+        description: CO2 concentration point
+slots:
+  id:
+    description: Stable identifier (local or global)
+    required: true
+    identifier: true
+  name:
+    description: Human-readable name
+    range: string
+  description_text:
+    description: Description (English). For multilingual, see annotations on each
+      object.
+  custom_tags:
+    description: Arbitrary tags
+    multivalued: true
+  sites:
+    description: Sites contained by a higher-level container (rarely used)
+    range: Site
+    multivalued: true
+    inlined_as_list: true
+  buildings:
+    description: Buildings in a site
+    range: Building
+    multivalued: true
+    inlined_as_list: true
+  levels:
+    description: Levels in a building
+    range: Level
+    multivalued: true
+    inlined_as_list: true
+  spaces:
+    description: Spaces within a building or level
+    range: Space
+    multivalued: true
+    inlined_as_list: true
+  equipment_list:
+    description: Equipment installed in a space
+    range: Equipment
+    multivalued: true
+    inlined_as_list: true
+  points:
+    description: Points (sensors/actuators) attached to equipment
+    range: Point
+    multivalued: true
+    inlined_as_list: true
+  site:
+    description: Parent site
+    range: Site
+  building:
+    description: Parent building
+    range: Building
+  level:
+    description: Parent level
+    range: Level
+  space:
+    description: Parent space
+    range: Space
+  equipment:
+    description: Parent equipment
+    range: Equipment
+  manufacturer:
+    description: Manufacturer name
+  model_number:
+    description: Manufacturer model number
+  serial_number:
+    description: Manufacturer serial number
+  ip_address:
+    description: IPv4 address
+    pattern: ^((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)$
+    slot_uri: rec:ipAddress
+  enabled:
+    description: Whether the point is enabled/active
+    range: boolean
+    ifabsent: true
+  point_type:
+    description: Point type (e.g., Temperature, Humidity, CO2)
+    range: PointTypeEnum
+    required: true
+  unit:
+    description: Measurement unit (enum key; symbol can be taken from annotations)
+    range: UnitEnum
+  min_pres_value:
+    description: Minimum plausible reading
+    range: float
+  max_pres_value:
+    description: Maximum plausible reading
+    range: float
+  key:
+    range: string
+    identifier: true
+  value:
+    range: string
+  flag:
+    range: boolean
+  entries:
+    description: 内側の string->string エントリ
+  dtmi:
+    range: Dtmi
+    pattern: ^dtmi:org:w3id:rec:Space;1$
+  identifiers:
+    description: map(string -> string)
+    multivalued: true
+    range: KeyStringMapEntry
+    inlined: true
+    inlined_as_list: true
+  customTags:
+    description: map(string -> boolean)
+    multivalued: true
+    range: KeyBoolMapEntry
+    inlined: true
+    inlined_as_list: true
+  customProperties:
+    description: map(string -> map(string -> string))
+    multivalued: true
+    range: KeyMapOfStringMapEntry
+    inlined: true
+    inlined_as_list: true
+  geometry:
+    range: Geometry
+    multivalued: false
+  georeference:
+    range: Georeference
+    multivalued: false
+  hasPart:
+    range: Space
+    multivalued: true
+  isPartOf:
+    range: Space
+    multivalued: false
+  isLocationOf:
+    description: 多様な対象を許容（必要に応じて共通上位クラスに）
+    range: string
+    multivalued: true
+classes:
+  Site:
+    class_uri: rec:Site
+    description: A site, which may contain buildings.
+    annotations:
+    - tag: description_ja
+      value: サイト。複数の建物を含みうる。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - buildings
+  Building:
+    class_uri: bot:Building
+    description: A building which is part of a site.
+    annotations:
+    - tag: description_ja
+      value: サイトの一部である建物。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - site
+    - levels
+    - spaces
+  Level:
+    class_uri: bot:Storey
+    description: A building storey. Levels can also be treated as a kind of space.
+    annotations:
+    - tag: description_ja
+      value: 建物のフロア。スペースの一種として扱える。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - building
+    - spaces
+  Space:
+    class_uri: rec:Space
+    description: A contiguous part of the physical world that contains or can contain sub-spaces. E.g., a Region can contain many Sites, which in turn can contain many Buildings.
+    annotations:
+    - tag: description_ja
+      value: 室やゾーンなどの空間単位。設備を含みうる。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - building
+    - level
+    - equipment_list
+  Equipment:
+    class_uri: rec:Equipment
+    description: An equipment asset installed in a space.
+    annotations:
+    - tag: description_ja
+      value: 空間に設置された設備アセット。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - space
+    - manufacturer
+    - model_number
+    - serial_number
+    - ip_address
+    - points
+  Point:
+    class_uri: rec:Point
+    description: A sensor, actuator, or data point associated with equipment.
+    annotations:
+    - tag: description_ja
+      value: 設備に紐づくセンサー/アクチュエータ/データポイント。
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
+    - equipment
+    - enabled
+    - point_type
+    - unit
+    - min_pres_value
+    - max_pres_value
+    rules:
+    - description: Temperature points should have reasonable range and Celsius unit
+      preconditions:
+        slot_conditions:
+          point_type: Temperature
+      postconditions:
+        slot_conditions:
+          unit:
+            equals_string: celsius
+          max_pres_value:
+            maximum_value: 100
+            minimum_value: -50
+    - description: Humidity points must be 0–100% range
+      preconditions:
+        slot_conditions:
+          point_type: Humidity
+      postconditions:
+        slot_conditions:
+          unit:
+            equals_string: percent
+          max_pres_value:
+            maximum_value: 100
+            minimum_value: 0
+    - description: CO2 points should have a reasonable ppm range
+      preconditions:
+        slot_conditions:
+          point_type: CO2
+      postconditions:
+        slot_conditions:
+          unit:
+            equals_string: ppm
+          max_pres_value:
+            maximum_value: 10000
+            minimum_value: 0
+  KeyStringMapEntry:
+    description: map(string -> string) の1エントリ
+    slots:
+    - key
+    - value
+    slot_usage:
+      key:
+        required: true
+      value:
+        required: true
+  KeyBoolMapEntry:
+    description: map(string -> boolean) の1エントリ
+    slots:
+    - key
+    - flag
+    slot_usage:
+      key:
+        required: true
+      flag:
+        required: true
+  KeyMapOfStringMapEntry:
+    description: map(string -> map(string -> string)) の1エントリ
+    slots:
+    - key
+    - entries
+    slot_usage:
+      key:
+        required: true
+      entries:
+        multivalued: true
+        range: KeyStringMapEntry
+        inlined: true
+        inlined_as_list: true
+  Geometry:
+    description: REC Geometry のプレースホルダ（詳細は別途拡張）
+  Georeference:
+    description: REC Georeference のプレースホルダ（詳細は別途拡張）
+types:
+  Dtmi:
+    typeof: string
+    pattern: ^dtmi:[A-Za-z0-9:._-]+;[0-9]+$
+    description: Digital Twin Model Identifier (DTMI) format

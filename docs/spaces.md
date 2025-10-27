@@ -22,8 +22,8 @@ Alias: spaces
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Building](Building.md) | A building which is part of a site |  no  |
 | [Level](Level.md) | A building storey |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
 
 
 
