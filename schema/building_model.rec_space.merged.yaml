@@ -12,6 +12,7 @@ prefixes:
   sbco: https://www.sbco.or.jp/ont/
   gutp: https://smart-building-ontology.org/gutp/
   rec: https://w3id.org/rec/
+  brick: https://brickschema.org/schema/Brick#
   bot: https://w3id.org/bot#
   xsd: http://www.w3.org/2001/XMLSchema#
 imports:
@@ -35,15 +36,6 @@ enums:
         annotations:
         - tag: text
           value: ppm
-  PointTypeEnum:
-    description: Point kind
-    permissible_values:
-      Temperature:
-        description: Temperature sensor/point
-      Humidity:
-        description: Relative humidity sensor/point
-      CO2:
-        description: CO2 concentration point
 slots:
   id:
     description: Stable identifier (local or global)
@@ -118,9 +110,12 @@ slots:
     range: boolean
     ifabsent: true
   point_type:
-    description: Point type (e.g., Temperature, Humidity, CO2)
-    range: PointTypeEnum
+    description: "Point type - a profile or template name used to refer to the telemetry format obtainable from the device or point. Specific definitions are provided separately in schema files."
+    range: string
     required: true
+    annotations:
+      - tag: description_ja
+        value: "ポイントタイプ - 機器やポイントから取得できるテレメトリのフォーマットを参照するためのプロファイル名、またはテンプレート名。具体的な定義については、スキーマファイル等で当該タイプについては別途定義される。"
   unit:
     description: Measurement unit (enum key; symbol can be taken from annotations)
     range: UnitEnum
@@ -140,6 +135,7 @@ slots:
   entries:
     description: 内側の string->string エントリ
   dtmi:
+    description: Digital Twin Model Identifier (DTMI)
     range: Dtmi
     pattern: ^dtmi:org:w3id:rec:Space;1$
   identifiers:
@@ -177,9 +173,31 @@ slots:
     range: string
     multivalued: true
 classes:
+  Space:
+    class_uri: rec:Space
+    description: A contiguous part of the physical world that contains or can contain sub-spaces. E.g., a Region can contain many Sites, which in turn can contain many Buildings.
+    annotations:
+    - tag: description_ja
+      value: 室やゾーンなどの空間単位。設備を含みうる。
+    slots:
+    - costom_properties
+    - custom_tags
+    - identifiers
+    - name
+  
+  Architecture:
+    is_a: Space
+    class_uri: rec:Architecture
+    description: A designed/landscaped (or potentially designed/landscaped) part of the physical world that has a 3D spatial extent. E.g., a building site, a building, levels within the building, rooms, etc.
+    slots:
+    - id
+    - name
+    - description_text
+    - custom_tags
   Site:
+    is_a: Architecture
     class_uri: rec:Site
-    description: A site, which may contain buildings.
+    description: A piece of land upon which zero or more buildings may be situated.
     annotations:
     - tag: description_ja
       value: サイト。複数の建物を含みうる。
@@ -216,20 +234,7 @@ classes:
     - custom_tags
     - building
     - spaces
-  Space:
-    class_uri: rec:Space
-    description: A contiguous part of the physical world that contains or can contain sub-spaces. E.g., a Region can contain many Sites, which in turn can contain many Buildings.
-    annotations:
-    - tag: description_ja
-      value: 室やゾーンなどの空間単位。設備を含みうる。
-    slots:
-    - id
-    - name
-    - description_text
-    - custom_tags
-    - building
-    - level
-    - equipment_list
+
   Equipment:
     class_uri: rec:Equipment
     description: An equipment asset installed in a space.
