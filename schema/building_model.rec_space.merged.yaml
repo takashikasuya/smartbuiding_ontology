@@ -15,6 +15,7 @@ prefixes:
   brick: https://brickschema.org/schema/Brick#
   bot: https://w3id.org/bot#
   xsd: http://www.w3.org/2001/XMLSchema#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
 - linkml:types
 enums:
@@ -41,15 +42,15 @@ slots:
     description: Stable identifier (local or global)
     required: true
     identifier: true
+
   name:
     description: Human-readable name
     range: string
+
   description_text:
     description: Description (English). For multilingual, see annotations on each
       object.
-  custom_tags:
-    description: Arbitrary tags
-    multivalued: true
+
   sites:
     description: Sites contained by a higher-level container (rarely used)
     range: Site
@@ -95,16 +96,7 @@ slots:
   equipment:
     description: Parent equipment
     range: Equipment
-  manufacturer:
-    description: Manufacturer name
-  model_number:
-    description: Manufacturer model number
-  serial_number:
-    description: Manufacturer serial number
-  ip_address:
-    description: IPv4 address
-    pattern: ^((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)$
-    slot_uri: rec:ipAddress
+
   enabled:
     description: Whether the point is enabled/active
     range: boolean
@@ -156,22 +148,165 @@ slots:
     range: KeyMapOfStringMapEntry
     inlined: true
     inlined_as_list: true
+
   geometry:
+    description: Polygon representing the spatial extent of this Space.
     range: Geometry
     multivalued: false
+
   georeference:
+    description: A georeference creates a relationship between the local coordinate system used within a building (e.g., measured in meters) and a geographic coordinate system (e.g., lat, long, alt), such that locally placed Spaces can be resolved and rendered in that geographic coordinate system (e.g., for mapping purposes).
     range: Georeference
     multivalued: false
+
   hasPart:
-    range: Space
+    description: The subject is composed in part of the entity given by the object.
+    any_of:
+      - range : Space
+      - range : Resource
     multivalued: true
+
   isPartOf:
     range: Space
+    any_of:
+      - range : Space
+      - range : Resource
     multivalued: false
+
   isLocationOf:
-    description: 多様な対象を許容（必要に応じて共通上位クラスに）
-    range: string
+    description: Subject is the physical location encapsulating the object.
+    range: Resource
     multivalued: true
+
+  # Asset specific slots
+  assetTag:
+    description: "Asset identification tag"
+    range: string
+    slot_uri: rec:assetTag
+    multivalued: true
+    
+  commissionedBy:
+    description: "Agent or resource that commissioned this asset"
+    any_of:
+      - range: Resource
+      - range: Agent
+    multivalued: true
+    slot_uri: rec:commissionedBy
+    
+  commissioningDate:
+    description: "Date when the asset was commissioned"
+    range: date
+    slot_uri: rec:commissioningDate
+    
+  documentation:
+    description: "Documentation related to this asset"
+    any_of:
+      - range: Resource
+      - range: Document
+    multivalued: true
+    slot_uri: rec:documentation
+    
+  initialCost:
+    description: "Initial cost of the asset"
+    range: string  # Using string for rdfs:Literal
+    slot_uri: rec:initialCost
+    
+  installationDate:
+    description: "Date when the asset was installed"
+    range: date
+    slot_uri: rec:installationDate
+    exact_mappings:
+      - xsd:date  # XSD date型との正確なマッピングを明示
+      
+  installedBy:
+    description: "Agent or resource that installed this asset"
+    any_of:
+      - range: Resource
+      - range: Agent
+    multivalued: true
+    slot_uri: rec:installedBy
+    
+  IPAddress:
+    description: "IP address of the asset"
+    range: string
+    pattern: "^((25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1?\\d?\\d)$"
+    multivalued: true
+    slot_uri: rec:IPAddress
+    
+  locatedIn:
+    description: "Space where this asset is located"
+    any_of:
+      - range: Resource
+      - range: Space
+    multivalued: true
+    slot_uri: rec:locatedIn
+    
+  MACAddress:
+    description: "MAC address of the asset"
+    range: string
+    pattern: "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+    multivalued: true
+    slot_uri: rec:MACAddress
+    
+  maintenanceInterval:
+    description: "Maintenance interval duration"
+    range: xsd:duration
+    multivalued: true
+    slot_uri: rec:maintenanceInterval
+    pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
+    
+  manufacturedBy:
+    description: "Agent or resource that manufactured this asset"
+    any_of:
+      - range: Resource
+      - range: Agent
+    multivalued: true
+    slot_uri: rec:manufacturedBy
+    
+  mountedOn:
+    description: "Building element on which this asset is mounted"
+    any_of:
+      - range: Resource
+      - range: BuildingElement
+    slot_uri: rec:mountedOn
+    
+  servicedBy:
+    description: "Agent or resource that services this asset"
+    any_of:
+      - range: Resource
+      - range: Agent
+    multivalued: true
+    slot_uri: rec:servicedBy
+    
+  turnoverDate:
+    description: "Date when the asset was turned over"
+    range: date
+    slot_uri: rec:turnoverDate
+    exact_mappings:
+      - xsd:date
+    
+  weight:
+    description: "Weight of the asset"
+    range: decimal
+    slot_uri: rec:weight
+    exact_mappings:
+      - xsd:decimal
+      
+  # Agent specific slots
+  isMemberOf:
+    description: "Organization that this agent is a member of"
+    any_of:
+      - range: Resource
+      - range: Organization
+    multivalued: true
+    slot_uri: rec:isMemberOf
+    
+  owns:
+    description: "Resources owned by this agent"
+    range: Resource
+    multivalued: true
+    slot_uri: rec:owns
+
 classes:
   Space:
     class_uri: rec:Space
@@ -236,22 +371,20 @@ classes:
     - spaces
 
   Equipment:
+    is_a: Asset
     class_uri: rec:Equipment
-    description: An equipment asset installed in a space.
+    description: "An equipment asset installed in a space."
     annotations:
     - tag: description_ja
-      value: 空間に設置された設備アセット。
+      value: "空間に設置された設備アセット。"
     slots:
-    - id
-    - name
-    - description_text
-    - custom_tags
     - space
     - manufacturer
-    - model_number
-    - serial_number
-    - ip_address
     - points
+    
+    slot_usage:
+      locatedIn:
+        range: Space  # Equipment is specifically located in spaces
   Point:
     class_uri: rec:Point
     description: A sensor, actuator, or data point associated with equipment.
@@ -340,6 +473,65 @@ classes:
     description: REC Geometry のプレースホルダ（詳細は別途拡張）
   Georeference:
     description: REC Georeference のプレースホルダ（詳細は別途拡張）
+  # Base Resource class (if not already defined)
+  Resource:
+    class_uri: rdfs:Resource
+    description: "Base class for all resources"
+    slots:
+      - id
+      - name
+      - description_text
+  
+  # Document class (if not already defined)
+  Document:
+    is_a: Resource
+    class_uri: rec:Document
+    description: "A document providing information about a building element or asset"
+    slots:
+      - id
+      - name
+      - description_text
+  
+  # BuildingElement class extending Resource
+  BuildingElement:
+    is_a: Resource
+    class_uri: rec:BuildingElement
+    description: "A part that constitutes a piece of a building's structural makeup. E.g., Facade, Wall, Slab, Roof, etc."
+    annotations:
+      - tag: description_ja
+        value: "建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。"
+    slots:
+      - id
+      - name
+      - description_text
+      - custom_tags
+      - documentation
+      - hasPart
+      - isPartOf
+      - locatedIn
+    
+    slot_usage:
+      documentation:
+        any_of:
+          - range: Resource
+          - range: Document
+        multivalued: true
+
+      locatedIn:
+        any_of:
+          - range: Resource
+          - range: Architecture
+        multivalued: false
+
+  # Update mountedOn slot to properly reference BuildingElement
+  Asset:
+    # ...existing Asset definition...
+    slot_usage:
+      mountedOn:
+        any_of:
+          - range: Resource
+          - range: BuildingElement
+        slot_uri: rec:mountedOn
 types:
   Dtmi:
     typeof: string
