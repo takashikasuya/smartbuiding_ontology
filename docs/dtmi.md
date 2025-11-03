@@ -2,21 +2,15 @@
 
 
 
-
-_Digital Twin Model Identifier (DTMI) format_
-
-
-
 URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-* [base](https://w3id.org/linkml/base): str
+* [base](https://w3id.org/linkml/base): string
 
 * [uri](https://w3id.org/linkml/uri): xsd:string
 
 
-* [typeof](https://w3id.org/linkml/typeof): string
 
-* [pattern](https://w3id.org/linkml/pattern): `^dtmi:[A-Za-z0-9:._-]+;[0-9]+$`
+* [pattern](https://w3id.org/linkml/pattern): `^dtmi:[A-Za-z0-9_:.;-]+$`
 
 
 
@@ -41,7 +35,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:Dtmi |
+| self | xsd:string |
 | native | sbco:Dtmi |
 
 

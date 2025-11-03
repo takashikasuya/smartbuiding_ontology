@@ -20,12 +20,6 @@ URI: [sbco:UnitEnum](https://www.sbco.or.jp/ont/UnitEnum)
 
 
 
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [unit](unit.md) | Measurement unit (enum key; symbol can be taken from annotations) |
-
 
 
 
