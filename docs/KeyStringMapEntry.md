@@ -36,8 +36,8 @@ URI: [sbco:KeyStringMapEntry](https://www.sbco.or.jp/ont/KeyStringMapEntry)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [key](key.md) | 1 <br/> [String](String.md) |  | direct |
-| [value](value.md) | 1 <br/> [String](String.md) |  | direct |
+| [key](key.md) | 1 <br/> [String](String.md) | Key of the map entry | direct |
+| [value](value.md) | 1 <br/> [String](String.md) | Value of the map entry | direct |
 
 
 
@@ -124,9 +124,9 @@ slot_usage:
 attributes:
   key:
     name: key
+    description: Key of the map entry
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
-    identifier: true
     alias: key
     owner: KeyStringMapEntry
     domain_of:
@@ -137,6 +137,7 @@ attributes:
     required: true
   value:
     name: value
+    description: Value of the map entry
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: value

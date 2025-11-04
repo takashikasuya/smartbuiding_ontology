@@ -3,6 +3,11 @@
 # Slot: value 
 
 
+_Value of the map entry_
+
+
+
+
 
 URI: [sbco:value](https://www.sbco.or.jp/ont/value)
 Alias: value
@@ -61,6 +66,7 @@ Alias: value
 <details>
 ```yaml
 name: value
+description: Value of the map entry
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: value

@@ -3,6 +3,11 @@
 # Slot: flag 
 
 
+_Boolean flag value_
+
+
+
+
 
 URI: [sbco:flag](https://www.sbco.or.jp/ont/flag)
 Alias: flag
@@ -27,6 +32,8 @@ Alias: flag
 ## Properties
 
 * Range: [Boolean](Boolean.md)
+
+* Required: True
 
 
 
@@ -61,12 +68,14 @@ Alias: flag
 <details>
 ```yaml
 name: flag
+description: Boolean flag value
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: flag
 domain_of:
 - KeyBoolMapEntry
 range: boolean
+required: true
 
 ```
 </details>

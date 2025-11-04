@@ -380,40 +380,9 @@ enums:
         description: "Standard deviation"
 
 slots:
-  id:
-    description: "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format)."
-    range: string
-    identifier: true
-    required: true
-    pattern: "^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$"
-    annotations:
-      - tag: description_ja
-        value: "スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。"
-      - tag: example
-        value: "dtmi:example:Building:1"
-
+  
   identifiers:
     description: map(string -> string)
-    multivalued: true
-    range: KeyStringMapEntry
-    inlined: true
-    inlined_as_list: true
-    required: true
-
-  key:
-    description: "Key of the map entry"
-    range: string
-  value:
-    description: "Value of the map entry"
-    range: string
-
-  flag:
-    description: "Boolean flag value"
-    range: boolean
-    required: true
-
-  entries:
-    description: "Nested map entries"
     multivalued: true
     range: KeyStringMapEntry
     inlined: true
@@ -439,6 +408,11 @@ slots:
     range: string
     required: true
 
+  sites:
+    description: Sites contained by a higher-level container (rarely used)
+    range: Site
+    multivalued: true
+    inlined_as_list: true
   
   buildings:
     description: Buildings in a site
@@ -492,6 +466,27 @@ slots:
     range: boolean
     ifabsent: true
   
+  key:
+    description: "Key of the map entry"
+    range: string
+  value:
+    description: "Value of the map entry"
+    range: string
+
+  flag:
+    description: "Boolean flag value"
+    range: boolean
+    required: true
+
+  entries:
+    description: "Nested map entries"
+    multivalued: true
+    range: KeyStringMapEntry
+    inlined: true
+    inlined_as_list: true
+    required: true
+
+
   pointType:  # point_type → pointType
     description: "Point type - a profile or template name used to refer to the telemetry format obtainable from the device or point. Specific definitions are provided separately in schema files."
     range: string
@@ -516,7 +511,6 @@ slots:
     description: Maximum plausible reading
     range: float
 
-
   geometry:
     description: Polygon representing the spatial extent of this Space.
     range: Geometry
@@ -526,6 +520,7 @@ slots:
     description: A georeference creates a relationship between the local coordinate system used within a building (e.g., measured in meters) and a geographic coordinate system (e.g., lat, long, alt), such that locally placed Spaces can be resolved and rendered in that geographic coordinate system (e.g., for mapping purposes).
     range: Georeference
     multivalued: false
+
 
   hasPart:
     description: The subject is composed in part of the entity given by the object.
@@ -547,171 +542,6 @@ slots:
     multivalued: true
     inverse: locatedIn
 
-  # Asset specific slots
-  assetTag:
-    description: "Asset identification tag"
-    range: string
-    slot_uri: rec:assetTag
-    multivalued: true
-    
-  commissionedBy:
-    description: "Agent or resource that commissioned this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:commissionedBy
-    
-  commissioningDate:
-    description: "Date when the asset was commissioned"
-    range: date
-    slot_uri: rec:commissioningDate
-    
-  documentation:
-    description: "Documentation related to this asset"
-    any_of:
-      - range: Resource
-      - range: Document
-    multivalued: true
-    slot_uri: rec:documentation
-    
-  initialCost:
-    description: "Initial cost of the asset"
-    range: string  # Using string for rdfs:Literal
-    slot_uri: rec:initialCost
-    
-  installationDate:
-    description: "Date when the asset was installed"
-    range: date
-    slot_uri: rec:installationDate
-    #exact_mappings:
-    #  - xsd:date  # XSD date型との正確なマッピングを明示
-      
-  installedBy:
-    description: "Agent or resource that installed this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:installedBy
-    
-  IPAddress:  
-    description: "IP address of the asset"
-    range: string
-    pattern: "^((25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1?\\d?\\d)$"
-    multivalued: true
-    slot_uri: rec:IPAddress
-    
-  locatedIn:
-    description: "Space where this asset is located"
-    any_of:
-      - range: Resource
-      - range: Space
-    multivalued: true
-    inverse: isLocationOf
-    slot_uri: rec:locatedIn
-    
-  MACAddress:  
-    description: "MAC address of the asset"
-    range: string
-    pattern: "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
-    multivalued: true
-    slot_uri: rec:MACAddress
-    
-  maintenanceInterval:
-    description: "Maintenance interval duration"
-    range: xsd:duration
-    multivalued: true
-    slot_uri: rec:maintenanceInterval
-    pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
-
-  modelNumber:
-    description: "Model number of the asset"
-    range: string
-    slot_uri: rec:modelNumber
-
-  manufacturedBy:
-    description: "Agent or resource that manufactured this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:manufacturedBy
-    
-  mountedOn:
-    description: "Building element on which this asset is mounted"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
-    slot_uri: rec:mountedOn
-    
-  servicedBy:
-    description: "Agent or resource that services this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:servicedBy
-    
-  serialNumber:
-    description: "Serial number of the asset"
-    range: string
-    slot_uri: rec:serialNumber
-
-  turnoverDate:
-    description: "Date when the asset was turned over"
-    range: date
-    slot_uri: rec:turnoverDate
-    #exact_mappings:
-    #  - xsd:date
-    
-  weight:
-    description: "Weight of the asset"
-    range: decimal
-    slot_uri: rec:weight
-    #exact_mappings:
-    #  - xsd:decimal
-      
-  # Agent specific slots
-  isMemberOf:
-    description: "Organization that this agent is a member of"
-    any_of:
-      - range: Resource
-      - range: Organization
-    multivalued: true
-    slot_uri: rec:isMemberOf
-    
-  owns:
-    description: "Resources owned by this agent"
-    range: Resource
-    multivalued: true
-    slot_uri: rec:owns
-
-  # Architecture specific slots
-  address:
-    description: "Address of the architecture"
-    any_of:
-      - range: Resource
-      - range: PostalAddress
-    multivalued: true
-    slot_uri: rec:address
-    
-  adjacentElement:
-    description: "Building element adjacent to this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
-    multivalued: true
-    slot_uri: rec:adjacentElement
-    
-  architectedBy:
-    description: "Agent or resource that architected this structure"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:architectedBy
-    
   area:
     description: "Area of the architecture"
     any_of:
@@ -725,123 +555,45 @@ slots:
       - range: Resource
       - range: ArchitectureCapacity
     slot_uri: rec:capacity
-    
-  constructedBy:
-    description: "Agent or resource that constructed this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:constructedBy
-    
-  containsElement:
-    description: "Building element contained within this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
-    multivalued: true
-    slot_uri: rec:containsElement
-    
-  hasPoint:
-    description: "Point associated with this architecture"
-    any_of:
-      - range: Resource
-      - range: Point
-    multivalued: true
-    slot_uri: rec:hasPoint
-    
-  intersectingElement:
-    description: "Building element intersecting with this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
-    multivalued: true
-    slot_uri: rec:intersectingElement
-    
-
-  operatedBy:
-    description: "Agent or resource that operates this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:operatedBy
-    
-  ownedBy:
-    description: "Agent or resource that owns this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
-    multivalued: true
-    slot_uri: rec:ownedBy
-
-  levelNumber:
-    description: "Floor or level number within a building"
-    range: integer
-    slot_uri: rec:levelNumber
-    annotations:
-      - tag: description_ja
-        value: "建物内のフロアまたはレベル番号"
-
-  feeds:
-    description: "Equipment or system that this equipment feeds"
-    range: Resource
-    multivalued: true
-    slot_uri: brick:feeds
-    annotations:
-      - tag: substance
-        value: SubstanceEnum
-
-  isFedBy:
-    description: "Resource that feeds this architecture"
-    range: Resource
-    multivalued: true
-    slot_uri: rec:isFedBy
-    annotations:
-      - tag: substance
-        value: SubstanceEnum 
-
-  operationalStageCount:
-    description: "The number of operational stages supported by this equipment"
-    range: integer
-    slot_uri: brick:operationalStageCount
-
-  aggregate:
-    description: "Aggregation function or method for point data processing"
-    range: AggregateEnum
-    slot_uri: brick:aggregate
-    annotations:
-      - tag: description_ja
-        value: "ポイントデータ処理のための集約関数または方法"
-      - tag: azure_dtdl_type
-        value: "DTObjectInfo"
-
-  hasQuantity:
-    description: "Physical quantity measured by this point"
-    range: QuantityEnum
-    slot_uri: brick:hasQuantity
-    annotations:
-      - tag: description_ja
-        value: "このポイントで測定される物理量"
-
-  hasSubstance:
-    description: "Substance associated with this point"
-    range: SubstanceEnum
-    slot_uri: brick:hasSubstance
-    annotations:
-      - tag: description_ja
-        value: "このポイントに関連する物質"
-
-  isPointOf:
-    description: "Equipment that this point belongs to"
-    range: Equipment
-    inverse: hasPoint
-    slot_uri: brick:isPointOf
-    annotations:
-      - tag: description_ja
-        value: "このポイントが属する設備"
 
 classes:
+ 
+  KeyStringMapEntry:
+    description: map(string -> string) の1エントリ
+    slots:
+    - key
+    - value
+    slot_usage:
+      key:
+        required: true
+      value:
+        required: true
+
+  KeyBoolMapEntry:
+    description: map(string -> boolean) の1エントリ
+    slots:
+    - key
+    - flag
+    slot_usage:
+      key:
+        required: true
+      flag:
+        required: true
+
+  KeyMapOfStringMapEntry:
+    description: map(string -> map(string -> string)) の1エントリ
+    slots:
+    - key
+    - entries
+    slot_usage:
+      key:
+        required: true
+      entries:
+        multivalued: true
+        range: KeyStringMapEntry
+        inlined: true
+        inlined_as_list: true
+
   Space:
     class_uri: rec:Space
     description: A contiguous part of the physical world that contains or can contain sub-spaces. E.g., a Region can contain many Sites, which in turn can contain many Buildings.
@@ -983,117 +735,8 @@ classes:
     - identifiers
     - name
   
-  SBCOPoint:
-    is_a: Point
-    class_uri: sbco:SBCOPoint
-    description: "A point (sensor/actuator) in a smart building context."
-    annotations:
-      - tag: description_ja
-        value: "スマートビルディングの文脈におけるポイント（センサー/アクチュエータ）。"
-    slots:
-      - enabled
-      - pointSpecification  # point_specification → pointSpecification
-      - pointType          # point_type → pointType
-      - unit
-      - maxPresValue       # max_pres_value → maxPresValue
-      - minPresValue       # min_pres_value → minPresValue
-
-    slot_usage:
-      isPointOf:
-        range: Equipment  # SBCOPoint is specifically a point of Equipment
-
-  KeyStringMapEntry:
-    description: map(string -> string) の1エントリ
-    slots:
-    - key
-    - value
-    slot_usage:
-      key:
-        required: true
-      value:
-        required: true
-
-  KeyBoolMapEntry:
-    description: map(string -> boolean) の1エントリ
-    slots:
-    - key
-    - flag
-    slot_usage:
-      key:
-        required: true
-      flag:
-        required: true
-
-  KeyMapOfStringMapEntry:
-    description: map(string -> map(string -> string)) の1エントリ
-    slots:
-    - key
-    - entries
-    slot_usage:
-      key:
-        required: true
-      entries:
-        multivalued: true
-        range: KeyStringMapEntry
-        inlined: true
-        inlined_as_list: true
-
   Geometry:
     description: REC Geometry のプレースホルダ（詳細は別途拡張）
 
   Georeference:
     description: REC Georeference のプレースホルダ（詳細は別途拡張）
-
-
-
-  # Document class
-  Document:
-    is_a: Resource
-    class_uri: rec:Document
-    description: "A document providing information about a building element or asset"
-
-  # BuildingElement class extending Resource
-  BuildingElement:
-    is_a: Resource
-    class_uri: rec:BuildingElement
-    description: "A part that constitutes a piece of a building's structural makeup. E.g., Facade, Wall, Slab, Roof, etc."
-    annotations:
-      - tag: description_ja
-        value: "建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。"
-    slots:
-      - name
-      - identifiers
-      - customTags      
-      - documentation
-      - hasPart
-      - isPartOf
-      - locatedIn
-
-  # Agent class
-  Agent:
-    is_a: Resource
-    class_uri: rec:Agent
-    description: "The human, group, or machine that consumes or acts upon an object or data. This higher-level grouping allows properties that are shared among its subclasses (Person, Organization, ….) to be anchored in one joint place, on the Agent class."
-    annotations:
-      - tag: description_ja
-        value: "オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。"
-    slots:
-      - name
-      - customTags      # custom_tags → customTags
-      - isMemberOf
-      - owns
-
-  # Organization class
-  Organization:
-    is_a: Agent
-    class_uri: rec:Organization
-    description: "An organization such as a company, institution, or association"
-    annotations:
-      - tag: description_ja
-        value: "会社、機関、協会などの組織"
-    slots:
-      - name
-      - customTags      # custom_tags → customTags
-      - isMemberOf
-      - owns
-

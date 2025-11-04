@@ -3,7 +3,7 @@
 # Slot: entries 
 
 
-_内側の string->string エントリ_
+_Nested map entries_
 
 
 
@@ -31,7 +31,11 @@ Alias: entries
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [KeyStringMapEntry](KeyStringMapEntry.md)
+
+* Multivalued: True
+
+* Required: True
 
 
 
@@ -66,13 +70,17 @@ Alias: entries
 <details>
 ```yaml
 name: entries
-description: 内側の string->string エントリ
+description: Nested map entries
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: entries
 domain_of:
 - KeyMapOfStringMapEntry
-range: string
+range: KeyStringMapEntry
+required: true
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

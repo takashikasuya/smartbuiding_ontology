@@ -36,8 +36,8 @@ URI: [sbco:KeyBoolMapEntry](https://www.sbco.or.jp/ont/KeyBoolMapEntry)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [key](key.md) | 1 <br/> [String](String.md) |  | direct |
-| [flag](flag.md) | 1 <br/> [Boolean](Boolean.md) |  | direct |
+| [key](key.md) | 1 <br/> [String](String.md) | Key of the map entry | direct |
+| [flag](flag.md) | 1 <br/> [Boolean](Boolean.md) | Boolean flag value | direct |
 
 
 
@@ -117,9 +117,9 @@ slot_usage:
 attributes:
   key:
     name: key
+    description: Key of the map entry
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
-    identifier: true
     alias: key
     owner: KeyBoolMapEntry
     domain_of:
@@ -130,6 +130,7 @@ attributes:
     required: true
   flag:
     name: flag
+    description: Boolean flag value
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: flag

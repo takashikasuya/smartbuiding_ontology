@@ -26,6 +26,8 @@ Alias: identifiers
 
 * Multivalued: True
 
+* Required: True
+
 
 
 
@@ -64,6 +66,7 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: identifiers
 range: KeyStringMapEntry
+required: true
 multivalued: true
 inlined: true
 inlined_as_list: true

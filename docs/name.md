@@ -3,7 +3,7 @@
 # Slot: name 
 
 
-_Human-readable name_
+_Machine or Human-readable name_
 
 
 
@@ -18,25 +18,13 @@ Alias: name
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Level](Level.md) | A building storey |  no  |
-| [Site](Site.md) | A site, which may contain buildings |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
-
-
-
-
 
 
 ## Properties
 
 * Range: [String](String.md)
+
+* Required: True
 
 
 
@@ -71,18 +59,12 @@ Alias: name
 <details>
 ```yaml
 name: name
-description: Human-readable name
+description: Machine or Human-readable name
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: name
-domain_of:
-- Site
-- Building
-- Level
-- Space
-- Equipment
-- Point
 range: string
+required: true
 
 ```
 </details>

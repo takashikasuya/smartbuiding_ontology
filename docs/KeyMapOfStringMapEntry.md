@@ -25,7 +25,7 @@ URI: [sbco:KeyMapOfStringMapEntry](https://www.sbco.or.jp/ont/KeyMapOfStringMapE
     
         
         
-        KeyMapOfStringMapEntry --> "*" KeyStringMapEntry : entries
+        KeyMapOfStringMapEntry --> "1..*" KeyStringMapEntry : entries
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -45,8 +45,8 @@ URI: [sbco:KeyMapOfStringMapEntry](https://www.sbco.or.jp/ont/KeyMapOfStringMapE
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [key](key.md) | 1 <br/> [String](String.md) |  | direct |
-| [entries](entries.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | 内側の string->string エントリ | direct |
+| [key](key.md) | 1 <br/> [String](String.md) | Key of the map entry | direct |
+| [entries](entries.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | Nested map entries | direct |
 
 
 
@@ -132,9 +132,9 @@ slot_usage:
 attributes:
   key:
     name: key
+    description: Key of the map entry
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
-    identifier: true
     alias: key
     owner: KeyMapOfStringMapEntry
     domain_of:
@@ -145,7 +145,7 @@ attributes:
     required: true
   entries:
     name: entries
-    description: 内側の string->string エントリ
+    description: Nested map entries
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: entries
@@ -153,6 +153,7 @@ attributes:
     domain_of:
     - KeyMapOfStringMapEntry
     range: KeyStringMapEntry
+    required: true
     multivalued: true
     inlined: true
     inlined_as_list: true
