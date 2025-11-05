@@ -95,6 +95,17 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
         
       Architecture : hasPoint
         
+          
+    
+        
+        
+        Architecture --> "*" Point : hasPoint
+        click Point href "../Point/"
+    
+
+        
+      Architecture : id
+        
       Architecture : identifiers
         
           
@@ -125,8 +136,8 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
     
         
         
-        Architecture --> "*" Resource : isLocationOf
-        click Resource href "../Resource/"
+        Architecture --> "*" Space : isLocationOf
+        click Space href "../Space/"
     
 
         
@@ -167,23 +178,24 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [area](area.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />NONE | Area of the architecture | direct |
-| [capacity](capacity.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />NONE | Capacity of the architecture | direct |
-| [address](address.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />NONE | Address of the architecture | direct |
+| [area](area.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureArea](ArchitectureArea.md) | Area of the architecture | direct |
+| [capacity](capacity.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | direct |
+| [address](address.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[PostalAddress](PostalAddress.md) | Address of the architecture | direct |
 | [adjacentElement](adjacentElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | direct |
 | [architectedBy](architectedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that architected this structure | direct |
 | [constructedBy](constructedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
 | [containsElement](containsElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element contained within this architecture | direct |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
-| [hasPoint](hasPoint.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Point](Point.md) | Point associated with this architecture | direct |
+| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | direct |
 | [intersectingElement](intersectingElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | direct |
 | [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | direct |
 | [operatedBy](operatedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that operates this architecture | direct |
 | [ownedBy](ownedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that owns this architecture | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
 | [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
-| [isLocationOf](isLocationOf.md) | * <br/> [Resource](Resource.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
+| [isLocationOf](isLocationOf.md) | * <br/> [Space](Space.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | [Space](Space.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Space](Space.md) |
@@ -401,11 +413,8 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: string
+    range: Point
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Point
   intersectingElement:
     name: intersectingElement
     description: Building element intersecting with this architecture
@@ -468,6 +477,29 @@ attributes:
     any_of:
     - range: Resource
     - range: Agent
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: Architecture
+    domain_of:
+    - Space
+    - Asset
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -519,8 +551,7 @@ attributes:
     owner: Architecture
     domain_of:
     - Space
-    inverse: locatedIn
-    range: Resource
+    range: Space
     multivalued: true
   isPartOf:
     name: isPartOf
@@ -548,6 +579,7 @@ attributes:
     - Space
     - Asset
     - Point
+    - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -566,6 +598,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -582,6 +615,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - PostalAddress
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -601,6 +635,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: string
     required: true
 class_uri: rec:Architecture

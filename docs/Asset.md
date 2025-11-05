@@ -72,6 +72,17 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
         
       Asset : hasPoint
         
+          
+    
+        
+        
+        Asset --> "*" Point : hasPoint
+        click Point href "../Point/"
+    
+
+        
+      Asset : id
+        
       Asset : identifiers
         
           
@@ -104,18 +115,18 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
         
       Asset : locatedIn
         
-      Asset : MACAddress
-        
-      Asset : maintenanceInterval
-        
           
     
         
         
-        Asset --> "*"  : maintenanceInterval
-        click  href "NONE"
+        Asset --> "*" Resource : locatedIn
+        click Resource href "../Resource/"
     
 
+        
+      Asset : MACAddress
+        
+      Asset : maintenanceInterval
         
       Asset : manufacturedBy
         
@@ -151,14 +162,15 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
 | [commissionedBy](commissionedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that commissioned this asset | direct |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | direct |
 | [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | direct |
-| [hasPoint](hasPoint.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Point](Point.md) | Point associated with this architecture | direct |
+| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | direct |
 | [installedBy](installedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that installed this asset | direct |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | direct |
-| [locatedIn](locatedIn.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Space](Space.md) | Space where this asset is located | direct |
+| [locatedIn](locatedIn.md) | * <br/> [Resource](Resource.md) | Space where this asset is located | direct |
 | [manufacturedBy](manufacturedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that manufactured this asset | direct |
 | [mountedOn](mountedOn.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element on which this asset is mounted | direct |
 | [servicedBy](servicedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that services this asset | direct |
@@ -171,7 +183,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | [installationDate](installationDate.md) | 0..1 <br/> [Date](Date.md) | Date when the asset was installed | direct |
 | [IPAddress](IPAddress.md) | * <br/> [String](String.md) | IP address of the asset | direct |
 | [MACAddress](MACAddress.md) | * <br/> [String](String.md) | MAC address of the asset | direct |
-| [maintenanceInterval](maintenanceInterval.md) | * <br/> NONE | Maintenance interval duration | direct |
+| [maintenanceInterval](maintenanceInterval.md) | * <br/> [Duration](Duration.md) | Maintenance interval duration | direct |
 | [modelNumber](modelNumber.md) | 0..1 <br/> [String](String.md) | Model number of the asset | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 | [serialNumber](serialNumber.md) | 0..1 <br/> [String](String.md) | Serial number of the asset | direct |
@@ -239,6 +251,7 @@ description: Something which is placed inside of a building, but is not an integ
 from_schema: https://www.sbco.or.jp/ont/schema
 is_a: Resource
 slots:
+- id
 - commissionedBy
 - documentation
 - geometry
@@ -284,6 +297,29 @@ description: Something which is placed inside of a building, but is not an integ
 from_schema: https://www.sbco.or.jp/ont/schema
 is_a: Resource
 attributes:
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: Asset
+    domain_of:
+    - Space
+    - Asset
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   commissionedBy:
     name: commissionedBy
     description: Agent or resource that commissioned this asset
@@ -355,11 +391,8 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: string
+    range: Point
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Point
   installedBy:
     name: installedBy
     description: Agent or resource that installed this asset
@@ -401,12 +434,8 @@ attributes:
     domain_of:
     - Asset
     - BuildingElement
-    inverse: isLocationOf
-    range: string
+    range: Resource
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Space
   manufacturedBy:
     name: manufacturedBy
     description: Agent or resource that manufactured this asset
@@ -485,6 +514,7 @@ attributes:
     - Space
     - Asset
     - Point
+    - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -503,6 +533,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -519,6 +550,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - PostalAddress
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -582,9 +614,8 @@ attributes:
     owner: Asset
     domain_of:
     - Asset
-    range: xsd:duration
+    range: Duration
     multivalued: true
-    pattern: ^P(?:\d+Y)?(?:\d+M)?(?:\d+D)?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
   modelNumber:
     name: modelNumber
     description: Model number of the asset
@@ -610,6 +641,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: string
     required: true
   serialNumber:

@@ -175,6 +175,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: string
     required: true
   customTags:
@@ -191,6 +192,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true

@@ -23,10 +23,13 @@ Name: building_model
 | [Resource](Resource.md) | Base class for all resources |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Agent](Agent.md) | The human, group, or machine that consumes or acts upon an object or data |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Organization](Organization.md) | An organization such as a company, institution, or association |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Equipment](Equipment.md) | An equipment asset installed in a space |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Document](Document.md) | A document providing information about a building element or asset |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PostalAddress](PostalAddress.md) | A postal address |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Building](Building.md) | A building which is part of a site |
@@ -133,6 +136,7 @@ Name: building_model
 | [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
 | [Dtmi](Dtmi.md) | DTMI形式のID |
+| [Duration](Duration.md) | ISO 8601 duration format |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |

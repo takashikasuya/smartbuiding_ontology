@@ -22,11 +22,11 @@ Alias: isLocationOf
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Level](Level.md) | A building storey |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [Level](Level.md) | A building storey |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 
 
@@ -35,7 +35,7 @@ Alias: isLocationOf
 
 ## Properties
 
-* Range: [Resource](Resource.md)
+* Range: [Space](Space.md)
 
 * Multivalued: True
 
@@ -78,8 +78,7 @@ rank: 1000
 alias: isLocationOf
 domain_of:
 - Space
-inverse: locatedIn
-range: Resource
+range: Space
 multivalued: true
 
 ```

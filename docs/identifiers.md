@@ -22,16 +22,17 @@ Alias: identifiers
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Level](Level.md) | A building storey |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |  no  |
+| [Level](Level.md) | A building storey |  no  |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 | [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [PostalAddress](PostalAddress.md) | A postal address |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 
 
 
@@ -88,6 +89,7 @@ domain_of:
 - Asset
 - Point
 - BuildingElement
+- PostalAddress
 range: KeyStringMapEntry
 required: true
 multivalued: true

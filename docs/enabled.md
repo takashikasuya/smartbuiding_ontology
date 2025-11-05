@@ -18,15 +18,6 @@ Alias: enabled
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
-
-
-
-
 
 
 ## Properties
@@ -71,8 +62,6 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 ifabsent: 'True'
 alias: enabled
-domain_of:
-- SBCOPoint
 range: boolean
 
 ```

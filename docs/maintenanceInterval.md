@@ -32,11 +32,9 @@ Alias: maintenanceInterval
 
 ## Properties
 
-* Range: NONE
+* Range: [Duration](Duration.md)
 
 * Multivalued: True
-
-* Regex pattern: `^P(?:\d+Y)?(?:\d+M)?(?:\d+D)?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$`
 
 
 
@@ -78,9 +76,8 @@ slot_uri: rec:maintenanceInterval
 alias: maintenanceInterval
 domain_of:
 - Asset
-range: xsd:duration
+range: Duration
 multivalued: true
-pattern: ^P(?:\d+Y)?(?:\d+M)?(?:\d+D)?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
 
 ```
 </details>

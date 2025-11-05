@@ -33,7 +33,7 @@ Alias: locatedIn
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Space](Space.md)
+* Range: [Resource](Resource.md)
 
 * Multivalued: True
 
@@ -78,12 +78,8 @@ alias: locatedIn
 domain_of:
 - Asset
 - BuildingElement
-inverse: isLocationOf
-range: string
+range: Resource
 multivalued: true
-any_of:
-- range: Resource
-- range: Space
 
 ```
 </details>

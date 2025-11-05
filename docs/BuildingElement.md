@@ -61,6 +61,15 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
         
       BuildingElement : locatedIn
         
+          
+    
+        
+        
+        BuildingElement --> "*" Resource : locatedIn
+        click Resource href "../Resource/"
+    
+
+        
       BuildingElement : name
         
       
@@ -86,7 +95,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
 | [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | direct |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | direct |
-| [locatedIn](locatedIn.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Space](Space.md) | Space where this asset is located | direct |
+| [locatedIn](locatedIn.md) | * <br/> [Resource](Resource.md) | Space where this asset is located | direct |
 
 
 
@@ -209,6 +218,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: string
     required: true
   identifiers:
@@ -223,6 +233,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - PostalAddress
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -242,6 +253,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -305,12 +317,8 @@ attributes:
     domain_of:
     - Asset
     - BuildingElement
-    inverse: isLocationOf
-    range: string
+    range: Resource
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Space
 class_uri: rec:BuildingElement
 
 ```

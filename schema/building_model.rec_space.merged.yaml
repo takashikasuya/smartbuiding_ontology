@@ -13,7 +13,6 @@ prefixes:
   gutp: https://smart-building-ontology.org/gutp/
   rec: https://w3id.org/rec/
   brick: https://brickschema.org/schema/Brick#
-  bot: https://w3id.org/bot#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
@@ -25,6 +24,13 @@ types:
     description: DTMI形式のID
     uri: xsd:string
     pattern: "^dtmi:[A-Za-z0-9_:.;-]+$"
+
+    # 以下を追加
+  Duration:
+    base: string
+    description: ISO 8601 duration format
+    uri: xsd:duration
+    pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
 
     
 enums:
@@ -544,9 +550,8 @@ slots:
 
   isLocationOf:
     description: Subject is the physical location encapsulating the object.
-    range: Resource
+    range: Space
     multivalued: true
-    inverse: locatedIn
 
   # Asset specific slots
   assetTag:
@@ -605,11 +610,8 @@ slots:
     
   locatedIn:
     description: "Space where this asset is located"
-    any_of:
-      - range: Resource
-      - range: Space
+    range: Resource
     multivalued: true
-    inverse: isLocationOf
     slot_uri: rec:locatedIn
     
   MACAddress:  
@@ -621,10 +623,9 @@ slots:
     
   maintenanceInterval:
     description: "Maintenance interval duration"
-    range: xsd:duration
+    range: Duration
     multivalued: true
     slot_uri: rec:maintenanceInterval
-    pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
 
   modelNumber:
     description: "Model number of the asset"
@@ -745,9 +746,7 @@ slots:
     
   hasPoint:
     description: "Point associated with this architecture"
-    any_of:
-      - range: Resource
-      - range: Point
+    range: Point
     multivalued: true
     slot_uri: rec:hasPoint
     
@@ -836,7 +835,6 @@ slots:
   isPointOf:
     description: "Equipment that this point belongs to"
     range: Equipment
-    inverse: hasPoint
     slot_uri: brick:isPointOf
     annotations:
       - tag: description_ja
@@ -851,6 +849,7 @@ classes:
       value: 室やゾーンなどの空間単位。設備を含みうる。
     slots:
     # relationships
+    - id
     - geometry
     - georeference
     - hasPart
@@ -923,6 +922,7 @@ classes:
       - tag: description_ja
         value: "建物内に配置されるが、建物構造の不可欠な部分ではないもの。例：家具、設備、システムなど。"
     slots:
+      - id
       - commissionedBy
       - documentation
       - geometry
@@ -992,7 +992,6 @@ classes:
       - tag: description_ja
         value: "スマートビルディングの文脈におけるポイント（センサー/アクチュエータ）。"
     slots:
-      - enabled
       - pointSpecification  # point_specification → pointSpecification
       - pointType          # point_type → pointType
       - unit
@@ -1098,3 +1097,35 @@ classes:
       - isMemberOf
       - owns
 
+
+#TODO 本当はInformationのサブクラス
+  PostalAddress:
+    is_a: Resource
+    class_uri: rec:PostalAddress
+    description: "A postal address"
+    annotations:
+      - tag: description_ja
+        value: "郵便住所"
+    slots:
+      - name
+      - identifiers
+      - customTags
+      - customProperties
+
+ # TODO
+  ArchitectureArea:
+    is_a: Resource
+    class_uri: rec:ArchitectureArea
+    description: "Describes business-relevant area measurements typically associated with architected spaces. As the exact requirements on these measurements will vary from case to case or jurisdiction to jurisdiction, subclassing and specializing this definition is encouraged."
+    annotations:
+      - tag: description_ja
+        value: "建築の面積測定"
+
+
+  ArchitectureCapacity:
+    is_a: Resource
+    class_uri: rec:ArchitectureCapacity
+    description: "Describes business-relevant capacity measurements typically associated with architected spaces. As the exact requirements on these measurements will vary from case to case or jurisdiction to jurisdiction, subclassing and specializing this definition is encouraged."
+    annotations:
+      - tag: description_ja
+        value: "建築の容量測定"

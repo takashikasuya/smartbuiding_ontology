@@ -59,6 +59,7 @@ URI: [sbco:KeyBoolMapEntry](https://www.sbco.or.jp/ont/KeyBoolMapEntry)
 | [BuildingElement](BuildingElement.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Agent](Agent.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Organization](Organization.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [PostalAddress](PostalAddress.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 
 
 

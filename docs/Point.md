@@ -135,12 +135,12 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
-| [Site](Site.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
-| [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
-| [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
-| [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
-| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Site](Site.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Building](Building.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Level](Level.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Asset](Asset.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 
 
 
@@ -237,7 +237,6 @@ attributes:
     owner: Point
     domain_of:
     - Point
-    inverse: hasPoint
     range: Equipment
   aggregate:
     name: aggregate
@@ -268,6 +267,7 @@ attributes:
     - Space
     - Asset
     - Point
+    - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -286,6 +286,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -332,6 +333,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - PostalAddress
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -351,6 +353,7 @@ attributes:
     - BuildingElement
     - Agent
     - Organization
+    - PostalAddress
     range: string
     required: true
 class_uri: brick:Point

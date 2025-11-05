@@ -18,6 +18,21 @@ Alias: id
 
 
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+
+
+
+
 
 
 ## Properties
@@ -83,6 +98,9 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 identifier: true
 alias: id
+domain_of:
+- Space
+- Asset
 range: string
 required: true
 pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
