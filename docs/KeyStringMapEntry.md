@@ -47,7 +47,17 @@ URI: [sbco:KeyStringMapEntry](https://www.sbco.or.jp/ont/KeyStringMapEntry)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Space](Space.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Architecture](Architecture.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Site](Site.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Building](Building.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Level](Level.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Asset](Asset.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Equipment](Equipment.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Point](Point.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [SBCOPoint](SBCOPoint.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | [entries](entries.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [BuildingElement](BuildingElement.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 
 
 

@@ -102,7 +102,6 @@ Name: building_model
 | [serialNumber](serialNumber.md) | Serial number of the asset |
 | [servicedBy](servicedBy.md) | Agent or resource that services this asset |
 | [site](site.md) | Parent site |
-| [sites](sites.md) | Sites contained by a higher-level container (rarely used) |
 | [space](space.md) | Parent space |
 | [spaces](spaces.md) | Spaces within a building or level |
 | [turnoverDate](turnoverDate.md) | Date when the asset was turned over |
@@ -133,7 +132,7 @@ Name: building_model
 | [Datetime](Datetime.md) | The combination of a date and time |
 | [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
-| [Dtmi](Dtmi.md) |  |
+| [Dtmi](Dtmi.md) | DTMI形式のID |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |

@@ -18,15 +18,6 @@ Alias: points
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-
-
-
-
 
 
 ## Properties
@@ -72,11 +63,8 @@ description: Points (sensors/actuators) attached to equipment
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: points
-domain_of:
-- Equipment
 range: Point
 multivalued: true
-inlined: true
 inlined_as_list: true
 
 ```

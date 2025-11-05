@@ -3,7 +3,7 @@
 # Slot: isLocationOf 
 
 
-_多様な対象を許容（必要に応じて共通上位クラスに）_
+_Subject is the physical location encapsulating the object._
 
 
 
@@ -18,11 +18,24 @@ Alias: isLocationOf
 
 
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Level](Level.md) | A building storey |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+
+
+
+
 
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Resource](Resource.md)
 
 * Multivalued: True
 
@@ -59,11 +72,14 @@ Alias: isLocationOf
 <details>
 ```yaml
 name: isLocationOf
-description: 多様な対象を許容（必要に応じて共通上位クラスに）
+description: Subject is the physical location encapsulating the object.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: isLocationOf
-range: string
+domain_of:
+- Space
+inverse: locatedIn
+range: Resource
 multivalued: true
 
 ```

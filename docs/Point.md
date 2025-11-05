@@ -9,7 +9,7 @@ _A sensor, actuator, or data point associated with equipment._
 
 
 
-URI: [rec:Point](https://w3id.org/rec/Point)
+URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 
 
 
@@ -19,52 +19,87 @@ URI: [rec:Point](https://w3id.org/rec/Point)
  classDiagram
     class Point
     click Point href "../Point/"
-      Point : custom_tags
-        
-      Point : description_text
-        
-      Point : enabled
-        
-      Point : equipment
+      Point <|-- SBCOPoint
+        click SBCOPoint href "../SBCOPoint/"
+      
+      Point : aggregate
         
           
     
         
         
-        Point --> "0..1" Equipment : equipment
+        Point --> "0..1" AggregateEnum : aggregate
+        click AggregateEnum href "../AggregateEnum/"
+    
+
+        
+      Point : customProperties
+        
+          
+    
+        
+        
+        Point --> "*" KeyMapOfStringMapEntry : customProperties
+        click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
+    
+
+        
+      Point : customTags
+        
+          
+    
+        
+        
+        Point --> "*" KeyBoolMapEntry : customTags
+        click KeyBoolMapEntry href "../KeyBoolMapEntry/"
+    
+
+        
+      Point : hasQuantity
+        
+          
+    
+        
+        
+        Point --> "0..1" QuantityEnum : hasQuantity
+        click QuantityEnum href "../QuantityEnum/"
+    
+
+        
+      Point : hasSubstance
+        
+          
+    
+        
+        
+        Point --> "0..1" SubstanceEnum : hasSubstance
+        click SubstanceEnum href "../SubstanceEnum/"
+    
+
+        
+      Point : identifiers
+        
+          
+    
+        
+        
+        Point --> "1..*" KeyStringMapEntry : identifiers
+        click KeyStringMapEntry href "../KeyStringMapEntry/"
+    
+
+        
+      Point : isPointOf
+        
+          
+    
+        
+        
+        Point --> "0..1" Equipment : isPointOf
         click Equipment href "../Equipment/"
     
 
         
-      Point : id
-        
-      Point : max_pres_value
-        
-      Point : min_pres_value
-        
       Point : name
-        
-      Point : point_type
-        
-          
-    
-        
-        
-        Point --> "1" PointTypeEnum : point_type
-        click PointTypeEnum href "../PointTypeEnum/"
-    
-
-        
-      Point : unit
-        
-          
-    
-        
-        
-        Point --> "0..1" UnitEnum : unit
-        click UnitEnum href "../UnitEnum/"
-    
-
         
       
 ```
@@ -72,23 +107,25 @@ URI: [rec:Point](https://w3id.org/rec/Point)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Point**
+    * [SBCOPoint](SBCOPoint.md)
+
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | Stable identifier (local or global) | direct |
-| [name](name.md) | 0..1 <br/> [String](String.md) | Human-readable name | direct |
-| [description_text](description_text.md) | 0..1 <br/> [String](String.md) | Description (English) | direct |
-| [custom_tags](custom_tags.md) | * <br/> [String](String.md) | Arbitrary tags | direct |
-| [equipment](equipment.md) | 0..1 <br/> [Equipment](Equipment.md) | Parent equipment | direct |
-| [enabled](enabled.md) | 0..1 <br/> [Boolean](Boolean.md) | Whether the point is enabled/active | direct |
-| [point_type](point_type.md) | 1 <br/> [PointTypeEnum](PointTypeEnum.md) | Point type (e | direct |
-| [unit](unit.md) | 0..1 <br/> [UnitEnum](UnitEnum.md) | Measurement unit (enum key; symbol can be taken from annotations) | direct |
-| [min_pres_value](min_pres_value.md) | 0..1 <br/> [Float](Float.md) | Minimum plausible reading | direct |
-| [max_pres_value](max_pres_value.md) | 0..1 <br/> [Float](Float.md) | Maximum plausible reading | direct |
+| [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md) | Equipment that this point belongs to | direct |
+| [aggregate](aggregate.md) | 0..1 <br/> [AggregateEnum](AggregateEnum.md) | Aggregation function or method for point data processing | direct |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
+| [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
+| [hasQuantity](hasQuantity.md) | 0..1 <br/> [QuantityEnum](QuantityEnum.md) | Physical quantity measured by this point | direct |
+| [hasSubstance](hasSubstance.md) | 0..1 <br/> [SubstanceEnum](SubstanceEnum.md) | Substance associated with this point | direct |
+| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
+| [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 
 
 
@@ -98,35 +135,12 @@ URI: [rec:Point](https://w3id.org/rec/Point)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Equipment](Equipment.md) | [points](points.md) | range | [Point](Point.md) |
-
-
-
-
-## Rules
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'point_type': {'id_prefixes': ['Temperature']}}``` |```{'unit': {'equals_string': 'celsius'}, 'max_pres_value': {'minimum_value': -50, 'maximum_value': 100}}``` | |
-
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'point_type': {'id_prefixes': ['Humidity']}}``` |```{'unit': {'equals_string': 'percent'}, 'max_pres_value': {'minimum_value': 0, 'maximum_value': 100}}``` | |
-
-
-
-### 
-
-| Rule Applied | Preconditions | Postconditions | Elseconditions |
-|--------------|---------------|----------------|----------------|
-| slot_conditions |```{'point_type': {'id_prefixes': ['CO2']}}``` |```{'unit': {'equals_string': 'ppm'}, 'max_pres_value': {'minimum_value': 0, 'maximum_value': 10000}}``` | |
+| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Site](Site.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
 
 
 
@@ -160,7 +174,7 @@ URI: [rec:Point](https://w3id.org/rec/Point)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:Point |
+| self | brick:Point |
 | native | sbco:Point |
 
 
@@ -184,66 +198,15 @@ annotations:
 description: A sensor, actuator, or data point associated with equipment.
 from_schema: https://www.sbco.or.jp/ont/schema
 slots:
-- id
+- isPointOf
+- aggregate
+- customProperties
+- customTags
+- hasQuantity
+- hasSubstance
+- identifiers
 - name
-- description_text
-- custom_tags
-- equipment
-- enabled
-- point_type
-- unit
-- min_pres_value
-- max_pres_value
-class_uri: rec:Point
-rules:
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - Temperature
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: celsius
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: -50
-        maximum_value: 100
-  description: Temperature points should have reasonable range and Celsius unit
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - Humidity
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: percent
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: 0
-        maximum_value: 100
-  description: Humidity points must be 0–100% range
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - CO2
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: ppm
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: 0
-        maximum_value: 10000
-  description: CO2 points should have a reasonable ppm range
+class_uri: brick:Point
 
 ```
 </details>
@@ -260,182 +223,137 @@ annotations:
 description: A sensor, actuator, or data point associated with equipment.
 from_schema: https://www.sbco.or.jp/ont/schema
 attributes:
-  id:
-    name: id
-    description: Stable identifier (local or global)
+  isPointOf:
+    name: isPointOf
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: このポイントが属する設備
+    description: Equipment that this point belongs to
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
-    identifier: true
-    alias: id
+    slot_uri: brick:isPointOf
+    alias: isPointOf
     owner: Point
     domain_of:
-    - Site
-    - Building
-    - Level
-    - Space
-    - Equipment
     - Point
-    range: string
+    inverse: hasPoint
+    range: Equipment
+  aggregate:
+    name: aggregate
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: ポイントデータ処理のための集約関数または方法
+      azure_dtdl_type:
+        tag: azure_dtdl_type
+        value: DTObjectInfo
+    description: Aggregation function or method for point data processing
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: brick:aggregate
+    alias: aggregate
+    owner: Point
+    domain_of:
+    - Point
+    range: AggregateEnum
+  customProperties:
+    name: customProperties
+    description: map(string -> map(string -> string))
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: customProperties
+    owner: Point
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    range: KeyMapOfStringMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customTags:
+    name: customTags
+    description: map(string -> boolean)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: customTags
+    owner: Point
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    - Agent
+    - Organization
+    range: KeyBoolMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  hasQuantity:
+    name: hasQuantity
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: このポイントで測定される物理量
+    description: Physical quantity measured by this point
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: brick:hasQuantity
+    alias: hasQuantity
+    owner: Point
+    domain_of:
+    - Point
+    range: QuantityEnum
+  hasSubstance:
+    name: hasSubstance
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: このポイントに関連する物質
+    description: Substance associated with this point
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: brick:hasSubstance
+    alias: hasSubstance
+    owner: Point
+    domain_of:
+    - Point
+    range: SubstanceEnum
+  identifiers:
+    name: identifiers
+    description: map(string -> string)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: identifiers
+    owner: Point
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    range: KeyStringMapEntry
     required: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   name:
     name: name
-    description: Human-readable name
+    description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: name
     owner: Point
     domain_of:
-    - Site
-    - Building
-    - Level
     - Space
-    - Equipment
+    - Asset
     - Point
+    - BuildingElement
+    - Agent
+    - Organization
     range: string
-  description_text:
-    name: description_text
-    description: Description (English). For multilingual, see annotations on each
-      object.
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: description_text
-    owner: Point
-    domain_of:
-    - Site
-    - Building
-    - Level
-    - Space
-    - Equipment
-    - Point
-    range: string
-  custom_tags:
-    name: custom_tags
-    description: Arbitrary tags
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: custom_tags
-    owner: Point
-    domain_of:
-    - Site
-    - Building
-    - Level
-    - Space
-    - Equipment
-    - Point
-    range: string
-    multivalued: true
-  equipment:
-    name: equipment
-    description: Parent equipment
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: equipment
-    owner: Point
-    domain_of:
-    - Point
-    range: Equipment
-  enabled:
-    name: enabled
-    description: Whether the point is enabled/active
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    ifabsent: 'True'
-    alias: enabled
-    owner: Point
-    domain_of:
-    - Point
-    range: boolean
-  point_type:
-    name: point_type
-    description: Point type (e.g., Temperature, Humidity, CO2)
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: point_type
-    owner: Point
-    domain_of:
-    - Point
-    range: PointTypeEnum
     required: true
-  unit:
-    name: unit
-    description: Measurement unit (enum key; symbol can be taken from annotations)
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: unit
-    owner: Point
-    domain_of:
-    - Point
-    range: UnitEnum
-  min_pres_value:
-    name: min_pres_value
-    description: Minimum plausible reading
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: min_pres_value
-    owner: Point
-    domain_of:
-    - Point
-    range: float
-  max_pres_value:
-    name: max_pres_value
-    description: Maximum plausible reading
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: max_pres_value
-    owner: Point
-    domain_of:
-    - Point
-    range: float
-class_uri: rec:Point
-rules:
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - Temperature
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: celsius
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: -50
-        maximum_value: 100
-  description: Temperature points should have reasonable range and Celsius unit
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - Humidity
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: percent
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: 0
-        maximum_value: 100
-  description: Humidity points must be 0–100% range
-- preconditions:
-    slot_conditions:
-      point_type:
-        name: point_type
-        id_prefixes:
-        - CO2
-  postconditions:
-    slot_conditions:
-      unit:
-        name: unit
-        equals_string: ppm
-      max_pres_value:
-        name: max_pres_value
-        minimum_value: 0
-        maximum_value: 10000
-  description: CO2 points should have a reasonable ppm range
+class_uri: brick:Point
 
 ```
 </details>

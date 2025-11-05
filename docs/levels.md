@@ -18,15 +18,6 @@ Alias: levels
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Building](Building.md) | A building which is part of a site |  no  |
-
-
-
-
 
 
 ## Properties
@@ -72,11 +63,8 @@ description: Levels in a building
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: levels
-domain_of:
-- Building
 range: Level
 multivalued: true
-inlined: true
 inlined_as_list: true
 
 ```

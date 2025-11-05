@@ -18,15 +18,6 @@ Alias: buildings
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Site](Site.md) | A site, which may contain buildings |  no  |
-
-
-
-
 
 
 ## Properties
@@ -72,11 +63,8 @@ description: Buildings in a site
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: buildings
-domain_of:
-- Site
 range: Building
 multivalued: true
-inlined: true
 inlined_as_list: true
 
 ```

@@ -18,16 +18,6 @@ Alias: building
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
-| [Level](Level.md) | A building storey |  no  |
-
-
-
-
 
 
 ## Properties
@@ -71,9 +61,6 @@ description: Parent building
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: building
-domain_of:
-- Level
-- Space
 range: Building
 
 ```

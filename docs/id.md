@@ -3,7 +3,7 @@
 # Slot: id 
 
 
-_Stable identifier (local or global)_
+_Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format)._
 
 
 
@@ -18,20 +18,6 @@ Alias: id
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Level](Level.md) | A building storey |  no  |
-| [Site](Site.md) | A site, which may contain buildings |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
-
-
-
-
 
 
 ## Properties
@@ -40,12 +26,22 @@ Alias: id
 
 * Required: True
 
+* Regex pattern: `^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$`
+
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_ja | スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。 |
+| example | dtmi:example:Building:1 |
 
 
 
@@ -73,20 +69,23 @@ Alias: id
 <details>
 ```yaml
 name: id
-description: Stable identifier (local or global)
+annotations:
+  description_ja:
+    tag: description_ja
+    value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+  example:
+    tag: example
+    value: dtmi:example:Building:1
+description: Unique identifier within the schema. Must start with a letter and contain
+  only letters, digits, underscores, hyphens, colons, semicolons, or periods (for
+  DTMI format).
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 identifier: true
 alias: id
-domain_of:
-- Site
-- Building
-- Level
-- Space
-- Equipment
-- Point
 range: string
 required: true
+pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
 
 ```
 </details>

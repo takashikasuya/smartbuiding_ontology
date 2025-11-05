@@ -18,15 +18,6 @@ Alias: site
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Building](Building.md) | A building which is part of a site |  no  |
-
-
-
-
 
 
 ## Properties
@@ -70,8 +61,6 @@ description: Parent site
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: site
-domain_of:
-- Building
 range: Site
 
 ```

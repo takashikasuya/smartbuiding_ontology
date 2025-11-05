@@ -23,6 +23,12 @@ URI: [sbco:PointSpecificationEnum](https://www.sbco.or.jp/ont/PointSpecification
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [pointSpecification](pointSpecification.md) | Point specification category as shown in equipment point list |
+
 
 
 

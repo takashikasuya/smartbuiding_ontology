@@ -113,6 +113,12 @@ URI: [sbco:QuantityEnum](https://www.sbco.or.jp/ont/QuantityEnum)
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [hasQuantity](hasQuantity.md) | Physical quantity measured by this point |
+
 
 
 

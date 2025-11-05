@@ -26,6 +26,12 @@ URI: [sbco:AggregateEnum](https://www.sbco.or.jp/ont/AggregateEnum)
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [aggregate](aggregate.md) | Aggregation function or method for point data processing |
+
 
 
 

@@ -22,6 +22,7 @@ imports:
 types:
   Dtmi:
     base: string
+    description: DTMI形式のID
     uri: xsd:string
     pattern: "^dtmi:[A-Za-z0-9_:.;-]+$"
 

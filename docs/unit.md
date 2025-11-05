@@ -22,7 +22,7 @@ Alias: unit
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
 
 
 
@@ -71,7 +71,7 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: unit
 domain_of:
-- Point
+- SBCOPoint
 range: UnitEnum
 
 ```

@@ -53,6 +53,12 @@ URI: [sbco:SubstanceEnum](https://www.sbco.or.jp/ont/SubstanceEnum)
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [hasSubstance](hasSubstance.md) | Substance associated with this point |
+
 
 
 

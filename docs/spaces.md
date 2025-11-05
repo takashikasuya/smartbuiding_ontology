@@ -18,16 +18,6 @@ Alias: spaces
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Level](Level.md) | A building storey |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-
-
-
-
 
 
 ## Properties
@@ -73,12 +63,8 @@ description: Spaces within a building or level
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: spaces
-domain_of:
-- Building
-- Level
 range: Space
 multivalued: true
-inlined: true
 inlined_as_list: true
 
 ```

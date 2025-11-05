@@ -52,6 +52,21 @@ URI: [sbco:KeyMapOfStringMapEntry](https://www.sbco.or.jp/ont/KeyMapOfStringMapE
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Space](Space.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Architecture](Architecture.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Site](Site.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Building](Building.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Level](Level.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Asset](Asset.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Equipment](Equipment.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Point](Point.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [SBCOPoint](SBCOPoint.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+
+
 
 
 

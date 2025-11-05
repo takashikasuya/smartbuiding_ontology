@@ -19,7 +19,7 @@ linkml generate shacl --schema schema/building_model.yaml --output output/buildi
 linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
 
 # Generate docs and preview
-linkml generate doc --directory docs schema/building_model.yaml
+gen-doc --directory docs schema/building_model.yaml
 mkdocs serve
 ```
 

@@ -18,15 +18,6 @@ Alias: level
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Space](Space.md) | A spatial unit (room/zone) that may contain equipment |  no  |
-
-
-
-
 
 
 ## Properties
@@ -70,8 +61,6 @@ description: Parent level
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: level
-domain_of:
-- Space
 range: Level
 
 ```

@@ -22,7 +22,7 @@ Alias: enabled
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
 
 
 
@@ -72,7 +72,7 @@ rank: 1000
 ifabsent: 'True'
 alias: enabled
 domain_of:
-- Point
+- SBCOPoint
 range: boolean
 
 ```
