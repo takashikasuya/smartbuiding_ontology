@@ -145,9 +145,9 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [BuildingElement](BuildingElement.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [BuildingElement](BuildingElement.md) | [locatedIn](locatedIn.md) | range | [Resource](Resource.md) |
-| [Agent](Agent.md) | [isMemberOf](isMemberOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Agent](Agent.md) | [owns](owns.md) | range | [Resource](Resource.md) |
-| [Organization](Organization.md) | [isMemberOf](isMemberOf.md) | any_of[range] | [Resource](Resource.md) |
+| [Organization](Organization.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
+| [Organization](Organization.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Organization](Organization.md) | [owns](owns.md) | range | [Resource](Resource.md) |
 
 

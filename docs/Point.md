@@ -176,6 +176,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 | ---  | ---  |
 | self | brick:Point |
 | native | sbco:Point |
+| exact | brick:Point |
 
 
 
@@ -197,6 +198,8 @@ annotations:
     value: 設備に紐づくセンサー/アクチュエータ/データポイント。
 description: A sensor, actuator, or data point associated with equipment.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- brick:Point
 slots:
 - isPointOf
 - aggregate
@@ -222,6 +225,8 @@ annotations:
     value: 設備に紐づくセンサー/アクチュエータ/データポイント。
 description: A sensor, actuator, or data point associated with equipment.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- brick:Point
 attributes:
   isPointOf:
     name: isPointOf
@@ -261,12 +266,14 @@ attributes:
     description: map(string -> map(string -> string))
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customProperties
     alias: customProperties
     owner: Point
     domain_of:
     - Space
     - Asset
     - Point
+    - Agent
     - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
@@ -277,6 +284,7 @@ attributes:
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: Point
     domain_of:
@@ -285,7 +293,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
@@ -326,6 +333,7 @@ attributes:
     description: map(string -> string)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:identifiers
     alias: identifiers
     owner: Point
     domain_of:
@@ -333,6 +341,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - Agent
     - PostalAddress
     range: KeyStringMapEntry
     required: true
@@ -344,6 +353,7 @@ attributes:
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: Point
     domain_of:
@@ -352,7 +362,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true

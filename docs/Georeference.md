@@ -9,7 +9,7 @@ _A georeference creates a relationship between the local coordinate system used 
 
 
 
-URI: [sbco:georeference](https://www.sbco.or.jp/ont/georeference)
+URI: [rec:georeference](https://w3id.org/rec/georeference)
 Alias: georeference
 
 <!-- no inheritance hierarchy -->
@@ -22,11 +22,11 @@ Alias: georeference
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 
 
 
@@ -59,7 +59,7 @@ Alias: georeference
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:georeference |
+| self | rec:georeference |
 | native | sbco:georeference |
 
 
@@ -76,6 +76,7 @@ description: A georeference creates a relationship between the local coordinate 
   in that geographic coordinate system (e.g., for mapping purposes).
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
+slot_uri: rec:georeference
 alias: georeference
 domain_of:
 - Space

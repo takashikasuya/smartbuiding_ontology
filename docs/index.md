@@ -48,8 +48,6 @@ Name: building_model
 | [architectedBy](architectedBy.md) | Agent or resource that architected this structure |
 | [area](area.md) | Area of the architecture |
 | [assetTag](assetTag.md) | Asset identification tag |
-| [building](building.md) | Parent building |
-| [buildings](buildings.md) | Buildings in a site |
 | [capacity](capacity.md) | Capacity of the architecture |
 | [commissionedBy](commissionedBy.md) | Agent or resource that commissioned this asset |
 | [commissioningDate](commissioningDate.md) | Date when the asset was commissioned |
@@ -58,10 +56,7 @@ Name: building_model
 | [customProperties](customProperties.md) | map(string -> map(string -> string)) |
 | [customTags](customTags.md) | map(string -> boolean) |
 | [documentation](documentation.md) | Documentation related to this asset |
-| [enabled](enabled.md) | Whether the point is enabled/active |
 | [entries](entries.md) | Nested map entries |
-| [equipment](equipment.md) | Parent equipment |
-| [equipmentList](equipmentList.md) | Equipment installed in a space |
 | [feeds](feeds.md) | Equipment or system that this equipment feeds |
 | [flag](flag.md) | Boolean flag value |
 | [geometry](geometry.md) | Polygon representing the spatial extent of this Space |
@@ -73,24 +68,23 @@ Name: building_model
 | [id](id.md) | Unique identifier within the schema |
 | [identifiers](identifiers.md) | map(string -> string) |
 | [initialCost](initialCost.md) | Initial cost of the asset |
+| [installationArea](installationArea.md) | Parent installation area |
 | [installationDate](installationDate.md) | Date when the asset was installed |
 | [installedBy](installedBy.md) | Agent or resource that installed this asset |
 | [intersectingElement](intersectingElement.md) | Building element intersecting with this architecture |
 | [IPAddress](IPAddress.md) | IP address of the asset |
 | [isFedBy](isFedBy.md) | Resource that feeds this architecture |
 | [isLocationOf](isLocationOf.md) | Subject is the physical location encapsulating the object |
-| [isMemberOf](isMemberOf.md) | Organization that this agent is a member of |
 | [isPartOf](isPartOf.md) |  |
 | [isPointOf](isPointOf.md) | Equipment that this point belongs to |
 | [key](key.md) | Key of the map entry |
-| [level](level.md) | Parent level |
 | [levelNumber](levelNumber.md) | Floor or level number within a building |
-| [levels](levels.md) | Levels in a building |
 | [locatedIn](locatedIn.md) | Space where this asset is located |
 | [MACAddress](MACAddress.md) | MAC address of the asset |
 | [maintenanceInterval](maintenanceInterval.md) | Maintenance interval duration |
 | [manufacturedBy](manufacturedBy.md) | Agent or resource that manufactured this asset |
 | [maxPresValue](maxPresValue.md) | Maximum plausible reading |
+| [memberOf](memberOf.md) | Indicates membership in an organization |
 | [minPresValue](minPresValue.md) | Minimum plausible reading |
 | [modelNumber](modelNumber.md) | Model number of the asset |
 | [mountedOn](mountedOn.md) | Building element on which this asset is mounted |
@@ -98,15 +92,13 @@ Name: building_model
 | [operatedBy](operatedBy.md) | Agent or resource that operates this architecture |
 | [operationalStageCount](operationalStageCount.md) | The number of operational stages supported by this equipment |
 | [ownedBy](ownedBy.md) | Agent or resource that owns this architecture |
-| [owns](owns.md) | Resources owned by this agent |
-| [points](points.md) | Points (sensors/actuators) attached to equipment |
+| [owns](owns.md) |  Indicates ownership of some thing, e |
+| [panel](panel.md) | Parent panel |
 | [pointSpecification](pointSpecification.md) | Point specification category as shown in equipment point list |
 | [pointType](pointType.md) | Point type - a profile or template name used to refer to the telemetry format... |
 | [serialNumber](serialNumber.md) | Serial number of the asset |
 | [servicedBy](servicedBy.md) | Agent or resource that services this asset |
-| [site](site.md) | Parent site |
-| [space](space.md) | Parent space |
-| [spaces](spaces.md) | Spaces within a building or level |
+| [targetArea](targetArea.md) | Target area for this resource |
 | [turnoverDate](turnoverDate.md) | Date when the asset was turned over |
 | [unit](unit.md) | Measurement unit (enum key; symbol can be taken from annotations) |
 | [value](value.md) | Value of the map entry |

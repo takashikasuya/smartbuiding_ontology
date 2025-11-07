@@ -1,16 +1,16 @@
 
 
-# Slot: serialNumber 
+# Slot: panel 
 
 
-_Serial number of the asset_
+_Parent panel_
 
 
 
 
 
-URI: [rec:serialNumber](https://w3id.org/rec/serialNumber)
-Alias: serialNumber
+URI: [sbco:panel](https://www.sbco.or.jp/ont/panel)
+Alias: panel
 
 <!-- no inheritance hierarchy -->
 
@@ -22,8 +22,7 @@ Alias: serialNumber
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
 
 
 
@@ -56,8 +55,8 @@ Alias: serialNumber
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:serialNumber |
-| native | sbco:serialNumber |
+| self | sbco:panel |
+| native | sbco:panel |
 
 
 
@@ -66,14 +65,13 @@ Alias: serialNumber
 
 <details>
 ```yaml
-name: serialNumber
-description: Serial number of the asset
+name: panel
+description: Parent panel
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:serialNumber
-alias: serialNumber
+alias: panel
 domain_of:
-- Asset
+- SBCOPoint
 range: string
 
 ```

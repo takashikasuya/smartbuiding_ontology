@@ -9,7 +9,7 @@ _Subject is the physical location encapsulating the object._
 
 
 
-URI: [sbco:isLocationOf](https://www.sbco.or.jp/ont/isLocationOf)
+URI: [rec:isLocationOf](https://w3id.org/rec/isLocationOf)
 Alias: isLocationOf
 
 <!-- no inheritance hierarchy -->
@@ -22,11 +22,11 @@ Alias: isLocationOf
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 
 
 
@@ -61,7 +61,7 @@ Alias: isLocationOf
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:isLocationOf |
+| self | rec:isLocationOf |
 | native | sbco:isLocationOf |
 
 
@@ -75,6 +75,7 @@ name: isLocationOf
 description: Subject is the physical location encapsulating the object.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
+slot_uri: rec:isLocationOf
 alias: isLocationOf
 domain_of:
 - Space

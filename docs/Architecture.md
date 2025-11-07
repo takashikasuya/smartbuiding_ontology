@@ -520,6 +520,7 @@ attributes:
     description: Polygon representing the spatial extent of this Space.
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:geometry
     alias: geometry
     owner: Architecture
     domain_of:
@@ -535,6 +536,7 @@ attributes:
       and rendered in that geographic coordinate system (e.g., for mapping purposes).
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:georeference
     alias: georeference
     owner: Architecture
     domain_of:
@@ -546,12 +548,14 @@ attributes:
     description: The subject is composed in part of the entity given by the object.
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:hasPart
     alias: hasPart
     owner: Architecture
     domain_of:
     - Space
     - Asset
     - BuildingElement
+    - Organization
     range: string
     multivalued: true
     any_of:
@@ -562,6 +566,7 @@ attributes:
     description: Subject is the physical location encapsulating the object.
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:isLocationOf
     alias: isLocationOf
     owner: Architecture
     domain_of:
@@ -572,12 +577,14 @@ attributes:
     name: isPartOf
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:isPartOf
     alias: isPartOf
     owner: Architecture
     domain_of:
     - Space
     - Asset
     - BuildingElement
+    - Organization
     range: Space
     multivalued: false
     any_of:
@@ -588,12 +595,14 @@ attributes:
     description: map(string -> map(string -> string))
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customProperties
     alias: customProperties
     owner: Architecture
     domain_of:
     - Space
     - Asset
     - Point
+    - Agent
     - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
@@ -604,6 +613,7 @@ attributes:
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: Architecture
     domain_of:
@@ -612,7 +622,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
@@ -623,6 +632,7 @@ attributes:
     description: map(string -> string)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:identifiers
     alias: identifiers
     owner: Architecture
     domain_of:
@@ -630,6 +640,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - Agent
     - PostalAddress
     range: KeyStringMapEntry
     required: true
@@ -641,6 +652,7 @@ attributes:
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: Architecture
     domain_of:
@@ -649,7 +661,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true

@@ -22,8 +22,8 @@ Alias: isMemberOf
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Agent](Agent.md) | The human, group, or machine that consumes or acts upon an object or data |  no  |
 | [Organization](Organization.md) | An organization such as a company, institution, or association |  no  |
+| [Agent](Agent.md) | The human, group, or machine that consumes or acts upon an object or data |  no  |
 
 
 

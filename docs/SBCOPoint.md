@@ -88,6 +88,8 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
     
 
         
+      SBCOPoint : installationArea
+        
       SBCOPoint : isPointOf
         
           
@@ -105,6 +107,8 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
         
       SBCOPoint : name
         
+      SBCOPoint : panel
+        
       SBCOPoint : pointSpecification
         
           
@@ -117,6 +121,8 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
         
       SBCOPoint : pointType
+        
+      SBCOPoint : targetArea
         
       SBCOPoint : unit
         
@@ -146,6 +152,9 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [installationArea](installationArea.md) | 0..1 <br/> [String](String.md) | Parent installation area | direct |
+| [targetArea](targetArea.md) | 0..1 <br/> [String](String.md) | Target area for this resource | direct |
+| [panel](panel.md) | 0..1 <br/> [String](String.md) | Parent panel | direct |
 | [pointSpecification](pointSpecification.md) | 0..1 <br/> [PointSpecificationEnum](PointSpecificationEnum.md) | Point specification category as shown in equipment point list | direct |
 | [pointType](pointType.md) | 1 <br/> [String](String.md) | Point type - a profile or template name used to refer to the telemetry format... | direct |
 | [unit](unit.md) | 0..1 <br/> [UnitEnum](UnitEnum.md) | Measurement unit (enum key; symbol can be taken from annotations) | direct |
@@ -220,6 +229,9 @@ description: A point (sensor/actuator) in a smart building context.
 from_schema: https://www.sbco.or.jp/ont/schema
 is_a: Point
 slots:
+- installationArea
+- targetArea
+- panel
 - pointSpecification
 - pointType
 - unit
@@ -251,6 +263,36 @@ slot_usage:
     name: isPointOf
     range: Equipment
 attributes:
+  installationArea:
+    name: installationArea
+    description: Parent installation area
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: installationArea
+    owner: SBCOPoint
+    domain_of:
+    - SBCOPoint
+    range: string
+  targetArea:
+    name: targetArea
+    description: Target area for this resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: targetArea
+    owner: SBCOPoint
+    domain_of:
+    - SBCOPoint
+    range: string
+  panel:
+    name: panel
+    description: Parent panel
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: panel
+    owner: SBCOPoint
+    domain_of:
+    - SBCOPoint
+    range: string
   pointSpecification:
     name: pointSpecification
     annotations:
@@ -351,12 +393,14 @@ attributes:
     description: map(string -> map(string -> string))
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customProperties
     alias: customProperties
     owner: SBCOPoint
     domain_of:
     - Space
     - Asset
     - Point
+    - Agent
     - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true
@@ -367,6 +411,7 @@ attributes:
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: SBCOPoint
     domain_of:
@@ -375,7 +420,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
@@ -416,6 +460,7 @@ attributes:
     description: map(string -> string)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:identifiers
     alias: identifiers
     owner: SBCOPoint
     domain_of:
@@ -423,6 +468,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - Agent
     - PostalAddress
     range: KeyStringMapEntry
     required: true
@@ -434,6 +480,7 @@ attributes:
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: SBCOPoint
     domain_of:
@@ -442,7 +489,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true

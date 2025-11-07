@@ -1,28 +1,213 @@
 
 
-# Slot: level 
+# Class: Level 
 
 
-_Parent level_
-
-
-
-
-
-URI: [sbco:level](https://www.sbco.or.jp/ont/level)
-Alias: level
-
-<!-- no inheritance hierarchy -->
+_A building storey. Levels can also be treated as a kind of space._
 
 
 
 
 
+URI: [rec:Level](https://w3id.org/rec/Level)
 
 
-## Properties
 
-* Range: [Level](Level.md)
+
+
+```mermaid
+ classDiagram
+    class Level
+    click Level href "../Level/"
+      Architecture <|-- Level
+        click Architecture href "../Architecture/"
+      
+      Level : address
+        
+          
+    
+        
+        
+        Level --> "*" PostalAddress : address
+        click PostalAddress href "../PostalAddress/"
+    
+
+        
+      Level : adjacentElement
+        
+      Level : architectedBy
+        
+      Level : area
+        
+      Level : capacity
+        
+      Level : constructedBy
+        
+      Level : containsElement
+        
+      Level : customProperties
+        
+          
+    
+        
+        
+        Level --> "*" KeyMapOfStringMapEntry : customProperties
+        click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
+    
+
+        
+      Level : customTags
+        
+          
+    
+        
+        
+        Level --> "*" KeyBoolMapEntry : customTags
+        click KeyBoolMapEntry href "../KeyBoolMapEntry/"
+    
+
+        
+      Level : documentation
+        
+      Level : geometry
+        
+          
+    
+        
+        
+        Level --> "0..1" Geometry : geometry
+        click Geometry href "../Geometry/"
+    
+
+        
+      Level : georeference
+        
+          
+    
+        
+        
+        Level --> "0..1" Georeference : georeference
+        click Georeference href "../Georeference/"
+    
+
+        
+      Level : hasPart
+        
+      Level : hasPoint
+        
+          
+    
+        
+        
+        Level --> "*" Point : hasPoint
+        click Point href "../Point/"
+    
+
+        
+      Level : id
+        
+      Level : identifiers
+        
+          
+    
+        
+        
+        Level --> "1..*" KeyStringMapEntry : identifiers
+        click KeyStringMapEntry href "../KeyStringMapEntry/"
+    
+
+        
+      Level : intersectingElement
+        
+      Level : isFedBy
+        
+          
+    
+        
+        
+        Level --> "*" Resource : isFedBy
+        click Resource href "../Resource/"
+    
+
+        
+      Level : isLocationOf
+        
+          
+    
+        
+        
+        Level --> "*" Space : isLocationOf
+        click Space href "../Space/"
+    
+
+        
+      Level : isPartOf
+        
+          
+    
+        
+        
+        Level --> "0..1" Space : isPartOf
+        click Space href "../Space/"
+    
+
+        
+      Level : levelNumber
+        
+      Level : name
+        
+      Level : operatedBy
+        
+      Level : ownedBy
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [Space](Space.md)
+    * [Architecture](Architecture.md)
+        * **Level**
+
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [levelNumber](levelNumber.md) | 0..1 <br/> [Integer](Integer.md) | Floor or level number within a building | direct |
+| [area](area.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureArea](ArchitectureArea.md) | Area of the architecture | [Architecture](Architecture.md) |
+| [capacity](capacity.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | [Architecture](Architecture.md) |
+| [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | [Architecture](Architecture.md) |
+| [adjacentElement](adjacentElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | [Architecture](Architecture.md) |
+| [architectedBy](architectedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that architected this structure | [Architecture](Architecture.md) |
+| [constructedBy](constructedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that constructed this architecture | [Architecture](Architecture.md) |
+| [containsElement](containsElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element contained within this architecture | [Architecture](Architecture.md) |
+| [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | [Architecture](Architecture.md) |
+| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | [Architecture](Architecture.md) |
+| [intersectingElement](intersectingElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | [Architecture](Architecture.md) |
+| [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | [Architecture](Architecture.md) |
+| [operatedBy](operatedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that operates this architecture | [Architecture](Architecture.md) |
+| [ownedBy](ownedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that owns this architecture | [Architecture](Architecture.md) |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
+| [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
+| [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
+| [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
+| [isLocationOf](isLocationOf.md) | * <br/> [Space](Space.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
+| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | [Space](Space.md) |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
+| [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Space](Space.md) |
+| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Space](Space.md) |
+| [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Space](Space.md) |
+
+
+
+
+
+
 
 
 
@@ -30,6 +215,13 @@ Alias: level
 ## Identifier and Mapping Information
 
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_ja | 建物のフロア。スペースの一種として扱える。 |
 
 
 
@@ -46,22 +238,435 @@ Alias: level
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:level |
-| native | sbco:level |
+| self | rec:Level |
+| native | sbco:Level |
+| exact | rec:Level |
+
+
 
 
 
 
 ## LinkML Source
 
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
 <details>
 ```yaml
-name: level
-description: Parent level
+name: Level
+annotations:
+  description_ja:
+    tag: description_ja
+    value: 建物のフロア。スペースの一種として扱える。
+description: A building storey. Levels can also be treated as a kind of space.
 from_schema: https://www.sbco.or.jp/ont/schema
-rank: 1000
-alias: level
-range: Level
+exact_mappings:
+- rec:Level
+is_a: Architecture
+slots:
+- levelNumber
+class_uri: rec:Level
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Level
+annotations:
+  description_ja:
+    tag: description_ja
+    value: 建物のフロア。スペースの一種として扱える。
+description: A building storey. Levels can also be treated as a kind of space.
+from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Level
+is_a: Architecture
+attributes:
+  levelNumber:
+    name: levelNumber
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: 建物内のフロアまたはレベル番号
+    description: Floor or level number within a building
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:levelNumber
+    alias: levelNumber
+    owner: Level
+    domain_of:
+    - Level
+    range: integer
+  area:
+    name: area
+    description: Area of the architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:area
+    alias: area
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    any_of:
+    - range: Resource
+    - range: ArchitectureArea
+  capacity:
+    name: capacity
+    description: Capacity of the architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:capacity
+    alias: capacity
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    any_of:
+    - range: Resource
+    - range: ArchitectureCapacity
+  address:
+    name: address
+    description: Address of the architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:address
+    alias: address
+    owner: Level
+    domain_of:
+    - Architecture
+    range: PostalAddress
+    multivalued: true
+  adjacentElement:
+    name: adjacentElement
+    description: Building element adjacent to this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:adjacentElement
+    alias: adjacentElement
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: BuildingElement
+  architectedBy:
+    name: architectedBy
+    description: Agent or resource that architected this structure
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:architectedBy
+    alias: architectedBy
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: Agent
+  constructedBy:
+    name: constructedBy
+    description: Agent or resource that constructed this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:constructedBy
+    alias: constructedBy
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: Agent
+  containsElement:
+    name: containsElement
+    description: Building element contained within this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:containsElement
+    alias: containsElement
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: BuildingElement
+  documentation:
+    name: documentation
+    description: Documentation related to this asset
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:documentation
+    alias: documentation
+    owner: Level
+    domain_of:
+    - Architecture
+    - Asset
+    - BuildingElement
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: Document
+  hasPoint:
+    name: hasPoint
+    description: Point associated with this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:hasPoint
+    alias: hasPoint
+    owner: Level
+    domain_of:
+    - Architecture
+    - Asset
+    range: Point
+    multivalued: true
+  intersectingElement:
+    name: intersectingElement
+    description: Building element intersecting with this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:intersectingElement
+    alias: intersectingElement
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: BuildingElement
+  isFedBy:
+    name: isFedBy
+    annotations:
+      substance:
+        tag: substance
+        value: SubstanceEnum
+    description: Resource that feeds this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:isFedBy
+    alias: isFedBy
+    owner: Level
+    domain_of:
+    - Architecture
+    - Equipment
+    range: Resource
+    multivalued: true
+  operatedBy:
+    name: operatedBy
+    description: Agent or resource that operates this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:operatedBy
+    alias: operatedBy
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: Agent
+  ownedBy:
+    name: ownedBy
+    description: Agent or resource that owns this architecture
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:ownedBy
+    alias: ownedBy
+    owner: Level
+    domain_of:
+    - Architecture
+    range: string
+    multivalued: true
+    any_of:
+    - range: Resource
+    - range: Agent
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+  geometry:
+    name: geometry
+    description: Polygon representing the spatial extent of this Space.
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:geometry
+    alias: geometry
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    range: Geometry
+    multivalued: false
+  georeference:
+    name: georeference
+    description: A georeference creates a relationship between the local coordinate
+      system used within a building (e.g., measured in meters) and a geographic coordinate
+      system (e.g., lat, long, alt), such that locally placed Spaces can be resolved
+      and rendered in that geographic coordinate system (e.g., for mapping purposes).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:georeference
+    alias: georeference
+    owner: Level
+    domain_of:
+    - Space
+    range: Georeference
+    multivalued: false
+  hasPart:
+    name: hasPart
+    description: The subject is composed in part of the entity given by the object.
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:hasPart
+    alias: hasPart
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - BuildingElement
+    - Organization
+    range: string
+    multivalued: true
+    any_of:
+    - range: Space
+    - range: Resource
+  isLocationOf:
+    name: isLocationOf
+    description: Subject is the physical location encapsulating the object.
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:isLocationOf
+    alias: isLocationOf
+    owner: Level
+    domain_of:
+    - Space
+    range: Space
+    multivalued: true
+  isPartOf:
+    name: isPartOf
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:isPartOf
+    alias: isPartOf
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - BuildingElement
+    - Organization
+    range: Space
+    multivalued: false
+    any_of:
+    - range: Space
+    - range: Resource
+  customProperties:
+    name: customProperties
+    description: map(string -> map(string -> string))
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:customProperties
+    alias: customProperties
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Agent
+    - PostalAddress
+    range: KeyMapOfStringMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customTags:
+    name: customTags
+    description: map(string -> boolean)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:customTags
+    alias: customTags
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    - Agent
+    - PostalAddress
+    range: KeyBoolMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  identifiers:
+    name: identifiers
+    description: map(string -> string)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:identifiers
+    alias: identifiers
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    - Agent
+    - PostalAddress
+    range: KeyStringMapEntry
+    required: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  name:
+    name: name
+    description: Machine or Human-readable name
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:name
+    alias: name
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    - Agent
+    - PostalAddress
+    range: string
+    required: true
+class_uri: rec:Level
 
 ```
 </details>

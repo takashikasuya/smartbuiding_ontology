@@ -181,6 +181,7 @@ attributes:
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: PostalAddress
     domain_of:
@@ -189,7 +190,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true
@@ -198,6 +198,7 @@ attributes:
     description: map(string -> string)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:identifiers
     alias: identifiers
     owner: PostalAddress
     domain_of:
@@ -205,6 +206,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - Agent
     - PostalAddress
     range: KeyStringMapEntry
     required: true
@@ -216,6 +218,7 @@ attributes:
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: PostalAddress
     domain_of:
@@ -224,7 +227,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
@@ -235,12 +237,14 @@ attributes:
     description: map(string -> map(string -> string))
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customProperties
     alias: customProperties
     owner: PostalAddress
     domain_of:
     - Space
     - Asset
     - Point
+    - Agent
     - PostalAddress
     range: KeyMapOfStringMapEntry
     multivalued: true

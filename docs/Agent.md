@@ -27,6 +27,17 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
         click Organization href "../Organization/"
       
 
+      Agent : customProperties
+        
+          
+    
+        
+        
+        Agent --> "*" KeyMapOfStringMapEntry : customProperties
+        click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
+    
+
+        
       Agent : customTags
         
           
@@ -38,7 +49,27 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
     
 
         
-      Agent : isMemberOf
+      Agent : identifiers
+        
+          
+    
+        
+        
+        Agent --> "1..*" KeyStringMapEntry : identifiers
+        click KeyStringMapEntry href "../KeyStringMapEntry/"
+    
+
+        
+      Agent : memberOf
+        
+          
+    
+        
+        
+        Agent --> "*" Organization : memberOf
+        click Organization href "../Organization/"
+    
+
         
       Agent : name
         
@@ -71,10 +102,12 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [memberOf](memberOf.md) | * <br/> [Organization](Organization.md) | Indicates membership in an organization | direct |
+| [owns](owns.md) | * <br/> [Resource](Resource.md) |  Indicates ownership of some thing, e | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
+| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
-| [isMemberOf](isMemberOf.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Organization](Organization.md) | Organization that this agent is a member of | direct |
-| [owns](owns.md) | * <br/> [Resource](Resource.md) | Resources owned by this agent | direct |
 
 
 
@@ -171,10 +204,12 @@ exact_mappings:
 - rec:Agent
 is_a: Resource
 slots:
-- name
-- customTags
-- isMemberOf
+- memberOf
 - owns
+- name
+- customProperties
+- identifiers
+- customTags
 class_uri: rec:Agent
 
 ```
@@ -197,11 +232,39 @@ exact_mappings:
 - rec:Agent
 is_a: Resource
 attributes:
+  memberOf:
+    name: memberOf
+    description: Indicates membership in an organization. Note that componency (e.g.,
+      departments of a corporation) are expressed using the more generic Organization.isPartOf
+      property.
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:memberOf
+    alias: memberOf
+    owner: Agent
+    domain_of:
+    - Agent
+    range: Organization
+    multivalued: true
+  owns:
+    name: owns
+    description: ' Indicates ownership of some thing, e.g., a building, an asset,
+      an organization, etc.'
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:owns
+    alias: owns
+    owner: Agent
+    domain_of:
+    - Agent
+    range: Resource
+    multivalued: true
   name:
     name: name
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: Agent
     domain_of:
@@ -210,15 +273,53 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true
+  customProperties:
+    name: customProperties
+    description: map(string -> map(string -> string))
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:customProperties
+    alias: customProperties
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Agent
+    - PostalAddress
+    range: KeyMapOfStringMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  identifiers:
+    name: identifiers
+    description: map(string -> string)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:identifiers
+    alias: identifiers
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - BuildingElement
+    - Agent
+    - PostalAddress
+    range: KeyStringMapEntry
+    required: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   customTags:
     name: customTags
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: Agent
     domain_of:
@@ -227,41 +328,11 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
     inlined_as_list: true
-  isMemberOf:
-    name: isMemberOf
-    description: Organization that this agent is a member of
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:isMemberOf
-    alias: isMemberOf
-    owner: Agent
-    domain_of:
-    - Agent
-    - Organization
-    range: string
-    multivalued: true
-    any_of:
-    - range: Resource
-    - range: Organization
-  owns:
-    name: owns
-    description: Resources owned by this agent
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:owns
-    alias: owns
-    owner: Agent
-    domain_of:
-    - Agent
-    - Organization
-    range: Resource
-    multivalued: true
 class_uri: rec:Agent
 
 ```

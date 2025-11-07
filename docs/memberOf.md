@@ -1,16 +1,16 @@
 
 
-# Slot: owns 
+# Slot: memberOf 
 
 
-_ Indicates ownership of some thing, e.g., a building, an asset, an organization, etc._
+_Indicates membership in an organization. Note that componency (e.g., departments of a corporation) are expressed using the more generic Organization.isPartOf property._
 
 
 
 
 
-URI: [rec:owns](https://w3id.org/rec/owns)
-Alias: owns
+URI: [rec:memberOf](https://w3id.org/rec/memberOf)
+Alias: memberOf
 
 <!-- no inheritance hierarchy -->
 
@@ -32,7 +32,7 @@ Alias: owns
 
 ## Properties
 
-* Range: [Resource](Resource.md)
+* Range: [Organization](Organization.md)
 
 * Multivalued: True
 
@@ -58,8 +58,8 @@ Alias: owns
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:owns |
-| native | sbco:owns |
+| self | rec:memberOf |
+| native | sbco:memberOf |
 
 
 
@@ -68,16 +68,17 @@ Alias: owns
 
 <details>
 ```yaml
-name: owns
-description: ' Indicates ownership of some thing, e.g., a building, an asset, an organization,
-  etc.'
+name: memberOf
+description: Indicates membership in an organization. Note that componency (e.g.,
+  departments of a corporation) are expressed using the more generic Organization.isPartOf
+  property.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:owns
-alias: owns
+slot_uri: rec:memberOf
+alias: memberOf
 domain_of:
 - Agent
-range: Resource
+range: Organization
 multivalued: true
 
 ```

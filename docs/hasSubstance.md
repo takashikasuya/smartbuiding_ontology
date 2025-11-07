@@ -22,8 +22,8 @@ Alias: hasSubstance
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 | [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 
 
 

@@ -214,6 +214,7 @@ attributes:
     description: Machine or Human-readable name
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:name
     alias: name
     owner: BuildingElement
     domain_of:
@@ -222,7 +223,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: string
     required: true
@@ -231,6 +231,7 @@ attributes:
     description: map(string -> string)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:identifiers
     alias: identifiers
     owner: BuildingElement
     domain_of:
@@ -238,6 +239,7 @@ attributes:
     - Asset
     - Point
     - BuildingElement
+    - Agent
     - PostalAddress
     range: KeyStringMapEntry
     required: true
@@ -249,6 +251,7 @@ attributes:
     description: map(string -> boolean)
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:customTags
     alias: customTags
     owner: BuildingElement
     domain_of:
@@ -257,7 +260,6 @@ attributes:
     - Point
     - BuildingElement
     - Agent
-    - Organization
     - PostalAddress
     range: KeyBoolMapEntry
     multivalued: true
@@ -285,12 +287,14 @@ attributes:
     description: The subject is composed in part of the entity given by the object.
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:hasPart
     alias: hasPart
     owner: BuildingElement
     domain_of:
     - Space
     - Asset
     - BuildingElement
+    - Organization
     range: string
     multivalued: true
     any_of:
@@ -300,12 +304,14 @@ attributes:
     name: isPartOf
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
+    slot_uri: rec:isPartOf
     alias: isPartOf
     owner: BuildingElement
     domain_of:
     - Space
     - Asset
     - BuildingElement
+    - Organization
     range: Space
     multivalued: false
     any_of:
