@@ -972,6 +972,7 @@ classes:
     - tag: description_ja
       value: 設備に紐づくセンサー/アクチュエータ/データポイント。
     slots:
+    - id
     - isPointOf
     - aggregate
     - customProperties  # costomProperties → customProperties (タイポ修正)

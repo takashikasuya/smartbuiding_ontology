@@ -514,6 +514,7 @@ attributes:
     domain_of:
     - Space
     - Asset
+    - Point
     range: string
     required: true
     pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$

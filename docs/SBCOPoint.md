@@ -77,6 +77,8 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
     
 
         
+      SBCOPoint : id
+        
       SBCOPoint : identifiers
         
           
@@ -160,6 +162,7 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 | [unit](unit.md) | 0..1 <br/> [UnitEnum](UnitEnum.md) | Measurement unit (enum key; symbol can be taken from annotations) | direct |
 | [maxPresValue](maxPresValue.md) | 0..1 <br/> [Float](Float.md) | Maximum plausible reading | direct |
 | [minPresValue](minPresValue.md) | 0..1 <br/> [Float](Float.md) | Minimum plausible reading | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Point](Point.md) |
 | [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md) | Equipment that this point belongs to | [Point](Point.md) |
 | [aggregate](aggregate.md) | 0..1 <br/> [AggregateEnum](AggregateEnum.md) | Aggregation function or method for point data processing | [Point](Point.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Point](Point.md) |
@@ -355,6 +358,30 @@ attributes:
     domain_of:
     - SBCOPoint
     range: float
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: SBCOPoint
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   isPointOf:
     name: isPointOf
     annotations:
