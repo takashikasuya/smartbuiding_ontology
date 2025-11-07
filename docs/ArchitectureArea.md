@@ -87,6 +87,7 @@ URI: [rec:ArchitectureArea](https://w3id.org/rec/ArchitectureArea)
 | ---  | ---  |
 | self | rec:ArchitectureArea |
 | native | sbco:ArchitectureArea |
+| exact | rec:ArchitectureArea |
 
 
 
@@ -111,6 +112,8 @@ description: Describes business-relevant area measurements typically associated 
   case to case or jurisdiction to jurisdiction, subclassing and specializing this
   definition is encouraged.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:ArchitectureArea
 is_a: Resource
 class_uri: rec:ArchitectureArea
 
@@ -131,6 +134,8 @@ description: Describes business-relevant area measurements typically associated 
   case to case or jurisdiction to jurisdiction, subclassing and specializing this
   definition is encouraged.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:ArchitectureArea
 is_a: Resource
 class_uri: rec:ArchitectureArea
 

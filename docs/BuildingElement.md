@@ -154,6 +154,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 | ---  | ---  |
 | self | rec:BuildingElement |
 | native | sbco:BuildingElement |
+| exact | rec:BuildingElement |
 
 
 
@@ -176,6 +177,8 @@ annotations:
 description: A part that constitutes a piece of a building's structural makeup. E.g.,
   Facade, Wall, Slab, Roof, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:BuildingElement
 is_a: Resource
 slots:
 - name
@@ -202,6 +205,8 @@ annotations:
 description: A part that constitutes a piece of a building's structural makeup. E.g.,
   Facade, Wall, Slab, Roof, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:BuildingElement
 is_a: Resource
 attributes:
   name:

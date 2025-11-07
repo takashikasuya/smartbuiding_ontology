@@ -8,6 +8,8 @@ _Something which is placed inside of a building, but is not an integral part of 
 
 
 
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [rec:Asset](https://w3id.org/rec/Asset)
 
@@ -227,6 +229,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | ---  | ---  |
 | self | rec:Asset |
 | native | sbco:Asset |
+| exact | rec:Asset |
 
 
 
@@ -249,7 +252,10 @@ annotations:
 description: Something which is placed inside of a building, but is not an integral
   part of that building's structure; e.g., furniture, equipment, systems, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Asset
 is_a: Resource
+abstract: true
 slots:
 - id
 - commissionedBy
@@ -295,7 +301,10 @@ annotations:
 description: Something which is placed inside of a building, but is not an integral
   part of that building's structure; e.g., furniture, equipment, systems, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Asset
 is_a: Resource
+abstract: true
 attributes:
   id:
     name: id

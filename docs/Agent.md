@@ -143,6 +143,7 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 | ---  | ---  |
 | self | rec:Agent |
 | native | sbco:Agent |
+| exact | rec:Agent |
 
 
 
@@ -166,6 +167,8 @@ description: The human, group, or machine that consumes or acts upon an object o
   data. This higher-level grouping allows properties that are shared among its subclasses
   (Person, Organization, ….) to be anchored in one joint place, on the Agent class.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Agent
 is_a: Resource
 slots:
 - name
@@ -190,6 +193,8 @@ description: The human, group, or machine that consumes or acts upon an object o
   data. This higher-level grouping allows properties that are shared among its subclasses
   (Person, Organization, ….) to be anchored in one joint place, on the Agent class.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Agent
 is_a: Resource
 attributes:
   name:

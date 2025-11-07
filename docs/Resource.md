@@ -8,6 +8,8 @@ _Base class for all resources_
 
 
 
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 
@@ -70,7 +72,6 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [address](address.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
@@ -84,7 +85,6 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
-| [Site](Site.md) | [address](address.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
@@ -98,7 +98,6 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
-| [Building](Building.md) | [address](address.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
@@ -112,7 +111,6 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
-| [Level](Level.md) | [address](address.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
@@ -179,6 +177,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | ---  | ---  |
 | self | rdfs:Resource |
 | native | sbco:Resource |
+| exact | rdfs:Resource |
 
 
 
@@ -196,6 +195,9 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 name: Resource
 description: Base class for all resources
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rdfs:Resource
+abstract: true
 class_uri: rdfs:Resource
 
 ```
@@ -208,6 +210,9 @@ class_uri: rdfs:Resource
 name: Resource
 description: Base class for all resources
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rdfs:Resource
+abstract: true
 class_uri: rdfs:Resource
 
 ```

@@ -268,7 +268,7 @@ enums:
       Luminous_Flux:
         description: "Luminous flux measurement"
       Luminous_Intensity:
-        description: "Luminous intensity measurement"
+        description: "Luminance intensity measurement"
       Mass:
         description: "Mass measurement"
       Methane_Concentration:
@@ -692,9 +692,7 @@ slots:
   # Architecture specific slots
   address:
     description: "Address of the architecture"
-    any_of:
-      - range: Resource
-      - range: PostalAddress
+    range: PostalAddress
     multivalued: true
     slot_uri: rec:address
     
@@ -847,6 +845,8 @@ classes:
     annotations:
     - tag: description_ja
       value: 室やゾーンなどの空間単位。設備を含みうる。
+    exact_mappings:
+      - rec:Space
     slots:
     # relationships
     - id
@@ -856,15 +856,18 @@ classes:
     - isLocationOf
     - isPartOf
     # properties
-    - customProperties  # custom_properties → customProperties
-    - customTags       # custom_tags → customTags
+    - customProperties
+    - customTags
     - identifiers
     - name
   
   Architecture:
+    abstract: true 
     is_a: Space
     class_uri: rec:Architecture
     description: A designed/landscaped (or potentially designed/landscaped) part of the physical world that has a 3D spatial extent. E.g., a building site, a building, levels within the building, rooms, etc.
+    exact_mappings:
+      - rec:Architecture
     slots:
     - area
     - capacity
@@ -888,7 +891,8 @@ classes:
     annotations:
     - tag: description_ja
       value: サイト。複数の建物を含みうる。
-
+    exact_mappings:
+      - rec:Site
 
   Building:
     is_a: Architecture
@@ -897,6 +901,8 @@ classes:
     annotations:
     - tag: description_ja
       value: サイトの一部である建物。
+    exact_mappings:
+      - rec:Building
 
   Level:
     is_a: Architecture
@@ -905,22 +911,30 @@ classes:
     annotations:
     - tag: description_ja
       value: 建物のフロア。スペースの一種として扱える。
+    exact_mappings:
+      - rec:Level
     slots:
     - levelNumber
 
   # Base Resource class
   Resource:
+    abstract: true
     class_uri: rdfs:Resource
     description: "Base class for all resources"
+    exact_mappings:
+      - rdfs:Resource
 
   # Asset class
   Asset:
+    abstract: true
     is_a: Resource
     class_uri: rec:Asset
     description: "Something which is placed inside of a building, but is not an integral part of that building's structure; e.g., furniture, equipment, systems, etc."
     annotations:
       - tag: description_ja
         value: "建物内に配置されるが、建物構造の不可欠な部分ではないもの。例：家具、設備、システムなど。"
+    exact_mappings:
+      - rec:Asset
     slots:
       - id
       - commissionedBy
@@ -954,6 +968,8 @@ classes:
   Equipment:
     is_a: Asset
     class_uri: brick:Equipment
+    exact_mappings: 
+      - brick:Equipment
     description: "An equipment asset installed in a space."
     annotations:
     - tag: description_ja
@@ -969,6 +985,8 @@ classes:
 
   Point:
     class_uri: brick:Point
+    exact_mappings: 
+      - brick:Point
     description: A sensor, actuator, or data point associated with equipment.
     annotations:
     - tag: description_ja
@@ -1051,6 +1069,8 @@ classes:
     is_a: Resource
     class_uri: rec:Document
     description: "A document providing information about a building element or asset"
+    exact_mappings:
+      - rec:Document
 
   # BuildingElement class extending Resource
   BuildingElement:
@@ -1060,6 +1080,8 @@ classes:
     annotations:
       - tag: description_ja
         value: "建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。"
+    exact_mappings:
+      - rec:BuildingElement
     slots:
       - name
       - identifiers
@@ -1077,6 +1099,8 @@ classes:
     annotations:
       - tag: description_ja
         value: "オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。"
+    exact_mappings:
+      - rec:Agent
     slots:
       - name
       - customTags      # custom_tags → customTags
@@ -1091,6 +1115,8 @@ classes:
     annotations:
       - tag: description_ja
         value: "会社、機関、協会などの組織"
+    exact_mappings:
+      - rec:Organization
     slots:
       - name
       - customTags      # custom_tags → customTags
@@ -1106,6 +1132,8 @@ classes:
     annotations:
       - tag: description_ja
         value: "郵便住所"
+    exact_mappings:
+      - rec:PostalAddress
     slots:
       - name
       - identifiers
@@ -1120,7 +1148,8 @@ classes:
     annotations:
       - tag: description_ja
         value: "建築の面積測定"
-
+    exact_mappings:
+      - rec:ArchitectureArea
 
   ArchitectureCapacity:
     is_a: Resource
@@ -1129,3 +1158,5 @@ classes:
     annotations:
       - tag: description_ja
         value: "建築の容量測定"
+    exact_mappings:
+      - rec:ArchitectureCapacity

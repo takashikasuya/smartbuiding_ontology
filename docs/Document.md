@@ -83,6 +83,7 @@ URI: [rec:Document](https://w3id.org/rec/Document)
 | ---  | ---  |
 | self | rec:Document |
 | native | sbco:Document |
+| exact | rec:Document |
 
 
 
@@ -100,6 +101,8 @@ URI: [rec:Document](https://w3id.org/rec/Document)
 name: Document
 description: A document providing information about a building element or asset
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Document
 is_a: Resource
 class_uri: rec:Document
 
@@ -113,6 +116,8 @@ class_uri: rec:Document
 name: Document
 description: A document providing information about a building element or asset
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Document
 is_a: Resource
 class_uri: rec:Document
 

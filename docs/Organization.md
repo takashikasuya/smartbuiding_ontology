@@ -116,6 +116,7 @@ URI: [rec:Organization](https://w3id.org/rec/Organization)
 | ---  | ---  |
 | self | rec:Organization |
 | native | sbco:Organization |
+| exact | rec:Organization |
 
 
 
@@ -137,6 +138,8 @@ annotations:
     value: 会社、機関、協会などの組織
 description: An organization such as a company, institution, or association
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Organization
 is_a: Agent
 slots:
 - name
@@ -159,6 +162,8 @@ annotations:
     value: 会社、機関、協会などの組織
 description: An organization such as a company, institution, or association
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Organization
 is_a: Agent
 attributes:
   name:

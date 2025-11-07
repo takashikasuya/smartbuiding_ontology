@@ -23,9 +23,9 @@ Alias: address
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Building](Building.md) | A building which is part of a site |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Level](Level.md) | A building storey |  no  |
 
 
 
@@ -34,7 +34,7 @@ Alias: address
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[PostalAddress](PostalAddress.md)
+* Range: [PostalAddress](PostalAddress.md)
 
 * Multivalued: True
 
@@ -78,11 +78,8 @@ slot_uri: rec:address
 alias: address
 domain_of:
 - Architecture
-range: string
+range: PostalAddress
 multivalued: true
-any_of:
-- range: Resource
-- range: PostalAddress
 
 ```
 </details>

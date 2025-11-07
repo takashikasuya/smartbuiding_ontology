@@ -87,6 +87,7 @@ URI: [rec:ArchitectureCapacity](https://w3id.org/rec/ArchitectureCapacity)
 | ---  | ---  |
 | self | rec:ArchitectureCapacity |
 | native | sbco:ArchitectureCapacity |
+| exact | rec:ArchitectureCapacity |
 
 
 
@@ -111,6 +112,8 @@ description: Describes business-relevant capacity measurements typically associa
   from case to case or jurisdiction to jurisdiction, subclassing and specializing
   this definition is encouraged.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:ArchitectureCapacity
 is_a: Resource
 class_uri: rec:ArchitectureCapacity
 
@@ -131,6 +134,8 @@ description: Describes business-relevant capacity measurements typically associa
   from case to case or jurisdiction to jurisdiction, subclassing and specializing
   this definition is encouraged.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:ArchitectureCapacity
 is_a: Resource
 class_uri: rec:ArchitectureCapacity
 

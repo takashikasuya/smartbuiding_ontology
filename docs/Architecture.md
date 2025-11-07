@@ -8,6 +8,8 @@ _A designed/landscaped (or potentially designed/landscaped) part of the physical
 
 
 
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
 
 URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
@@ -32,6 +34,15 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
       
 
       Architecture : address
+        
+          
+    
+        
+        
+        Architecture --> "*" PostalAddress : address
+        click PostalAddress href "../PostalAddress/"
+    
+
         
       Architecture : adjacentElement
         
@@ -180,7 +191,7 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 | ---  | --- | --- | --- |
 | [area](area.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureArea](ArchitectureArea.md) | Area of the architecture | direct |
 | [capacity](capacity.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | direct |
-| [address](address.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[PostalAddress](PostalAddress.md) | Address of the architecture | direct |
+| [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | direct |
 | [adjacentElement](adjacentElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | direct |
 | [architectedBy](architectedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that architected this structure | direct |
 | [constructedBy](constructedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
@@ -232,6 +243,7 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 | ---  | ---  |
 | self | rec:Architecture |
 | native | sbco:Architecture |
+| exact | rec:Architecture |
 
 
 
@@ -251,7 +263,10 @@ description: A designed/landscaped (or potentially designed/landscaped) part of 
   physical world that has a 3D spatial extent. E.g., a building site, a building,
   levels within the building, rooms, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Architecture
 is_a: Space
+abstract: true
 slots:
 - area
 - capacity
@@ -280,7 +295,10 @@ description: A designed/landscaped (or potentially designed/landscaped) part of 
   physical world that has a 3D spatial extent. E.g., a building site, a building,
   levels within the building, rooms, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:Architecture
 is_a: Space
+abstract: true
 attributes:
   area:
     name: area
@@ -320,11 +338,8 @@ attributes:
     owner: Architecture
     domain_of:
     - Architecture
-    range: string
+    range: PostalAddress
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: PostalAddress
   adjacentElement:
     name: adjacentElement
     description: Building element adjacent to this architecture

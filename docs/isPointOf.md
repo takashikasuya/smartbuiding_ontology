@@ -22,8 +22,8 @@ Alias: isPointOf
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  yes  |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  yes  |
 
 
 

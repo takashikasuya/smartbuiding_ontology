@@ -62,7 +62,7 @@ URI: [sbco:QuantityEnum](https://www.sbco.or.jp/ont/QuantityEnum)
 | Linear_Speed | None | Linear speed measurement |
 | Luminance | None | Luminance measurement |
 | Luminous_Flux | None | Luminous flux measurement |
-| Luminous_Intensity | None | Luminous intensity measurement |
+| Luminous_Intensity | None | Luminance intensity measurement |
 | Mass | None | Mass measurement |
 | Methane_Concentration | None | Methane concentration in air |
 | NO2_Concentration | None | Nitrogen dioxide concentration |
@@ -309,7 +309,7 @@ permissible_values:
     description: Luminous flux measurement
   Luminous_Intensity:
     text: Luminous_Intensity
-    description: Luminous intensity measurement
+    description: Luminance intensity measurement
   Mass:
     text: Mass
     description: Mass measurement

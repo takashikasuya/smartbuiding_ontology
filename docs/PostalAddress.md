@@ -87,10 +87,10 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [address](address.md) | any_of[range] | [PostalAddress](PostalAddress.md) |
-| [Site](Site.md) | [address](address.md) | any_of[range] | [PostalAddress](PostalAddress.md) |
-| [Building](Building.md) | [address](address.md) | any_of[range] | [PostalAddress](PostalAddress.md) |
-| [Level](Level.md) | [address](address.md) | any_of[range] | [PostalAddress](PostalAddress.md) |
+| [Architecture](Architecture.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
+| [Site](Site.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
+| [Building](Building.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
+| [Level](Level.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
 
 
 
@@ -126,6 +126,7 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 | ---  | ---  |
 | self | rec:PostalAddress |
 | native | sbco:PostalAddress |
+| exact | rec:PostalAddress |
 
 
 
@@ -147,6 +148,8 @@ annotations:
     value: 郵便住所
 description: A postal address
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:PostalAddress
 is_a: Resource
 slots:
 - name
@@ -169,6 +172,8 @@ annotations:
     value: 郵便住所
 description: A postal address
 from_schema: https://www.sbco.or.jp/ont/schema
+exact_mappings:
+- rec:PostalAddress
 is_a: Resource
 attributes:
   name:
