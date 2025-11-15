@@ -463,7 +463,15 @@ slots:
 #  level:
 #    description: Parent level
 #    range: string
-  
+
+  deviceType:
+    description: Device Type
+    range: string
+
+  intervalCapability: 
+    description: Polling period (period speed that the device is capable of)
+    range: integer
+
   installationArea:
     description: Parent installation area
     range: string
@@ -475,7 +483,6 @@ slots:
   panel:
     description: Parent panel
     range: string  
-
   
   
   pointType:  # point_type → pointType
@@ -963,6 +970,25 @@ classes:
       locatedIn:
         range: Space  # Equipment is specifically located in spaces
 
+  EquipmentExt:
+    is_a: Equipment
+    class_uri: sbco:EquipmentExt
+    description: "An equipment asset installed in a space."
+    annotations:
+    - tag: description_ja
+      value: "SBCOにて拡張したデバイスモデル"
+    slots:
+      - deviceType
+      - panel
+      - installationArea
+      - targetArea
+      - 
+    
+    slot_usage:
+      locatedIn:
+        range: Space  # Equipment is specifically located in spaces
+
+
   Point:
     class_uri: brick:Point
     exact_mappings: 
@@ -982,22 +1008,24 @@ classes:
     - identifiers
     - name
   
-  SBCOPoint:
+  PointExt:
     is_a: Point
-    class_uri: sbco:SBCOPoint
+    class_uri: sbco:PointExt
     description: "A point (sensor/actuator) in a smart building context."
     annotations:
       - tag: description_ja
         value: "スマートビルディングの文脈におけるポイント（センサー/アクチュエータ）。"
     slots:
-      - installationArea
-      - targetArea
-      - panel
       - pointSpecification  # point_specification → pointSpecification
       - pointType          # point_type → pointType
       - unit
       - maxPresValue       # max_pres_value → maxPresValue
       - minPresValue       # min_pres_value → minPresValue
+      - tags
+      - scale
+      - supplier
+      - localId
+      
 
     slot_usage:
       isPointOf:
