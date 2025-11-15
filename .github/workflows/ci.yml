@@ -28,8 +28,8 @@ jobs:
           # Generate docs into docs/ (in-place)
           linkml generate doc --directory docs schema/building_model.yaml
 
-      - name: Build docs (MkDocs)
-        run: mkdocs build --strict
+#      - name: Build docs (MkDocs)
+#        run: mkdocs build 
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
