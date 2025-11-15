@@ -982,7 +982,6 @@ classes:
       - panel
       - installationArea
       - targetArea
-      - 
     
     slot_usage:
       locatedIn:
