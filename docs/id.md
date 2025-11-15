@@ -22,15 +22,16 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
 | [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [Level](Level.md) | A building storey |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 
 

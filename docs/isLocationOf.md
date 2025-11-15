@@ -24,9 +24,9 @@ Alias: isLocationOf
 | --- | --- | --- |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 
 

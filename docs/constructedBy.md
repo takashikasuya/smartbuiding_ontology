@@ -23,8 +23,8 @@ Alias: constructedBy
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
+| [Level](Level.md) | A building storey |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 

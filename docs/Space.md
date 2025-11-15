@@ -168,6 +168,10 @@ URI: [rec:Space](https://w3id.org/rec/Space)
 | [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
 | [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
 | [Equipment](Equipment.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
+| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
+| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
+| [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
 | [BuildingElement](BuildingElement.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
 | [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
 | [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |

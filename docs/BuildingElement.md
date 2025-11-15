@@ -119,6 +119,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 | [Level](Level.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
 | [Asset](Asset.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
 | [Equipment](Equipment.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
+| [EquipmentExt](EquipmentExt.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
 
 
 

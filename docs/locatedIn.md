@@ -23,8 +23,9 @@ Alias: locatedIn
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  yes  |
 | [BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  yes  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  yes  |
 
 
 

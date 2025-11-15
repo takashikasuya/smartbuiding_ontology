@@ -1,6 +1,6 @@
 
 
-# Class: SBCOPoint 
+# Class: PointExt 
 
 
 _A point (sensor/actuator) in a smart building context._
@@ -9,7 +9,7 @@ _A point (sensor/actuator) in a smart building context._
 
 
 
-URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
+URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
 
 
 
@@ -17,122 +17,118 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 ```mermaid
  classDiagram
-    class SBCOPoint
-    click SBCOPoint href "../SBCOPoint/"
-      Point <|-- SBCOPoint
+    class PointExt
+    click PointExt href "../PointExt/"
+      Point <|-- PointExt
         click Point href "../Point/"
       
-      SBCOPoint : aggregate
+      PointExt : aggregate
         
           
     
         
         
-        SBCOPoint --> "0..1" AggregateEnum : aggregate
+        PointExt --> "0..1" AggregateEnum : aggregate
         click AggregateEnum href "../AggregateEnum/"
     
 
         
-      SBCOPoint : customProperties
+      PointExt : customProperties
         
           
     
         
         
-        SBCOPoint --> "*" KeyMapOfStringMapEntry : customProperties
+        PointExt --> "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
     
 
         
-      SBCOPoint : customTags
+      PointExt : customTags
         
           
     
         
         
-        SBCOPoint --> "*" KeyBoolMapEntry : customTags
+        PointExt --> "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
         
-      SBCOPoint : hasQuantity
+      PointExt : hasQuantity
         
           
     
         
         
-        SBCOPoint --> "0..1" QuantityEnum : hasQuantity
+        PointExt --> "0..1" QuantityEnum : hasQuantity
         click QuantityEnum href "../QuantityEnum/"
     
 
         
-      SBCOPoint : hasSubstance
+      PointExt : hasSubstance
         
           
     
         
         
-        SBCOPoint --> "0..1" SubstanceEnum : hasSubstance
+        PointExt --> "0..1" SubstanceEnum : hasSubstance
         click SubstanceEnum href "../SubstanceEnum/"
     
 
         
-      SBCOPoint : id
+      PointExt : id
         
-      SBCOPoint : identifiers
+      PointExt : identifiers
         
           
     
         
         
-        SBCOPoint --> "1..*" KeyStringMapEntry : identifiers
+        PointExt --> "1..*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
         
-      SBCOPoint : installationArea
-        
-      SBCOPoint : isPointOf
+      PointExt : isPointOf
         
           
     
         
         
-        SBCOPoint --> "0..1" Equipment : isPointOf
+        PointExt --> "0..1" Equipment : isPointOf
         click Equipment href "../Equipment/"
     
 
         
-      SBCOPoint : maxPresValue
+      PointExt : maxPresValue
         
-      SBCOPoint : minPresValue
+      PointExt : minPresValue
         
-      SBCOPoint : name
+      PointExt : name
         
-      SBCOPoint : panel
-        
-      SBCOPoint : pointSpecification
+      PointExt : pointSpecification
         
           
     
         
         
-        SBCOPoint --> "0..1" PointSpecificationEnum : pointSpecification
+        PointExt --> "0..1" PointSpecificationEnum : pointSpecification
         click PointSpecificationEnum href "../PointSpecificationEnum/"
     
 
         
-      SBCOPoint : pointType
+      PointExt : pointType
         
-      SBCOPoint : targetArea
+      PointExt : scale
         
-      SBCOPoint : unit
+      PointExt : unit
         
           
     
         
         
-        SBCOPoint --> "0..1" UnitEnum : unit
+        PointExt --> "0..1" UnitEnum : unit
         click UnitEnum href "../UnitEnum/"
     
 
@@ -146,7 +142,7 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 ## Inheritance
 * [Point](Point.md)
-    * **SBCOPoint**
+    * **PointExt**
 
 
 
@@ -154,14 +150,12 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [installationArea](installationArea.md) | 0..1 <br/> [String](String.md) | Parent installation area | direct |
-| [targetArea](targetArea.md) | 0..1 <br/> [String](String.md) | Target area for this resource | direct |
-| [panel](panel.md) | 0..1 <br/> [String](String.md) | Parent panel | direct |
 | [pointSpecification](pointSpecification.md) | 0..1 <br/> [PointSpecificationEnum](PointSpecificationEnum.md) | Point specification category as shown in equipment point list | direct |
 | [pointType](pointType.md) | 1 <br/> [String](String.md) | Point type - a profile or template name used to refer to the telemetry format... | direct |
 | [unit](unit.md) | 0..1 <br/> [UnitEnum](UnitEnum.md) | Measurement unit (enum key; symbol can be taken from annotations) | direct |
 | [maxPresValue](maxPresValue.md) | 0..1 <br/> [Float](Float.md) | Maximum plausible reading | direct |
 | [minPresValue](minPresValue.md) | 0..1 <br/> [Float](Float.md) | Minimum plausible reading | direct |
+| [scale](scale.md) | 0..1 <br/> [Float](Float.md) | Scale factor for raw value conversion | direct |
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Point](Point.md) |
 | [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md) | Equipment that this point belongs to | [Point](Point.md) |
 | [aggregate](aggregate.md) | 0..1 <br/> [AggregateEnum](AggregateEnum.md) | Aggregation function or method for point data processing | [Point](Point.md) |
@@ -207,8 +201,8 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:SBCOPoint |
-| native | sbco:SBCOPoint |
+| self | sbco:PointExt |
+| native | sbco:PointExt |
 
 
 
@@ -223,7 +217,7 @@ URI: [sbco:SBCOPoint](https://www.sbco.or.jp/ont/SBCOPoint)
 
 <details>
 ```yaml
-name: SBCOPoint
+name: PointExt
 annotations:
   description_ja:
     tag: description_ja
@@ -232,19 +226,17 @@ description: A point (sensor/actuator) in a smart building context.
 from_schema: https://www.sbco.or.jp/ont/schema
 is_a: Point
 slots:
-- installationArea
-- targetArea
-- panel
 - pointSpecification
 - pointType
 - unit
 - maxPresValue
 - minPresValue
+- scale
 slot_usage:
   isPointOf:
     name: isPointOf
     range: Equipment
-class_uri: sbco:SBCOPoint
+class_uri: sbco:PointExt
 
 ```
 </details>
@@ -253,7 +245,7 @@ class_uri: sbco:SBCOPoint
 
 <details>
 ```yaml
-name: SBCOPoint
+name: PointExt
 annotations:
   description_ja:
     tag: description_ja
@@ -266,36 +258,6 @@ slot_usage:
     name: isPointOf
     range: Equipment
 attributes:
-  installationArea:
-    name: installationArea
-    description: Parent installation area
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: installationArea
-    owner: SBCOPoint
-    domain_of:
-    - SBCOPoint
-    range: string
-  targetArea:
-    name: targetArea
-    description: Target area for this resource
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: targetArea
-    owner: SBCOPoint
-    domain_of:
-    - SBCOPoint
-    range: string
-  panel:
-    name: panel
-    description: Parent panel
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    alias: panel
-    owner: SBCOPoint
-    domain_of:
-    - SBCOPoint
-    range: string
   pointSpecification:
     name: pointSpecification
     annotations:
@@ -307,9 +269,9 @@ attributes:
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: pointSpecification
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
-    - SBCOPoint
+    - PointExt
     range: PointSpecificationEnum
   pointType:
     name: pointType
@@ -323,9 +285,9 @@ attributes:
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: pointType
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
-    - SBCOPoint
+    - PointExt
     range: string
     required: true
   unit:
@@ -334,9 +296,9 @@ attributes:
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: unit
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
-    - SBCOPoint
+    - PointExt
     range: UnitEnum
   maxPresValue:
     name: maxPresValue
@@ -344,9 +306,9 @@ attributes:
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: maxPresValue
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
-    - SBCOPoint
+    - PointExt
     range: float
   minPresValue:
     name: minPresValue
@@ -354,9 +316,19 @@ attributes:
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     alias: minPresValue
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
-    - SBCOPoint
+    - PointExt
+    range: float
+  scale:
+    name: scale
+    description: Scale factor for raw value conversion
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: scale
+    owner: PointExt
+    domain_of:
+    - PointExt
     range: float
   id:
     name: id
@@ -374,7 +346,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Space
     - Asset
@@ -393,7 +365,7 @@ attributes:
     rank: 1000
     slot_uri: brick:isPointOf
     alias: isPointOf
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Point
     range: Equipment
@@ -411,7 +383,7 @@ attributes:
     rank: 1000
     slot_uri: brick:aggregate
     alias: aggregate
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Point
     range: AggregateEnum
@@ -422,7 +394,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customProperties
     alias: customProperties
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Space
     - Asset
@@ -440,7 +412,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customTags
     alias: customTags
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Space
     - Asset
@@ -463,7 +435,7 @@ attributes:
     rank: 1000
     slot_uri: brick:hasQuantity
     alias: hasQuantity
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Point
     range: QuantityEnum
@@ -478,7 +450,7 @@ attributes:
     rank: 1000
     slot_uri: brick:hasSubstance
     alias: hasSubstance
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Point
     range: SubstanceEnum
@@ -489,7 +461,7 @@ attributes:
     rank: 1000
     slot_uri: rec:identifiers
     alias: identifiers
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Space
     - Asset
@@ -509,7 +481,7 @@ attributes:
     rank: 1000
     slot_uri: rec:name
     alias: name
-    owner: SBCOPoint
+    owner: PointExt
     domain_of:
     - Space
     - Asset
@@ -519,7 +491,7 @@ attributes:
     - PostalAddress
     range: string
     required: true
-class_uri: sbco:SBCOPoint
+class_uri: sbco:PointExt
 
 ```
 </details>

@@ -1,16 +1,16 @@
 
 
-# Slot: installationArea 
+# Slot: deviceType 
 
 
-_Parent installation area_
+_Device Type_
 
 
 
 
 
-URI: [sbco:installationArea](https://www.sbco.or.jp/ont/installationArea)
-Alias: installationArea
+URI: [sbco:deviceType](https://www.sbco.or.jp/ont/deviceType)
+Alias: deviceType
 
 <!-- no inheritance hierarchy -->
 
@@ -55,8 +55,8 @@ Alias: installationArea
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:installationArea |
-| native | sbco:installationArea |
+| self | sbco:deviceType |
+| native | sbco:deviceType |
 
 
 
@@ -65,11 +65,11 @@ Alias: installationArea
 
 <details>
 ```yaml
-name: installationArea
-description: Parent installation area
+name: deviceType
+description: Device Type
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: installationArea
+alias: deviceType
 domain_of:
 - EquipmentExt
 range: string

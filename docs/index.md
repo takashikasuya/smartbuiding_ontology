@@ -19,7 +19,7 @@ Name: building_model
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) の1エントリ |
 | [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) の1エントリ |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |
 | [Resource](Resource.md) | Base class for all resources |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Agent](Agent.md) | The human, group, or machine that consumes or acts upon an object or data |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Organization](Organization.md) | An organization such as a company, institution, or association |
@@ -27,6 +27,7 @@ Name: building_model
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Equipment](Equipment.md) | An equipment asset installed in a space |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Document](Document.md) | A document providing information about a building element or asset |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PostalAddress](PostalAddress.md) | A postal address |
@@ -55,6 +56,7 @@ Name: building_model
 | [containsElement](containsElement.md) | Building element contained within this architecture |
 | [customProperties](customProperties.md) | map(string -> map(string -> string)) |
 | [customTags](customTags.md) | map(string -> boolean) |
+| [deviceType](deviceType.md) | Device Type |
 | [documentation](documentation.md) | Documentation related to this asset |
 | [entries](entries.md) | Nested map entries |
 | [feeds](feeds.md) | Equipment or system that this equipment feeds |
@@ -72,6 +74,7 @@ Name: building_model
 | [installationDate](installationDate.md) | Date when the asset was installed |
 | [installedBy](installedBy.md) | Agent or resource that installed this asset |
 | [intersectingElement](intersectingElement.md) | Building element intersecting with this architecture |
+| [intervalCapability](intervalCapability.md) | Polling period (period speed that the device is capable of) |
 | [IPAddress](IPAddress.md) | IP address of the asset |
 | [isFedBy](isFedBy.md) | Resource that feeds this architecture |
 | [isLocationOf](isLocationOf.md) | Subject is the physical location encapsulating the object |
@@ -96,6 +99,7 @@ Name: building_model
 | [panel](panel.md) | Parent panel |
 | [pointSpecification](pointSpecification.md) | Point specification category as shown in equipment point list |
 | [pointType](pointType.md) | Point type - a profile or template name used to refer to the telemetry format... |
+| [scale](scale.md) | Scale factor for raw value conversion |
 | [serialNumber](serialNumber.md) | Serial number of the asset |
 | [servicedBy](servicedBy.md) | Agent or resource that services this asset |
 | [targetArea](targetArea.md) | Target area for this resource |

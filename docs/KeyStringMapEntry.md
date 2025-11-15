@@ -54,8 +54,9 @@ URI: [sbco:KeyStringMapEntry](https://www.sbco.or.jp/ont/KeyStringMapEntry)
 | [Level](Level.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Asset](Asset.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Equipment](Equipment.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [EquipmentExt](EquipmentExt.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Point](Point.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
-| [SBCOPoint](SBCOPoint.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [PointExt](PointExt.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | [entries](entries.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [BuildingElement](BuildingElement.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Agent](Agent.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |

@@ -1,16 +1,16 @@
 
 
-# Slot: installationArea 
+# Slot: scale 
 
 
-_Parent installation area_
+_Scale factor for raw value conversion_
 
 
 
 
 
-URI: [sbco:installationArea](https://www.sbco.or.jp/ont/installationArea)
-Alias: installationArea
+URI: [sbco:scale](https://www.sbco.or.jp/ont/scale)
+Alias: scale
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: installationArea
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
 
 
 
@@ -31,7 +31,7 @@ Alias: installationArea
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Float](Float.md)
 
 
 
@@ -55,8 +55,8 @@ Alias: installationArea
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:installationArea |
-| native | sbco:installationArea |
+| self | sbco:scale |
+| native | sbco:scale |
 
 
 
@@ -65,14 +65,14 @@ Alias: installationArea
 
 <details>
 ```yaml
-name: installationArea
-description: Parent installation area
+name: scale
+description: Scale factor for raw value conversion
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-alias: installationArea
+alias: scale
 domain_of:
-- EquipmentExt
-range: string
+- PointExt
+range: float
 
 ```
 </details>

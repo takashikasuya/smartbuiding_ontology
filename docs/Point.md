@@ -19,8 +19,8 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
  classDiagram
     class Point
     click Point href "../Point/"
-      Point <|-- SBCOPoint
-        click SBCOPoint href "../SBCOPoint/"
+      Point <|-- PointExt
+        click PointExt href "../PointExt/"
       
       Point : aggregate
         
@@ -112,7 +112,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 
 ## Inheritance
 * **Point**
-    * [SBCOPoint](SBCOPoint.md)
+    * [PointExt](PointExt.md)
 
 
 
@@ -144,6 +144,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 | [Level](Level.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 | [Asset](Asset.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 | [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 
 
 

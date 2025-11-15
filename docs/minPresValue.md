@@ -22,7 +22,7 @@ Alias: minPresValue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
 
 
 
@@ -71,7 +71,7 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: minPresValue
 domain_of:
-- SBCOPoint
+- PointExt
 range: float
 
 ```

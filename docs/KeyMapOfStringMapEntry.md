@@ -63,8 +63,9 @@ URI: [sbco:KeyMapOfStringMapEntry](https://www.sbco.or.jp/ont/KeyMapOfStringMapE
 | [Level](Level.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Asset](Asset.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Equipment](Equipment.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [EquipmentExt](EquipmentExt.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Point](Point.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
-| [SBCOPoint](SBCOPoint.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [PointExt](PointExt.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Agent](Agent.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Organization](Organization.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [PostalAddress](PostalAddress.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |

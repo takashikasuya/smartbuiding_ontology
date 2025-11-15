@@ -22,7 +22,7 @@ Alias: panel
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SBCOPoint](SBCOPoint.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
 
 
 
@@ -71,7 +71,7 @@ from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 alias: panel
 domain_of:
-- SBCOPoint
+- EquipmentExt
 range: string
 
 ```

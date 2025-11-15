@@ -141,6 +141,10 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 | [Equipment](Equipment.md) | [installedBy](installedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Equipment](Equipment.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Equipment](Equipment.md) | [servicedBy](servicedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [installedBy](installedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [servicedBy](servicedBy.md) | any_of[range] | [Agent](Agent.md) |
 
 
 

@@ -141,6 +141,16 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Equipment](Equipment.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Equipment](Equipment.md) | [mountedOn](mountedOn.md) | any_of[range] | [Resource](Resource.md) |
 | [Equipment](Equipment.md) | [servicedBy](servicedBy.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [feeds](feeds.md) | range | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [installedBy](installedBy.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [mountedOn](mountedOn.md) | any_of[range] | [Resource](Resource.md) |
+| [EquipmentExt](EquipmentExt.md) | [servicedBy](servicedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [BuildingElement](BuildingElement.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
 | [BuildingElement](BuildingElement.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |

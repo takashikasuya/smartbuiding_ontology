@@ -1,6 +1,6 @@
 
 
-# Class: Equipment 
+# Class: EquipmentExt 
 
 
 _An equipment asset installed in a space._
@@ -9,7 +9,7 @@ _An equipment asset installed in a space._
 
 
 
-URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
+URI: [sbco:EquipmentExt](https://www.sbco.or.jp/ont/EquipmentExt)
 
 
 
@@ -17,156 +17,159 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 ```mermaid
  classDiagram
-    class Equipment
-    click Equipment href "../Equipment/"
-      Asset <|-- Equipment
-        click Asset href "../Asset/"
-      
-
+    class EquipmentExt
+    click EquipmentExt href "../EquipmentExt/"
       Equipment <|-- EquipmentExt
-        click EquipmentExt href "../EquipmentExt/"
+        click Equipment href "../Equipment/"
       
-
-      Equipment : assetTag
+      EquipmentExt : assetTag
         
-      Equipment : commissionedBy
+      EquipmentExt : commissionedBy
         
-      Equipment : commissioningDate
+      EquipmentExt : commissioningDate
         
-      Equipment : customProperties
+      EquipmentExt : customProperties
         
           
     
         
         
-        Equipment --> "*" KeyMapOfStringMapEntry : customProperties
+        EquipmentExt --> "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
     
 
         
-      Equipment : customTags
+      EquipmentExt : customTags
         
           
     
         
         
-        Equipment --> "*" KeyBoolMapEntry : customTags
+        EquipmentExt --> "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
         
-      Equipment : documentation
+      EquipmentExt : deviceType
         
-      Equipment : feeds
+      EquipmentExt : documentation
+        
+      EquipmentExt : feeds
         
           
     
         
         
-        Equipment --> "*" Resource : feeds
+        EquipmentExt --> "*" Resource : feeds
         click Resource href "../Resource/"
     
 
         
-      Equipment : geometry
+      EquipmentExt : geometry
         
           
     
         
         
-        Equipment --> "0..1" Geometry : geometry
+        EquipmentExt --> "0..1" Geometry : geometry
         click Geometry href "../Geometry/"
     
 
         
-      Equipment : hasPart
+      EquipmentExt : hasPart
         
-      Equipment : hasPoint
+      EquipmentExt : hasPoint
         
           
     
         
         
-        Equipment --> "*" Point : hasPoint
+        EquipmentExt --> "*" Point : hasPoint
         click Point href "../Point/"
     
 
         
-      Equipment : id
+      EquipmentExt : id
         
-      Equipment : identifiers
+      EquipmentExt : identifiers
         
           
     
         
         
-        Equipment --> "1..*" KeyStringMapEntry : identifiers
+        EquipmentExt --> "1..*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
         
-      Equipment : initialCost
+      EquipmentExt : initialCost
         
-      Equipment : installationDate
+      EquipmentExt : installationArea
         
-      Equipment : installedBy
+      EquipmentExt : installationDate
         
-      Equipment : IPAddress
+      EquipmentExt : installedBy
         
-      Equipment : isFedBy
+      EquipmentExt : IPAddress
+        
+      EquipmentExt : isFedBy
         
           
     
         
         
-        Equipment --> "*" Resource : isFedBy
+        EquipmentExt --> "*" Resource : isFedBy
         click Resource href "../Resource/"
     
 
         
-      Equipment : isPartOf
+      EquipmentExt : isPartOf
         
           
     
         
         
-        Equipment --> "0..1" Space : isPartOf
+        EquipmentExt --> "0..1" Space : isPartOf
         click Space href "../Space/"
     
 
         
-      Equipment : locatedIn
+      EquipmentExt : locatedIn
         
           
     
         
         
-        Equipment --> "*" Space : locatedIn
+        EquipmentExt --> "*" Space : locatedIn
         click Space href "../Space/"
     
 
         
-      Equipment : MACAddress
+      EquipmentExt : MACAddress
         
-      Equipment : maintenanceInterval
+      EquipmentExt : maintenanceInterval
         
-      Equipment : manufacturedBy
+      EquipmentExt : manufacturedBy
         
-      Equipment : modelNumber
+      EquipmentExt : modelNumber
         
-      Equipment : mountedOn
+      EquipmentExt : mountedOn
         
-      Equipment : name
+      EquipmentExt : name
         
-      Equipment : operationalStageCount
+      EquipmentExt : operationalStageCount
         
-      Equipment : serialNumber
+      EquipmentExt : panel
         
-      Equipment : servicedBy
+      EquipmentExt : serialNumber
         
-      Equipment : turnoverDate
+      EquipmentExt : servicedBy
         
-      Equipment : weight
+      EquipmentExt : targetArea
+        
+      EquipmentExt : turnoverDate
+        
+      EquipmentExt : weight
         
       
 ```
@@ -178,8 +181,8 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 ## Inheritance
 * [Resource](Resource.md)
     * [Asset](Asset.md)
-        * **Equipment**
-            * [EquipmentExt](EquipmentExt.md)
+        * [Equipment](Equipment.md)
+            * **EquipmentExt**
 
 
 
@@ -187,9 +190,13 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [feeds](feeds.md) | * <br/> [Resource](Resource.md) | Equipment or system that this equipment feeds | direct |
-| [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | direct |
-| [operationalStageCount](operationalStageCount.md) | 0..1 <br/> [Integer](Integer.md) | The number of operational stages supported by this equipment | direct |
+| [deviceType](deviceType.md) | 0..1 <br/> [String](String.md) | Device Type | direct |
+| [panel](panel.md) | 0..1 <br/> [String](String.md) | Parent panel | direct |
+| [installationArea](installationArea.md) | 0..1 <br/> [String](String.md) | Parent installation area | direct |
+| [targetArea](targetArea.md) | 0..1 <br/> [String](String.md) | Target area for this resource | direct |
+| [feeds](feeds.md) | * <br/> [Resource](Resource.md) | Equipment or system that this equipment feeds | [Equipment](Equipment.md) |
+| [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | [Equipment](Equipment.md) |
+| [operationalStageCount](operationalStageCount.md) | 0..1 <br/> [Integer](Integer.md) | The number of operational stages supported by this equipment | [Equipment](Equipment.md) |
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Asset](Asset.md) |
 | [commissionedBy](commissionedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that commissioned this asset | [Asset](Asset.md) |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | [Asset](Asset.md) |
@@ -222,14 +229,6 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 
 
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Point](Point.md) | [isPointOf](isPointOf.md) | range | [Equipment](Equipment.md) |
-| [PointExt](PointExt.md) | [isPointOf](isPointOf.md) | range | [Equipment](Equipment.md) |
-
-
 
 
 
@@ -244,7 +243,7 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 | property | value |
 | --- | --- |
-| description_ja | 空間に設置された設備アセット。 |
+| description_ja | SBCOにて拡張したデバイスモデル |
 
 
 
@@ -261,9 +260,8 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | brick:Equipment |
-| native | sbco:Equipment |
-| exact | brick:Equipment |
+| self | sbco:EquipmentExt |
+| native | sbco:EquipmentExt |
 
 
 
@@ -278,25 +276,24 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 <details>
 ```yaml
-name: Equipment
+name: EquipmentExt
 annotations:
   description_ja:
     tag: description_ja
-    value: 空間に設置された設備アセット。
+    value: SBCOにて拡張したデバイスモデル
 description: An equipment asset installed in a space.
 from_schema: https://www.sbco.or.jp/ont/schema
-exact_mappings:
-- brick:Equipment
-is_a: Asset
+is_a: Equipment
 slots:
-- feeds
-- isFedBy
-- operationalStageCount
+- deviceType
+- panel
+- installationArea
+- targetArea
 slot_usage:
   locatedIn:
     name: locatedIn
     range: Space
-class_uri: brick:Equipment
+class_uri: sbco:EquipmentExt
 
 ```
 </details>
@@ -305,21 +302,59 @@ class_uri: brick:Equipment
 
 <details>
 ```yaml
-name: Equipment
+name: EquipmentExt
 annotations:
   description_ja:
     tag: description_ja
-    value: 空間に設置された設備アセット。
+    value: SBCOにて拡張したデバイスモデル
 description: An equipment asset installed in a space.
 from_schema: https://www.sbco.or.jp/ont/schema
-exact_mappings:
-- brick:Equipment
-is_a: Asset
+is_a: Equipment
 slot_usage:
   locatedIn:
     name: locatedIn
     range: Space
 attributes:
+  deviceType:
+    name: deviceType
+    description: Device Type
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: deviceType
+    owner: EquipmentExt
+    domain_of:
+    - EquipmentExt
+    range: string
+  panel:
+    name: panel
+    description: Parent panel
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: panel
+    owner: EquipmentExt
+    domain_of:
+    - EquipmentExt
+    range: string
+  installationArea:
+    name: installationArea
+    description: Parent installation area
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: installationArea
+    owner: EquipmentExt
+    domain_of:
+    - EquipmentExt
+    range: string
+  targetArea:
+    name: targetArea
+    description: Target area for this resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    alias: targetArea
+    owner: EquipmentExt
+    domain_of:
+    - EquipmentExt
+    range: string
   feeds:
     name: feeds
     annotations:
@@ -331,7 +366,7 @@ attributes:
     rank: 1000
     slot_uri: brick:feeds
     alias: feeds
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Equipment
     range: Resource
@@ -347,7 +382,7 @@ attributes:
     rank: 1000
     slot_uri: rec:isFedBy
     alias: isFedBy
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Architecture
     - Equipment
@@ -360,7 +395,7 @@ attributes:
     rank: 1000
     slot_uri: brick:operationalStageCount
     alias: operationalStageCount
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Equipment
     range: integer
@@ -380,7 +415,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -395,7 +430,7 @@ attributes:
     rank: 1000
     slot_uri: rec:commissionedBy
     alias: commissionedBy
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -410,7 +445,7 @@ attributes:
     rank: 1000
     slot_uri: rec:documentation
     alias: documentation
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Architecture
     - Asset
@@ -427,7 +462,7 @@ attributes:
     rank: 1000
     slot_uri: rec:geometry
     alias: geometry
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -440,7 +475,7 @@ attributes:
     rank: 1000
     slot_uri: rec:hasPart
     alias: hasPart
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -458,7 +493,7 @@ attributes:
     rank: 1000
     slot_uri: rec:hasPoint
     alias: hasPoint
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Architecture
     - Asset
@@ -471,7 +506,7 @@ attributes:
     rank: 1000
     slot_uri: rec:installedBy
     alias: installedBy
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -485,7 +520,7 @@ attributes:
     rank: 1000
     slot_uri: rec:isPartOf
     alias: isPartOf
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -503,7 +538,7 @@ attributes:
     rank: 1000
     slot_uri: rec:locatedIn
     alias: locatedIn
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     - BuildingElement
@@ -516,7 +551,7 @@ attributes:
     rank: 1000
     slot_uri: rec:manufacturedBy
     alias: manufacturedBy
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -531,7 +566,7 @@ attributes:
     rank: 1000
     slot_uri: rec:mountedOn
     alias: mountedOn
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -545,7 +580,7 @@ attributes:
     rank: 1000
     slot_uri: rec:servicedBy
     alias: servicedBy
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -560,7 +595,7 @@ attributes:
     rank: 1000
     slot_uri: rec:assetTag
     alias: assetTag
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -572,7 +607,7 @@ attributes:
     rank: 1000
     slot_uri: rec:commissioningDate
     alias: commissioningDate
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: date
@@ -583,7 +618,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customProperties
     alias: customProperties
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -601,7 +636,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customTags
     alias: customTags
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -620,7 +655,7 @@ attributes:
     rank: 1000
     slot_uri: rec:identifiers
     alias: identifiers
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -640,7 +675,7 @@ attributes:
     rank: 1000
     slot_uri: rec:initialCost
     alias: initialCost
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -651,7 +686,7 @@ attributes:
     rank: 1000
     slot_uri: rec:installationDate
     alias: installationDate
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: date
@@ -662,7 +697,7 @@ attributes:
     rank: 1000
     slot_uri: rec:IPAddress
     alias: IPAddress
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -675,7 +710,7 @@ attributes:
     rank: 1000
     slot_uri: rec:MACAddress
     alias: MACAddress
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -688,7 +723,7 @@ attributes:
     rank: 1000
     slot_uri: rec:maintenanceInterval
     alias: maintenanceInterval
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: Duration
@@ -700,7 +735,7 @@ attributes:
     rank: 1000
     slot_uri: rec:modelNumber
     alias: modelNumber
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -711,7 +746,7 @@ attributes:
     rank: 1000
     slot_uri: rec:name
     alias: name
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Space
     - Asset
@@ -728,7 +763,7 @@ attributes:
     rank: 1000
     slot_uri: rec:serialNumber
     alias: serialNumber
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: string
@@ -739,7 +774,7 @@ attributes:
     rank: 1000
     slot_uri: rec:turnoverDate
     alias: turnoverDate
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: date
@@ -750,11 +785,11 @@ attributes:
     rank: 1000
     slot_uri: rec:weight
     alias: weight
-    owner: Equipment
+    owner: EquipmentExt
     domain_of:
     - Asset
     range: decimal
-class_uri: brick:Equipment
+class_uri: sbco:EquipmentExt
 
 ```
 </details>

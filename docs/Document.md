@@ -54,6 +54,7 @@ URI: [rec:Document](https://w3id.org/rec/Document)
 | [Level](Level.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
 | [Asset](Asset.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
 | [Equipment](Equipment.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
+| [EquipmentExt](EquipmentExt.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
 | [BuildingElement](BuildingElement.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
 
 

@@ -54,8 +54,9 @@ URI: [sbco:KeyBoolMapEntry](https://www.sbco.or.jp/ont/KeyBoolMapEntry)
 | [Level](Level.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Asset](Asset.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Equipment](Equipment.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [EquipmentExt](EquipmentExt.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Point](Point.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
-| [SBCOPoint](SBCOPoint.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [PointExt](PointExt.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [BuildingElement](BuildingElement.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Agent](Agent.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Organization](Organization.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
