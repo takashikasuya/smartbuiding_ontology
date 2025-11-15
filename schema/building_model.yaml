@@ -508,6 +508,9 @@ slots:
   maxPresValue:  # max_pres_value → maxPresValue
     description: Maximum plausible reading
     range: float
+  scale:
+    description: Scale factor for raw value conversion
+    range: float
 
 
   geometry:
@@ -1020,10 +1023,7 @@ classes:
       - unit
       - maxPresValue       # max_pres_value → maxPresValue
       - minPresValue       # min_pres_value → minPresValue
-      - scale
-      - supplier
-      - localId
-      
+      - scale      
 
     slot_usage:
       isPointOf:
