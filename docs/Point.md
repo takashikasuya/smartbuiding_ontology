@@ -254,6 +254,11 @@ attributes:
     - Space
     - Asset
     - Point
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
     pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
@@ -302,8 +307,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -320,9 +330,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -369,9 +383,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -389,9 +407,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
 class_uri: brick:Point

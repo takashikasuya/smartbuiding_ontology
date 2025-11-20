@@ -58,10 +58,19 @@ URI: [sbco:KeyStringMapEntry](https://www.sbco.or.jp/ont/KeyStringMapEntry)
 | [Point](Point.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [PointExt](PointExt.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | [entries](entries.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
-| [BuildingElement](BuildingElement.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Information](Information.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Document](Document.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Image](Image.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Media](Media.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Schema](Schema.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [PostalAddress](PostalAddress.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Geometry](Geometry.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [Georeference](Georeference.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Agent](Agent.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 | [Organization](Organization.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
-| [PostalAddress](PostalAddress.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [BuildingElement](BuildingElement.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [ArchitectureArea](ArchitectureArea.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
+| [ArchitectureCapacity](ArchitectureCapacity.md) | [identifiers](identifiers.md) | range | [KeyStringMapEntry](KeyStringMapEntry.md) |
 
 
 

@@ -1,16 +1,16 @@
 
 
-# Slot: description 
+# Slot: format 
 
 
-_A textual description of the resource_
+_MIME type or format identifier for the information_
 
 
 
 
 
-URI: [rec:description](https://w3id.org/rec/description)
-Alias: description
+URI: [rec:format](https://w3id.org/rec/format)
+Alias: format
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +52,7 @@ Alias: description
 
 | property | value |
 | --- | --- |
-| description_ja | リソースのテキスト記述 |
+| description_ja | 情報のMIMEタイプまたはフォーマット識別子 |
 
 
 
@@ -69,8 +69,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:description |
-| native | sbco:description |
+| self | rec:format |
+| native | sbco:format |
 
 
 
@@ -79,16 +79,16 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: format
 annotations:
   description_ja:
     tag: description_ja
-    value: リソースのテキスト記述
-description: A textual description of the resource
+    value: 情報のMIMEタイプまたはフォーマット識別子
+description: MIME type or format identifier for the information
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:description
-alias: description
+slot_uri: rec:format
+alias: format
 domain_of:
 - Information
 range: string

@@ -48,11 +48,47 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
         
       Architecture : architectedBy
         
+          
+    
+        
+        
+        Architecture --> "*" Agent : architectedBy
+        click Agent href "../Agent/"
+    
+
+        
       Architecture : area
+        
+          
+    
+        
+        
+        Architecture --> "0..1" ArchitectureArea : area
+        click ArchitectureArea href "../ArchitectureArea/"
+    
+
         
       Architecture : capacity
         
+          
+    
+        
+        
+        Architecture --> "0..1" ArchitectureCapacity : capacity
+        click ArchitectureCapacity href "../ArchitectureCapacity/"
+    
+
+        
       Architecture : constructedBy
+        
+          
+    
+        
+        
+        Architecture --> "*" Agent : constructedBy
+        click Agent href "../Agent/"
+    
+
         
       Architecture : containsElement
         
@@ -189,12 +225,12 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [area](area.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureArea](ArchitectureArea.md) | Area of the architecture | direct |
-| [capacity](capacity.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | direct |
+| [area](area.md) | 0..1 <br/> [ArchitectureArea](ArchitectureArea.md) | Area of the architecture | direct |
+| [capacity](capacity.md) | 0..1 <br/> [ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | direct |
 | [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | direct |
 | [adjacentElement](adjacentElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | direct |
-| [architectedBy](architectedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that architected this structure | direct |
-| [constructedBy](constructedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
+| [architectedBy](architectedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that architected this structure | direct |
+| [constructedBy](constructedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
 | [containsElement](containsElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element contained within this architecture | direct |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
 | [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | direct |
@@ -310,10 +346,7 @@ attributes:
     owner: Architecture
     domain_of:
     - Architecture
-    range: string
-    any_of:
-    - range: Resource
-    - range: ArchitectureArea
+    range: ArchitectureArea
   capacity:
     name: capacity
     description: Capacity of the architecture
@@ -324,10 +357,7 @@ attributes:
     owner: Architecture
     domain_of:
     - Architecture
-    range: string
-    any_of:
-    - range: Resource
-    - range: ArchitectureCapacity
+    range: ArchitectureCapacity
   address:
     name: address
     description: Address of the architecture
@@ -365,11 +395,8 @@ attributes:
     owner: Architecture
     domain_of:
     - Architecture
-    range: string
+    range: Agent
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Agent
   constructedBy:
     name: constructedBy
     description: Agent or resource that constructed this architecture
@@ -380,11 +407,8 @@ attributes:
     owner: Architecture
     domain_of:
     - Architecture
-    range: string
+    range: Agent
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Agent
   containsElement:
     name: containsElement
     description: Building element contained within this architecture
@@ -411,7 +435,6 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    - BuildingElement
     range: string
     multivalued: true
     any_of:
@@ -513,6 +536,11 @@ attributes:
     - Space
     - Asset
     - Point
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
     pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
@@ -555,8 +583,6 @@ attributes:
     domain_of:
     - Space
     - Asset
-    - BuildingElement
-    - Organization
     range: string
     multivalued: true
     any_of:
@@ -584,8 +610,6 @@ attributes:
     domain_of:
     - Space
     - Asset
-    - BuildingElement
-    - Organization
     range: Space
     multivalued: false
     any_of:
@@ -603,8 +627,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -621,9 +650,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -640,9 +673,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -660,9 +697,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
 class_uri: rec:Architecture

@@ -20,3 +20,15 @@ markdown_extensions:
   - admonition
   - tables
   - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+  - js/mermaid-init.js
+
+extra_css:
+  - css/mermaid.css

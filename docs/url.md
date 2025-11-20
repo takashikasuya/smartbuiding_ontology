@@ -1,16 +1,16 @@
 
 
-# Slot: description 
+# Slot: url 
 
 
-_A textual description of the resource_
+_URL or URI pointing to the information resource_
 
 
 
 
 
-URI: [rec:description](https://w3id.org/rec/description)
-Alias: description
+URI: [rec:url](https://w3id.org/rec/url)
+Alias: url
 
 <!-- no inheritance hierarchy -->
 
@@ -38,7 +38,7 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Uri](Uri.md)
 
 
 
@@ -52,7 +52,7 @@ Alias: description
 
 | property | value |
 | --- | --- |
-| description_ja | リソースのテキスト記述 |
+| description_ja | 情報リソースを指すURLまたはURI |
 
 
 
@@ -69,8 +69,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:description |
-| native | sbco:description |
+| self | rec:url |
+| native | sbco:url |
 
 
 
@@ -79,19 +79,19 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: url
 annotations:
   description_ja:
     tag: description_ja
-    value: リソースのテキスト記述
-description: A textual description of the resource
+    value: 情報リソースを指すURLまたはURI
+description: URL or URI pointing to the information resource
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:description
-alias: description
+slot_uri: rec:url
+alias: url
 domain_of:
 - Information
-range: string
+range: uri
 
 ```
 </details>

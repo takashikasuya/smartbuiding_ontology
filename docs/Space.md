@@ -172,12 +172,6 @@ URI: [rec:Space](https://w3id.org/rec/Space)
 | [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
 | [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
 | [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
-| [BuildingElement](BuildingElement.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Organization](Organization.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Organization](Organization.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Organization](Organization.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
 
 
 
@@ -292,6 +286,11 @@ attributes:
     - Space
     - Asset
     - Point
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
     pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
@@ -334,8 +333,6 @@ attributes:
     domain_of:
     - Space
     - Asset
-    - BuildingElement
-    - Organization
     range: string
     multivalued: true
     any_of:
@@ -363,8 +360,6 @@ attributes:
     domain_of:
     - Space
     - Asset
-    - BuildingElement
-    - Organization
     range: Space
     multivalued: false
     any_of:
@@ -382,8 +377,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyMapOfStringMapEntry
     multivalued: true
     inlined: true
@@ -400,9 +400,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
@@ -419,9 +423,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -439,9 +447,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
 class_uri: rec:Space

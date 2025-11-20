@@ -1,16 +1,16 @@
 
 
-# Slot: description 
+# Slot: checksum 
 
 
-_A textual description of the resource_
+_Checksum or hash of the information content_
 
 
 
 
 
-URI: [rec:description](https://w3id.org/rec/description)
-Alias: description
+URI: [rec:checksum](https://w3id.org/rec/checksum)
+Alias: checksum
 
 <!-- no inheritance hierarchy -->
 
@@ -52,7 +52,7 @@ Alias: description
 
 | property | value |
 | --- | --- |
-| description_ja | リソースのテキスト記述 |
+| description_ja | 情報コンテンツのチェックサムまたはハッシュ |
 
 
 
@@ -69,8 +69,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:description |
-| native | sbco:description |
+| self | rec:checksum |
+| native | sbco:checksum |
 
 
 
@@ -79,16 +79,16 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: checksum
 annotations:
   description_ja:
     tag: description_ja
-    value: リソースのテキスト記述
-description: A textual description of the resource
+    value: 情報コンテンツのチェックサムまたはハッシュ
+description: Checksum or hash of the information content
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:description
-alias: description
+slot_uri: rec:checksum
+alias: checksum
 domain_of:
 - Information
 range: string

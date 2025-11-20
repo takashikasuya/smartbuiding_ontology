@@ -22,10 +22,9 @@ Alias: locatedIn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |  no  |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  yes  |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |  yes  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  yes  |
 
 
 
@@ -78,7 +77,6 @@ slot_uri: rec:locatedIn
 alias: locatedIn
 domain_of:
 - Asset
-- BuildingElement
 range: Resource
 multivalued: true
 

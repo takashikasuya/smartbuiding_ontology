@@ -13,24 +13,28 @@ Name: building_model
 
 | Class | Description |
 | --- | --- |
-| [Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |
-| [Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |
 | [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) の1エントリ |
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) の1エントリ |
 | [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) の1エントリ |
 | [Point](Point.md) | A sensor, actuator, or data point associated with equipment |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |
 | [Resource](Resource.md) | Base class for all resources |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Agent](Agent.md) | The human, group, or machine that consumes or acts upon an object or data |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Agent](Agent.md) | An entity that can act or be acted upon |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Organization](Organization.md) | An organization such as a company, institution, or association |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Equipment](Equipment.md) | An equipment asset installed in a space |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BuildingElement](BuildingElement.md) | A part that constitutes a piece of a building's structural makeup |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Document](Document.md) | A document providing information about a building element or asset |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PostalAddress](PostalAddress.md) | A postal address |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[BuildingElement](BuildingElement.md) | A part of the building structure |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Information](Information.md) | Abstract base class for information resources such as documents, images, medi... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Document](Document.md) | A document providing information about a building element or asset |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Image](Image.md) | An image file containing visual information |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Media](Media.md) | A media file such as audio or video content |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PostalAddress](PostalAddress.md) | A postal address |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Schema](Schema.md) | A schema definition file |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Building](Building.md) | A building which is part of a site |
@@ -46,21 +50,26 @@ Name: building_model
 | [address](address.md) | Address of the architecture |
 | [adjacentElement](adjacentElement.md) | Building element adjacent to this architecture |
 | [aggregate](aggregate.md) | Aggregation function or method for point data processing |
+| [altitude](altitude.md) | Altitude above sea level in meters |
 | [architectedBy](architectedBy.md) | Agent or resource that architected this structure |
 | [area](area.md) | Area of the architecture |
 | [assetTag](assetTag.md) | Asset identification tag |
 | [capacity](capacity.md) | Capacity of the architecture |
+| [checksum](checksum.md) | Checksum or hash of the information content |
 | [commissionedBy](commissionedBy.md) | Agent or resource that commissioned this asset |
 | [commissioningDate](commissioningDate.md) | Date when the asset was commissioned |
 | [constructedBy](constructedBy.md) | Agent or resource that constructed this architecture |
 | [containsElement](containsElement.md) | Building element contained within this architecture |
+| [coordinates](coordinates.md) | Geographic coordinates defining the geofence boundary |
 | [customProperties](customProperties.md) | map(string -> map(string -> string)) |
 | [customTags](customTags.md) | map(string -> boolean) |
+| [description](description.md) | A textual description of the resource |
 | [deviceType](deviceType.md) | Device Type |
 | [documentation](documentation.md) | Documentation related to this asset |
 | [entries](entries.md) | Nested map entries |
 | [feeds](feeds.md) | Equipment or system that this equipment feeds |
 | [flag](flag.md) | Boolean flag value |
+| [format](format.md) | MIME type or format identifier for the information |
 | [geometry](geometry.md) | Polygon representing the spatial extent of this Space |
 | [georeference](georeference.md) | A georeference creates a relationship between the local coordinate system use... |
 | [hasPart](hasPart.md) | The subject is composed in part of the entity given by the object |
@@ -81,6 +90,7 @@ Name: building_model
 | [isPartOf](isPartOf.md) |  |
 | [isPointOf](isPointOf.md) | Equipment that this point belongs to |
 | [key](key.md) | Key of the map entry |
+| [language](language.md) | Language code (ISO 639-1) of the information content |
 | [levelNumber](levelNumber.md) | Floor or level number within a building |
 | [locatedIn](locatedIn.md) | Space where this asset is located |
 | [MACAddress](MACAddress.md) | MAC address of the asset |
@@ -99,13 +109,17 @@ Name: building_model
 | [panel](panel.md) | Parent panel |
 | [pointSpecification](pointSpecification.md) | Point specification category as shown in equipment point list |
 | [pointType](pointType.md) | Point type - a profile or template name used to refer to the telemetry format... |
+| [radius](radius.md) | Radius in meters for circular geofences |
 | [scale](scale.md) | Scale factor for raw value conversion |
 | [serialNumber](serialNumber.md) | Serial number of the asset |
 | [servicedBy](servicedBy.md) | Agent or resource that services this asset |
+| [size](size.md) | Size of the information resource in bytes |
 | [targetArea](targetArea.md) | Target area for this resource |
 | [turnoverDate](turnoverDate.md) | Date when the asset was turned over |
 | [unit](unit.md) | Measurement unit (enum key; symbol can be taken from annotations) |
+| [url](url.md) | URL or URI pointing to the information resource |
 | [value](value.md) | Value of the map entry |
+| [version](version.md) | Version identifier for the information |
 | [weight](weight.md) | Weight of the asset |
 
 

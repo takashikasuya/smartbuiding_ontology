@@ -23,9 +23,9 @@ Alias: constructedBy
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
 
 
 
@@ -34,7 +34,7 @@ Alias: constructedBy
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md)
+* Range: [Agent](Agent.md)
 
 * Multivalued: True
 
@@ -78,11 +78,8 @@ slot_uri: rec:constructedBy
 alias: constructedBy
 domain_of:
 - Architecture
-range: string
+range: Agent
 multivalued: true
-any_of:
-- range: Resource
-- range: Agent
 
 ```
 </details>

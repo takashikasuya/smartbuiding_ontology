@@ -57,10 +57,19 @@ URI: [sbco:KeyBoolMapEntry](https://www.sbco.or.jp/ont/KeyBoolMapEntry)
 | [EquipmentExt](EquipmentExt.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Point](Point.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [PointExt](PointExt.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
-| [BuildingElement](BuildingElement.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Information](Information.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Document](Document.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Image](Image.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Media](Media.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Schema](Schema.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [PostalAddress](PostalAddress.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Geometry](Geometry.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [Georeference](Georeference.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Agent](Agent.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 | [Organization](Organization.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
-| [PostalAddress](PostalAddress.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [BuildingElement](BuildingElement.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [ArchitectureArea](ArchitectureArea.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
+| [ArchitectureCapacity](ArchitectureCapacity.md) | [customTags](customTags.md) | range | [KeyBoolMapEntry](KeyBoolMapEntry.md) |
 
 
 

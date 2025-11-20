@@ -3,7 +3,7 @@
 # Class: BuildingElement 
 
 
-_A part that constitutes a piece of a building's structural makeup. E.g., Facade, Wall, Slab, Roof, etc._
+_A part of the building structure_
 
 
 
@@ -22,6 +22,17 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
       Resource <|-- BuildingElement
         click Resource href "../Resource/"
       
+      BuildingElement : customProperties
+        
+          
+    
+        
+        
+        BuildingElement --> "*" KeyMapOfStringMapEntry : customProperties
+        click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
+    
+
+        
       BuildingElement : customTags
         
           
@@ -33,9 +44,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
     
 
         
-      BuildingElement : documentation
-        
-      BuildingElement : hasPart
+      BuildingElement : id
         
       BuildingElement : identifiers
         
@@ -45,28 +54,6 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
         
         BuildingElement --> "1..*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
-    
-
-        
-      BuildingElement : isPartOf
-        
-          
-    
-        
-        
-        BuildingElement --> "0..1" Space : isPartOf
-        click Space href "../Space/"
-    
-
-        
-      BuildingElement : locatedIn
-        
-          
-    
-        
-        
-        BuildingElement --> "*" Resource : locatedIn
-        click Resource href "../Resource/"
     
 
         
@@ -89,13 +76,11 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
-| [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
-| [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | direct |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | direct |
-| [locatedIn](locatedIn.md) | * <br/> [Resource](Resource.md) | Space where this asset is located | direct |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
 
 
 
@@ -136,7 +121,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 
 | property | value |
 | --- | --- |
-| description_ja | 建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。 |
+| description_ja | 建物構造の一部 |
 
 
 
@@ -174,21 +159,18 @@ name: BuildingElement
 annotations:
   description_ja:
     tag: description_ja
-    value: 建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。
-description: A part that constitutes a piece of a building's structural makeup. E.g.,
-  Facade, Wall, Slab, Roof, etc.
+    value: 建物構造の一部
+description: A part of the building structure
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
 - rec:BuildingElement
 is_a: Resource
 slots:
+- id
 - name
 - identifiers
 - customTags
-- documentation
-- hasPart
-- isPartOf
-- locatedIn
+- customProperties
 class_uri: rec:BuildingElement
 
 ```
@@ -202,14 +184,42 @@ name: BuildingElement
 annotations:
   description_ja:
     tag: description_ja
-    value: 建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。
-description: A part that constitutes a piece of a building's structural makeup. E.g.,
-  Facade, Wall, Slab, Roof, etc.
+    value: 建物構造の一部
+description: A part of the building structure
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
 - rec:BuildingElement
 is_a: Resource
 attributes:
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: BuildingElement
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   name:
     name: name
     description: Machine or Human-readable name
@@ -222,9 +232,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: string
     required: true
   identifiers:
@@ -239,9 +253,13 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyStringMapEntry
     required: true
     multivalued: true
@@ -259,78 +277,40 @@ attributes:
     - Space
     - Asset
     - Point
-    - BuildingElement
-    - Agent
+    - Information
     - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
     range: KeyBoolMapEntry
     multivalued: true
     inlined: true
     inlined_as_list: true
-  documentation:
-    name: documentation
-    description: Documentation related to this asset
+  customProperties:
+    name: customProperties
+    description: map(string -> map(string -> string))
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
-    slot_uri: rec:documentation
-    alias: documentation
-    owner: BuildingElement
-    domain_of:
-    - Architecture
-    - Asset
-    - BuildingElement
-    range: string
-    multivalued: true
-    any_of:
-    - range: Resource
-    - range: Document
-  hasPart:
-    name: hasPart
-    description: The subject is composed in part of the entity given by the object.
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:hasPart
-    alias: hasPart
+    slot_uri: rec:customProperties
+    alias: customProperties
     owner: BuildingElement
     domain_of:
     - Space
     - Asset
-    - BuildingElement
+    - Point
+    - Information
+    - PostalAddress
+    - Agent
     - Organization
-    range: string
-    multivalued: true
-    any_of:
-    - range: Space
-    - range: Resource
-  isPartOf:
-    name: isPartOf
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:isPartOf
-    alias: isPartOf
-    owner: BuildingElement
-    domain_of:
-    - Space
-    - Asset
     - BuildingElement
-    - Organization
-    range: Space
-    multivalued: false
-    any_of:
-    - range: Space
-    - range: Resource
-  locatedIn:
-    name: locatedIn
-    description: Space where this asset is located
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:locatedIn
-    alias: locatedIn
-    owner: BuildingElement
-    domain_of:
-    - Asset
-    - BuildingElement
-    range: Resource
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: KeyMapOfStringMapEntry
     multivalued: true
+    inlined: true
+    inlined_as_list: true
 class_uri: rec:BuildingElement
 
 ```

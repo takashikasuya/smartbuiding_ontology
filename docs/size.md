@@ -1,16 +1,16 @@
 
 
-# Slot: description 
+# Slot: size 
 
 
-_A textual description of the resource_
+_Size of the information resource in bytes_
 
 
 
 
 
-URI: [rec:description](https://w3id.org/rec/description)
-Alias: description
+URI: [rec:size](https://w3id.org/rec/size)
+Alias: size
 
 <!-- no inheritance hierarchy -->
 
@@ -38,7 +38,7 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Integer](Integer.md)
 
 
 
@@ -52,7 +52,7 @@ Alias: description
 
 | property | value |
 | --- | --- |
-| description_ja | リソースのテキスト記述 |
+| description_ja | 情報リソースのサイズ（バイト） |
 
 
 
@@ -69,8 +69,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:description |
-| native | sbco:description |
+| self | rec:size |
+| native | sbco:size |
 
 
 
@@ -79,19 +79,19 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: size
 annotations:
   description_ja:
     tag: description_ja
-    value: リソースのテキスト記述
-description: A textual description of the resource
+    value: 情報リソースのサイズ（バイト）
+description: Size of the information resource in bytes
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:description
-alias: description
+slot_uri: rec:size
+alias: size
 domain_of:
 - Information
-range: string
+range: integer
 
 ```
 </details>

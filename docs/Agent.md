@@ -3,7 +3,7 @@
 # Class: Agent 
 
 
-_The human, group, or machine that consumes or acts upon an object or data. This higher-level grouping allows properties that are shared among its subclasses (Person, Organization, ….) to be anchored in one joint place, on the Agent class._
+_An entity that can act or be acted upon_
 
 
 
@@ -48,6 +48,8 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
+        
+      Agent : id
         
       Agent : identifiers
         
@@ -102,12 +104,13 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [memberOf](memberOf.md) | * <br/> [Organization](Organization.md) | Indicates membership in an organization | direct |
-| [owns](owns.md) | * <br/> [Resource](Resource.md) |  Indicates ownership of some thing, e | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
-| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
+| [memberOf](memberOf.md) | * <br/> [Organization](Organization.md) | Indicates membership in an organization | direct |
+| [owns](owns.md) | * <br/> [Resource](Resource.md) |  Indicates ownership of some thing, e | direct |
 
 
 
@@ -117,20 +120,20 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [architectedBy](architectedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Architecture](Architecture.md) | [constructedBy](constructedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Architecture](Architecture.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
+| [Architecture](Architecture.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
 | [Architecture](Architecture.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Architecture](Architecture.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Site](Site.md) | [architectedBy](architectedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Site](Site.md) | [constructedBy](constructedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Site](Site.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
+| [Site](Site.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
 | [Site](Site.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Site](Site.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Building](Building.md) | [architectedBy](architectedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Building](Building.md) | [constructedBy](constructedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Building](Building.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
+| [Building](Building.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
 | [Building](Building.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Building](Building.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Level](Level.md) | [architectedBy](architectedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Level](Level.md) | [constructedBy](constructedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Level](Level.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
+| [Level](Level.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
 | [Level](Level.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Level](Level.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
 | [Asset](Asset.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Agent](Agent.md) |
@@ -161,7 +164,7 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 
 | property | value |
 | --- | --- |
-| description_ja | オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。 |
+| description_ja | 行動することができる、または行動される主体 |
 
 
 
@@ -199,21 +202,20 @@ name: Agent
 annotations:
   description_ja:
     tag: description_ja
-    value: オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。
-description: The human, group, or machine that consumes or acts upon an object or
-  data. This higher-level grouping allows properties that are shared among its subclasses
-  (Person, Organization, ….) to be anchored in one joint place, on the Agent class.
+    value: 行動することができる、または行動される主体
+description: An entity that can act or be acted upon
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
 - rec:Agent
 is_a: Resource
 slots:
-- memberOf
-- owns
+- id
 - name
-- customProperties
 - identifiers
 - customTags
+- customProperties
+- memberOf
+- owns
 class_uri: rec:Agent
 
 ```
@@ -227,15 +229,133 @@ name: Agent
 annotations:
   description_ja:
     tag: description_ja
-    value: オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。
-description: The human, group, or machine that consumes or acts upon an object or
-  data. This higher-level grouping allows properties that are shared among its subclasses
-  (Person, Organization, ….) to be anchored in one joint place, on the Agent class.
+    value: 行動することができる、または行動される主体
+description: An entity that can act or be acted upon
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
 - rec:Agent
 is_a: Resource
 attributes:
+  id:
+    name: id
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。
+      example:
+        tag: example
+        value: dtmi:example:Building:1
+    description: Unique identifier within the schema. Must start with a letter and
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
+      (for DTMI format).
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: string
+    required: true
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+  name:
+    name: name
+    description: Machine or Human-readable name
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:name
+    alias: name
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Information
+    - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: string
+    required: true
+  identifiers:
+    name: identifiers
+    description: map(string -> string)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:identifiers
+    alias: identifiers
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Information
+    - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: KeyStringMapEntry
+    required: true
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customTags:
+    name: customTags
+    description: map(string -> boolean)
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:customTags
+    alias: customTags
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Information
+    - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: KeyBoolMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customProperties:
+    name: customProperties
+    description: map(string -> map(string -> string))
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:customProperties
+    alias: customProperties
+    owner: Agent
+    domain_of:
+    - Space
+    - Asset
+    - Point
+    - Information
+    - PostalAddress
+    - Agent
+    - Organization
+    - BuildingElement
+    - ArchitectureArea
+    - ArchitectureCapacity
+    range: KeyMapOfStringMapEntry
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   memberOf:
     name: memberOf
     description: Indicates membership in an organization. Note that componency (e.g.,
@@ -263,80 +383,6 @@ attributes:
     - Agent
     range: Resource
     multivalued: true
-  name:
-    name: name
-    description: Machine or Human-readable name
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:name
-    alias: name
-    owner: Agent
-    domain_of:
-    - Space
-    - Asset
-    - Point
-    - BuildingElement
-    - Agent
-    - PostalAddress
-    range: string
-    required: true
-  customProperties:
-    name: customProperties
-    description: map(string -> map(string -> string))
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:customProperties
-    alias: customProperties
-    owner: Agent
-    domain_of:
-    - Space
-    - Asset
-    - Point
-    - Agent
-    - PostalAddress
-    range: KeyMapOfStringMapEntry
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  identifiers:
-    name: identifiers
-    description: map(string -> string)
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:identifiers
-    alias: identifiers
-    owner: Agent
-    domain_of:
-    - Space
-    - Asset
-    - Point
-    - BuildingElement
-    - Agent
-    - PostalAddress
-    range: KeyStringMapEntry
-    required: true
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  customTags:
-    name: customTags
-    description: map(string -> boolean)
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:customTags
-    alias: customTags
-    owner: Agent
-    domain_of:
-    - Space
-    - Asset
-    - Point
-    - BuildingElement
-    - Agent
-    - PostalAddress
-    range: KeyBoolMapEntry
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
 class_uri: rec:Agent
 
 ```

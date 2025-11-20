@@ -698,31 +698,23 @@ slots:
     
   architectedBy:
     description: "Agent or resource that architected this structure"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:architectedBy
     
   area:
     description: "Area of the architecture"
-    any_of:
-      - range: Resource
-      - range: ArchitectureArea
+    range: ArchitectureArea
     slot_uri: rec:area
     
   capacity:
     description: "Capacity of the architecture"
-    any_of:
-      - range: Resource
-      - range: ArchitectureCapacity
+    range: ArchitectureCapacity
     slot_uri: rec:capacity
     
   constructedBy:
     description: "Agent or resource that constructed this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:constructedBy
     
@@ -829,6 +821,91 @@ slots:
     annotations:
       - tag: description_ja
         value: "このポイントが属する設備"
+
+
+  # Information specific slots
+  description:
+    description: "A textual description of the resource"
+    range: string
+    slot_uri: rec:description
+    annotations:
+      - tag: description_ja
+        value: "リソースのテキスト記述"
+
+  format:
+    description: "MIME type or format identifier for the information"
+    range: string
+    slot_uri: rec:format
+    annotations:
+      - tag: description_ja
+        value: "情報のMIMEタイプまたはフォーマット識別子"
+
+  url:
+    description: "URL or URI pointing to the information resource"
+    range: uri
+    slot_uri: rec:url
+    annotations:
+      - tag: description_ja
+        value: "情報リソースを指すURLまたはURI"
+
+  version:
+    description: "Version identifier for the information"
+    range: string
+    slot_uri: rec:version
+    annotations:
+      - tag: description_ja
+        value: "情報のバージョン識別子"
+
+  language:
+    description: "Language code (ISO 639-1) of the information content"
+    range: string
+    pattern: "^[a-z]{2}(-[A-Z]{2})?$"
+    slot_uri: rec:language
+    annotations:
+      - tag: description_ja
+        value: "情報コンテンツの言語コード (ISO 639-1)"
+
+  size:
+    description: "Size of the information resource in bytes"
+    range: integer
+    slot_uri: rec:size
+    annotations:
+      - tag: description_ja
+        value: "情報リソースのサイズ（バイト）"
+
+  checksum:
+    description: "Checksum or hash of the information content"
+    range: string
+    slot_uri: rec:checksum
+    annotations:
+      - tag: description_ja
+        value: "情報コンテンツのチェックサムまたはハッシュ"
+
+  # Geofence specific slots
+  coordinates:
+    description: "Geographic coordinates defining the geofence boundary"
+    range: string
+    slot_uri: rec:coordinates
+    annotations:
+      - tag: description_ja
+        value: "ジオフェンス境界を定義する地理座標"
+
+  radius:
+    description: "Radius in meters for circular geofences"
+    range: float
+    slot_uri: rec:radius
+    annotations:
+      - tag: description_ja
+        value: "円形ジオフェンスの半径（メートル）"
+
+  altitude:
+    description: "Altitude above sea level in meters"
+    range: float
+    slot_uri: rec:altitude
+    annotations:
+      - tag: description_ja
+        value: "海抜高度（メートル）"
+
 
 classes:
   Space:
@@ -1065,80 +1142,77 @@ classes:
         inlined: true
         inlined_as_list: true
 
-  Geometry:
-    description: REC Geometry のプレースホルダ（詳細は別途拡張）
 
-  Georeference:
-    description: REC Georeference のプレースホルダ（詳細は別途拡張）
-
-
-
-  # Document class
-  Document:
+  # Information class - base class for information resources
+  Information:
     is_a: Resource
+    class_uri: rec:Information
+    description: "Abstract base class for information resources such as documents, images, media files, etc."
+    annotations:
+      - tag: description_ja
+        value: "ドキュメント、画像、メディアファイルなどの情報リソースの抽象基底クラス"
+    exact_mappings:
+      - rec:Information
+    slots:
+      - name
+      - description
+      - identifiers
+      - customTags
+      - customProperties
+      - format
+      - url
+      - version
+      - language
+      - size
+      - checksum
+
+  # Document class extending Information
+  Document:
+    is_a: Information
     class_uri: rec:Document
     description: "A document providing information about a building element or asset"
+    annotations:
+      - tag: description_ja
+        value: "建物要素やアセットに関する情報を提供するドキュメント"
     exact_mappings:
       - rec:Document
 
-  # BuildingElement class extending Resource
-  BuildingElement:
-    is_a: Resource
-    class_uri: rec:BuildingElement
-    description: "A part that constitutes a piece of a building's structural makeup. E.g., Facade, Wall, Slab, Roof, etc."
+  # Image class extending Information
+  Image:
+    is_a: Information
+    class_uri: rec:Image
+    description: "An image file containing visual information"
     annotations:
       - tag: description_ja
-        value: "建物の構造的構成要素。例：ファサード、壁、スラブ、屋根など。"
+        value: "視覚情報を含む画像ファイル"
     exact_mappings:
-      - rec:BuildingElement
-    slots:
-      - name
-      - identifiers
-      - customTags      
-      - documentation
-      - hasPart
-      - isPartOf
-      - locatedIn
+      - rec:Image
 
-  # Agent class
-  Agent:
-    is_a: Resource
-    class_uri: rec:Agent
-    description: "The human, group, or machine that consumes or acts upon an object or data. This higher-level grouping allows properties that are shared among its subclasses (Person, Organization, ….) to be anchored in one joint place, on the Agent class."
+  # Media class extending Information
+  Media:
+    is_a: Information
+    class_uri: rec:Media
+    description: "A media file such as audio or video content"
     annotations:
       - tag: description_ja
-        value: "オブジェクトやデータを消費または作用する人間、グループ、または機械。この上位レベルのグループ化により、そのサブクラス（Person、Organization等）間で共有されるプロパティを、Agentクラスの一箇所に集約できる。"
+        value: "オーディオやビデオコンテンツなどのメディアファイル"
     exact_mappings:
-      - rec:Agent
-    slots:
-      - memberOf
-      - owns
-      - name
-      - customProperties
-      - identifiers
-      - customTags      # custom_tags → customTags
+      - rec:Media
 
-
-  # Organization class
-  Organization:
-    is_a: Agent
-    class_uri: rec:Organization
-    description: "An organization such as a company, institution, or association"
+  # Schema class extending Information
+  Schema:
+    is_a: Information
+    class_uri: rec:Schema
+    description: "A schema definition file"
     annotations:
       - tag: description_ja
-        value: "会社、機関、協会などの組織"
+        value: "スキーマ定義ファイル"
     exact_mappings:
-      - rec:Organization
-    slots:
-#      - hasMember
-      - hasPart
-      - isPartOf
-#      - logo
+      - rec:Schema
 
-
-#TODO 本当はInformationのサブクラス
+  # PostalAddress class extending Information
   PostalAddress:
-    is_a: Resource
+    is_a: Information
     class_uri: rec:PostalAddress
     description: "A postal address"
     annotations:
@@ -1152,23 +1226,108 @@ classes:
       - customTags
       - customProperties
 
- # TODO
+  Geometry:
+    is_a: Information
+    class_uri: rec:Geometry
+    description: "REC Geometry のプレースホルダ（詳細は別途拡張）"
+    annotations:
+      - tag: description_ja
+        value: "ジオメトリ情報のプレースホルダ"
+    exact_mappings:
+      - rec:Geometry
+
+  Georeference:
+    is_a: Information
+    class_uri: rec:Georeference
+    description: "REC Georeference のプレースホルダ（詳細は別途拡張）"
+    annotations:
+      - tag: description_ja
+        value: "地理参照情報のプレースホルダ"
+    exact_mappings:
+      - rec:Georeference
+# Add missing Agent class
+  Agent:
+    is_a: Resource
+    class_uri: rec:Agent
+    description: "An entity that can act or be acted upon"
+    annotations:
+      - tag: description_ja
+        value: "行動することができる、または行動される主体"
+    exact_mappings:
+      - rec:Agent
+    slots:
+      - id
+      - name
+      - identifiers
+      - customTags
+      - customProperties
+      - memberOf
+      - owns
+
+  # Add missing Organization class
+  Organization:
+    is_a: Agent
+    class_uri: rec:Organization
+    description: "An organization such as a company, institution, or association"
+    annotations:
+      - tag: description_ja
+        value: "会社、機関、協会などの組織"
+    exact_mappings:
+      - rec:Organization
+    slots:
+      - id
+      - name
+      - identifiers
+      - customTags
+      - customProperties
+
+  # Add missing BuildingElement class
+  BuildingElement:
+    is_a: Resource
+    class_uri: rec:BuildingElement
+    description: "A part of the building structure"
+    annotations:
+      - tag: description_ja
+        value: "建物構造の一部"
+    exact_mappings:
+      - rec:BuildingElement
+    slots:
+      - id
+      - name
+      - identifiers
+      - customTags
+      - customProperties
+
+  # Add missing ArchitectureArea class
   ArchitectureArea:
     is_a: Resource
     class_uri: rec:ArchitectureArea
-    description: "Describes business-relevant area measurements typically associated with architected spaces. As the exact requirements on these measurements will vary from case to case or jurisdiction to jurisdiction, subclassing and specializing this definition is encouraged."
+    description: "Describes business-relevant area measurements typically associated with architected spaces"
     annotations:
       - tag: description_ja
-        value: "建築の面積測定"
+        value: "設計された空間に関連する業務上重要な面積測定"
     exact_mappings:
       - rec:ArchitectureArea
+    slots:
+      - id
+      - name
+      - identifiers
+      - customTags
+      - customProperties
 
+  # Add missing ArchitectureCapacity class
   ArchitectureCapacity:
     is_a: Resource
     class_uri: rec:ArchitectureCapacity
-    description: "Describes business-relevant capacity measurements typically associated with architected spaces. As the exact requirements on these measurements will vary from case to case or jurisdiction to jurisdiction, subclassing and specializing this definition is encouraged."
+    description: "Describes business-relevant capacity measurements typically associated with architected spaces"
     annotations:
       - tag: description_ja
-        value: "建築の容量測定"
+        value: "設計された空間に関連する業務上重要な容量測定"
     exact_mappings:
       - rec:ArchitectureCapacity
+    slots:
+      - id
+      - name
+      - identifiers
+      - customTags
+      - customProperties

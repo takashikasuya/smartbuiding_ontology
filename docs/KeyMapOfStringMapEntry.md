@@ -66,9 +66,19 @@ URI: [sbco:KeyMapOfStringMapEntry](https://www.sbco.or.jp/ont/KeyMapOfStringMapE
 | [EquipmentExt](EquipmentExt.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Point](Point.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [PointExt](PointExt.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Information](Information.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Document](Document.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Image](Image.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Media](Media.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Schema](Schema.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [PostalAddress](PostalAddress.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Geometry](Geometry.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [Georeference](Georeference.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Agent](Agent.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 | [Organization](Organization.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
-| [PostalAddress](PostalAddress.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [BuildingElement](BuildingElement.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [ArchitectureArea](ArchitectureArea.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
+| [ArchitectureCapacity](ArchitectureCapacity.md) | [customProperties](customProperties.md) | range | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) |
 
 
 

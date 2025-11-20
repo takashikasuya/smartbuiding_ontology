@@ -1,15 +1,15 @@
 
 
-# Class: PostalAddress 
+# Class: Information 
 
 
-_A postal address_
+_Abstract base class for information resources such as documents, images, media files, etc._
 
 
 
 
 
-URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
+URI: [rec:Information](https://w3id.org/rec/Information)
 
 
 
@@ -17,59 +17,76 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 ```mermaid
  classDiagram
-    class PostalAddress
-    click PostalAddress href "../PostalAddress/"
-      Information <|-- PostalAddress
-        click Information href "../Information/"
+    class Information
+    click Information href "../Information/"
+      Resource <|-- Information
+        click Resource href "../Resource/"
       
-      PostalAddress : checksum
+
+      Information <|-- Document
+        click Document href "../Document/"
+      Information <|-- Image
+        click Image href "../Image/"
+      Information <|-- Media
+        click Media href "../Media/"
+      Information <|-- Schema
+        click Schema href "../Schema/"
+      Information <|-- PostalAddress
+        click PostalAddress href "../PostalAddress/"
+      Information <|-- Geometry
+        click Geometry href "../Geometry/"
+      Information <|-- Georeference
+        click Georeference href "../Georeference/"
+      
+
+      Information : checksum
         
-      PostalAddress : customProperties
+      Information : customProperties
         
           
     
         
         
-        PostalAddress --> "*" KeyMapOfStringMapEntry : customProperties
+        Information --> "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
     
 
         
-      PostalAddress : customTags
+      Information : customTags
         
           
     
         
         
-        PostalAddress --> "*" KeyBoolMapEntry : customTags
+        Information --> "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
         
-      PostalAddress : description
+      Information : description
         
-      PostalAddress : format
+      Information : format
         
-      PostalAddress : identifiers
+      Information : identifiers
         
           
     
         
         
-        PostalAddress --> "1..*" KeyStringMapEntry : identifiers
+        Information --> "1..*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
         
-      PostalAddress : language
+      Information : language
         
-      PostalAddress : name
+      Information : name
         
-      PostalAddress : size
+      Information : size
         
-      PostalAddress : url
+      Information : url
         
-      PostalAddress : version
+      Information : version
         
       
 ```
@@ -80,8 +97,14 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 ## Inheritance
 * [Resource](Resource.md)
-    * [Information](Information.md)
-        * **PostalAddress**
+    * **Information**
+        * [Document](Document.md)
+        * [Image](Image.md)
+        * [Media](Media.md)
+        * [Schema](Schema.md)
+        * [PostalAddress](PostalAddress.md)
+        * [Geometry](Geometry.md)
+        * [Georeference](Georeference.md)
 
 
 
@@ -90,29 +113,19 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Information](Information.md) |
-| [format](format.md) | 0..1 <br/> [String](String.md) | MIME type or format identifier for the information | [Information](Information.md) |
-| [url](url.md) | 0..1 <br/> [Uri](Uri.md) | URL or URI pointing to the information resource | [Information](Information.md) |
-| [version](version.md) | 0..1 <br/> [String](String.md) | Version identifier for the information | [Information](Information.md) |
-| [language](language.md) | 0..1 <br/> [String](String.md) | Language code (ISO 639-1) of the information content | [Information](Information.md) |
-| [size](size.md) | 0..1 <br/> [Integer](Integer.md) | Size of the information resource in bytes | [Information](Information.md) |
-| [checksum](checksum.md) | 0..1 <br/> [String](String.md) | Checksum or hash of the information content | [Information](Information.md) |
+| [format](format.md) | 0..1 <br/> [String](String.md) | MIME type or format identifier for the information | direct |
+| [url](url.md) | 0..1 <br/> [Uri](Uri.md) | URL or URI pointing to the information resource | direct |
+| [version](version.md) | 0..1 <br/> [String](String.md) | Version identifier for the information | direct |
+| [language](language.md) | 0..1 <br/> [String](String.md) | Language code (ISO 639-1) of the information content | direct |
+| [size](size.md) | 0..1 <br/> [Integer](Integer.md) | Size of the information resource in bytes | direct |
+| [checksum](checksum.md) | 0..1 <br/> [String](String.md) | Checksum or hash of the information content | direct |
 
 
 
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Site](Site.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Building](Building.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Level](Level.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
 
 
 
@@ -129,7 +142,7 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | property | value |
 | --- | --- |
-| description_ja | 郵便住所 |
+| description_ja | ドキュメント、画像、メディアファイルなどの情報リソースの抽象基底クラス |
 
 
 
@@ -146,9 +159,9 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:PostalAddress |
-| native | sbco:PostalAddress |
-| exact | rec:PostalAddress |
+| self | rec:Information |
+| native | sbco:Information |
+| exact | rec:Information |
 
 
 
@@ -163,22 +176,30 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 <details>
 ```yaml
-name: PostalAddress
+name: Information
 annotations:
   description_ja:
     tag: description_ja
-    value: 郵便住所
-description: A postal address
+    value: ドキュメント、画像、メディアファイルなどの情報リソースの抽象基底クラス
+description: Abstract base class for information resources such as documents, images,
+  media files, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:PostalAddress
-is_a: Information
+- rec:Information
+is_a: Resource
 slots:
 - name
+- description
 - identifiers
 - customTags
 - customProperties
-class_uri: rec:PostalAddress
+- format
+- url
+- version
+- language
+- size
+- checksum
+class_uri: rec:Information
 
 ```
 </details>
@@ -187,16 +208,17 @@ class_uri: rec:PostalAddress
 
 <details>
 ```yaml
-name: PostalAddress
+name: Information
 annotations:
   description_ja:
     tag: description_ja
-    value: 郵便住所
-description: A postal address
+    value: ドキュメント、画像、メディアファイルなどの情報リソースの抽象基底クラス
+description: Abstract base class for information resources such as documents, images,
+  media files, etc.
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:PostalAddress
-is_a: Information
+- rec:Information
+is_a: Resource
 attributes:
   name:
     name: name
@@ -205,7 +227,7 @@ attributes:
     rank: 1000
     slot_uri: rec:name
     alias: name
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Space
     - Asset
@@ -219,6 +241,21 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Information
+    domain_of:
+    - Information
+    range: string
   identifiers:
     name: identifiers
     description: map(string -> string)
@@ -226,7 +263,7 @@ attributes:
     rank: 1000
     slot_uri: rec:identifiers
     alias: identifiers
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Space
     - Asset
@@ -250,7 +287,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customTags
     alias: customTags
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Space
     - Asset
@@ -273,7 +310,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customProperties
     alias: customProperties
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Space
     - Asset
@@ -289,21 +326,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  description:
-    name: description
-    annotations:
-      description_ja:
-        tag: description_ja
-        value: リソースのテキスト記述
-    description: A textual description of the resource
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:description
-    alias: description
-    owner: PostalAddress
-    domain_of:
-    - Information
-    range: string
   format:
     name: format
     annotations:
@@ -315,7 +337,7 @@ attributes:
     rank: 1000
     slot_uri: rec:format
     alias: format
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: string
@@ -330,7 +352,7 @@ attributes:
     rank: 1000
     slot_uri: rec:url
     alias: url
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: uri
@@ -345,7 +367,7 @@ attributes:
     rank: 1000
     slot_uri: rec:version
     alias: version
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: string
@@ -360,7 +382,7 @@ attributes:
     rank: 1000
     slot_uri: rec:language
     alias: language
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: string
@@ -376,7 +398,7 @@ attributes:
     rank: 1000
     slot_uri: rec:size
     alias: size
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: integer
@@ -391,11 +413,11 @@ attributes:
     rank: 1000
     slot_uri: rec:checksum
     alias: checksum
-    owner: PostalAddress
+    owner: Information
     domain_of:
     - Information
     range: string
-class_uri: rec:PostalAddress
+class_uri: rec:Information
 
 ```
 </details>

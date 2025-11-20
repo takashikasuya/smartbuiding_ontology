@@ -1,15 +1,15 @@
 
 
-# Class: PostalAddress 
+# Class: Schema 
 
 
-_A postal address_
+_A schema definition file_
 
 
 
 
 
-URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
+URI: [rec:Schema](https://w3id.org/rec/Schema)
 
 
 
@@ -17,59 +17,59 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 ```mermaid
  classDiagram
-    class PostalAddress
-    click PostalAddress href "../PostalAddress/"
-      Information <|-- PostalAddress
+    class Schema
+    click Schema href "../Schema/"
+      Information <|-- Schema
         click Information href "../Information/"
       
-      PostalAddress : checksum
+      Schema : checksum
         
-      PostalAddress : customProperties
+      Schema : customProperties
         
           
     
         
         
-        PostalAddress --> "*" KeyMapOfStringMapEntry : customProperties
+        Schema --> "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
     
 
         
-      PostalAddress : customTags
+      Schema : customTags
         
           
     
         
         
-        PostalAddress --> "*" KeyBoolMapEntry : customTags
+        Schema --> "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
         
-      PostalAddress : description
+      Schema : description
         
-      PostalAddress : format
+      Schema : format
         
-      PostalAddress : identifiers
+      Schema : identifiers
         
           
     
         
         
-        PostalAddress --> "1..*" KeyStringMapEntry : identifiers
+        Schema --> "1..*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
         
-      PostalAddress : language
+      Schema : language
         
-      PostalAddress : name
+      Schema : name
         
-      PostalAddress : size
+      Schema : size
         
-      PostalAddress : url
+      Schema : url
         
-      PostalAddress : version
+      Schema : version
         
       
 ```
@@ -81,7 +81,7 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 ## Inheritance
 * [Resource](Resource.md)
     * [Information](Information.md)
-        * **PostalAddress**
+        * **Schema**
 
 
 
@@ -89,11 +89,11 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
-| [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
-| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
+| [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Information](Information.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Information](Information.md) |
+| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Information](Information.md) |
+| [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Information](Information.md) |
+| [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Information](Information.md) |
 | [format](format.md) | 0..1 <br/> [String](String.md) | MIME type or format identifier for the information | [Information](Information.md) |
 | [url](url.md) | 0..1 <br/> [Uri](Uri.md) | URL or URI pointing to the information resource | [Information](Information.md) |
 | [version](version.md) | 0..1 <br/> [String](String.md) | Version identifier for the information | [Information](Information.md) |
@@ -103,16 +103,6 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 
 
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Site](Site.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Building](Building.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
-| [Level](Level.md) | [address](address.md) | range | [PostalAddress](PostalAddress.md) |
 
 
 
@@ -129,7 +119,7 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | property | value |
 | --- | --- |
-| description_ja | 郵便住所 |
+| description_ja | スキーマ定義ファイル |
 
 
 
@@ -146,9 +136,9 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:PostalAddress |
-| native | sbco:PostalAddress |
-| exact | rec:PostalAddress |
+| self | rec:Schema |
+| native | sbco:Schema |
+| exact | rec:Schema |
 
 
 
@@ -163,22 +153,17 @@ URI: [rec:PostalAddress](https://w3id.org/rec/PostalAddress)
 
 <details>
 ```yaml
-name: PostalAddress
+name: Schema
 annotations:
   description_ja:
     tag: description_ja
-    value: 郵便住所
-description: A postal address
+    value: スキーマ定義ファイル
+description: A schema definition file
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:PostalAddress
+- rec:Schema
 is_a: Information
-slots:
-- name
-- identifiers
-- customTags
-- customProperties
-class_uri: rec:PostalAddress
+class_uri: rec:Schema
 
 ```
 </details>
@@ -187,15 +172,15 @@ class_uri: rec:PostalAddress
 
 <details>
 ```yaml
-name: PostalAddress
+name: Schema
 annotations:
   description_ja:
     tag: description_ja
-    value: 郵便住所
-description: A postal address
+    value: スキーマ定義ファイル
+description: A schema definition file
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:PostalAddress
+- rec:Schema
 is_a: Information
 attributes:
   name:
@@ -205,7 +190,7 @@ attributes:
     rank: 1000
     slot_uri: rec:name
     alias: name
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Space
     - Asset
@@ -219,6 +204,21 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Schema
+    domain_of:
+    - Information
+    range: string
   identifiers:
     name: identifiers
     description: map(string -> string)
@@ -226,7 +226,7 @@ attributes:
     rank: 1000
     slot_uri: rec:identifiers
     alias: identifiers
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Space
     - Asset
@@ -250,7 +250,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customTags
     alias: customTags
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Space
     - Asset
@@ -273,7 +273,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customProperties
     alias: customProperties
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Space
     - Asset
@@ -289,21 +289,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  description:
-    name: description
-    annotations:
-      description_ja:
-        tag: description_ja
-        value: リソースのテキスト記述
-    description: A textual description of the resource
-    from_schema: https://www.sbco.or.jp/ont/schema
-    rank: 1000
-    slot_uri: rec:description
-    alias: description
-    owner: PostalAddress
-    domain_of:
-    - Information
-    range: string
   format:
     name: format
     annotations:
@@ -315,7 +300,7 @@ attributes:
     rank: 1000
     slot_uri: rec:format
     alias: format
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: string
@@ -330,7 +315,7 @@ attributes:
     rank: 1000
     slot_uri: rec:url
     alias: url
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: uri
@@ -345,7 +330,7 @@ attributes:
     rank: 1000
     slot_uri: rec:version
     alias: version
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: string
@@ -360,7 +345,7 @@ attributes:
     rank: 1000
     slot_uri: rec:language
     alias: language
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: string
@@ -376,7 +361,7 @@ attributes:
     rank: 1000
     slot_uri: rec:size
     alias: size
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: integer
@@ -391,11 +376,11 @@ attributes:
     rank: 1000
     slot_uri: rec:checksum
     alias: checksum
-    owner: PostalAddress
+    owner: Schema
     domain_of:
     - Information
     range: string
-class_uri: rec:PostalAddress
+class_uri: rec:Schema
 
 ```
 </details>

@@ -23,9 +23,9 @@ Alias: capacity
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
 
 
 
@@ -34,7 +34,7 @@ Alias: capacity
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[ArchitectureCapacity](ArchitectureCapacity.md)
+* Range: [ArchitectureCapacity](ArchitectureCapacity.md)
 
 
 
@@ -76,10 +76,7 @@ slot_uri: rec:capacity
 alias: capacity
 domain_of:
 - Architecture
-range: string
-any_of:
-- range: Resource
-- range: ArchitectureCapacity
+range: ArchitectureCapacity
 
 ```
 </details>

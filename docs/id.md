@@ -22,16 +22,21 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
-| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
-| [Level](Level.md) | A building storey |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |  no  |
+| [Organization](Organization.md) | An organization such as a company, institution, or association |  no  |
+| [Agent](Agent.md) | An entity that can act or be acted upon |  no  |
+| [BuildingElement](BuildingElement.md) | A part of the building structure |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |  no  |
 
 
 
@@ -105,6 +110,11 @@ domain_of:
 - Space
 - Asset
 - Point
+- Agent
+- Organization
+- BuildingElement
+- ArchitectureArea
+- ArchitectureCapacity
 range: string
 required: true
 pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$

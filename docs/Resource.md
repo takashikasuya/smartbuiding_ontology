@@ -23,14 +23,12 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
     click Resource href "../Resource/"
       Resource <|-- Asset
         click Asset href "../Asset/"
-      Resource <|-- Document
-        click Document href "../Document/"
-      Resource <|-- BuildingElement
-        click BuildingElement href "../BuildingElement/"
+      Resource <|-- Information
+        click Information href "../Information/"
       Resource <|-- Agent
         click Agent href "../Agent/"
-      Resource <|-- PostalAddress
-        click PostalAddress href "../PostalAddress/"
+      Resource <|-- BuildingElement
+        click BuildingElement href "../BuildingElement/"
       Resource <|-- ArchitectureArea
         click ArchitectureArea href "../ArchitectureArea/"
       Resource <|-- ArchitectureCapacity
@@ -46,10 +44,9 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 ## Inheritance
 * **Resource**
     * [Asset](Asset.md)
-    * [Document](Document.md)
-    * [BuildingElement](BuildingElement.md)
+    * [Information](Information.md)
     * [Agent](Agent.md)
-    * [PostalAddress](PostalAddress.md)
+    * [BuildingElement](BuildingElement.md)
     * [ArchitectureArea](ArchitectureArea.md)
     * [ArchitectureCapacity](ArchitectureCapacity.md)
 
@@ -70,11 +67,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | ---  | --- | --- | --- |
 | [Space](Space.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [containsElement](containsElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [Resource](Resource.md) |
@@ -83,11 +76,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Architecture](Architecture.md) | [ownedBy](ownedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
-| [Site](Site.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
-| [Site](Site.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
-| [Site](Site.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
-| [Site](Site.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [containsElement](containsElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [Resource](Resource.md) |
@@ -96,11 +85,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Site](Site.md) | [ownedBy](ownedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
-| [Building](Building.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
-| [Building](Building.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
-| [Building](Building.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
-| [Building](Building.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [containsElement](containsElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [Resource](Resource.md) |
@@ -109,11 +94,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [Building](Building.md) | [ownedBy](ownedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
 | [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
-| [Level](Level.md) | [area](area.md) | any_of[range] | [Resource](Resource.md) |
-| [Level](Level.md) | [capacity](capacity.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [Resource](Resource.md) |
-| [Level](Level.md) | [architectedBy](architectedBy.md) | any_of[range] | [Resource](Resource.md) |
-| [Level](Level.md) | [constructedBy](constructedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [containsElement](containsElement.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
 | [Level](Level.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [Resource](Resource.md) |
@@ -151,13 +132,7 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 | [EquipmentExt](EquipmentExt.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Resource](Resource.md) |
 | [EquipmentExt](EquipmentExt.md) | [mountedOn](mountedOn.md) | any_of[range] | [Resource](Resource.md) |
 | [EquipmentExt](EquipmentExt.md) | [servicedBy](servicedBy.md) | any_of[range] | [Resource](Resource.md) |
-| [BuildingElement](BuildingElement.md) | [documentation](documentation.md) | any_of[range] | [Resource](Resource.md) |
-| [BuildingElement](BuildingElement.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
-| [BuildingElement](BuildingElement.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
-| [BuildingElement](BuildingElement.md) | [locatedIn](locatedIn.md) | range | [Resource](Resource.md) |
 | [Agent](Agent.md) | [owns](owns.md) | range | [Resource](Resource.md) |
-| [Organization](Organization.md) | [hasPart](hasPart.md) | any_of[range] | [Resource](Resource.md) |
-| [Organization](Organization.md) | [isPartOf](isPartOf.md) | any_of[range] | [Resource](Resource.md) |
 | [Organization](Organization.md) | [owns](owns.md) | range | [Resource](Resource.md) |
 
 

@@ -1,16 +1,16 @@
 
 
-# Slot: description 
+# Slot: language 
 
 
-_A textual description of the resource_
+_Language code (ISO 639-1) of the information content_
 
 
 
 
 
-URI: [rec:description](https://w3id.org/rec/description)
-Alias: description
+URI: [rec:language](https://w3id.org/rec/language)
+Alias: language
 
 <!-- no inheritance hierarchy -->
 
@@ -40,6 +40,8 @@ Alias: description
 
 * Range: [String](String.md)
 
+* Regex pattern: `^[a-z]{2}(-[A-Z]{2})?$`
+
 
 
 
@@ -52,7 +54,7 @@ Alias: description
 
 | property | value |
 | --- | --- |
-| description_ja | リソースのテキスト記述 |
+| description_ja | 情報コンテンツの言語コード (ISO 639-1) |
 
 
 
@@ -69,8 +71,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:description |
-| native | sbco:description |
+| self | rec:language |
+| native | sbco:language |
 
 
 
@@ -79,19 +81,20 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: language
 annotations:
   description_ja:
     tag: description_ja
-    value: リソースのテキスト記述
-description: A textual description of the resource
+    value: 情報コンテンツの言語コード (ISO 639-1)
+description: Language code (ISO 639-1) of the information content
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:description
-alias: description
+slot_uri: rec:language
+alias: language
 domain_of:
 - Information
 range: string
+pattern: ^[a-z]{2}(-[A-Z]{2})?$
 
 ```
 </details>
