@@ -48,10 +48,14 @@ mkdocs serve
 
 ## サンプルデータモデル（RDF/Turtle）
 
-LinkML で定義したクラス・スロットを RDF で表現したシンプルな例です。Site を起点に Building / Level / Space / Equipment / Point が階層的につながり、設備（Equipment）の下に計測・制御・状態などのポイント（Point）がぶら下がる基本構造を RDF/Turtle で示しています。
+LinkML スキーマから生成された OWL / SHACL に合わせ、実際のクラス URI とスロット URI（`sbco:hasPart`, `sbco:isPartOf`, `sbco:locatedIn`,
+`sbco:hasPoint`, `sbco:isPointOf`, `sbco:hasQuantity`, `sbco:unit` など）を使って階層構造を示した例です。Site → Building → Level →
+Space → Equipment → Point の接続関係を、`output/building_model.owl.ttl` / `output/building_model.shacl.ttl` の語彙に準拠して RDF/Turtle で表しています。
 
 **English explanation**
-This Turtle snippet represents the same hierarchy (Site → Building → Level → Space → Equipment → Point) using RDF terms aligned with the LinkML slots. Equipment nodes describe the asset, while Points capture measurable or controllable signals with their quantity and unit.
+This Turtle example follows the OWL/SHACL vocabulary generated from the LinkML schema. It uses the official `sbco` terms such as
+`sbco:hasPart`, `sbco:isPartOf`, `sbco:locatedIn`, and `sbco:hasPoint` to show the Site → Building → Level → Space → Equipment →
+Point hierarchy. Points reference quantities and units via the enumerations defined in the generated artifacts.
 
 ```turtle
 @prefix sbco: <https://www.sbco.or.jp/ont/> .
@@ -59,38 +63,40 @@ This Turtle snippet represents the same hierarchy (Site → Building → Level �
 
 ex:site/001 a sbco:Site ;
   sbco:name "Marunouchi HQ" ;
-  sbco:buildings ex:building/A .
+  sbco:hasPart ex:building/A .
 
 ex:building/A a sbco:Building ;
   sbco:name "Tower A" ;
-  sbco:levels ex:level/A-3F .
+  sbco:isPartOf ex:site/001 ;
+  sbco:hasPart ex:level/A-3F .
 
 ex:level/A-3F a sbco:Level ;
   sbco:name "3F" ;
-  sbco:spaces ex:space/A-3F-Office .
+  sbco:levelNumber 3 ;
+  sbco:isPartOf ex:building/A ;
+  sbco:hasPart ex:space/A-3F-Office .
 
 ex:space/A-3F-Office a sbco:Space ;
   sbco:name "Office Area" ;
-  sbco:equipment_list ex:equip/AHU-01 .
+  sbco:isPartOf ex:level/A-3F ;
+  sbco:hasPart ex:equip/AHU-01 .
 
 ex:equip/AHU-01 a sbco:Equipment ;
   sbco:name "AHU-01" ;
-  sbco:specification "Air Handling Unit" ;
-  sbco:substance_in sbco:OutsideAir ;
-  sbco:substance_out sbco:SupplyAir, sbco:ReturnAir ;
-  sbco:points ex:point/AHU-01-MAT, ex:point/AHU-01-SF-CMD .
+  sbco:locatedIn ex:space/A-3F-Office ;
+  sbco:hasPoint ex:point/AHU-01-SAT, ex:point/AHU-01-SF-CMD .
 
-ex:point/AHU-01-MAT a sbco:Point ;
-  sbco:name "Mixed Air Temperature" ;
-  sbco:specification sbco:Measurement ;
-  sbco:quantity sbco:Air_Quality ;
-  sbco:unit sbco:celsius .
+ex:point/AHU-01-SAT a sbco:Point ;
+  sbco:name "Supply Air Temperature" ;
+  sbco:isPointOf ex:equip/AHU-01 ;
+  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Temperature> ;
+  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#celsius> .
 
 ex:point/AHU-01-SF-CMD a sbco:Point ;
   sbco:name "Supply Fan Command" ;
-  sbco:specification sbco:Command ;
-  sbco:quantity sbco:Active_Power ;
-  sbco:unit sbco:percent .
+  sbco:isPointOf ex:equip/AHU-01 ;
+  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Active_Power> ;
+  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#percent> .
 ```
 
 ## 参考
