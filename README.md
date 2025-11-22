@@ -46,43 +46,51 @@ mkdocs serve
 - Key slots: `buildings`, `levels`, `spaces`, `equipment_list`, `points`.
 - Cardinality controls: `multivalued`, `required`, and `inlined_as_list` indicate multiplicity, requiredness, and inline list expansion.
 
-## サンプルデータモデル（YAML）
+## サンプルデータモデル（RDF/Turtle）
 
-LinkML の `instances` として利用できるシンプルな例です。Site 以下に Building / Level / Space / Equipment / Point がネストされる基本的な構造を示しています。設備（Equipment）の中にポイント（Point）がぶら下がり、計測値・制御コマンド・状態などを表現します。
+LinkML で定義したクラス・スロットを RDF で表現したシンプルな例です。Site を起点に Building / Level / Space / Equipment / Point が階層的につながり、設備（Equipment）の下に計測・制御・状態などのポイント（Point）がぶら下がる基本構造を RDF/Turtle で示しています。
 
 **English explanation**
-This YAML illustrates how to nest a Site containing Buildings, Levels, Spaces, Equipment, and Points. Equipment entries describe the physical asset, while each Point captures a measurable or controllable signal (e.g., temperature measurement, fan command) with its quantity and unit.
+This Turtle snippet represents the same hierarchy (Site → Building → Level → Space → Equipment → Point) using RDF terms aligned with the LinkML slots. Equipment nodes describe the asset, while Points capture measurable or controllable signals with their quantity and unit.
 
-```yaml
-id: https://example.com/site/001
-type: Site
-name: Marunouchi HQ
-buildings:
-  - id: https://example.com/building/A
-    name: Tower A
-    levels:
-      - id: https://example.com/level/A-3F
-        name: 3F
-        spaces:
-          - id: https://example.com/space/A-3F-Office
-            name: Office Area
-            equipment_list:
-              - id: https://example.com/equip/AHU-01
-                name: AHU-01
-                specification: Air Handling Unit
-                substance_in: [OutsideAir]
-                substance_out: [SupplyAir, ReturnAir]
-                points:
-                  - id: https://example.com/point/AHU-01-MAT
-                    name: Mixed Air Temperature
-                    specification: Measurement
-                    quantity: Air_Quality
-                    unit: celsius
-                  - id: https://example.com/point/AHU-01-SF-CMD
-                    name: Supply Fan Command
-                    specification: Command
-                    quantity: Active_Power
-                    unit: percent
+```turtle
+@prefix bmo: <https://example.com/schema/building_model#> .
+@prefix ex:  <https://example.com/> .
+
+ex:site/001 a bmo:Site ;
+  bmo:name "Marunouchi HQ" ;
+  bmo:buildings ex:building/A .
+
+ex:building/A a bmo:Building ;
+  bmo:name "Tower A" ;
+  bmo:levels ex:level/A-3F .
+
+ex:level/A-3F a bmo:Level ;
+  bmo:name "3F" ;
+  bmo:spaces ex:space/A-3F-Office .
+
+ex:space/A-3F-Office a bmo:Space ;
+  bmo:name "Office Area" ;
+  bmo:equipment_list ex:equip/AHU-01 .
+
+ex:equip/AHU-01 a bmo:Equipment ;
+  bmo:name "AHU-01" ;
+  bmo:specification "Air Handling Unit" ;
+  bmo:substance_in bmo:OutsideAir ;
+  bmo:substance_out bmo:SupplyAir, bmo:ReturnAir ;
+  bmo:points ex:point/AHU-01-MAT, ex:point/AHU-01-SF-CMD .
+
+ex:point/AHU-01-MAT a bmo:Point ;
+  bmo:name "Mixed Air Temperature" ;
+  bmo:specification bmo:Measurement ;
+  bmo:quantity bmo:Air_Quality ;
+  bmo:unit bmo:celsius .
+
+ex:point/AHU-01-SF-CMD a bmo:Point ;
+  bmo:name "Supply Fan Command" ;
+  bmo:specification bmo:Command ;
+  bmo:quantity bmo:Active_Power ;
+  bmo:unit bmo:percent .
 ```
 
 ## 参考
