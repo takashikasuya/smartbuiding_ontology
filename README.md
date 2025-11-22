@@ -54,43 +54,43 @@ LinkML で定義したクラス・スロットを RDF で表現したシンプ�
 This Turtle snippet represents the same hierarchy (Site → Building → Level → Space → Equipment → Point) using RDF terms aligned with the LinkML slots. Equipment nodes describe the asset, while Points capture measurable or controllable signals with their quantity and unit.
 
 ```turtle
-@prefix bmo: <https://example.com/schema/building_model#> .
-@prefix ex:  <https://example.com/> .
+@prefix sbco: <https://www.sbco.or.jp/ont/> .
+@prefix ex:   <https://example.com/> .
 
-ex:site/001 a bmo:Site ;
-  bmo:name "Marunouchi HQ" ;
-  bmo:buildings ex:building/A .
+ex:site/001 a sbco:Site ;
+  sbco:name "Marunouchi HQ" ;
+  sbco:buildings ex:building/A .
 
-ex:building/A a bmo:Building ;
-  bmo:name "Tower A" ;
-  bmo:levels ex:level/A-3F .
+ex:building/A a sbco:Building ;
+  sbco:name "Tower A" ;
+  sbco:levels ex:level/A-3F .
 
-ex:level/A-3F a bmo:Level ;
-  bmo:name "3F" ;
-  bmo:spaces ex:space/A-3F-Office .
+ex:level/A-3F a sbco:Level ;
+  sbco:name "3F" ;
+  sbco:spaces ex:space/A-3F-Office .
 
-ex:space/A-3F-Office a bmo:Space ;
-  bmo:name "Office Area" ;
-  bmo:equipment_list ex:equip/AHU-01 .
+ex:space/A-3F-Office a sbco:Space ;
+  sbco:name "Office Area" ;
+  sbco:equipment_list ex:equip/AHU-01 .
 
-ex:equip/AHU-01 a bmo:Equipment ;
-  bmo:name "AHU-01" ;
-  bmo:specification "Air Handling Unit" ;
-  bmo:substance_in bmo:OutsideAir ;
-  bmo:substance_out bmo:SupplyAir, bmo:ReturnAir ;
-  bmo:points ex:point/AHU-01-MAT, ex:point/AHU-01-SF-CMD .
+ex:equip/AHU-01 a sbco:Equipment ;
+  sbco:name "AHU-01" ;
+  sbco:specification "Air Handling Unit" ;
+  sbco:substance_in sbco:OutsideAir ;
+  sbco:substance_out sbco:SupplyAir, sbco:ReturnAir ;
+  sbco:points ex:point/AHU-01-MAT, ex:point/AHU-01-SF-CMD .
 
-ex:point/AHU-01-MAT a bmo:Point ;
-  bmo:name "Mixed Air Temperature" ;
-  bmo:specification bmo:Measurement ;
-  bmo:quantity bmo:Air_Quality ;
-  bmo:unit bmo:celsius .
+ex:point/AHU-01-MAT a sbco:Point ;
+  sbco:name "Mixed Air Temperature" ;
+  sbco:specification sbco:Measurement ;
+  sbco:quantity sbco:Air_Quality ;
+  sbco:unit sbco:celsius .
 
-ex:point/AHU-01-SF-CMD a bmo:Point ;
-  bmo:name "Supply Fan Command" ;
-  bmo:specification bmo:Command ;
-  bmo:quantity bmo:Active_Power ;
-  bmo:unit bmo:percent .
+ex:point/AHU-01-SF-CMD a sbco:Point ;
+  sbco:name "Supply Fan Command" ;
+  sbco:specification sbco:Command ;
+  sbco:quantity sbco:Active_Power ;
+  sbco:unit sbco:percent .
 ```
 
 ## 参考
