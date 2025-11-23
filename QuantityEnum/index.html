@@ -1,0 +1,1356 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.github.io/smart-building-ontology/QuantityEnum/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Enum: QuantityEnum - Smart Building Ontology (LinkML)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/mermaid.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-quantityenum" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Smart Building Ontology (LinkML)" class="md-header__button md-logo" aria-label="Smart Building Ontology (LinkML)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Smart Building Ontology (LinkML)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: QuantityEnum
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Smart Building Ontology (LinkML)" class="md-nav__button md-logo" aria-label="Smart Building Ontology (LinkML)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Smart Building Ontology (LinkML)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generated Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generated Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes (after first build)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slots/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slots (after first build)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissible Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifier and Mapping Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LinkML Source
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="enum-quantityenum">Enum: QuantityEnum<a class="headerlink" href="#enum-quantityenum" title="Permanent link">&para;</a></h1>
+<p><em>Physical quantities that can be measured or monitored by points</em></p>
+<p>URI: <a href="https://www.sbco.or.jp/ont/QuantityEnum">sbco:QuantityEnum</a></p>
+<h2 id="permissible-values">Permissible Values<a class="headerlink" href="#permissible-values" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Absolute_Humidity</td>
+<td>None</td>
+<td>Absolute humidity measurement</td>
+</tr>
+<tr>
+<td>Acceleration_Time</td>
+<td>None</td>
+<td>Time required for acceleration</td>
+</tr>
+<tr>
+<td>Active_Energy</td>
+<td>None</td>
+<td>Active electrical energy</td>
+</tr>
+<tr>
+<td>Active_Power</td>
+<td>None</td>
+<td>Active electrical power</td>
+</tr>
+<tr>
+<td>Air_Quality</td>
+<td>None</td>
+<td>Air quality measurement</td>
+</tr>
+<tr>
+<td>Alternating_Current_Frequency</td>
+<td>None</td>
+<td>AC frequency measurement</td>
+</tr>
+<tr>
+<td>Ammonia_Concentration</td>
+<td>None</td>
+<td>Ammonia concentration in air</td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>None</td>
+<td>Angular measurement</td>
+</tr>
+<tr>
+<td>Apparent_Energy</td>
+<td>None</td>
+<td>Apparent electrical energy</td>
+</tr>
+<tr>
+<td>Apparent_Power</td>
+<td>None</td>
+<td>Apparent electrical power</td>
+</tr>
+<tr>
+<td>Atmospheric_Pressure</td>
+<td>None</td>
+<td>Atmospheric pressure measurement</td>
+</tr>
+<tr>
+<td>CO2_Concentration</td>
+<td>None</td>
+<td>Carbon dioxide concentration</td>
+</tr>
+<tr>
+<td>CO_Concentration</td>
+<td>None</td>
+<td>Carbon monoxide concentration</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>None</td>
+<td>Storage or processing capacity</td>
+</tr>
+<tr>
+<td>Cloudage</td>
+<td>None</td>
+<td>Cloud coverage measurement</td>
+</tr>
+<tr>
+<td>Complex_Power</td>
+<td>None</td>
+<td>Complex electrical power</td>
+</tr>
+<tr>
+<td>Conductivity</td>
+<td>None</td>
+<td>Electrical or thermal conductivity</td>
+</tr>
+<tr>
+<td>Current_Angle</td>
+<td>None</td>
+<td>Electrical current phase angle</td>
+</tr>
+<tr>
+<td>Current_Imbalance</td>
+<td>None</td>
+<td>Current imbalance in multi-phase systems</td>
+</tr>
+<tr>
+<td>Current_Total_Harmonic_Distortion</td>
+<td>None</td>
+<td>Total harmonic distortion of current</td>
+</tr>
+<tr>
+<td>Deceleration_Time</td>
+<td>None</td>
+<td>Time required for deceleration</td>
+</tr>
+<tr>
+<td>Dewpoint</td>
+<td>None</td>
+<td>Dew point temperature</td>
+</tr>
+<tr>
+<td>Differential_CO2_Concentration</td>
+<td>None</td>
+<td>Differential carbon dioxide concentration</td>
+</tr>
+<tr>
+<td>Differential_CO_Concentration</td>
+<td>None</td>
+<td>Differential carbon monoxide concentration</td>
+</tr>
+<tr>
+<td>Differential_Dry_Bulb_Temperature</td>
+<td>None</td>
+<td>Temperature difference (dry bulb)</td>
+</tr>
+<tr>
+<td>Differential_Dynamic_Pressure</td>
+<td>None</td>
+<td>Dynamic pressure difference</td>
+</tr>
+<tr>
+<td>Differential_Pressure</td>
+<td>None</td>
+<td>Pressure difference measurement</td>
+</tr>
+<tr>
+<td>Differential_Static_Pressure</td>
+<td>None</td>
+<td>Static pressure difference</td>
+</tr>
+<tr>
+<td>Differential_Temperature</td>
+<td>None</td>
+<td>Temperature difference</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>None</td>
+<td>Directional measurement</td>
+</tr>
+<tr>
+<td>Dry_Bulb_Temperature</td>
+<td>None</td>
+<td>Dry bulb temperature</td>
+</tr>
+<tr>
+<td>Dynamic_Pressure</td>
+<td>None</td>
+<td>Dynamic pressure measurement</td>
+</tr>
+<tr>
+<td>Electric_Current</td>
+<td>None</td>
+<td>Electrical current measurement</td>
+</tr>
+<tr>
+<td>Electric_Energy</td>
+<td>None</td>
+<td>Electrical energy measurement</td>
+</tr>
+<tr>
+<td>Electric_Power</td>
+<td>None</td>
+<td>Electrical power measurement</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>None</td>
+<td>General energy measurement</td>
+</tr>
+<tr>
+<td>Enthalpy</td>
+<td>None</td>
+<td>Enthalpy measurement</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>None</td>
+<td>Flow rate measurement</td>
+</tr>
+<tr>
+<td>Flow_Loss</td>
+<td>None</td>
+<td>Flow loss measurement</td>
+</tr>
+<tr>
+<td>Formaldehyde_Concentration</td>
+<td>None</td>
+<td>Formaldehyde concentration in air</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>None</td>
+<td>Frequency measurement</td>
+</tr>
+<tr>
+<td>GrainsOfMoisture</td>
+<td>None</td>
+<td>Moisture content in grains per pound</td>
+</tr>
+<tr>
+<td>Humidity</td>
+<td>None</td>
+<td>General humidity measurement</td>
+</tr>
+<tr>
+<td>Illuminance</td>
+<td>None</td>
+<td>Illuminance measurement</td>
+</tr>
+<tr>
+<td>Irradiance</td>
+<td>None</td>
+<td>Irradiance measurement</td>
+</tr>
+<tr>
+<td>Level</td>
+<td>None</td>
+<td>Level measurement</td>
+</tr>
+<tr>
+<td>Linear_Speed</td>
+<td>None</td>
+<td>Linear speed measurement</td>
+</tr>
+<tr>
+<td>Luminance</td>
+<td>None</td>
+<td>Luminance measurement</td>
+</tr>
+<tr>
+<td>Luminous_Flux</td>
+<td>None</td>
+<td>Luminous flux measurement</td>
+</tr>
+<tr>
+<td>Luminous_Intensity</td>
+<td>None</td>
+<td>Luminance intensity measurement</td>
+</tr>
+<tr>
+<td>Mass</td>
+<td>None</td>
+<td>Mass measurement</td>
+</tr>
+<tr>
+<td>Methane_Concentration</td>
+<td>None</td>
+<td>Methane concentration in air</td>
+</tr>
+<tr>
+<td>NO2_Concentration</td>
+<td>None</td>
+<td>Nitrogen dioxide concentration</td>
+</tr>
+<tr>
+<td>Occupancy</td>
+<td>None</td>
+<td>Occupancy detection</td>
+</tr>
+<tr>
+<td>Occupancy_Count</td>
+<td>None</td>
+<td>Number of occupants</td>
+</tr>
+<tr>
+<td>Occupancy_Percentage</td>
+<td>None</td>
+<td>Occupancy percentage</td>
+</tr>
+<tr>
+<td>Operative_Temperature</td>
+<td>None</td>
+<td>Operative temperature measurement</td>
+</tr>
+<tr>
+<td>Ozone_Concentration</td>
+<td>None</td>
+<td>Ozone concentration in air</td>
+</tr>
+<tr>
+<td>PM10_Concentration</td>
+<td>None</td>
+<td>PM10 particulate matter concentration</td>
+</tr>
+<tr>
+<td>PM1_Concentration</td>
+<td>None</td>
+<td>PM1 particulate matter concentration</td>
+</tr>
+<tr>
+<td>PM2_5_Concentration</td>
+<td>None</td>
+<td>PM2</td>
+</tr>
+<tr>
+<td>Peak_Power</td>
+<td>None</td>
+<td>Peak power measurement</td>
+</tr>
+<tr>
+<td>Phasor</td>
+<td>None</td>
+<td>Phasor measurement</td>
+</tr>
+<tr>
+<td>Phasor_Angle</td>
+<td>None</td>
+<td>Phasor angle measurement</td>
+</tr>
+<tr>
+<td>Phasor_Magnitude</td>
+<td>None</td>
+<td>Phasor magnitude measurement</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>None</td>
+<td>Position measurement</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>None</td>
+<td>General power measurement</td>
+</tr>
+<tr>
+<td>Power_Factor</td>
+<td>None</td>
+<td>Power factor measurement</td>
+</tr>
+<tr>
+<td>Precipitation</td>
+<td>None</td>
+<td>Precipitation measurement</td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>None</td>
+<td>General pressure measurement</td>
+</tr>
+<tr>
+<td>Radiance</td>
+<td>None</td>
+<td>Radiance measurement</td>
+</tr>
+<tr>
+<td>Radiant_Temperature</td>
+<td>None</td>
+<td>Radiant temperature measurement</td>
+</tr>
+<tr>
+<td>Radioactivity_Concentration</td>
+<td>None</td>
+<td>Radioactivity concentration</td>
+</tr>
+<tr>
+<td>Radon_Concentration</td>
+<td>None</td>
+<td>Radon concentration in air</td>
+</tr>
+<tr>
+<td>Reactive_Energy</td>
+<td>None</td>
+<td>Reactive electrical energy</td>
+</tr>
+<tr>
+<td>Reactive_Power</td>
+<td>None</td>
+<td>Reactive electrical power</td>
+</tr>
+<tr>
+<td>Real_Power</td>
+<td>None</td>
+<td>Real electrical power</td>
+</tr>
+<tr>
+<td>Relative_Humidity</td>
+<td>None</td>
+<td>Relative humidity measurement</td>
+</tr>
+<tr>
+<td>Rotational_Speed</td>
+<td>None</td>
+<td>Rotational speed measurement</td>
+</tr>
+<tr>
+<td>Solar_Irradiance</td>
+<td>None</td>
+<td>Solar irradiance measurement</td>
+</tr>
+<tr>
+<td>Solar_Radiance</td>
+<td>None</td>
+<td>Solar radiance measurement</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>None</td>
+<td>General speed measurement</td>
+</tr>
+<tr>
+<td>Static_Pressure</td>
+<td>None</td>
+<td>Static pressure measurement</td>
+</tr>
+<tr>
+<td>TVOC_Concentration</td>
+<td>None</td>
+<td>Total volatile organic compounds concentration</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>None</td>
+<td>General temperature measurement</td>
+</tr>
+<tr>
+<td>Thermal_Energy</td>
+<td>None</td>
+<td>Thermal energy measurement</td>
+</tr>
+<tr>
+<td>Thermal_Power</td>
+<td>None</td>
+<td>Thermal power measurement</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>None</td>
+<td>Time measurement</td>
+</tr>
+<tr>
+<td>Torque</td>
+<td>None</td>
+<td>Torque measurement</td>
+</tr>
+<tr>
+<td>Velocity_Pressure</td>
+<td>None</td>
+<td>Velocity pressure measurement</td>
+</tr>
+<tr>
+<td>Voltage</td>
+<td>None</td>
+<td>Electrical voltage measurement</td>
+</tr>
+<tr>
+<td>Voltage_Angle</td>
+<td>None</td>
+<td>Voltage phase angle</td>
+</tr>
+<tr>
+<td>Voltage_Imbalance</td>
+<td>None</td>
+<td>Voltage imbalance in multi-phase systems</td>
+</tr>
+<tr>
+<td>Weather_Condition</td>
+<td>None</td>
+<td>Weather condition measurement</td>
+</tr>
+<tr>
+<td>Wet_Bulb_Temperature</td>
+<td>None</td>
+<td>Wet bulb temperature measurement</td>
+</tr>
+<tr>
+<td>Wind_Direction</td>
+<td>None</td>
+<td>Wind direction measurement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../hasQuantity/">hasQuantity</a></td>
+<td>Physical quantity measured by this point</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
+<h3 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>description_ja</td>
+<td>ポイントで測定・監視可能な物理量</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source<a class="headerlink" href="#schema-source" title="Permanent link">&para;</a></h3>
+<ul>
+<li>from schema: https://www.sbco.or.jp/ont/schema</li>
+</ul>
+<h2 id="linkml-source">LinkML Source<a class="headerlink" href="#linkml-source" title="Permanent link">&para;</a></h2>
+<details>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QuantityEnum</span>
+<span class="nt">annotations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">description_ja</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description_ja</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ポイントで測定・監視可能な物理量</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Physical quantities that can be measured or monitored by points</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
+<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Absolute_Humidity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Absolute_Humidity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Absolute humidity measurement</span>
+<span class="w">  </span><span class="nt">Acceleration_Time</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acceleration_Time</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time required for acceleration</span>
+<span class="w">  </span><span class="nt">Active_Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Active_Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Active electrical energy</span>
+<span class="w">  </span><span class="nt">Active_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Active_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Active electrical power</span>
+<span class="w">  </span><span class="nt">Air_Quality</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Air_Quality</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Air quality measurement</span>
+<span class="w">  </span><span class="nt">Alternating_Current_Frequency</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alternating_Current_Frequency</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AC frequency measurement</span>
+<span class="w">  </span><span class="nt">Ammonia_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ammonia_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ammonia concentration in air</span>
+<span class="w">  </span><span class="nt">Angle</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Angle</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Angular measurement</span>
+<span class="w">  </span><span class="nt">Apparent_Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apparent_Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apparent electrical energy</span>
+<span class="w">  </span><span class="nt">Apparent_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apparent_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Apparent electrical power</span>
+<span class="w">  </span><span class="nt">Atmospheric_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Atmospheric pressure measurement</span>
+<span class="w">  </span><span class="nt">CO2_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO2_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Carbon dioxide concentration</span>
+<span class="w">  </span><span class="nt">CO_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Carbon monoxide concentration</span>
+<span class="w">  </span><span class="nt">Capacity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Capacity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Storage or processing capacity</span>
+<span class="w">  </span><span class="nt">Cloudage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cloudage</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cloud coverage measurement</span>
+<span class="w">  </span><span class="nt">Complex_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Complex_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Complex electrical power</span>
+<span class="w">  </span><span class="nt">Conductivity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Conductivity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical or thermal conductivity</span>
+<span class="w">  </span><span class="nt">Current_Angle</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Current_Angle</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical current phase angle</span>
+<span class="w">  </span><span class="nt">Current_Imbalance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Current_Imbalance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Current imbalance in multi-phase systems</span>
+<span class="w">  </span><span class="nt">Current_Total_Harmonic_Distortion</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Current_Total_Harmonic_Distortion</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total harmonic distortion of current</span>
+<span class="w">  </span><span class="nt">Deceleration_Time</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deceleration_Time</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time required for deceleration</span>
+<span class="w">  </span><span class="nt">Dewpoint</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dewpoint</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dew point temperature</span>
+<span class="w">  </span><span class="nt">Differential_CO2_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_CO2_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential carbon dioxide concentration</span>
+<span class="w">  </span><span class="nt">Differential_CO_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_CO_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential carbon monoxide concentration</span>
+<span class="w">  </span><span class="nt">Differential_Dry_Bulb_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_Dry_Bulb_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temperature difference (dry bulb)</span>
+<span class="w">  </span><span class="nt">Differential_Dynamic_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_Dynamic_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic pressure difference</span>
+<span class="w">  </span><span class="nt">Differential_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pressure difference measurement</span>
+<span class="w">  </span><span class="nt">Differential_Static_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_Static_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Static pressure difference</span>
+<span class="w">  </span><span class="nt">Differential_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Differential_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temperature difference</span>
+<span class="w">  </span><span class="nt">Direction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Direction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Directional measurement</span>
+<span class="w">  </span><span class="nt">Dry_Bulb_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dry_Bulb_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dry bulb temperature</span>
+<span class="w">  </span><span class="nt">Dynamic_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic pressure measurement</span>
+<span class="w">  </span><span class="nt">Electric_Current</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electric_Current</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical current measurement</span>
+<span class="w">  </span><span class="nt">Electric_Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electric_Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical energy measurement</span>
+<span class="w">  </span><span class="nt">Electric_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electric_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical power measurement</span>
+<span class="w">  </span><span class="nt">Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General energy measurement</span>
+<span class="w">  </span><span class="nt">Enthalpy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enthalpy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enthalpy measurement</span>
+<span class="w">  </span><span class="nt">Flow</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow rate measurement</span>
+<span class="w">  </span><span class="nt">Flow_Loss</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow_Loss</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow loss measurement</span>
+<span class="w">  </span><span class="nt">Formaldehyde_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Formaldehyde_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Formaldehyde concentration in air</span>
+<span class="w">  </span><span class="nt">Frequency</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Frequency</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Frequency measurement</span>
+<span class="w">  </span><span class="nt">GrainsOfMoisture</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GrainsOfMoisture</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Moisture content in grains per pound</span>
+<span class="w">  </span><span class="nt">Humidity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Humidity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General humidity measurement</span>
+<span class="w">  </span><span class="nt">Illuminance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Illuminance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Illuminance measurement</span>
+<span class="w">  </span><span class="nt">Irradiance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Irradiance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Irradiance measurement</span>
+<span class="w">  </span><span class="nt">Level</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Level</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Level measurement</span>
+<span class="w">  </span><span class="nt">Linear_Speed</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Linear_Speed</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Linear speed measurement</span>
+<span class="w">  </span><span class="nt">Luminance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminance measurement</span>
+<span class="w">  </span><span class="nt">Luminous_Flux</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminous_Flux</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminous flux measurement</span>
+<span class="w">  </span><span class="nt">Luminous_Intensity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminous_Intensity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Luminance intensity measurement</span>
+<span class="w">  </span><span class="nt">Mass</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mass</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mass measurement</span>
+<span class="w">  </span><span class="nt">Methane_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Methane_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Methane concentration in air</span>
+<span class="w">  </span><span class="nt">NO2_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NO2_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nitrogen dioxide concentration</span>
+<span class="w">  </span><span class="nt">Occupancy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Occupancy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Occupancy detection</span>
+<span class="w">  </span><span class="nt">Occupancy_Count</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Occupancy_Count</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Number of occupants</span>
+<span class="w">  </span><span class="nt">Occupancy_Percentage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Occupancy_Percentage</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Occupancy percentage</span>
+<span class="w">  </span><span class="nt">Operative_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Operative_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Operative temperature measurement</span>
+<span class="w">  </span><span class="nt">Ozone_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ozone_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ozone concentration in air</span>
+<span class="w">  </span><span class="nt">PM10_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM10_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM10 particulate matter concentration</span>
+<span class="w">  </span><span class="nt">PM1_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM1_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM1 particulate matter concentration</span>
+<span class="w">  </span><span class="nt">PM2_5_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM2_5_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PM2.5 particulate matter concentration</span>
+<span class="w">  </span><span class="nt">Peak_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peak_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Peak power measurement</span>
+<span class="w">  </span><span class="nt">Phasor</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor measurement</span>
+<span class="w">  </span><span class="nt">Phasor_Angle</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor_Angle</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor angle measurement</span>
+<span class="w">  </span><span class="nt">Phasor_Magnitude</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor_Magnitude</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Phasor magnitude measurement</span>
+<span class="w">  </span><span class="nt">Position</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Position</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Position measurement</span>
+<span class="w">  </span><span class="nt">Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General power measurement</span>
+<span class="w">  </span><span class="nt">Power_Factor</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Power_Factor</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Power factor measurement</span>
+<span class="w">  </span><span class="nt">Precipitation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Precipitation</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Precipitation measurement</span>
+<span class="w">  </span><span class="nt">Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General pressure measurement</span>
+<span class="w">  </span><span class="nt">Radiance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radiance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radiance measurement</span>
+<span class="w">  </span><span class="nt">Radiant_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radiant_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radiant temperature measurement</span>
+<span class="w">  </span><span class="nt">Radioactivity_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radioactivity_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radioactivity concentration</span>
+<span class="w">  </span><span class="nt">Radon_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radon_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Radon concentration in air</span>
+<span class="w">  </span><span class="nt">Reactive_Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reactive_Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reactive electrical energy</span>
+<span class="w">  </span><span class="nt">Reactive_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reactive_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Reactive electrical power</span>
+<span class="w">  </span><span class="nt">Real_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Real_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Real electrical power</span>
+<span class="w">  </span><span class="nt">Relative_Humidity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relative_Humidity</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Relative humidity measurement</span>
+<span class="w">  </span><span class="nt">Rotational_Speed</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rotational_Speed</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rotational speed measurement</span>
+<span class="w">  </span><span class="nt">Solar_Irradiance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solar_Irradiance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solar irradiance measurement</span>
+<span class="w">  </span><span class="nt">Solar_Radiance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solar_Radiance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solar radiance measurement</span>
+<span class="w">  </span><span class="nt">Speed</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Speed</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General speed measurement</span>
+<span class="w">  </span><span class="nt">Static_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Static_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Static pressure measurement</span>
+<span class="w">  </span><span class="nt">TVOC_Concentration</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TVOC_Concentration</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total volatile organic compounds concentration</span>
+<span class="w">  </span><span class="nt">Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General temperature measurement</span>
+<span class="w">  </span><span class="nt">Thermal_Energy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thermal_Energy</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thermal energy measurement</span>
+<span class="w">  </span><span class="nt">Thermal_Power</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thermal_Power</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Thermal power measurement</span>
+<span class="w">  </span><span class="nt">Time</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Time measurement</span>
+<span class="w">  </span><span class="nt">Torque</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Torque</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Torque measurement</span>
+<span class="w">  </span><span class="nt">Velocity_Pressure</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Velocity_Pressure</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Velocity pressure measurement</span>
+<span class="w">  </span><span class="nt">Voltage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Voltage</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Electrical voltage measurement</span>
+<span class="w">  </span><span class="nt">Voltage_Angle</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Voltage_Angle</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Voltage phase angle</span>
+<span class="w">  </span><span class="nt">Voltage_Imbalance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Voltage_Imbalance</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Voltage imbalance in multi-phase systems</span>
+<span class="w">  </span><span class="nt">Weather_Condition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Weather_Condition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Weather condition measurement</span>
+<span class="w">  </span><span class="nt">Wet_Bulb_Temperature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wet_Bulb_Temperature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wet bulb temperature measurement</span>
+<span class="w">  </span><span class="nt">Wind_Direction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wind_Direction</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wind direction measurement</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/your-org/smart-building-ontology" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+      
+        <script src="../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
