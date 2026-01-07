@@ -57,6 +57,8 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
     
 
         
+      Asset : description
+        
       Asset : documentation
         
       Asset : geometry
@@ -73,15 +75,6 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
       Asset : hasPart
         
       Asset : hasPoint
-        
-          
-    
-        
-        
-        Asset --> "*" Point : hasPoint
-        click Point href "../Point/"
-    
-
         
       Asset : id
         
@@ -167,9 +160,10 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
 | [commissionedBy](commissionedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that commissioned this asset | direct |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | direct |
 | [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | direct |
-| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | direct |
+| [hasPoint](hasPoint.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | direct |
 | [installedBy](installedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that installed this asset | direct |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | direct |
 | [locatedIn](locatedIn.md) | * <br/> [Resource](Resource.md) | Space where this asset is located | direct |
@@ -260,6 +254,7 @@ slots:
 - id
 - commissionedBy
 - documentation
+- description
 - geometry
 - hasPart
 - hasPoint
@@ -334,7 +329,7 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
   commissionedBy:
     name: commissionedBy
     description: Agent or resource that commissioned this asset
@@ -366,6 +361,23 @@ attributes:
     any_of:
     - range: Resource
     - range: Document
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Asset
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -406,8 +418,11 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: Point
+    range: string
     multivalued: true
+    any_of:
+    - range: Point
+    - range: PointExt
   installedBy:
     name: installedBy
     description: Agent or resource that installed this asset

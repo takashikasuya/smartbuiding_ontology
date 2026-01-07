@@ -32,7 +32,7 @@ Alias: isPointOf
 
 ## Properties
 
-* Range: [Equipment](Equipment.md)
+* Range: [String](String.md)&nbsp;or&nbsp;<br />[Equipment](Equipment.md)&nbsp;or&nbsp;<br />[EquipmentExt](EquipmentExt.md)
 
 
 
@@ -85,7 +85,10 @@ slot_uri: brick:isPointOf
 alias: isPointOf
 domain_of:
 - Point
-range: Equipment
+range: string
+any_of:
+- range: Equipment
+- range: EquipmentExt
 
 ```
 </details>

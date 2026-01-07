@@ -44,6 +44,8 @@ URI: [rec:Space](https://w3id.org/rec/Space)
     
 
         
+      Space : description
+        
       Space : geometry
         
           
@@ -132,6 +134,7 @@ URI: [rec:Space](https://w3id.org/rec/Space)
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
 
 
 
@@ -244,6 +247,7 @@ slots:
 - customTags
 - identifiers
 - name
+- description
 class_uri: rec:Space
 
 ```
@@ -293,7 +297,7 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -456,6 +460,23 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Space
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
 class_uri: rec:Space
 
 ```

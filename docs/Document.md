@@ -230,6 +230,8 @@ attributes:
     alias: description
     owner: Document
     domain_of:
+    - Space
+    - Asset
     - Information
     range: string
   identifiers:

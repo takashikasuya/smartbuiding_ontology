@@ -55,6 +55,8 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
     
 
         
+      Equipment : description
+        
       Equipment : documentation
         
       Equipment : feeds
@@ -82,15 +84,6 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
       Equipment : hasPart
         
       Equipment : hasPoint
-        
-          
-    
-        
-        
-        Equipment --> "*" Point : hasPoint
-        click Point href "../Point/"
-    
-
         
       Equipment : id
         
@@ -193,9 +186,10 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Asset](Asset.md) |
 | [commissionedBy](commissionedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that commissioned this asset | [Asset](Asset.md) |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | [Asset](Asset.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Asset](Asset.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Asset](Asset.md) |
 | [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | [Asset](Asset.md) |
-| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | [Asset](Asset.md) |
+| [hasPoint](hasPoint.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | [Asset](Asset.md) |
 | [installedBy](installedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that installed this asset | [Asset](Asset.md) |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | [Asset](Asset.md) |
 | [locatedIn](locatedIn.md) | * <br/> [Space](Space.md) | Space where this asset is located | [Asset](Asset.md) |
@@ -226,8 +220,8 @@ URI: [brick:Equipment](https://brickschema.org/schema/Brick#Equipment)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Point](Point.md) | [isPointOf](isPointOf.md) | range | [Equipment](Equipment.md) |
-| [PointExt](PointExt.md) | [isPointOf](isPointOf.md) | range | [Equipment](Equipment.md) |
+| [Point](Point.md) | [isPointOf](isPointOf.md) | any_of[range] | [Equipment](Equipment.md) |
+| [PointExt](PointExt.md) | [isPointOf](isPointOf.md) | any_of[range] | [Equipment](Equipment.md) |
 
 
 
@@ -392,7 +386,7 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
   commissionedBy:
     name: commissionedBy
     description: Agent or resource that commissioned this asset
@@ -424,6 +418,23 @@ attributes:
     any_of:
     - range: Resource
     - range: Document
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Equipment
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -464,8 +475,11 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: Point
+    range: string
     multivalued: true
+    any_of:
+    - range: Point
+    - range: PointExt
   installedBy:
     name: installedBy
     description: Agent or resource that installed this asset

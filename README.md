@@ -15,9 +15,9 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # Generate artifacts
-linkml generate owl --schema schema/building_model.yaml --output output/building_model.owl.ttl
-linkml generate shacl --schema schema/building_model.yaml --output output/building_model.shacl.ttl
-linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
+linkml generate owl --metadata-profile rdfs schema/building_model.yaml -f ttl >  output/building_model.owl.ttl
+linkml generate shacl -s Shape schema/building_model.yaml > output/building_model.shacl.ttl
+linkml generate json-schema schema/building_model.yaml > output/building_model.schema.json
 
 # Generate docs and preview
 gen-doc --directory docs schema/building_model.yaml

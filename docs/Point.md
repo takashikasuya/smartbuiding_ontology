@@ -92,15 +92,6 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
         
       Point : isPointOf
         
-          
-    
-        
-        
-        Point --> "0..1" Equipment : isPointOf
-        click Equipment href "../Equipment/"
-    
-
-        
       Point : name
         
       
@@ -121,7 +112,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
-| [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md) | Equipment that this point belongs to | direct |
+| [isPointOf](isPointOf.md) | 0..1 <br/> [String](String.md)&nbsp;or&nbsp;<br />[Equipment](Equipment.md)&nbsp;or&nbsp;<br />[EquipmentExt](EquipmentExt.md) | Equipment that this point belongs to | direct |
 | [aggregate](aggregate.md) | 0..1 <br/> [AggregateEnum](AggregateEnum.md) | Aggregation function or method for point data processing | direct |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
@@ -138,13 +129,13 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [Site](Site.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [Building](Building.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [Level](Level.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [Asset](Asset.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
-| [EquipmentExt](EquipmentExt.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Site](Site.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
 
 
 
@@ -261,7 +252,7 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
   isPointOf:
     name: isPointOf
     annotations:
@@ -276,7 +267,10 @@ attributes:
     owner: Point
     domain_of:
     - Point
-    range: Equipment
+    range: string
+    any_of:
+    - range: Equipment
+    - range: EquipmentExt
   aggregate:
     name: aggregate
     annotations:

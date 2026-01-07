@@ -22,13 +22,13 @@ Alias: hasPoint
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 | [Level](Level.md) | A building storey |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
 | [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 
 
@@ -37,7 +37,7 @@ Alias: hasPoint
 
 ## Properties
 
-* Range: [Point](Point.md)
+* Range: [String](String.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md)
 
 * Multivalued: True
 
@@ -82,8 +82,11 @@ alias: hasPoint
 domain_of:
 - Architecture
 - Asset
-range: Point
+range: string
 multivalued: true
+any_of:
+- range: Point
+- range: PointExt
 
 ```
 </details>

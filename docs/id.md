@@ -22,20 +22,20 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
-| [Level](Level.md) | A building storey |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |  no  |
 | [Organization](Organization.md) | An organization such as a company, institution, or association |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [Level](Level.md) | A building storey |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Agent](Agent.md) | An entity that can act or be acted upon |  no  |
 | [BuildingElement](BuildingElement.md) | A part of the building structure |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 | [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
-| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |  no  |
 
 
@@ -49,7 +49,7 @@ Alias: id
 
 * Required: True
 
-* Regex pattern: `^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$`
+* Regex pattern: `^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$`
 
 
 
@@ -117,7 +117,7 @@ domain_of:
 - ArchitectureCapacity
 range: string
 required: true
-pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
 
 ```
 </details>

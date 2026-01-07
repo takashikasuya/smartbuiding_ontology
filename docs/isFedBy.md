@@ -22,12 +22,12 @@ Alias: isFedBy
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 
 
 

@@ -302,6 +302,8 @@ attributes:
     alias: description
     owner: PostalAddress
     domain_of:
+    - Space
+    - Asset
     - Information
     range: string
   format:

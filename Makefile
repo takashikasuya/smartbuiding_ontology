@@ -12,9 +12,9 @@ install: venv
 	$(PIP) install -r requirements.txt
 
 gen:
-	linkml generate owl --schema schema/building_model.yaml --output output/building_model.owl.ttl
-	linkml generate shacl --schema schema/building_model.yaml --output output/building_model.shacl.ttl
-	linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
+	linkml generate owl --metadata-profile rdfs schema/building_model.yaml -f ttl >  output/building_model.owl.ttl
+	linkml generate shacl -s Shape schema/building_model.yaml > output/building_model.shacl.ttl
+	linkml generate json-schema schema/building_model.yaml > output/building_model.schema.json
 	linkml generate doc --directory docs schema/building_model.yaml
 
 docs:

@@ -392,7 +392,7 @@ slots:
     range: string
     identifier: true
     required: true
-    pattern: "^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$"
+    pattern: "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$"
     annotations:
       - tag: description_ja
         value: "スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。"
@@ -728,7 +728,9 @@ slots:
     
   hasPoint:
     description: "Point associated with this architecture"
-    range: Point
+    any_of:
+      - range: Point
+      - range: PointExt
     multivalued: true
     slot_uri: rec:hasPoint
     
@@ -816,7 +818,9 @@ slots:
 
   isPointOf:
     description: "Equipment that this point belongs to"
-    range: Equipment
+    any_of:
+      - range: Equipment
+      - range: EquipmentExt
     slot_uri: brick:isPointOf
     annotations:
       - tag: description_ja
@@ -927,6 +931,7 @@ classes:
     - customTags
     - identifiers
     - name
+    - description
   
   Architecture:
     abstract: true 
@@ -1007,6 +1012,7 @@ classes:
       - id
       - commissionedBy
       - documentation
+      - description
       - geometry
       - hasPart
       - hasPoint
@@ -1104,7 +1110,9 @@ classes:
 
     slot_usage:
       isPointOf:
-        range: Equipment  # SBCOPoint is specifically a point of Equipment
+        any_of:
+          - range: Equipment
+          - range: EquipmentExt
 
   KeyStringMapEntry:
     description: map(string -> string) の1エントリ

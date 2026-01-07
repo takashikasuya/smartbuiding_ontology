@@ -217,6 +217,8 @@ attributes:
     alias: description
     owner: Media
     domain_of:
+    - Space
+    - Asset
     - Information
     range: string
   identifiers:

@@ -22,14 +22,14 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |  no  |
-| [Schema](Schema.md) | A schema definition file |  no  |
-| [Media](Media.md) | A media file such as audio or video content |  no  |
-| [Information](Information.md) | Abstract base class for information resources such as documents, images, medi... |  no  |
-| [Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |  no  |
-| [Document](Document.md) | A document providing information about a building element or asset |  no  |
 | [PostalAddress](PostalAddress.md) | A postal address |  no  |
+| [Document](Document.md) | A document providing information about a building element or asset |  no  |
+| [Media](Media.md) | A media file such as audio or video content |  no  |
 | [Image](Image.md) | An image file containing visual information |  no  |
+| [Schema](Schema.md) | A schema definition file |  no  |
+| [Information](Information.md) | Abstract base class for information resources such as documents, images, medi... |  no  |
+| [Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |  no  |
+| [Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |  no  |
 
 
 

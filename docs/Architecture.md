@@ -114,6 +114,8 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
     
 
         
+      Architecture : description
+        
       Architecture : documentation
         
       Architecture : geometry
@@ -141,15 +143,6 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
       Architecture : hasPart
         
       Architecture : hasPoint
-        
-          
-    
-        
-        
-        Architecture --> "*" Point : hasPoint
-        click Point href "../Point/"
-    
-
         
       Architecture : id
         
@@ -233,7 +226,7 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 | [constructedBy](constructedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
 | [containsElement](containsElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element contained within this architecture | direct |
 | [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | direct |
-| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | direct |
+| [hasPoint](hasPoint.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | direct |
 | [intersectingElement](intersectingElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | direct |
 | [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | direct |
 | [operatedBy](operatedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that operates this architecture | direct |
@@ -248,6 +241,7 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Space](Space.md) |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Space](Space.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Space](Space.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Space](Space.md) |
 
 
 
@@ -451,8 +445,11 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: Point
+    range: string
     multivalued: true
+    any_of:
+    - range: Point
+    - range: PointExt
   intersectingElement:
     name: intersectingElement
     description: Building element intersecting with this architecture
@@ -543,7 +540,7 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
+    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -706,6 +703,23 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Architecture
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
 class_uri: rec:Architecture
 
 ```
