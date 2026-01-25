@@ -15,14 +15,17 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # Generate artifacts
-linkml generate owl --schema schema/building_model.yaml --output output/building_model.owl.ttl
-linkml generate shacl --schema schema/building_model.yaml --output output/building_model.shacl.ttl
-linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
+linkml generate owl schema/building_model.yaml > output/building_model.owl.ttl
+linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl
+linkml generate json-schema schema/building_model.yaml > output/building_model.schema.json
 
 # Generate docs and preview
 gen-doc --directory docs schema/building_model.yaml
 mkdocs serve
 ```
+
+_SHACL shapes honor class inheritance when you add `--include-range-class-descendants`, which makes the generated constraints cover each range class and its descendants, and the `--suffix Shape` flag appends `Shape` to each generated shape name so the class-to-shape mapping stays clear; because the LinkML generators (`owl`, `shacl`, `json-schema`) do not accept `--schema`/`--output`, every invocation writes to stdout, so this repo lists `PointExt`/`EquipmentExt` in the `hasPoint`/`isPointOf` ranges, uses `--non-closed` for SHACL, and redirects the output for each artifact (for example, `linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl`).  
+_SHACL にクラス継承（range クラスの子孫）を反映させるには `--include-range-class-descendants`、各シェイプ名に `Shape` をつけるには `--suffix Shape` を付けて生成してください。LinkML の `generate` サブコマンドは `--schema`/`--output` を受け付けず stdout に出力するため、このリポジトリでは `schema/building_model.yaml` で `hasPoint`/`isPointOf` の range に `PointExt`・`EquipmentExt` を明示し、SHACL には `--non-closed` を渡して open にした状態で（例: `linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl`）ファイルをリダイレクトして成果物を保存します。_
 
 ## CI/CD
 

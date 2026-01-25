@@ -728,7 +728,9 @@ slots:
     
   hasPoint:
     description: "Point associated with this architecture"
-    range: Point
+    any_of:
+      - range: Point
+      - range: PointExt
     multivalued: true
     slot_uri: rec:hasPoint
     
@@ -816,7 +818,9 @@ slots:
 
   isPointOf:
     description: "Equipment that this point belongs to"
-    range: Equipment
+    any_of:
+      - range: Equipment
+      - range: EquipmentExt
     slot_uri: brick:isPointOf
     annotations:
       - tag: description_ja
@@ -1104,7 +1108,9 @@ classes:
 
     slot_usage:
       isPointOf:
-        range: Equipment  # SBCOPoint is specifically a point of Equipment
+        any_of:
+          - range: Equipment
+          - range: EquipmentExt  # SBCOPoint is specifically a point of Equipment
 
   KeyStringMapEntry:
     description: map(string -> string) の1エントリ

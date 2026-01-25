@@ -13,7 +13,7 @@ install: venv
 
 gen:
 	linkml generate owl --schema schema/building_model.yaml --output output/building_model.owl.ttl
-	linkml generate shacl --schema schema/building_model.yaml --output output/building_model.shacl.ttl
+	linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl
 	linkml generate json-schema --schema schema/building_model.yaml --output output/building_model.schema.json
 	linkml generate doc --directory docs schema/building_model.yaml
 
