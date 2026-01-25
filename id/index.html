@@ -474,13 +474,8 @@ Alias: id</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../ArchitectureCapacity/">ArchitectureCapacity</a></td>
-<td>Describes business-relevant capacity measurements typically associated with a...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../BuildingElement/">BuildingElement</a></td>
-<td>A part of the building structure</td>
+<td><a href="../Building/">Building</a></td>
+<td>A building which is part of a site</td>
 <td>no</td>
 </tr>
 <tr>
@@ -489,43 +484,13 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Equipment/">Equipment</a></td>
-<td>An equipment asset installed in a space</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Agent/">Agent</a></td>
-<td>An entity that can act or be acted upon</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PointExt/">PointExt</a></td>
-<td>A point (sensor/actuator) in a smart building context</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Organization/">Organization</a></td>
-<td>An organization such as a company, institution, or association</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
-<td>Describes business-relevant area measurements typically associated with archi...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Site/">Site</a></td>
 <td>A piece of land upon which zero or more buildings may be situated</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Building/">Building</a></td>
-<td>A building which is part of a site</td>
+<td><a href="../Equipment/">Equipment</a></td>
+<td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
 <tr>
@@ -539,13 +504,48 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Something which is placed inside of a building, but is not an integral part o...</td>
+<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
+<td>Describes business-relevant area measurements typically associated with archi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Organization/">Organization</a></td>
+<td>An organization such as a company, institution, or association</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PointExt/">PointExt</a></td>
+<td>A point (sensor/actuator) in a smart building context</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BuildingElement/">BuildingElement</a></td>
+<td>A part of the building structure</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ArchitectureCapacity/">ArchitectureCapacity</a></td>
+<td>Describes business-relevant capacity measurements typically associated with a...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Agent/">Agent</a></td>
+<td>An entity that can act or be acted upon</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Space/">Space</a></td>
 <td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td>Something which is placed inside of a building, but is not an integral part o...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -559,7 +559,7 @@ Alias: id</p>
 <p>Required: True</p>
 </li>
 <li>
-<p>Regex pattern: <code>^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$</code></p>
+<p>Regex pattern: <code>^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$</code></p>
 </li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
@@ -633,7 +633,7 @@ Alias: id</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(?:[a-zA-Z][a-zA-Z0-9_:\-]*|dtmi:[A-Za-z0-9_:.;\-]+)$</span>
+<span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$</span>
 </code></pre></div>
 </details>
 
