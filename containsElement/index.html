@@ -463,11 +463,6 @@ Alias: containsElement</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Site/">Site</a></td>
-<td>A piece of land upon which zero or more buildings may be situated</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Building/">Building</a></td>
 <td>A building which is part of a site</td>
 <td>no</td>
@@ -475,6 +470,11 @@ Alias: containsElement</p>
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>A piece of land upon which zero or more buildings may be situated</td>
 <td>no</td>
 </tr>
 <tr>
@@ -487,7 +487,7 @@ Alias: containsElement</p>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Range: <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../BuildingElement/">BuildingElement</a></p>
+<p>Range: <a href="../BuildingElement/">BuildingElement</a></p>
 </li>
 <li>
 <p>Multivalued: True</p>
@@ -527,11 +527,8 @@ Alias: containsElement</p>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">containsElement</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">any_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 </code></pre></div>
 </details>
 

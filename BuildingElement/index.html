@@ -563,7 +563,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../IdString/">IdString</a></td>
 <td>Unique identifier within the schema</td>
 <td>direct</td>
 </tr>
@@ -607,91 +607,91 @@
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td><a href="../adjacentElement/">adjacentElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td><a href="../containsElement/">containsElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td><a href="../intersectingElement/">intersectingElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
 <td><a href="../adjacentElement/">adjacentElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
 <td><a href="../containsElement/">containsElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
 <td><a href="../intersectingElement/">intersectingElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Building/">Building</a></td>
 <td><a href="../adjacentElement/">adjacentElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Building/">Building</a></td>
 <td><a href="../containsElement/">containsElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Building/">Building</a></td>
 <td><a href="../intersectingElement/">intersectingElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
 <td><a href="../adjacentElement/">adjacentElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
 <td><a href="../containsElement/">containsElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
 <td><a href="../intersectingElement/">intersectingElement</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
 <td><a href="../mountedOn/">mountedOn</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../mountedOn/">mountedOn</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 <tr>
 <td><a href="../EquipmentExt/">EquipmentExt</a></td>
 <td><a href="../mountedOn/">mountedOn</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">BuildingElement</a></td>
 </tr>
 </tbody>
@@ -803,9 +803,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdString</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Machine or Human-readable name</span>

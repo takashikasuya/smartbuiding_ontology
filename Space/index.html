@@ -553,6 +553,15 @@
 
       Space : hasPart
 
+
+
+
+
+        Space --&gt; "*" Space : hasPart
+        click Space href "../Space/"
+
+
+
       Space : id
 
       Space : identifiers
@@ -572,8 +581,8 @@
 
 
 
-        Space --&gt; "*" Space : isLocationOf
-        click Space href "../Space/"
+        Space --&gt; "*" Resource : isLocationOf
+        click Resource href "../Resource/"
 
 
 
@@ -611,7 +620,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../IdString/">IdString</a></td>
 <td>Unique identifier within the schema</td>
 <td>direct</td>
 </tr>
@@ -629,19 +638,19 @@
 </tr>
 <tr>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="./">Space</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a></td>
+<td>* <br/> <a href="./">Space</a></td>
 <td>The subject is composed in part of the entity given by the object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../isLocationOf/">isLocationOf</a></td>
-<td>* <br/> <a href="./">Space</a></td>
+<td>* <br/> <a href="../Resource/">Resource</a></td>
 <td>Subject is the physical location encapsulating the object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../isPartOf/">isPartOf</a></td>
-<td>0..1 <br/> <a href="./">Space</a>&nbsp;or&nbsp;<br /><a href="./">Space</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a></td>
+<td>0..1 <br/> <a href="./">Space</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -691,12 +700,6 @@
 <tr>
 <td><a href="./">Space</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="./">Space</a></td>
-<td><a href="../isLocationOf/">isLocationOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
@@ -704,23 +707,11 @@
 <td><a href="./">Space</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="./">Space</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td><a href="../isLocationOf/">isLocationOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
@@ -731,20 +722,8 @@
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
 <td><a href="../Site/">Site</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td><a href="../isLocationOf/">isLocationOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
@@ -752,23 +731,11 @@
 <td><a href="../Site/">Site</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Building/">Building</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Building/">Building</a></td>
-<td><a href="../isLocationOf/">isLocationOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
@@ -776,23 +743,11 @@
 <td><a href="../Building/">Building</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Building/">Building</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Level/">Level</a></td>
-<td><a href="../isLocationOf/">isLocationOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
@@ -800,18 +755,12 @@
 <td><a href="../Level/">Level</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Level/">Level</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
@@ -822,26 +771,20 @@
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
+<td><a href="../locatedIn/">locatedIn</a></td>
+<td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../Equipment/">Equipment</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
@@ -853,19 +796,13 @@
 <tr>
 <td><a href="../EquipmentExt/">EquipmentExt</a></td>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>any_of[range]</td>
-<td><a href="./">Space</a></td>
-</tr>
-<tr>
-<td><a href="../EquipmentExt/">EquipmentExt</a></td>
-<td><a href="../isPartOf/">isPartOf</a></td>
 <td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
 <td><a href="../EquipmentExt/">EquipmentExt</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
-<td>any_of[range]</td>
+<td>range</td>
 <td><a href="./">Space</a></td>
 </tr>
 <tr>
@@ -991,9 +928,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdString</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$</span>
 <span class="w">  </span><span class="nt">geometry</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geometry</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Polygon representing the spatial extent of this Space.</span>
@@ -1033,11 +969,8 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">  </span><span class="nt">isLocationOf</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isLocationOf</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subject is the physical location encapsulating the object.</span>
@@ -1048,7 +981,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">isPartOf</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isPartOf</span>
@@ -1062,9 +995,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">  </span><span class="nt">customProperties</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">customProperties</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">map(string -&gt; map(string -&gt; string))</span>

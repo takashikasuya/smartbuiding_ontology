@@ -463,8 +463,8 @@ Alias: documentation</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Building/">Building</a></td>
-<td>A building which is part of a site</td>
+<td><a href="../Asset/">Asset</a></td>
+<td>Something which is placed inside of a building, but is not an integral part o...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -478,6 +478,16 @@ Alias: documentation</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../Building/">Building</a></td>
+<td>A building which is part of a site</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td>An equipment asset installed in a space</td>
 <td>no</td>
@@ -487,22 +497,12 @@ Alias: documentation</p>
 <td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Something which is placed inside of a building, but is not an integral part o...</td>
-<td>no</td>
-</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Range: <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Document/">Document</a></p>
+<p>Range: <a href="../Document/">Document</a></p>
 </li>
 <li>
 <p>Multivalued: True</p>
@@ -543,11 +543,8 @@ Alias: documentation</p>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">any_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document</span>
 </code></pre></div>
 </details>
 

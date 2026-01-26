@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.github.io/smart-building-ontology/capacity/">
+        <link rel="canonical" href="https://example.github.io/smart-building-ontology/Entity/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: capacity - Smart Building Ontology (LinkML)</title>
+        <title>Class: Entity - Smart Building Ontology (LinkML)</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-capacity" class="md-skip">
+        <a href="#class-entity" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: capacity
+              Class: Entity
             
           </span>
         </div>
@@ -358,10 +358,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#inheritance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
+        Inheritance
       
     </span>
   </a>
@@ -369,10 +369,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
+        Slots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usages
       
     </span>
   </a>
@@ -427,6 +438,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="LinkML Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#induced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Induced
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -446,48 +485,157 @@
 
 
 
-<h1 id="slot-capacity">Slot: capacity<a class="headerlink" href="#slot-capacity" title="Permanent link">&para;</a></h1>
-<p><em>Capacity of the architecture</em></p>
-<p>URI: <a href="https://w3id.org/rec/capacity">rec:capacity</a>
-Alias: capacity</p>
-<!-- no inheritance hierarchy -->
+<h1 id="class-entity">Class: Entity<a class="headerlink" href="#class-entity" title="Permanent link">&para;</a></h1>
+<p><em>Base class for spaces and resources</em></p>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
+<p>URI: <a href="https://www.sbco.or.jp/ont/Entity">sbco:Entity</a></p>
+<pre class="mermaid"><code> classDiagram
+    class Entity
+    click Entity href "../Entity/"
+      Entity &lt;|-- Space
+        click Space href "../Space/"
+      Entity &lt;|-- Resource
+        click Resource href "../Resource/"
 
-<h2 id="applicable-classes">Applicable Classes<a class="headerlink" href="#applicable-classes" title="Permanent link">&para;</a></h2>
+</code></pre>
+<h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Entity</strong><ul>
+<li><a href="../Space/">Space</a></li>
+<li><a href="../Resource/">Resource</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
+<th>Cardinality and Range</th>
 <th>Description</th>
-<th>Modifies Slot</th>
+<th>Inheritance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Building/">Building</a></td>
-<td>A building which is part of a site</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A piece of land upon which zero or more buildings may be situated</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Level/">Level</a></td>
-<td>A building storey</td>
-<td>no</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Range: <a href="../ArchitectureCapacity/">ArchitectureCapacity</a></li>
-</ul>
+<h2 id="usages">Usages<a class="headerlink" href="#usages" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Space/">Space</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Space/">Space</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Building/">Building</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Building/">Building</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Level/">Level</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Level/">Level</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Equipment/">Equipment</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../Equipment/">Equipment</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../EquipmentExt/">EquipmentExt</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+<tr>
+<td><a href="../EquipmentExt/">EquipmentExt</a></td>
+<td><a href="../isPartOf/">isPartOf</a></td>
+<td>range</td>
+<td><a href="./">Entity</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
 <h3 id="schema-source">Schema Source<a class="headerlink" href="#schema-source" title="Permanent link">&para;</a></h3>
 <ul>
@@ -504,25 +652,34 @@ Alias: capacity</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>rec:capacity</td>
+<td>sbco:Entity</td>
 </tr>
 <tr>
 <td>native</td>
-<td>sbco:capacity</td>
+<td>sbco:Entity</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source<a class="headerlink" href="#linkml-source" title="Permanent link">&para;</a></h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+<h3 id="direct">Direct<a class="headerlink" href="#direct" title="Permanent link">&para;</a></h3>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">capacity</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Capacity of the architecture</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Entity</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Base class for spaces and resources</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:capacity</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">capacity</span>
-<span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
+<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sbco:Entity</span>
+</code></pre></div>
+</details>
+
+<h3 id="induced">Induced<a class="headerlink" href="#induced" title="Permanent link">&para;</a></h3>
+<details>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Entity</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Base class for spaces and resources</span>
+<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
+<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sbco:Entity</span>
 </code></pre></div>
 </details>
 

@@ -514,6 +514,15 @@
 
       Equipment : commissionedBy
 
+
+
+
+
+        Equipment --&gt; "*" Agent : commissionedBy
+        click Agent href "../Agent/"
+
+
+
       Equipment : commissioningDate
 
       Equipment : customProperties
@@ -542,6 +551,15 @@
 
       Equipment : documentation
 
+
+
+
+
+        Equipment --&gt; "*" Document : documentation
+        click Document href "../Document/"
+
+
+
       Equipment : feeds
 
 
@@ -566,7 +584,25 @@
 
       Equipment : hasPart
 
+
+
+
+
+        Equipment --&gt; "*" Space : hasPart
+        click Space href "../Space/"
+
+
+
       Equipment : hasPoint
+
+
+
+
+
+        Equipment --&gt; "*" Point : hasPoint
+        click Point href "../Point/"
+
+
 
       Equipment : id
 
@@ -586,6 +622,15 @@
       Equipment : installationDate
 
       Equipment : installedBy
+
+
+
+
+
+        Equipment --&gt; "*" Agent : installedBy
+        click Agent href "../Agent/"
+
+
 
       Equipment : IPAddress
 
@@ -628,9 +673,27 @@
 
       Equipment : manufacturedBy
 
+
+
+
+
+        Equipment --&gt; "*" Agent : manufacturedBy
+        click Agent href "../Agent/"
+
+
+
       Equipment : modelNumber
 
       Equipment : mountedOn
+
+
+
+
+
+        Equipment --&gt; "0..1" BuildingElement : mountedOn
+        click BuildingElement href "../BuildingElement/"
+
+
 
       Equipment : name
 
@@ -639,6 +702,15 @@
       Equipment : serialNumber
 
       Equipment : servicedBy
+
+
+
+
+
+        Equipment --&gt; "*" Agent : servicedBy
+        click Agent href "../Agent/"
+
+
 
       Equipment : turnoverDate
 
@@ -689,19 +761,19 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../IdString/">IdString</a></td>
 <td>Unique identifier within the schema</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../commissionedBy/">commissionedBy</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Agent/">Agent</a></td>
+<td>* <br/> <a href="../Agent/">Agent</a></td>
 <td>Agent or resource that commissioned this asset</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../documentation/">documentation</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Document/">Document</a></td>
+<td>* <br/> <a href="../Document/">Document</a></td>
 <td>Documentation related to this asset</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
@@ -719,25 +791,25 @@
 </tr>
 <tr>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a></td>
+<td>* <br/> <a href="../Space/">Space</a></td>
 <td>The subject is composed in part of the entity given by the object</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../hasPoint/">hasPoint</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Point/">Point</a>&nbsp;or&nbsp;<br /><a href="../PointExt/">PointExt</a></td>
+<td>* <br/> <a href="../Point/">Point</a>&nbsp;or&nbsp;<br /><a href="../Point/">Point</a>&nbsp;or&nbsp;<br /><a href="../PointExt/">PointExt</a></td>
 <td>Point associated with this architecture</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../installedBy/">installedBy</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Agent/">Agent</a></td>
+<td>* <br/> <a href="../Agent/">Agent</a></td>
 <td>Agent or resource that installed this asset</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../isPartOf/">isPartOf</a></td>
-<td>0..1 <br/> <a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a></td>
+<td>0..1 <br/> <a href="../Space/">Space</a></td>
 <td></td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
@@ -749,19 +821,19 @@
 </tr>
 <tr>
 <td><a href="../manufacturedBy/">manufacturedBy</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Agent/">Agent</a></td>
+<td>* <br/> <a href="../Agent/">Agent</a></td>
 <td>Agent or resource that manufactured this asset</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../mountedOn/">mountedOn</a></td>
-<td>0..1 <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../BuildingElement/">BuildingElement</a></td>
+<td>0..1 <br/> <a href="../BuildingElement/">BuildingElement</a></td>
 <td>Building element on which this asset is mounted</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
 <tr>
 <td><a href="../servicedBy/">servicedBy</a></td>
-<td>* <br/> <a href="../String/">String</a>&nbsp;or&nbsp;<br /><a href="../Resource/">Resource</a>&nbsp;or&nbsp;<br /><a href="../Agent/">Agent</a></td>
+<td>* <br/> <a href="../Agent/">Agent</a></td>
 <td>Agent or resource that services this asset</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
@@ -821,7 +893,7 @@
 </tr>
 <tr>
 <td><a href="../maintenanceInterval/">maintenanceInterval</a></td>
-<td>* <br/> <a href="../Duration/">Duration</a></td>
+<td>* <br/> <a href="../DurationString/">DurationString</a></td>
 <td>Maintenance interval duration</td>
 <td><a href="../Asset/">Asset</a></td>
 </tr>
@@ -871,7 +943,13 @@
 <tr>
 <td><a href="../Point/">Point</a></td>
 <td><a href="../isPointOf/">isPointOf</a></td>
-<td>any_of[range]</td>
+<td>range</td>
+<td><a href="./">Equipment</a></td>
+</tr>
+<tr>
+<td><a href="../PointExt/">PointExt</a></td>
+<td><a href="../isPointOf/">isPointOf</a></td>
+<td>range</td>
 <td><a href="./">Equipment</a></td>
 </tr>
 <tr>
@@ -1039,9 +1117,8 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdString</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$</span>
 <span class="w">  </span><span class="nt">commissionedBy</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commissionedBy</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent or resource that commissioned this asset</span>
@@ -1052,11 +1129,8 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">  </span><span class="nt">documentation</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Documentation related to this asset</span>
@@ -1068,11 +1142,8 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Document</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
 <span class="w">    </span><span class="nt">annotations</span><span class="p">:</span>
@@ -1114,11 +1185,8 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">  </span><span class="nt">hasPoint</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasPoint</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Point associated with this architecture</span>
@@ -1130,7 +1198,7 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Point</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Point</span>
@@ -1145,11 +1213,8 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">  </span><span class="nt">isPartOf</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isPartOf</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
@@ -1162,9 +1227,6 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">  </span><span class="nt">locatedIn</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">locatedIn</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space where this asset is located</span>
@@ -1187,11 +1249,8 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">  </span><span class="nt">mountedOn</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mountedOn</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Building element on which this asset is mounted</span>
@@ -1202,10 +1261,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="w">  </span><span class="nt">servicedBy</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">servicedBy</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent or resource that services this asset</span>
@@ -1216,11 +1272,8 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
 <span class="w">  </span><span class="nt">assetTag</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assetTag</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset identification tag</span>
@@ -1372,7 +1425,7 @@
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Duration</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DurationString</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">modelNumber</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modelNumber</span>
