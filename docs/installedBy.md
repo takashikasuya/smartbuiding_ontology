@@ -33,7 +33,7 @@ Alias: installedBy
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md)
+* Range: [Agent](Agent.md)
 
 * Multivalued: True
 
@@ -77,11 +77,8 @@ slot_uri: rec:installedBy
 alias: installedBy
 domain_of:
 - Asset
-range: string
+range: Agent
 multivalued: true
-any_of:
-- range: Resource
-- range: Agent
 
 ```
 </details>

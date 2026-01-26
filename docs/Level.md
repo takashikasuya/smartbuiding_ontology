@@ -35,6 +35,15 @@ URI: [rec:Level](https://w3id.org/rec/Level)
         
       Level : adjacentElement
         
+          
+    
+        
+        
+        Level --> "*" BuildingElement : adjacentElement
+        click BuildingElement href "../BuildingElement/"
+    
+
+        
       Level : architectedBy
         
           
@@ -81,6 +90,15 @@ URI: [rec:Level](https://w3id.org/rec/Level)
         
       Level : containsElement
         
+          
+    
+        
+        
+        Level --> "*" BuildingElement : containsElement
+        click BuildingElement href "../BuildingElement/"
+    
+
+        
       Level : customProperties
         
           
@@ -103,7 +121,18 @@ URI: [rec:Level](https://w3id.org/rec/Level)
     
 
         
+      Level : description
+        
       Level : documentation
+        
+          
+    
+        
+        
+        Level --> "*" Document : documentation
+        click Document href "../Document/"
+    
+
         
       Level : geometry
         
@@ -128,6 +157,15 @@ URI: [rec:Level](https://w3id.org/rec/Level)
 
         
       Level : hasPart
+        
+          
+    
+        
+        
+        Level --> "*" Space : hasPart
+        click Space href "../Space/"
+    
+
         
       Level : hasPoint
         
@@ -155,6 +193,15 @@ URI: [rec:Level](https://w3id.org/rec/Level)
         
       Level : intersectingElement
         
+          
+    
+        
+        
+        Level --> "*" BuildingElement : intersectingElement
+        click BuildingElement href "../BuildingElement/"
+    
+
+        
       Level : isFedBy
         
           
@@ -172,8 +219,8 @@ URI: [rec:Level](https://w3id.org/rec/Level)
     
         
         
-        Level --> "*" Space : isLocationOf
-        click Space href "../Space/"
+        Level --> "*" Resource : isLocationOf
+        click Resource href "../Resource/"
     
 
         
@@ -194,7 +241,25 @@ URI: [rec:Level](https://w3id.org/rec/Level)
         
       Level : operatedBy
         
+          
+    
+        
+        
+        Level --> "*" Agent : operatedBy
+        click Agent href "../Agent/"
+    
+
+        
       Level : ownedBy
+        
+          
+    
+        
+        
+        Level --> "*" Agent : ownedBy
+        click Agent href "../Agent/"
+    
+
         
       
 ```
@@ -218,26 +283,27 @@ URI: [rec:Level](https://w3id.org/rec/Level)
 | [area](area.md) | 0..1 <br/> [ArchitectureArea](ArchitectureArea.md) | Area of the architecture | [Architecture](Architecture.md) |
 | [capacity](capacity.md) | 0..1 <br/> [ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | [Architecture](Architecture.md) |
 | [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | [Architecture](Architecture.md) |
-| [adjacentElement](adjacentElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | [Architecture](Architecture.md) |
+| [adjacentElement](adjacentElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | [Architecture](Architecture.md) |
 | [architectedBy](architectedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that architected this structure | [Architecture](Architecture.md) |
 | [constructedBy](constructedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that constructed this architecture | [Architecture](Architecture.md) |
-| [containsElement](containsElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element contained within this architecture | [Architecture](Architecture.md) |
-| [documentation](documentation.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Document](Document.md) | Documentation related to this asset | [Architecture](Architecture.md) |
-| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md) | Point associated with this architecture | [Architecture](Architecture.md) |
-| [intersectingElement](intersectingElement.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | [Architecture](Architecture.md) |
+| [containsElement](containsElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element contained within this architecture | [Architecture](Architecture.md) |
+| [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | [Architecture](Architecture.md) |
+| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | [Architecture](Architecture.md) |
+| [intersectingElement](intersectingElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | [Architecture](Architecture.md) |
 | [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | [Architecture](Architecture.md) |
-| [operatedBy](operatedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that operates this architecture | [Architecture](Architecture.md) |
-| [ownedBy](ownedBy.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[Agent](Agent.md) | Agent or resource that owns this architecture | [Architecture](Architecture.md) |
-| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
+| [operatedBy](operatedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that operates this architecture | [Architecture](Architecture.md) |
+| [ownedBy](ownedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that owns this architecture | [Architecture](Architecture.md) |
+| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | [Space](Space.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
-| [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
-| [isLocationOf](isLocationOf.md) | * <br/> [Space](Space.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | [Space](Space.md) |
+| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
+| [isLocationOf](isLocationOf.md) | * <br/> [Resource](Resource.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
+| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md) |  | [Space](Space.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Space](Space.md) |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Space](Space.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Space](Space.md) |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Space](Space.md) |
 
 
 
@@ -382,11 +448,8 @@ attributes:
     owner: Level
     domain_of:
     - Architecture
-    range: string
+    range: BuildingElement
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: BuildingElement
   architectedBy:
     name: architectedBy
     description: Agent or resource that architected this structure
@@ -421,11 +484,8 @@ attributes:
     owner: Level
     domain_of:
     - Architecture
-    range: string
+    range: BuildingElement
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: BuildingElement
   documentation:
     name: documentation
     description: Documentation related to this asset
@@ -437,11 +497,8 @@ attributes:
     domain_of:
     - Architecture
     - Asset
-    range: string
+    range: Document
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Document
   hasPoint:
     name: hasPoint
     description: Point associated with this architecture
@@ -455,6 +512,9 @@ attributes:
     - Asset
     range: Point
     multivalued: true
+    any_of:
+    - range: Point
+    - range: PointExt
   intersectingElement:
     name: intersectingElement
     description: Building element intersecting with this architecture
@@ -465,11 +525,8 @@ attributes:
     owner: Level
     domain_of:
     - Architecture
-    range: string
+    range: BuildingElement
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: BuildingElement
   isFedBy:
     name: isFedBy
     annotations:
@@ -497,11 +554,8 @@ attributes:
     owner: Level
     domain_of:
     - Architecture
-    range: string
+    range: Agent
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Agent
   ownedBy:
     name: ownedBy
     description: Agent or resource that owns this architecture
@@ -512,11 +566,8 @@ attributes:
     owner: Level
     domain_of:
     - Architecture
-    range: string
+    range: Agent
     multivalued: true
-    any_of:
-    - range: Resource
-    - range: Agent
   id:
     name: id
     annotations:
@@ -543,9 +594,8 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: string
+    range: IdString
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -585,11 +635,8 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: string
+    range: Space
     multivalued: true
-    any_of:
-    - range: Space
-    - range: Resource
   isLocationOf:
     name: isLocationOf
     description: Subject is the physical location encapsulating the object.
@@ -600,7 +647,7 @@ attributes:
     owner: Level
     domain_of:
     - Space
-    range: Space
+    range: Resource
     multivalued: true
   isPartOf:
     name: isPartOf
@@ -614,9 +661,6 @@ attributes:
     - Asset
     range: Space
     multivalued: false
-    any_of:
-    - range: Space
-    - range: Resource
   customProperties:
     name: customProperties
     description: map(string -> map(string -> string))
@@ -708,6 +752,23 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Level
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
 class_uri: rec:Level
 
 ```

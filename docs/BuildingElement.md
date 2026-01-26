@@ -76,7 +76,7 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
+| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
@@ -90,21 +90,21 @@ URI: [rec:BuildingElement](https://w3id.org/rec/BuildingElement)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Architecture](Architecture.md) | [containsElement](containsElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Architecture](Architecture.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Site](Site.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Site](Site.md) | [containsElement](containsElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Site](Site.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Building](Building.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Building](Building.md) | [containsElement](containsElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Building](Building.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Level](Level.md) | [adjacentElement](adjacentElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Level](Level.md) | [containsElement](containsElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Level](Level.md) | [intersectingElement](intersectingElement.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Asset](Asset.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [Equipment](Equipment.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
-| [EquipmentExt](EquipmentExt.md) | [mountedOn](mountedOn.md) | any_of[range] | [BuildingElement](BuildingElement.md) |
+| [Architecture](Architecture.md) | [adjacentElement](adjacentElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Architecture](Architecture.md) | [containsElement](containsElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Architecture](Architecture.md) | [intersectingElement](intersectingElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Site](Site.md) | [adjacentElement](adjacentElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Site](Site.md) | [containsElement](containsElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Site](Site.md) | [intersectingElement](intersectingElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Building](Building.md) | [adjacentElement](adjacentElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Building](Building.md) | [containsElement](containsElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Building](Building.md) | [intersectingElement](intersectingElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Level](Level.md) | [adjacentElement](adjacentElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Level](Level.md) | [containsElement](containsElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Level](Level.md) | [intersectingElement](intersectingElement.md) | range | [BuildingElement](BuildingElement.md) |
+| [Asset](Asset.md) | [mountedOn](mountedOn.md) | range | [BuildingElement](BuildingElement.md) |
+| [Equipment](Equipment.md) | [mountedOn](mountedOn.md) | range | [BuildingElement](BuildingElement.md) |
+| [EquipmentExt](EquipmentExt.md) | [mountedOn](mountedOn.md) | range | [BuildingElement](BuildingElement.md) |
 
 
 
@@ -217,9 +217,8 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: string
+    range: IdString
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   name:
     name: name
     description: Machine or Human-readable name

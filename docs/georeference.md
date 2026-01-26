@@ -1,11 +1,16 @@
 
 
-# Slot: isPartOf 
+# Slot: georeference 
+
+
+_A georeference creates a relationship between the local coordinate system used within a building (e.g., measured in meters) and a geographic coordinate system (e.g., lat, long, alt), such that locally placed Spaces can be resolved and rendered in that geographic coordinate system (e.g., for mapping purposes)._
 
 
 
-URI: [rec:isPartOf](https://w3id.org/rec/isPartOf)
-Alias: isPartOf
+
+
+URI: [rec:georeference](https://w3id.org/rec/georeference)
+Alias: georeference
 
 <!-- no inheritance hierarchy -->
 
@@ -21,10 +26,7 @@ Alias: isPartOf
 | [Building](Building.md) | A building which is part of a site |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 
 
@@ -33,7 +35,7 @@ Alias: isPartOf
 
 ## Properties
 
-* Range: [Space](Space.md)
+* Range: [Georeference](Georeference.md)
 
 
 
@@ -57,8 +59,8 @@ Alias: isPartOf
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:isPartOf |
-| native | sbco:isPartOf |
+| self | rec:georeference |
+| native | sbco:georeference |
 
 
 
@@ -67,15 +69,18 @@ Alias: isPartOf
 
 <details>
 ```yaml
-name: isPartOf
+name: georeference
+description: A georeference creates a relationship between the local coordinate system
+  used within a building (e.g., measured in meters) and a geographic coordinate system
+  (e.g., lat, long, alt), such that locally placed Spaces can be resolved and rendered
+  in that geographic coordinate system (e.g., for mapping purposes).
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:isPartOf
-alias: isPartOf
+slot_uri: rec:georeference
+alias: georeference
 domain_of:
 - Space
-- Asset
-range: Space
+range: Georeference
 multivalued: false
 
 ```

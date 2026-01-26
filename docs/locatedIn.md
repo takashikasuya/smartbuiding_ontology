@@ -33,7 +33,7 @@ Alias: locatedIn
 
 ## Properties
 
-* Range: [Resource](Resource.md)
+* Range: [Space](Space.md)
 
 * Multivalued: True
 
@@ -77,7 +77,7 @@ slot_uri: rec:locatedIn
 alias: locatedIn
 domain_of:
 - Asset
-range: Resource
+range: Space
 multivalued: true
 
 ```

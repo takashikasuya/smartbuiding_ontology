@@ -1,16 +1,16 @@
 
 
-# Slot: intersectingElement 
+# Slot: geometry 
 
 
-_Building element intersecting with this architecture_
+_Polygon representing the spatial extent of this Space._
 
 
 
 
 
-URI: [rec:intersectingElement](https://w3id.org/rec/intersectingElement)
-Alias: intersectingElement
+URI: [rec:geometry](https://w3id.org/rec/geometry)
+Alias: geometry
 
 <!-- no inheritance hierarchy -->
 
@@ -22,10 +22,14 @@ Alias: intersectingElement
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 
 
@@ -34,9 +38,7 @@ Alias: intersectingElement
 
 ## Properties
 
-* Range: [BuildingElement](BuildingElement.md)
-
-* Multivalued: True
+* Range: [Geometry](Geometry.md)
 
 
 
@@ -60,8 +62,8 @@ Alias: intersectingElement
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:intersectingElement |
-| native | sbco:intersectingElement |
+| self | rec:geometry |
+| native | sbco:geometry |
 
 
 
@@ -70,16 +72,17 @@ Alias: intersectingElement
 
 <details>
 ```yaml
-name: intersectingElement
-description: Building element intersecting with this architecture
+name: geometry
+description: Polygon representing the spatial extent of this Space.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
-slot_uri: rec:intersectingElement
-alias: intersectingElement
+slot_uri: rec:geometry
+alias: geometry
 domain_of:
-- Architecture
-range: BuildingElement
-multivalued: true
+- Space
+- Asset
+range: Geometry
+multivalued: false
 
 ```
 </details>

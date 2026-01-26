@@ -1,4 +1,4 @@
-﻿{
+{
     "$defs": {
         "Agent": {
             "additionalProperties": false,
@@ -26,7 +26,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -111,7 +111,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -160,7 +160,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -200,14 +200,6 @@
                 "adjacentElement": {
                     "description": "Building element adjacent to this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -252,14 +244,6 @@
                 "containsElement": {
                     "description": "Building element contained within this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -297,15 +281,7 @@
                 "documentation": {
                     "description": "Documentation related to this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "$ref": "#/$defs/Document"
-                            }
-                        ],
-                        "type": "string"
+                        "$ref": "#/$defs/Document"
                     },
                     "type": [
                         "array",
@@ -337,14 +313,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -372,7 +340,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -385,14 +353,6 @@
                 "intersectingElement": {
                     "description": "Building element intersecting with this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -413,7 +373,7 @@
                 "isLocationOf": {
                     "description": "Subject is the physical location encapsulating the object.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Resource"
                     },
                     "type": [
                         "array",
@@ -421,18 +381,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",
@@ -441,14 +393,6 @@
                 "operatedBy": {
                     "description": "Agent or resource that operates this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -459,14 +403,6 @@
                 "ownedBy": {
                     "description": "Agent or resource that owns this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -509,7 +445,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -664,14 +600,6 @@
                 "commissionedBy": {
                     "description": "Agent or resource that commissioned this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -717,15 +645,7 @@
                 "documentation": {
                     "description": "Documentation related to this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "$ref": "#/$defs/Document"
-                            }
-                        ],
-                        "type": "string"
+                        "$ref": "#/$defs/Document"
                     },
                     "type": [
                         "array",
@@ -756,14 +676,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -791,7 +703,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -819,14 +731,6 @@
                 "installedBy": {
                     "description": "Agent or resource that installed this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -845,18 +749,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "locatedIn": {
                     "description": "Space where this asset is located",
@@ -882,14 +778,6 @@
                 "manufacturedBy": {
                     "description": "Agent or resource that manufactured this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -905,19 +793,11 @@
                     ]
                 },
                 "mountedOn": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "description": "Building element on which this asset is mounted",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",
@@ -940,14 +820,6 @@
                 "servicedBy": {
                     "description": "Agent or resource that services this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1018,14 +890,6 @@
                 "commissionedBy": {
                     "description": "Agent or resource that commissioned this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1078,15 +942,7 @@
                 "documentation": {
                     "description": "Documentation related to this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "$ref": "#/$defs/Document"
-                            }
-                        ],
-                        "type": "string"
+                        "$ref": "#/$defs/Document"
                     },
                     "type": [
                         "array",
@@ -1117,14 +973,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1152,7 +1000,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -1187,14 +1035,6 @@
                 "installedBy": {
                     "description": "Agent or resource that installed this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1213,18 +1053,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "locatedIn": {
                     "description": "Space where this asset is located",
@@ -1250,14 +1082,6 @@
                 "manufacturedBy": {
                     "description": "Agent or resource that manufactured this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1273,19 +1097,11 @@
                     ]
                 },
                 "mountedOn": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "description": "Building element on which this asset is mounted",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",
@@ -1315,14 +1131,6 @@
                 "servicedBy": {
                     "description": "Agent or resource that services this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1813,14 +1621,6 @@
                 "adjacentElement": {
                     "description": "Building element adjacent to this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1865,14 +1665,6 @@
                 "containsElement": {
                     "description": "Building element contained within this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1910,15 +1702,7 @@
                 "documentation": {
                     "description": "Documentation related to this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "$ref": "#/$defs/Document"
-                            }
-                        ],
-                        "type": "string"
+                        "$ref": "#/$defs/Document"
                     },
                     "type": [
                         "array",
@@ -1950,14 +1734,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -1985,7 +1761,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -1998,14 +1774,6 @@
                 "intersectingElement": {
                     "description": "Building element intersecting with this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2026,7 +1794,7 @@
                 "isLocationOf": {
                     "description": "Subject is the physical location encapsulating the object.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Resource"
                     },
                     "type": [
                         "array",
@@ -2034,18 +1802,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "levelNumber": {
                     "description": "Floor or level number within a building",
@@ -2061,14 +1821,6 @@
                 "operatedBy": {
                     "description": "Agent or resource that operates this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2079,14 +1831,6 @@
                 "ownedBy": {
                     "description": "Agent or resource that owns this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2222,7 +1966,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2303,7 +2047,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2314,19 +2058,11 @@
                     "type": "array"
                 },
                 "isPointOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "description": "Equipment that this point belongs to",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",
@@ -2379,7 +2115,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2770,14 +2506,6 @@
                 "adjacentElement": {
                     "description": "Building element adjacent to this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2822,14 +2550,6 @@
                 "containsElement": {
                     "description": "Building element contained within this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2867,15 +2587,7 @@
                 "documentation": {
                     "description": "Documentation related to this asset",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "$ref": "#/$defs/Document"
-                            }
-                        ],
-                        "type": "string"
+                        "$ref": "#/$defs/Document"
                     },
                     "type": [
                         "array",
@@ -2907,14 +2619,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2942,7 +2646,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2955,14 +2659,6 @@
                 "intersectingElement": {
                     "description": "Building element intersecting with this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -2983,7 +2679,7 @@
                 "isLocationOf": {
                     "description": "Subject is the physical location encapsulating the object.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Resource"
                     },
                     "type": [
                         "array",
@@ -2991,18 +2687,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",
@@ -3011,14 +2699,6 @@
                 "operatedBy": {
                     "description": "Agent or resource that operates this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -3029,14 +2709,6 @@
                 "ownedBy": {
                     "description": "Agent or resource that owns this architecture",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Resource"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -3109,14 +2781,6 @@
                 "hasPart": {
                     "description": "The subject is composed in part of the entity given by the object.",
                     "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/$defs/Resource"
-                            }
-                        ],
                         "type": "string"
                     },
                     "type": [
@@ -3126,7 +2790,7 @@
                 },
                 "id": {
                     "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^(?:[a-zA-Z][a-zA-Z0-9_:\\-]*|dtmi:[A-Za-z0-9_:.;\\-]+)$",
+                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
                     "type": "string"
                 },
                 "identifiers": {
@@ -3139,7 +2803,7 @@
                 "isLocationOf": {
                     "description": "Subject is the physical location encapsulating the object.",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Resource"
                     },
                     "type": [
                         "array",
@@ -3147,18 +2811,10 @@
                     ]
                 },
                 "isPartOf": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/$defs/Resource"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "Machine or Human-readable name",

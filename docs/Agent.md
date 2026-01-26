@@ -104,7 +104,7 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
+| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
@@ -122,32 +122,32 @@ URI: [rec:Agent](https://w3id.org/rec/Agent)
 | ---  | --- | --- | --- |
 | [Architecture](Architecture.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
 | [Architecture](Architecture.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
-| [Architecture](Architecture.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Architecture](Architecture.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Architecture](Architecture.md) | [operatedBy](operatedBy.md) | range | [Agent](Agent.md) |
+| [Architecture](Architecture.md) | [ownedBy](ownedBy.md) | range | [Agent](Agent.md) |
 | [Site](Site.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
 | [Site](Site.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
-| [Site](Site.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Site](Site.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Site](Site.md) | [operatedBy](operatedBy.md) | range | [Agent](Agent.md) |
+| [Site](Site.md) | [ownedBy](ownedBy.md) | range | [Agent](Agent.md) |
 | [Building](Building.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
 | [Building](Building.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
-| [Building](Building.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Building](Building.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Building](Building.md) | [operatedBy](operatedBy.md) | range | [Agent](Agent.md) |
+| [Building](Building.md) | [ownedBy](ownedBy.md) | range | [Agent](Agent.md) |
 | [Level](Level.md) | [architectedBy](architectedBy.md) | range | [Agent](Agent.md) |
 | [Level](Level.md) | [constructedBy](constructedBy.md) | range | [Agent](Agent.md) |
-| [Level](Level.md) | [operatedBy](operatedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Level](Level.md) | [ownedBy](ownedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Asset](Asset.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Asset](Asset.md) | [installedBy](installedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Asset](Asset.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Asset](Asset.md) | [servicedBy](servicedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Equipment](Equipment.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Equipment](Equipment.md) | [installedBy](installedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Equipment](Equipment.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [Equipment](Equipment.md) | [servicedBy](servicedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [EquipmentExt](EquipmentExt.md) | [commissionedBy](commissionedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [EquipmentExt](EquipmentExt.md) | [installedBy](installedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [EquipmentExt](EquipmentExt.md) | [manufacturedBy](manufacturedBy.md) | any_of[range] | [Agent](Agent.md) |
-| [EquipmentExt](EquipmentExt.md) | [servicedBy](servicedBy.md) | any_of[range] | [Agent](Agent.md) |
+| [Level](Level.md) | [operatedBy](operatedBy.md) | range | [Agent](Agent.md) |
+| [Level](Level.md) | [ownedBy](ownedBy.md) | range | [Agent](Agent.md) |
+| [Asset](Asset.md) | [commissionedBy](commissionedBy.md) | range | [Agent](Agent.md) |
+| [Asset](Asset.md) | [installedBy](installedBy.md) | range | [Agent](Agent.md) |
+| [Asset](Asset.md) | [manufacturedBy](manufacturedBy.md) | range | [Agent](Agent.md) |
+| [Asset](Asset.md) | [servicedBy](servicedBy.md) | range | [Agent](Agent.md) |
+| [Equipment](Equipment.md) | [commissionedBy](commissionedBy.md) | range | [Agent](Agent.md) |
+| [Equipment](Equipment.md) | [installedBy](installedBy.md) | range | [Agent](Agent.md) |
+| [Equipment](Equipment.md) | [manufacturedBy](manufacturedBy.md) | range | [Agent](Agent.md) |
+| [Equipment](Equipment.md) | [servicedBy](servicedBy.md) | range | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [commissionedBy](commissionedBy.md) | range | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [installedBy](installedBy.md) | range | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [manufacturedBy](manufacturedBy.md) | range | [Agent](Agent.md) |
+| [EquipmentExt](EquipmentExt.md) | [servicedBy](servicedBy.md) | range | [Agent](Agent.md) |
 
 
 
@@ -262,9 +262,8 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: string
+    range: IdString
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   name:
     name: name
     description: Machine or Human-readable name

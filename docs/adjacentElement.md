@@ -22,10 +22,10 @@ Alias: adjacentElement
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 
 
 
@@ -34,7 +34,7 @@ Alias: adjacentElement
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md)
+* Range: [BuildingElement](BuildingElement.md)
 
 * Multivalued: True
 
@@ -78,11 +78,8 @@ slot_uri: rec:adjacentElement
 alias: adjacentElement
 domain_of:
 - Architecture
-range: string
+range: BuildingElement
 multivalued: true
-any_of:
-- range: Resource
-- range: BuildingElement
 
 ```
 </details>

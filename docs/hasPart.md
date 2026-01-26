@@ -22,13 +22,13 @@ Alias: hasPart
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
-| [Level](Level.md) | A building storey |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
+| [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [Level](Level.md) | A building storey |  no  |
 | [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 
@@ -38,7 +38,7 @@ Alias: hasPart
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)
+* Range: [Space](Space.md)
 
 * Multivalued: True
 
@@ -83,11 +83,8 @@ alias: hasPart
 domain_of:
 - Space
 - Asset
-range: string
+range: Space
 multivalued: true
-any_of:
-- range: Space
-- range: Resource
 
 ```
 </details>

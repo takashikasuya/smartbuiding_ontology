@@ -145,9 +145,9 @@ Name: building_model
 | [Datetime](Datetime.md) | The combination of a date and time |
 | [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
-| [Dtmi](Dtmi.md) | DTMI形式のID |
-| [Duration](Duration.md) | ISO 8601 duration format |
+| [DurationString](DurationString.md) | ISO 8601 duration format |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
+| [IdString](IdString.md) | DTMI形式のID |
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
 | [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |

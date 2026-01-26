@@ -156,8 +156,8 @@ URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
 | [maxPresValue](maxPresValue.md) | 0..1 <br/> [Float](Float.md) | Maximum plausible reading | direct |
 | [minPresValue](minPresValue.md) | 0..1 <br/> [Float](Float.md) | Minimum plausible reading | direct |
 | [scale](scale.md) | 0..1 <br/> [Float](Float.md) | Scale factor for raw value conversion | direct |
-| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Point](Point.md) |
-| [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md) | Equipment that this point belongs to | [Point](Point.md) |
+| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | [Point](Point.md) |
+| [isPointOf](isPointOf.md) | 0..1 <br/> [Equipment](Equipment.md)&nbsp;or&nbsp;<br />[Equipment](Equipment.md)&nbsp;or&nbsp;<br />[EquipmentExt](EquipmentExt.md) | Equipment that this point belongs to | [Point](Point.md) |
 | [aggregate](aggregate.md) | 0..1 <br/> [AggregateEnum](AggregateEnum.md) | Aggregation function or method for point data processing | [Point](Point.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Point](Point.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Point](Point.md) |
@@ -168,6 +168,19 @@ URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Architecture](Architecture.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Site](Site.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 
 
 
@@ -235,7 +248,9 @@ slots:
 slot_usage:
   isPointOf:
     name: isPointOf
-    range: Equipment
+    any_of:
+    - range: Equipment
+    - range: EquipmentExt
 class_uri: sbco:PointExt
 
 ```
@@ -256,7 +271,9 @@ is_a: Point
 slot_usage:
   isPointOf:
     name: isPointOf
-    range: Equipment
+    any_of:
+    - range: Equipment
+    - range: EquipmentExt
 attributes:
   pointSpecification:
     name: pointSpecification
@@ -356,9 +373,8 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: string
+    range: IdString
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   isPointOf:
     name: isPointOf
     annotations:
@@ -374,6 +390,9 @@ attributes:
     domain_of:
     - Point
     range: Equipment
+    any_of:
+    - range: Equipment
+    - range: EquipmentExt
   aggregate:
     name: aggregate
     annotations:

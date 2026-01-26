@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 # Generate artifacts
 linkml generate owl --metadata-profile rdfs schema/building_model.yaml -f ttl >  output/building_model.owl.ttl
-linkml generate shacl -s Shape schema/building_model.yaml > output/building_model.shacl.ttl
+linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl
 linkml generate json-schema schema/building_model.yaml > output/building_model.schema.json
 
 # Generate docs and preview
@@ -39,6 +39,8 @@ mkdocs serve
 - 設備とポイント: `Equipment` が設備本体、`Point` が計測・制御・状態などのポイント。
 - 主なスロット: `buildings`, `levels`, `spaces`, `equipment_list`, `points`
 - カードィナリティ: `multivalued`（複数可）、`required`（必須）、`inlined_as_list`（子要素をリストとしてインライン展開）で表現。
+- `hasPart` / `isPartOf` は `Space` を range として扱います（Space→Space の階層関係を表現）。
+- `id` と `maintenanceInterval` は独自の型（`IdString` / `DurationString`）で定義し、`xsd:string` / `xsd:duration` の再定義を避けます。
 
 **English recap**
 - Single source of truth: edit `schema/building_model.yaml` to regenerate all artifacts.
@@ -81,22 +83,36 @@ ex:space/A-3F-Office a sbco:Space ;
   sbco:isPartOf ex:level/A-3F ;
   sbco:hasPart ex:equip/AHU-01 .
 
-ex:equip/AHU-01 a sbco:Equipment ;
+ex:equip/AHU-01 a sbco:EquipmentExt ;
+  sbco:id "equip/AHU-01" ;
   sbco:name "AHU-01" ;
+  sbco:identifiers [ sbco:key "serial" ; sbco:value "AHU-01-XYZ" ] ;
+  sbco:deviceType "AHU" ;
+  sbco:panel "Panel-1" ;
+  sbco:installationArea "Office Area" ;
+  sbco:targetArea "Office Area" ;
   sbco:locatedIn ex:space/A-3F-Office ;
   sbco:hasPoint ex:point/AHU-01-SAT, ex:point/AHU-01-SF-CMD .
 
-ex:point/AHU-01-SAT a sbco:Point ;
+ex:point/AHU-01-SAT a sbco:PointExt ;
+  sbco:id "point/AHU-01-SAT" ;
   sbco:name "Supply Air Temperature" ;
+  sbco:identifiers [ sbco:key "BACnet" ; sbco:value "1234" ] ;
+  sbco:pointType "TemperatureSensor" ;
+  sbco:pointSpecification <https://www.sbco.or.jp/ont/PointSpecificationEnum#Measurement> ;
+  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#celsius> ;
   sbco:isPointOf ex:equip/AHU-01 ;
-  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Temperature> ;
-  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#celsius> .
+  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Temperature> .
 
-ex:point/AHU-01-SF-CMD a sbco:Point ;
+ex:point/AHU-01-SF-CMD a sbco:PointExt ;
+  sbco:id "point/AHU-01-SF-CMD" ;
   sbco:name "Supply Fan Command" ;
+  sbco:identifiers [ sbco:key "BACnet" ; sbco:value "5678" ] ;
+  sbco:pointType "Command" ;
+  sbco:pointSpecification <https://www.sbco.or.jp/ont/PointSpecificationEnum#Command> ;
+  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#percent> ;
   sbco:isPointOf ex:equip/AHU-01 ;
-  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Active_Power> ;
-  sbco:unit <https://www.sbco.or.jp/ont/UnitEnum#percent> .
+  sbco:hasQuantity <https://www.sbco.or.jp/ont/QuantityEnum#Active_Power> .
 ```
 
 ## 参考
@@ -104,4 +120,3 @@ ex:point/AHU-01-SF-CMD a sbco:Point ;
 - LinkML: https://linkml.io
 - MkDocs: https://www.mkdocs.org/
 - mkdocs-material: https://squidfunk.github.io/mkdocs-material/
-

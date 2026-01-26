@@ -254,6 +254,8 @@ attributes:
     alias: description
     owner: Information
     domain_of:
+    - Space
+    - Asset
     - Information
     range: string
   identifiers:

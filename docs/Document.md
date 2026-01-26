@@ -109,13 +109,13 @@ URI: [rec:Document](https://w3id.org/rec/Document)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Architecture](Architecture.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [Site](Site.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [Building](Building.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [Level](Level.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [Asset](Asset.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [Equipment](Equipment.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
-| [EquipmentExt](EquipmentExt.md) | [documentation](documentation.md) | any_of[range] | [Document](Document.md) |
+| [Architecture](Architecture.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [Site](Site.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [Building](Building.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [Level](Level.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [Asset](Asset.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [Equipment](Equipment.md) | [documentation](documentation.md) | range | [Document](Document.md) |
+| [EquipmentExt](EquipmentExt.md) | [documentation](documentation.md) | range | [Document](Document.md) |
 
 
 
@@ -230,6 +230,8 @@ attributes:
     alias: description
     owner: Document
     domain_of:
+    - Space
+    - Asset
     - Information
     range: string
   identifiers:

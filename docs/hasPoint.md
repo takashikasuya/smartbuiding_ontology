@@ -22,12 +22,12 @@ Alias: hasPoint
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
+| [Building](Building.md) | A building which is part of a site |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [Building](Building.md) | A building which is part of a site |  no  |
 | [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  yes  |
+| [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  yes  |
 | [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
 
 

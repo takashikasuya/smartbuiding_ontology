@@ -33,7 +33,7 @@ Alias: maintenanceInterval
 
 ## Properties
 
-* Range: [Duration](Duration.md)
+* Range: [DurationString](DurationString.md)
 
 * Multivalued: True
 
@@ -77,7 +77,7 @@ slot_uri: rec:maintenanceInterval
 alias: maintenanceInterval
 domain_of:
 - Asset
-range: Duration
+range: DurationString
 multivalued: true
 
 ```

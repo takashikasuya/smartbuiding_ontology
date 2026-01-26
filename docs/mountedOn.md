@@ -33,7 +33,7 @@ Alias: mountedOn
 
 ## Properties
 
-* Range: [String](String.md)&nbsp;or&nbsp;<br />[Resource](Resource.md)&nbsp;or&nbsp;<br />[BuildingElement](BuildingElement.md)
+* Range: [BuildingElement](BuildingElement.md)
 
 
 
@@ -75,10 +75,7 @@ slot_uri: rec:mountedOn
 alias: mountedOn
 domain_of:
 - Asset
-range: string
-any_of:
-- range: Resource
-- range: BuildingElement
+range: BuildingElement
 
 ```
 </details>

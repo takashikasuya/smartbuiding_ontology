@@ -1,20 +1,21 @@
-# Type: String 
+# Type: Dtmi 
 
 
 
 
-_A character string_
+_DTMI形式のID_
 
 
 
 URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-* [base](https://w3id.org/linkml/base): str
+* [base](https://w3id.org/linkml/base): string
 
 * [uri](https://w3id.org/linkml/uri): xsd:string
 
 
 
+* [pattern](https://w3id.org/linkml/pattern): `^dtmi:[A-Za-z0-9_:.;-]+$`
 
 
 
@@ -40,7 +41,6 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:string |
-| native | sbco:string |
-| exact | schema:Text |
+| native | sbco:Dtmi |
 
 

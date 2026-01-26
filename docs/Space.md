@@ -44,6 +44,8 @@ URI: [rec:Space](https://w3id.org/rec/Space)
     
 
         
+      Space : description
+        
       Space : geometry
         
           
@@ -68,6 +70,15 @@ URI: [rec:Space](https://w3id.org/rec/Space)
         
       Space : hasPart
         
+          
+    
+        
+        
+        Space --> "*" Space : hasPart
+        click Space href "../Space/"
+    
+
+        
       Space : id
         
       Space : identifiers
@@ -87,8 +98,8 @@ URI: [rec:Space](https://w3id.org/rec/Space)
     
         
         
-        Space --> "*" Space : isLocationOf
-        click Space href "../Space/"
+        Space --> "*" Resource : isLocationOf
+        click Resource href "../Resource/"
     
 
         
@@ -122,16 +133,17 @@ URI: [rec:Space](https://w3id.org/rec/Space)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
+| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | direct |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | direct |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | direct |
-| [hasPart](hasPart.md) | * <br/> [String](String.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) | The subject is composed in part of the entity given by the object | direct |
-| [isLocationOf](isLocationOf.md) | * <br/> [Space](Space.md) | Subject is the physical location encapsulating the object | direct |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Resource](Resource.md) |  | direct |
+| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | direct |
+| [isLocationOf](isLocationOf.md) | * <br/> [Resource](Resource.md) | Subject is the physical location encapsulating the object | direct |
+| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md) |  | direct |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
 | [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
 
 
 
@@ -141,36 +153,24 @@ URI: [rec:Space](https://w3id.org/rec/Space)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Space](Space.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Space](Space.md) | [isLocationOf](isLocationOf.md) | range | [Space](Space.md) |
+| [Space](Space.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Space](Space.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Architecture](Architecture.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Architecture](Architecture.md) | [isLocationOf](isLocationOf.md) | range | [Space](Space.md) |
+| [Architecture](Architecture.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Site](Site.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Site](Site.md) | [isLocationOf](isLocationOf.md) | range | [Space](Space.md) |
+| [Site](Site.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Site](Site.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Building](Building.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Building](Building.md) | [isLocationOf](isLocationOf.md) | range | [Space](Space.md) |
+| [Building](Building.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Building](Building.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Level](Level.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
-| [Level](Level.md) | [isLocationOf](isLocationOf.md) | range | [Space](Space.md) |
+| [Level](Level.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Level](Level.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Level](Level.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Asset](Asset.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
+| [Asset](Asset.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Asset](Asset.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Asset](Asset.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
-| [Equipment](Equipment.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
+| [Asset](Asset.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
+| [Equipment](Equipment.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
 | [Equipment](Equipment.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
-| [EquipmentExt](EquipmentExt.md) | [hasPart](hasPart.md) | any_of[range] | [Space](Space.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPart](hasPart.md) | range | [Space](Space.md) |
 | [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | range | [Space](Space.md) |
-| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Space](Space.md) |
 | [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | range | [Space](Space.md) |
 
 
@@ -244,6 +244,7 @@ slots:
 - customTags
 - identifiers
 - name
+- description
 class_uri: rec:Space
 
 ```
@@ -291,9 +292,8 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: string
+    range: IdString
     required: true
-    pattern: ^(?:[a-zA-Z][a-zA-Z0-9_-:]*|dtmi:[A-Za-z0-9_:.;-]+)$
   geometry:
     name: geometry
     description: Polygon representing the spatial extent of this Space.
@@ -333,11 +333,8 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: string
+    range: Space
     multivalued: true
-    any_of:
-    - range: Space
-    - range: Resource
   isLocationOf:
     name: isLocationOf
     description: Subject is the physical location encapsulating the object.
@@ -348,7 +345,7 @@ attributes:
     owner: Space
     domain_of:
     - Space
-    range: Space
+    range: Resource
     multivalued: true
   isPartOf:
     name: isPartOf
@@ -362,9 +359,6 @@ attributes:
     - Asset
     range: Space
     multivalued: false
-    any_of:
-    - range: Space
-    - range: Resource
   customProperties:
     name: customProperties
     description: map(string -> map(string -> string))
@@ -456,6 +450,23 @@ attributes:
     - ArchitectureCapacity
     range: string
     required: true
+  description:
+    name: description
+    annotations:
+      description_ja:
+        tag: description_ja
+        value: リソースのテキスト記述
+    description: A textual description of the resource
+    from_schema: https://www.sbco.or.jp/ont/schema
+    rank: 1000
+    slot_uri: rec:description
+    alias: description
+    owner: Space
+    domain_of:
+    - Space
+    - Asset
+    - Information
+    range: string
 class_uri: rec:Space
 
 ```

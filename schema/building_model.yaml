@@ -19,19 +19,17 @@ imports:
 - linkml:types
 
 types:
-  Dtmi:
+  IdString:
     base: string
     description: DTMI形式のID
-    uri: xsd:string
+    uri: sbco:IdString
     pattern: "^dtmi:[A-Za-z0-9_:.;-]+$"
 
-    # 以下を追加
-  Duration:
+  DurationString:
     base: string
     description: ISO 8601 duration format
-    uri: xsd:duration
+    uri: sbco:DurationString
     pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
-
     
 enums:
   UnitEnum:
@@ -389,10 +387,9 @@ enums:
 slots:
   id:
     description: "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format)."
-    range: string
+    range: IdString
     identifier: true
     required: true
-    pattern: "^(?:[a-zA-Z][-a-zA-Z0-9_:]*|dtmi:[-A-Za-z0-9_:.;]+)$"
     annotations:
       - tag: description_ja
         value: "スキーマ内の一意識別子。文字で開始し、DTMI形式もサポート。"
@@ -527,23 +524,18 @@ slots:
 
   hasPart:
     description: The subject is composed in part of the entity given by the object.
-    any_of:
-      - range : Space
-      - range : Resource
+    range: Space
     multivalued: true
     slot_uri: rec:hasPart
 
   isPartOf:
     range: Space
-    any_of:
-      - range : Space
-      - range : Resource
     multivalued: false
     slot_uri: rec:isPartOf
 
   isLocationOf:
     description: Subject is the physical location encapsulating the object.
-    range: Space
+    range: Resource
     multivalued: true
     slot_uri: rec:isLocationOf
 
@@ -556,9 +548,7 @@ slots:
     
   commissionedBy:
     description: "Agent or resource that commissioned this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:commissionedBy
     
@@ -569,9 +559,7 @@ slots:
     
   documentation:
     description: "Documentation related to this asset"
-    any_of:
-      - range: Resource
-      - range: Document
+    range: Document
     multivalued: true
     slot_uri: rec:documentation
     
@@ -589,9 +577,7 @@ slots:
       
   installedBy:
     description: "Agent or resource that installed this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:installedBy
     
@@ -604,7 +590,7 @@ slots:
     
   locatedIn:
     description: "Space where this asset is located"
-    range: Resource
+    range: Space
     multivalued: true
     slot_uri: rec:locatedIn
     
@@ -617,7 +603,7 @@ slots:
     
   maintenanceInterval:
     description: "Maintenance interval duration"
-    range: Duration
+    range: DurationString
     multivalued: true
     slot_uri: rec:maintenanceInterval
 
@@ -628,24 +614,18 @@ slots:
 
   manufacturedBy:
     description: "Agent or resource that manufactured this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:manufacturedBy
     
   mountedOn:
     description: "Building element on which this asset is mounted"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
+    range: BuildingElement
     slot_uri: rec:mountedOn
     
   servicedBy:
     description: "Agent or resource that services this asset"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:servicedBy
     
@@ -690,9 +670,7 @@ slots:
     
   adjacentElement:
     description: "Building element adjacent to this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
+    range: BuildingElement
     multivalued: true
     slot_uri: rec:adjacentElement
     
@@ -720,42 +698,32 @@ slots:
     
   containsElement:
     description: "Building element contained within this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
+    range: BuildingElement
     multivalued: true
     slot_uri: rec:containsElement
     
   hasPoint:
     description: "Point associated with this architecture"
-    any_of:
-      - range: Point
-      - range: PointExt
+    range: Point
     multivalued: true
     slot_uri: rec:hasPoint
     
   intersectingElement:
     description: "Building element intersecting with this architecture"
-    any_of:
-      - range: Resource
-      - range: BuildingElement
+    range: BuildingElement
     multivalued: true
     slot_uri: rec:intersectingElement
     
 
   operatedBy:
     description: "Agent or resource that operates this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:operatedBy
     
   ownedBy:
     description: "Agent or resource that owns this architecture"
-    any_of:
-      - range: Resource
-      - range: Agent
+    range: Agent
     multivalued: true
     slot_uri: rec:ownedBy
 
@@ -818,9 +786,7 @@ slots:
 
   isPointOf:
     description: "Equipment that this point belongs to"
-    any_of:
-      - range: Equipment
-      - range: EquipmentExt
+    range: Equipment
     slot_uri: brick:isPointOf
     annotations:
       - tag: description_ja
@@ -954,6 +920,11 @@ classes:
     - isFedBy
     - operatedBy
     - ownedBy
+    slot_usage:
+      hasPoint:
+        any_of:
+          - range: Point
+          - range: PointExt
 
   Site:
     is_a: Architecture
@@ -1037,6 +1008,11 @@ classes:
       - serialNumber
       - turnoverDate
       - weight
+    slot_usage:
+      hasPoint:
+        any_of:
+          - range: Point
+          - range: PointExt
        
   Equipment:
     is_a: Asset
