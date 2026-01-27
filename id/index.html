@@ -458,7 +458,7 @@
 
 
 <h1 id="slot-id">Slot: id<a class="headerlink" href="#slot-id" title="Permanent link">&para;</a></h1>
-<p><em>Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).</em></p>
+<p><em>Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.</em></p>
 <p>URI: <a href="https://www.sbco.or.jp/ont/id">sbco:id</a>
 Alias: id</p>
 <!-- no inheritance hierarchy -->
@@ -474,33 +474,18 @@ Alias: id</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Something which is placed inside of a building, but is not an integral part o...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../BuildingElement/">BuildingElement</a></td>
 <td>A part of the building structure</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Level/">Level</a></td>
-<td>A building storey</td>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Organization/">Organization</a></td>
-<td>An organization such as a company, institution, or association</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Building/">Building</a></td>
-<td>A building which is part of a site</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
-<td>Describes business-relevant area measurements typically associated with archi...</td>
+<td><a href="../Asset/">Asset</a></td>
+<td>Something which is placed inside of a building, but is not an integral part o...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -509,8 +494,8 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Space/">Space</a></td>
-<td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
+<td><a href="../PointExt/">PointExt</a></td>
+<td>A point (sensor/actuator) in a smart building context</td>
 <td>no</td>
 </tr>
 <tr>
@@ -519,23 +504,13 @@ Alias: id</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Agent/">Agent</a></td>
-<td>An entity that can act or be acted upon</td>
+<td><a href="../Space/">Space</a></td>
+<td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PointExt/">PointExt</a></td>
-<td>A point (sensor/actuator) in a smart building context</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Point/">Point</a></td>
-<td>A sensor, actuator, or data point associated with equipment</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td><a href="../Building/">Building</a></td>
+<td>A building which is part of a site</td>
 <td>no</td>
 </tr>
 <tr>
@@ -548,12 +523,37 @@ Alias: id</p>
 <td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../Point/">Point</a></td>
+<td>A sensor, actuator, or data point associated with equipment</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Agent/">Agent</a></td>
+<td>An entity that can act or be acted upon</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Organization/">Organization</a></td>
+<td>An organization such as a company, institution, or association</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
+<td>Describes business-relevant area measurements typically associated with archi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Level/">Level</a></td>
+<td>A building storey</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Range: <a href="../IdString/">IdString</a></p>
+<p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -613,8 +613,8 @@ Alias: id</p>
 <span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dtmi:example:Building:1</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier within the schema. Must start with a letter and contain</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">only letters, digits, underscores, hyphens, colons, semicolons, or periods (for</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">DTMI format).</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">is one acceptable example.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -628,7 +628,7 @@ Alias: id</p>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IdString</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
