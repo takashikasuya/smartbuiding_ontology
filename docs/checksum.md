@@ -22,14 +22,14 @@ Alias: checksum
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | A media file such as audio or video content |  no  |
-| [Document](Document.md) | A document providing information about a building element or asset |  no  |
-| [Schema](Schema.md) | A schema definition file |  no  |
-| [Image](Image.md) | An image file containing visual information |  no  |
-| [PostalAddress](PostalAddress.md) | A postal address |  no  |
-| [Information](Information.md) | Abstract base class for information resources such as documents, images, medi... |  no  |
 | [Georeference](Georeference.md) | REC Georeference のプレースホルダ（詳細は別途拡張） |  no  |
+| [Document](Document.md) | A document providing information about a building element or asset |  no  |
+| [Information](Information.md) | Abstract base class for information resources such as documents, images, medi... |  no  |
+| [PostalAddress](PostalAddress.md) | A postal address |  no  |
+| [Image](Image.md) | An image file containing visual information |  no  |
+| [Media](Media.md) | A media file such as audio or video content |  no  |
 | [Geometry](Geometry.md) | REC Geometry のプレースホルダ（詳細は別途拡張） |  no  |
+| [Schema](Schema.md) | A schema definition file |  no  |
 
 
 

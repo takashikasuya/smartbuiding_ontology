@@ -3,7 +3,7 @@
 
 
 
-_DTMI形式のID_
+_Identifier string (DTMI is one example)._
 
 
 
@@ -15,7 +15,7 @@ URI: [sbco:IdString](https://www.sbco.or.jp/ont/IdString)
 
 
 
-* [pattern](https://w3id.org/linkml/pattern): `^dtmi:[A-Za-z0-9_:.;-]+$`
+* [pattern](https://w3id.org/linkml/pattern): `^[A-Za-z][A-Za-z0-9_:.;-]*$`
 
 
 

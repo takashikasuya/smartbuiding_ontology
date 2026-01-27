@@ -147,7 +147,6 @@ Name: building_model
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
 | [DurationString](DurationString.md) | ISO 8601 duration format |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
-| [IdString](IdString.md) | DTMI形式のID |
 | [Integer](Integer.md) | An integer |
 | [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
 | [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |

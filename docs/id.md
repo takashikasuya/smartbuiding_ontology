@@ -3,7 +3,7 @@
 # Slot: id 
 
 
-_Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format)._
+_Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example._
 
 
 
@@ -22,21 +22,21 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |  no  |
-| [Organization](Organization.md) | An organization such as a company, institution, or association |  no  |
-| [Agent](Agent.md) | An entity that can act or be acted upon |  no  |
-| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
 | [BuildingElement](BuildingElement.md) | A part of the building structure |  no  |
+| [Organization](Organization.md) | An organization such as a company, institution, or association |  no  |
+| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
+| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
 | [Level](Level.md) | A building storey |  no  |
-| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
-| [Asset](Asset.md) | Something which is placed inside of a building, but is not an integral part o... |  no  |
-| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
+| [Agent](Agent.md) | An entity that can act or be acted upon |  no  |
 | [ArchitectureCapacity](ArchitectureCapacity.md) | Describes business-relevant capacity measurements typically associated with a... |  no  |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Equipment](Equipment.md) | An equipment asset installed in a space |  no  |
-| [PointExt](PointExt.md) | A point (sensor/actuator) in a smart building context |  no  |
+| [EquipmentExt](EquipmentExt.md) | An equipment asset installed in a space |  no  |
+| [Space](Space.md) | A contiguous part of the physical world that contains or can contain sub-spac... |  no  |
+| [ArchitectureArea](ArchitectureArea.md) | Describes business-relevant area measurements typically associated with archi... |  no  |
+| [Point](Point.md) | A sensor, actuator, or data point associated with equipment |  no  |
 
 
 
@@ -45,7 +45,7 @@ Alias: id
 
 ## Properties
 
-* Range: [IdString](IdString.md)
+* Range: [String](String.md)
 
 * Required: True
 
@@ -98,8 +98,8 @@ annotations:
     tag: example
     value: dtmi:example:Building:1
 description: Unique identifier within the schema. Must start with a letter and contain
-  only letters, digits, underscores, hyphens, colons, semicolons, or periods (for
-  DTMI format).
+  only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI
+  is one acceptable example.
 from_schema: https://www.sbco.or.jp/ont/schema
 rank: 1000
 identifier: true
@@ -113,7 +113,7 @@ domain_of:
 - BuildingElement
 - ArchitectureArea
 - ArchitectureCapacity
-range: IdString
+range: string
 required: true
 
 ```

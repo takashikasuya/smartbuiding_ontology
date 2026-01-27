@@ -229,7 +229,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [IdString](IdString.md) | Unique identifier within the schema | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | direct |
 | [commissionedBy](commissionedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that commissioned this asset | direct |
 | [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
@@ -395,8 +395,8 @@ attributes:
         tag: example
         value: dtmi:example:Building:1
     description: Unique identifier within the schema. Must start with a letter and
-      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods
-      (for DTMI format).
+      contain only letters, digits, underscores, hyphens, colons, semicolons, or periods.
+      DTMI is one acceptable example.
     from_schema: https://www.sbco.or.jp/ont/schema
     rank: 1000
     identifier: true
@@ -411,7 +411,7 @@ attributes:
     - BuildingElement
     - ArchitectureArea
     - ArchitectureCapacity
-    range: IdString
+    range: string
     required: true
   commissionedBy:
     name: commissionedBy

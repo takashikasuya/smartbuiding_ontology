@@ -1,4 +1,4 @@
-{
+﻿{
     "$defs": {
         "Agent": {
             "additionalProperties": false,
@@ -25,8 +25,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -110,8 +109,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -159,8 +157,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -339,8 +336,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -444,8 +440,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -702,8 +697,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -999,8 +993,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -1760,8 +1753,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -1965,8 +1957,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2046,8 +2037,7 @@
                     "description": "Substance associated with this point"
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2114,8 +2104,7 @@
                     "description": "Substance associated with this point"
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2645,8 +2634,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
@@ -2789,8 +2777,7 @@
                     ]
                 },
                 "id": {
-                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods (for DTMI format).",
-                    "pattern": "^dtmi:[A-Za-z0-9_:.;-]+$",
+                    "description": "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example.",
                     "type": "string"
                 },
                 "identifiers": {
