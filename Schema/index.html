@@ -528,7 +528,7 @@
 
 
 
-        Schema --&gt; "1..*" KeyStringMapEntry : identifiers
+        Schema --&gt; "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
 
 
@@ -579,7 +579,7 @@
 </tr>
 <tr>
 <td><a href="../identifiers/">identifiers</a></td>
-<td>1..* <br/> <a href="../KeyStringMapEntry/">KeyStringMapEntry</a></td>
+<td>* <br/> <a href="../KeyStringMapEntry/">KeyStringMapEntry</a></td>
 <td>map(string -&gt; string)</td>
 <td><a href="../Information/">Information</a></td>
 </tr>
@@ -766,7 +766,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KeyStringMapEntry</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

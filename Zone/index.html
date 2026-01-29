@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.github.io/smart-building-ontology/Site/">
+        <link rel="canonical" href="https://example.github.io/smart-building-ontology/Zone/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Class: Site - Smart Building Ontology (LinkML)</title>
+        <title>Class: Zone - Smart Building Ontology (LinkML)</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-site" class="md-skip">
+        <a href="#class-zone" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class: Site
+              Class: Zone
             
           </span>
         </div>
@@ -403,17 +403,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -496,248 +485,248 @@
 
 
 
-<h1 id="class-site">Class: Site<a class="headerlink" href="#class-site" title="Permanent link">&para;</a></h1>
-<p><em>A piece of land upon which zero or more buildings may be situated.</em></p>
-<p>URI: <a href="https://w3id.org/rec/Site">rec:Site</a></p>
+<h1 id="class-zone">Class: Zone<a class="headerlink" href="#class-zone" title="Permanent link">&para;</a></h1>
+<p><em>A sub-zone within or outside of a building defined to support some technology and/or use.</em></p>
+<p>URI: <a href="https://w3id.org/rec/Zone">rec:Zone</a></p>
 <pre class="mermaid"><code> classDiagram
-    class Site
-    click Site href "../Site/"
-      Architecture &lt;|-- Site
+    class Zone
+    click Zone href "../Zone/"
+      Architecture &lt;|-- Zone
         click Architecture href "../Architecture/"
 
-      Site : address
+      Zone : address
 
 
 
 
 
-        Site --&gt; "*" PostalAddress : address
+        Zone --&gt; "*" PostalAddress : address
         click PostalAddress href "../PostalAddress/"
 
 
 
-      Site : adjacentElement
+      Zone : adjacentElement
 
 
 
 
 
-        Site --&gt; "*" BuildingElement : adjacentElement
+        Zone --&gt; "*" BuildingElement : adjacentElement
         click BuildingElement href "../BuildingElement/"
 
 
 
-      Site : architectedBy
+      Zone : architectedBy
 
 
 
 
 
-        Site --&gt; "*" Agent : architectedBy
+        Zone --&gt; "*" Agent : architectedBy
         click Agent href "../Agent/"
 
 
 
-      Site : area
+      Zone : area
 
 
 
 
 
-        Site --&gt; "0..1" ArchitectureArea : area
+        Zone --&gt; "0..1" ArchitectureArea : area
         click ArchitectureArea href "../ArchitectureArea/"
 
 
 
-      Site : capacity
+      Zone : capacity
 
 
 
 
 
-        Site --&gt; "0..1" ArchitectureCapacity : capacity
+        Zone --&gt; "0..1" ArchitectureCapacity : capacity
         click ArchitectureCapacity href "../ArchitectureCapacity/"
 
 
 
-      Site : constructedBy
+      Zone : constructedBy
 
 
 
 
 
-        Site --&gt; "*" Agent : constructedBy
+        Zone --&gt; "*" Agent : constructedBy
         click Agent href "../Agent/"
 
 
 
-      Site : containsElement
+      Zone : containsElement
 
 
 
 
 
-        Site --&gt; "*" BuildingElement : containsElement
+        Zone --&gt; "*" BuildingElement : containsElement
         click BuildingElement href "../BuildingElement/"
 
 
 
-      Site : customProperties
+      Zone : customProperties
 
 
 
 
 
-        Site --&gt; "*" KeyMapOfStringMapEntry : customProperties
+        Zone --&gt; "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
 
 
 
-      Site : customTags
+      Zone : customTags
 
 
 
 
 
-        Site --&gt; "*" KeyBoolMapEntry : customTags
+        Zone --&gt; "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
 
 
 
-      Site : description
+      Zone : description
 
-      Site : documentation
-
-
+      Zone : documentation
 
 
 
-        Site --&gt; "*" Document : documentation
+
+
+        Zone --&gt; "*" Document : documentation
         click Document href "../Document/"
 
 
 
-      Site : geometry
+      Zone : geometry
 
 
 
 
 
-        Site --&gt; "0..1" Geometry : geometry
+        Zone --&gt; "0..1" Geometry : geometry
         click Geometry href "../Geometry/"
 
 
 
-      Site : georeference
+      Zone : georeference
 
 
 
 
 
-        Site --&gt; "0..1" Georeference : georeference
+        Zone --&gt; "0..1" Georeference : georeference
         click Georeference href "../Georeference/"
 
 
 
-      Site : hasPart
+      Zone : hasPart
 
 
 
 
 
-        Site --&gt; "*" Space : hasPart
+        Zone --&gt; "*" Space : hasPart
         click Space href "../Space/"
 
 
 
-      Site : hasPoint
+      Zone : hasPoint
 
 
 
 
 
-        Site --&gt; "*" Point : hasPoint
+        Zone --&gt; "*" Point : hasPoint
         click Point href "../Point/"
 
 
 
-      Site : id
+      Zone : id
 
-      Site : identifiers
-
-
+      Zone : identifiers
 
 
 
-        Site --&gt; "*" KeyStringMapEntry : identifiers
+
+
+        Zone --&gt; "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
 
 
 
-      Site : intersectingElement
+      Zone : intersectingElement
 
 
 
 
 
-        Site --&gt; "*" BuildingElement : intersectingElement
+        Zone --&gt; "*" BuildingElement : intersectingElement
         click BuildingElement href "../BuildingElement/"
 
 
 
-      Site : isFedBy
+      Zone : isFedBy
 
 
 
 
 
-        Site --&gt; "*" Resource : isFedBy
+        Zone --&gt; "*" Resource : isFedBy
         click Resource href "../Resource/"
 
 
 
-      Site : isLocationOf
+      Zone : isLocationOf
 
 
 
 
 
-        Site --&gt; "*" EquipmentExt : isLocationOf
+        Zone --&gt; "*" EquipmentExt : isLocationOf
         click EquipmentExt href "../EquipmentExt/"
 
 
 
-      Site : isPartOf
+      Zone : isPartOf
 
 
 
 
 
-        Site --&gt; "0..1" Any : isPartOf
+        Zone --&gt; "0..1" Any : isPartOf
         click Any href "../Any/"
 
 
 
-      Site : name
+      Zone : name
 
-      Site : operatedBy
-
-
+      Zone : operatedBy
 
 
 
-        Site --&gt; "*" Agent : operatedBy
+
+
+        Zone --&gt; "*" Agent : operatedBy
         click Agent href "../Agent/"
 
 
 
-      Site : ownedBy
+      Zone : ownedBy
 
 
 
 
 
-        Site --&gt; "*" Agent : ownedBy
+        Zone --&gt; "*" Agent : ownedBy
         click Agent href "../Agent/"
 
 
@@ -747,7 +736,7 @@
 <ul>
 <li><a href="../Space/">Space</a><ul>
 <li><a href="../Architecture/">Architecture</a><ul>
-<li><strong>Site</strong></li>
+<li><strong>Zone</strong></li>
 </ul>
 </li>
 </ul>
@@ -874,7 +863,7 @@
 </tr>
 <tr>
 <td><a href="../isPartOf/">isPartOf</a></td>
-<td>0..1 <br/> <a href="../Any/">Any</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="./">Site</a>&nbsp;or&nbsp;<br /><a href="../Building/">Building</a>&nbsp;or&nbsp;<br /><a href="../Level/">Level</a>&nbsp;or&nbsp;<br /><a href="../Room/">Room</a>&nbsp;or&nbsp;<br /><a href="../Zone/">Zone</a>&nbsp;or&nbsp;<br /><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td>0..1 <br/> <a href="../Any/">Any</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Site/">Site</a>&nbsp;or&nbsp;<br /><a href="../Building/">Building</a>&nbsp;or&nbsp;<br /><a href="../Level/">Level</a>&nbsp;or&nbsp;<br /><a href="../Room/">Room</a>&nbsp;or&nbsp;<br /><a href="./">Zone</a>&nbsp;or&nbsp;<br /><a href="../OutdoorSpace/">OutdoorSpace</a></td>
 <td></td>
 <td><a href="../Space/">Space</a></td>
 </tr>
@@ -925,104 +914,89 @@
 <td><a href="../Space/">Space</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Architecture/">Architecture</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
-<td><a href="./">Site</a></td>
+<td><a href="../Site/">Site</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Building/">Building</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Room/">Room</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
-<td><a href="../Zone/">Zone</a></td>
+<td><a href="./">Zone</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
 <td><a href="../locatedIn/">locatedIn</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../locatedIn/">locatedIn</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../EquipmentExt/">EquipmentExt</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 <tr>
 <td><a href="../EquipmentExt/">EquipmentExt</a></td>
 <td><a href="../locatedIn/">locatedIn</a></td>
 <td>any_of[range]</td>
-<td><a href="./">Site</a></td>
+<td><a href="./">Zone</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
-<h3 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>description_ja</td>
-<td>サイト。複数の建物を含みうる。</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source<a class="headerlink" href="#schema-source" title="Permanent link">&para;</a></h3>
 <ul>
 <li>from schema: https://www.sbco.or.jp/ont/schema</li>
@@ -1038,15 +1012,15 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>rec:Site</td>
+<td>rec:Zone</td>
 </tr>
 <tr>
 <td>native</td>
-<td>sbco:Site</td>
+<td>sbco:Zone</td>
 </tr>
 <tr>
 <td>exact</td>
-<td>rec:Site</td>
+<td>rec:Zone</td>
 </tr>
 </tbody>
 </table>
@@ -1055,31 +1029,25 @@
 
 <h3 id="direct">Direct<a class="headerlink" href="#direct" title="Permanent link">&para;</a></h3>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
-<span class="nt">annotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">description_ja</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description_ja</span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">サイト。複数の建物を含みうる。</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A piece of land upon which zero or more buildings may be situated.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A sub-zone within or outside of a building defined to support some technology</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and/or use.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
 <span class="nt">exact_mappings</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Zone</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Site</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Zone</span>
 </code></pre></div>
 </details>
 
 <h3 id="induced">Induced<a class="headerlink" href="#induced" title="Permanent link">&para;</a></h3>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
-<span class="nt">annotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">description_ja</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description_ja</span>
-<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">サイト。複数の建物を含みうる。</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A piece of land upon which zero or more buildings may be situated.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A sub-zone within or outside of a building defined to support some technology</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">and/or use.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.sbco.or.jp/ont/schema</span>
 <span class="nt">exact_mappings</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Zone</span>
 <span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">area</span><span class="p">:</span>
@@ -1089,7 +1057,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:area</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">area</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
@@ -1100,7 +1068,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:capacity</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">capacity</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
@@ -1111,7 +1079,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:address</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">address</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostalAddress</span>
@@ -1123,7 +1091,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:adjacentElement</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adjacentElement</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
@@ -1135,7 +1103,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:architectedBy</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">architectedBy</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
@@ -1147,7 +1115,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:constructedBy</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constructedBy</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
@@ -1159,7 +1127,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:containsElement</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">containsElement</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
@@ -1171,7 +1139,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:documentation</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">documentation</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1184,7 +1152,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:hasPoint</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasPoint</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1200,7 +1168,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:intersectingElement</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intersectingElement</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BuildingElement</span>
@@ -1216,7 +1184,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:isFedBy</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isFedBy</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Equipment</span>
@@ -1229,7 +1197,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:operatedBy</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">operatedBy</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
@@ -1241,7 +1209,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:ownedBy</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ownedBy</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Architecture</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
@@ -1262,7 +1230,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1281,7 +1249,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:geometry</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geometry</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1297,7 +1265,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:georeference</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">georeference</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Georeference</span>
@@ -1309,7 +1277,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:hasPart</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasPart</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1324,7 +1292,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:isLocationOf</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isLocationOf</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EquipmentExt</span>
@@ -1335,7 +1303,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:isPartOf</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isPartOf</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1356,7 +1324,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:customProperties</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">customProperties</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1379,7 +1347,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:customTags</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">customTags</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1402,7 +1370,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:identifiers</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identifiers</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1426,7 +1394,7 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:name</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
@@ -1451,13 +1419,13 @@
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:description</span>
 <span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">description</span>
-<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Information</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Site</span>
+<span class="nt">class_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rec:Zone</span>
 </code></pre></div>
 </details>
 

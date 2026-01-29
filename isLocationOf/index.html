@@ -463,18 +463,18 @@ Alias: isLocationOf</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A piece of land upon which zero or more buildings may be situated</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Space/">Space</a></td>
 <td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td>An outdoor space associated with a site or building</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td>A sub-zone within or outside of a building defined to support some technology...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -487,12 +487,27 @@ Alias: isLocationOf</p>
 <td>A building storey</td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../Room/">Room</a></td>
+<td>A room within a building</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>A piece of land upon which zero or more buildings may be situated</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Range: <a href="../Resource/">Resource</a></p>
+<p>Range: <a href="../EquipmentExt/">EquipmentExt</a></p>
 </li>
 <li>
 <p>Multivalued: True</p>
@@ -532,7 +547,7 @@ Alias: isLocationOf</p>
 <span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isLocationOf</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EquipmentExt</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>

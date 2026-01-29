@@ -462,18 +462,13 @@ Alias: isPartOf</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td><a href="../EquipmentExt/">EquipmentExt</a></td>
+<td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Something which is placed inside of a building, but is not an integral part o...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Site/">Site</a></td>
-<td>A piece of land upon which zero or more buildings may be situated</td>
+<td><a href="../Room/">Room</a></td>
+<td>A room within a building</td>
 <td>no</td>
 </tr>
 <tr>
@@ -482,8 +477,33 @@ Alias: isPartOf</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td>An outdoor space associated with a site or building</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td>A sub-zone within or outside of a building defined to support some technology...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Building/">Building</a></td>
 <td>A building which is part of a site</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td>Something which is placed inside of a building, but is not an integral part o...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Level/">Level</a></td>
+<td>A building storey</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>A piece of land upon which zero or more buildings may be situated</td>
 <td>no</td>
 </tr>
 <tr>
@@ -492,20 +512,15 @@ Alias: isPartOf</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EquipmentExt/">EquipmentExt</a></td>
-<td>An equipment asset installed in a space</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Level/">Level</a></td>
-<td>A building storey</td>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Range: <a href="../Space/">Space</a></li>
+<li>Range: <a href="../Any/">Any</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Site/">Site</a>&nbsp;or&nbsp;<br /><a href="../Building/">Building</a>&nbsp;or&nbsp;<br /><a href="../Level/">Level</a>&nbsp;or&nbsp;<br /><a href="../Room/">Room</a>&nbsp;or&nbsp;<br /><a href="../Zone/">Zone</a>&nbsp;or&nbsp;<br /><a href="../OutdoorSpace/">OutdoorSpace</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
 <h3 id="schema-source">Schema Source<a class="headerlink" href="#schema-source" title="Permanent link">&para;</a></h3>
@@ -541,8 +556,16 @@ Alias: isPartOf</p>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Any</span>
 <span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">any_of</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Building</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Level</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Room</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OutdoorSpace</span>
 </code></pre></div>
 </details>
 

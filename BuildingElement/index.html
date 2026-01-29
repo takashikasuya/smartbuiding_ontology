@@ -535,7 +535,7 @@
 
 
 
-        BuildingElement --&gt; "1..*" KeyStringMapEntry : identifiers
+        BuildingElement --&gt; "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
 
 
@@ -575,7 +575,7 @@
 </tr>
 <tr>
 <td><a href="../identifiers/">identifiers</a></td>
-<td>1..* <br/> <a href="../KeyStringMapEntry/">KeyStringMapEntry</a></td>
+<td>* <br/> <a href="../KeyStringMapEntry/">KeyStringMapEntry</a></td>
 <td>map(string -&gt; string)</td>
 <td>direct</td>
 </tr>
@@ -672,6 +672,60 @@
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
+<td><a href="../intersectingElement/">intersectingElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Room/">Room</a></td>
+<td><a href="../adjacentElement/">adjacentElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Room/">Room</a></td>
+<td><a href="../containsElement/">containsElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Room/">Room</a></td>
+<td><a href="../intersectingElement/">intersectingElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td><a href="../adjacentElement/">adjacentElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td><a href="../containsElement/">containsElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td><a href="../intersectingElement/">intersectingElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td><a href="../adjacentElement/">adjacentElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td><a href="../containsElement/">containsElement</a></td>
+<td>range</td>
+<td><a href="./">BuildingElement</a></td>
+</tr>
+<tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
 <td><a href="../intersectingElement/">intersectingElement</a></td>
 <td>range</td>
 <td><a href="./">BuildingElement</a></td>
@@ -846,7 +900,7 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureArea</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArchitectureCapacity</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KeyStringMapEntry</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
