@@ -61,6 +61,31 @@ def slot_predicate(schema_view: SchemaView, prefix_map: dict[str, str], slot_nam
     return expand_uri(prefix_map, str(slot.slot_uri))
 
 
+def slot_range(schema_view: SchemaView, slot_name: str) -> str | None:
+    slot = schema_view.get_slot(slot_name)
+    if slot is None:
+        return None
+    return slot.range
+
+
+def slot_range_is_class(schema_view: SchemaView, slot_name: str) -> bool:
+    range_name = slot_range(schema_view, slot_name)
+    if not range_name:
+        return False
+    return schema_view.get_class(range_name) is not None
+
+
+def slot_range_is_enum(schema_view: SchemaView, slot_name: str) -> bool:
+    range_name = slot_range(schema_view, slot_name)
+    if not range_name:
+        return False
+    return schema_view.get_enum(range_name) is not None
+
+
+def is_curie_or_uri(value: str) -> bool:
+    return value.startswith("http://") or value.startswith("https://") or ":" in value
+
+
 def class_uri(schema_view: SchemaView, prefix_map: dict[str, str], class_name: str) -> URIRef:
     class_def = schema_view.get_class(class_name)
     if class_def is None or class_def.class_uri is None:
@@ -76,11 +101,14 @@ def resolve_class_name(
     node: dict[str, Any],
     depth: int,
     config: ConversionConfig,
+    class_override: str | None = None,
 ) -> str:
     for key in ("type", "@type", "class"):
         explicit = node.get(key)
         if explicit:
             return explicit
+    if class_override:
+        return class_override
     if depth == 0:
         return config.root_class
     if depth < len(config.class_chain):
@@ -110,13 +138,14 @@ def convert_node(
     config: ConversionConfig,
     parent: URIRef | None = None,
     parent_predicate: URIRef | None = None,
+    class_override: str | None = None,
 ) -> URIRef:
     node_id = node.get("id")
     if not node_id:
         raise ValueError("Each node must include an 'id' field")
     subject = curie_to_uri(prefix_map, node_id)
 
-    class_name = resolve_class_name(node, depth, config)
+    class_name = resolve_class_name(node, depth, config, class_override=class_override)
     graph.add((subject, RDF.type, class_uri(schema_view, prefix_map, class_name)))
 
     if parent is not None and parent_predicate is not None:
@@ -145,17 +174,57 @@ def convert_node(
             predicate = slot_predicate(schema_view, prefix_map, key)
             items = value if isinstance(value, list) else [value]
             for item in items:
-                graph.add((subject, predicate, curie_to_uri(prefix_map, item)))
+                graph.add((subject, predicate, expand_uri(prefix_map, str(item))))
             continue
 
         predicate = slot_predicate(schema_view, prefix_map, key)
         if isinstance(value, dict):
+            if slot_range_is_class(schema_view, key):
+                class_name = slot_range(schema_view, key)
+                convert_node(
+                    graph,
+                    schema_view,
+                    prefix_map,
+                    value,
+                    depth + 1,
+                    config,
+                    parent=subject,
+                    parent_predicate=predicate,
+                    class_override=class_name,
+                )
+                continue
             raise ValueError(f"Slot '{key}' expects literal(s), got mapping")
         if isinstance(value, list):
             for item in value:
-                add_literal(graph, subject, predicate, item)
+                if isinstance(item, dict):
+                    if slot_range_is_class(schema_view, key):
+                        class_name = slot_range(schema_view, key)
+                        convert_node(
+                            graph,
+                            schema_view,
+                            prefix_map,
+                            item,
+                            depth + 1,
+                            config,
+                            parent=subject,
+                            parent_predicate=predicate,
+                            class_override=class_name,
+                        )
+                        continue
+                    raise ValueError(f"Slot '{key}' expects literal(s), got mapping")
+                if slot_range_is_class(schema_view, key):
+                    graph.add((subject, predicate, expand_uri(prefix_map, str(item))))
+                elif slot_range_is_enum(schema_view, key) and isinstance(item, str) and is_curie_or_uri(item):
+                    graph.add((subject, predicate, expand_uri(prefix_map, item)))
+                else:
+                    add_literal(graph, subject, predicate, item)
         else:
-            add_literal(graph, subject, predicate, value)
+            if slot_range_is_class(schema_view, key) and isinstance(value, str):
+                graph.add((subject, predicate, expand_uri(prefix_map, value)))
+            elif slot_range_is_enum(schema_view, key) and isinstance(value, str) and is_curie_or_uri(value):
+                graph.add((subject, predicate, expand_uri(prefix_map, value)))
+            else:
+                add_literal(graph, subject, predicate, value)
 
     return subject
 

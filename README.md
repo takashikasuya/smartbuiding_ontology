@@ -24,6 +24,20 @@ gen-doc --directory docs schema/building_model.yaml
 mkdocs serve
 ```
 
+## RDF Validation (OWL Inference + SHACL)
+
+`scripts/validate_rdf.py` runs the YAML→RDF conversion and validates the resulting RDF with
+the generated OWL/SHACL artifacts. Validation cases live under `sample/validation/` and
+can assert both SHACL conformance and expected inferred class types.
+
+```bash
+python scripts/validate_rdf.py \
+  --schema schema/building_model.yaml \
+  --ontology output/building_model.owl.ttl \
+  --shacl output/building_model.shacl.ttl \
+  --cases sample/validation/cases.yaml
+```
+
 ## CI/CD
 
 - GitHub Actions (`.github/workflows/ci.yml`) により、`main` への push で
