@@ -65,15 +65,13 @@ URI: [rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Space](Space.md) | [isLocationOf](isLocationOf.md) | range | [Resource](Resource.md) |
 | [Architecture](Architecture.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
-| [Architecture](Architecture.md) | [isLocationOf](isLocationOf.md) | range | [Resource](Resource.md) |
 | [Site](Site.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
-| [Site](Site.md) | [isLocationOf](isLocationOf.md) | range | [Resource](Resource.md) |
 | [Building](Building.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
-| [Building](Building.md) | [isLocationOf](isLocationOf.md) | range | [Resource](Resource.md) |
 | [Level](Level.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
-| [Level](Level.md) | [isLocationOf](isLocationOf.md) | range | [Resource](Resource.md) |
+| [Room](Room.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
+| [Zone](Zone.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
 | [Equipment](Equipment.md) | [feeds](feeds.md) | range | [Resource](Resource.md) |
 | [Equipment](Equipment.md) | [isFedBy](isFedBy.md) | range | [Resource](Resource.md) |
 | [EquipmentExt](EquipmentExt.md) | [feeds](feeds.md) | range | [Resource](Resource.md) |

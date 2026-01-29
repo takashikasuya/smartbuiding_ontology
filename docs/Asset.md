@@ -120,7 +120,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
     
         
         
-        Asset --> "1..*" KeyStringMapEntry : identifiers
+        Asset --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -148,8 +148,8 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
     
         
         
-        Asset --> "0..1" Space : isPartOf
-        click Space href "../Space/"
+        Asset --> "0..1" Any : isPartOf
+        click Any href "../Any/"
     
 
         
@@ -159,8 +159,8 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
     
         
         
-        Asset --> "*" Space : locatedIn
-        click Space href "../Space/"
+        Asset --> "*" Any : locatedIn
+        click Any href "../Any/"
     
 
         
@@ -237,8 +237,8 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | direct |
 | [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | direct |
 | [installedBy](installedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that installed this asset | direct |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md) |  | direct |
-| [locatedIn](locatedIn.md) | * <br/> [Space](Space.md) | Space where this asset is located | direct |
+| [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | direct |
+| [locatedIn](locatedIn.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | Space where this asset is located | direct |
 | [manufacturedBy](manufacturedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that manufactured this asset | direct |
 | [mountedOn](mountedOn.md) | 0..1 <br/> [BuildingElement](BuildingElement.md) | Building element on which this asset is mounted | direct |
 | [servicedBy](servicedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that services this asset | direct |
@@ -246,7 +246,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | [commissioningDate](commissioningDate.md) | 0..1 <br/> [Date](Date.md) | Date when the asset was commissioned | direct |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | direct |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [initialCost](initialCost.md) | 0..1 <br/> [String](String.md) | Initial cost of the asset | direct |
 | [installationDate](installationDate.md) | 0..1 <br/> [Date](Date.md) | Date when the asset was installed | direct |
 | [IPAddress](IPAddress.md) | * <br/> [String](String.md) | IP address of the asset | direct |
@@ -481,6 +481,8 @@ attributes:
     - Asset
     range: Space
     multivalued: true
+    inlined: true
+    inlined_as_list: true
   hasPoint:
     name: hasPoint
     description: Point associated with this architecture
@@ -519,8 +521,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: false
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   locatedIn:
     name: locatedIn
     description: Space where this asset is located
@@ -531,8 +541,16 @@ attributes:
     owner: Asset
     domain_of:
     - Asset
-    range: Space
+    range: Any
     multivalued: true
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   manufacturedBy:
     name: manufacturedBy
     description: Agent or resource that manufactured this asset
@@ -657,7 +675,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true

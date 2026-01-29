@@ -85,7 +85,7 @@ URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
     
         
         
-        PointExt --> "1..*" KeyStringMapEntry : identifiers
+        PointExt --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -163,7 +163,7 @@ URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Point](Point.md) |
 | [hasQuantity](hasQuantity.md) | 0..1 <br/> [QuantityEnum](QuantityEnum.md) | Physical quantity measured by this point | [Point](Point.md) |
 | [hasSubstance](hasSubstance.md) | 0..1 <br/> [SubstanceEnum](SubstanceEnum.md) | Substance associated with this point | [Point](Point.md) |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Point](Point.md) |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Point](Point.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Point](Point.md) |
 
 
@@ -178,6 +178,9 @@ URI: [sbco:PointExt](https://www.sbco.or.jp/ont/PointExt)
 | [Site](Site.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 | [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 | [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Room](Room.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [Zone](Zone.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 | [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 | [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
 | [EquipmentExt](EquipmentExt.md) | [hasPoint](hasPoint.md) | any_of[range] | [PointExt](PointExt.md) |
@@ -507,7 +510,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true

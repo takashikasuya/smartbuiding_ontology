@@ -56,7 +56,7 @@ URI: [rec:Georeference](https://w3id.org/rec/Georeference)
     
         
         
-        Georeference --> "1..*" KeyStringMapEntry : identifiers
+        Georeference --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -91,7 +91,7 @@ URI: [rec:Georeference](https://w3id.org/rec/Georeference)
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Information](Information.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Information](Information.md) |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Information](Information.md) |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Information](Information.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Information](Information.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Information](Information.md) |
 | [format](format.md) | 0..1 <br/> [String](String.md) | MIME type or format identifier for the information | [Information](Information.md) |
@@ -114,6 +114,9 @@ URI: [rec:Georeference](https://w3id.org/rec/Georeference)
 | [Site](Site.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
 | [Building](Building.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
 | [Level](Level.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
+| [Room](Room.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
+| [Zone](Zone.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [georeference](georeference.md) | range | [Georeference](Georeference.md) |
 
 
 
@@ -252,7 +255,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true

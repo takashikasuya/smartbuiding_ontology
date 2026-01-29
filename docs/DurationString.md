@@ -9,11 +9,12 @@ _ISO 8601 duration format_
 
 URI: [sbco:DurationString](https://www.sbco.or.jp/ont/DurationString)
 
-* [base](https://w3id.org/linkml/base): string
+* [base](https://w3id.org/linkml/base): str
 
 * [uri](https://w3id.org/linkml/uri): sbco:DurationString
 
 
+* [typeof](https://w3id.org/linkml/typeof): string
 
 * [pattern](https://w3id.org/linkml/pattern): `^P(?:\d+Y)?(?:\d+M)?(?:\d+D)?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$`
 

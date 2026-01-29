@@ -20,7 +20,7 @@ imports:
 
 types:
   DurationString:
-    base: string
+    typeof: string
     description: ISO 8601 duration format
     uri: sbco:DurationString
     pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
@@ -396,7 +396,7 @@ slots:
     range: KeyStringMapEntry
     inlined: true
     inlined_as_list: true
-    required: true
+    required: false
     slot_uri: rec:identifiers
 
   key:
@@ -520,16 +520,26 @@ slots:
     description: The subject is composed in part of the entity given by the object.
     range: Space
     multivalued: true
+    inlined: true
+    inlined_as_list: true
     slot_uri: rec:hasPart
 
   isPartOf:
-    range: Space
+    range: Any
     multivalued: false
     slot_uri: rec:isPartOf
+    any_of:
+      - range: Space
+      - range: Site
+      - range: Building
+      - range: Level
+      - range: Room
+      - range: Zone
+      - range: OutdoorSpace
 
   isLocationOf:
     description: Subject is the physical location encapsulating the object.
-    range: Resource
+    range: EquipmentExt
     multivalued: true
     slot_uri: rec:isLocationOf
 
@@ -584,9 +594,17 @@ slots:
     
   locatedIn:
     description: "Space where this asset is located"
-    range: Space
+    range: Any
     multivalued: true
     slot_uri: rec:locatedIn
+    any_of:
+      - range: Space
+      - range: Site
+      - range: Building
+      - range: Level
+      - range: Room
+      - range: Zone
+      - range: OutdoorSpace
     
   MACAddress:  
     description: "MAC address of the asset"
@@ -954,6 +972,27 @@ classes:
     slots:
     - levelNumber
 
+  Room:
+    is_a: Architecture
+    class_uri: rec:Room
+    description: A room within a building.
+    exact_mappings:
+      - rec:Room
+
+  Zone:
+    is_a: Architecture
+    class_uri: rec:Zone
+    description: A sub-zone within or outside of a building defined to support some technology and/or use.
+    exact_mappings:
+      - rec:Zone
+
+  OutdoorSpace:
+    is_a: Architecture
+    class_uri: rec:OutdoorSpace
+    description: An outdoor space associated with a site or building.
+    exact_mappings:
+      - rec:OutdoorSpace
+
   # Base Resource class
   Resource:
     abstract: true
@@ -961,6 +1000,10 @@ classes:
     description: "Base class for all resources"
     exact_mappings:
       - rdfs:Resource
+
+  Any:
+    class_uri: linkml:Any
+    description: "Any resource or value."
 
   # Asset class
   Asset:

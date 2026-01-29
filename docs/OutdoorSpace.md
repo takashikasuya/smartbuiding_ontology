@@ -1,17 +1,15 @@
 
 
-# Class: Architecture 
+# Class: OutdoorSpace 
 
 
-_A designed/landscaped (or potentially designed/landscaped) part of the physical world that has a 3D spatial extent. E.g., a building site, a building, levels within the building, rooms, etc._
+_An outdoor space associated with a site or building._
 
 
 
 
-* __NOTE__: this is an abstract class and should not be instantiated directly
 
-
-URI: [rec:Architecture](https://w3id.org/rec/Architecture)
+URI: [rec:OutdoorSpace](https://w3id.org/rec/OutdoorSpace)
 
 
 
@@ -19,259 +17,244 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 ```mermaid
  classDiagram
-    class Architecture
-    click Architecture href "../Architecture/"
-      Space <|-- Architecture
-        click Space href "../Space/"
-      
-
-      Architecture <|-- Site
-        click Site href "../Site/"
-      Architecture <|-- Building
-        click Building href "../Building/"
-      Architecture <|-- Level
-        click Level href "../Level/"
-      Architecture <|-- Room
-        click Room href "../Room/"
-      Architecture <|-- Zone
-        click Zone href "../Zone/"
+    class OutdoorSpace
+    click OutdoorSpace href "../OutdoorSpace/"
       Architecture <|-- OutdoorSpace
-        click OutdoorSpace href "../OutdoorSpace/"
+        click Architecture href "../Architecture/"
       
-
-      Architecture : address
+      OutdoorSpace : address
         
           
     
         
         
-        Architecture --> "*" PostalAddress : address
+        OutdoorSpace --> "*" PostalAddress : address
         click PostalAddress href "../PostalAddress/"
     
 
         
-      Architecture : adjacentElement
+      OutdoorSpace : adjacentElement
         
           
     
         
         
-        Architecture --> "*" BuildingElement : adjacentElement
+        OutdoorSpace --> "*" BuildingElement : adjacentElement
         click BuildingElement href "../BuildingElement/"
     
 
         
-      Architecture : architectedBy
+      OutdoorSpace : architectedBy
         
           
     
         
         
-        Architecture --> "*" Agent : architectedBy
+        OutdoorSpace --> "*" Agent : architectedBy
         click Agent href "../Agent/"
     
 
         
-      Architecture : area
+      OutdoorSpace : area
         
           
     
         
         
-        Architecture --> "0..1" ArchitectureArea : area
+        OutdoorSpace --> "0..1" ArchitectureArea : area
         click ArchitectureArea href "../ArchitectureArea/"
     
 
         
-      Architecture : capacity
+      OutdoorSpace : capacity
         
           
     
         
         
-        Architecture --> "0..1" ArchitectureCapacity : capacity
+        OutdoorSpace --> "0..1" ArchitectureCapacity : capacity
         click ArchitectureCapacity href "../ArchitectureCapacity/"
     
 
         
-      Architecture : constructedBy
+      OutdoorSpace : constructedBy
         
           
     
         
         
-        Architecture --> "*" Agent : constructedBy
+        OutdoorSpace --> "*" Agent : constructedBy
         click Agent href "../Agent/"
     
 
         
-      Architecture : containsElement
+      OutdoorSpace : containsElement
         
           
     
         
         
-        Architecture --> "*" BuildingElement : containsElement
+        OutdoorSpace --> "*" BuildingElement : containsElement
         click BuildingElement href "../BuildingElement/"
     
 
         
-      Architecture : customProperties
+      OutdoorSpace : customProperties
         
           
     
         
         
-        Architecture --> "*" KeyMapOfStringMapEntry : customProperties
+        OutdoorSpace --> "*" KeyMapOfStringMapEntry : customProperties
         click KeyMapOfStringMapEntry href "../KeyMapOfStringMapEntry/"
     
 
         
-      Architecture : customTags
+      OutdoorSpace : customTags
         
           
     
         
         
-        Architecture --> "*" KeyBoolMapEntry : customTags
+        OutdoorSpace --> "*" KeyBoolMapEntry : customTags
         click KeyBoolMapEntry href "../KeyBoolMapEntry/"
     
 
         
-      Architecture : description
+      OutdoorSpace : description
         
-      Architecture : documentation
+      OutdoorSpace : documentation
         
           
     
         
         
-        Architecture --> "*" Document : documentation
+        OutdoorSpace --> "*" Document : documentation
         click Document href "../Document/"
     
 
         
-      Architecture : geometry
+      OutdoorSpace : geometry
         
           
     
         
         
-        Architecture --> "0..1" Geometry : geometry
+        OutdoorSpace --> "0..1" Geometry : geometry
         click Geometry href "../Geometry/"
     
 
         
-      Architecture : georeference
+      OutdoorSpace : georeference
         
           
     
         
         
-        Architecture --> "0..1" Georeference : georeference
+        OutdoorSpace --> "0..1" Georeference : georeference
         click Georeference href "../Georeference/"
     
 
         
-      Architecture : hasPart
+      OutdoorSpace : hasPart
         
           
     
         
         
-        Architecture --> "*" Space : hasPart
+        OutdoorSpace --> "*" Space : hasPart
         click Space href "../Space/"
     
 
         
-      Architecture : hasPoint
+      OutdoorSpace : hasPoint
         
           
     
         
         
-        Architecture --> "*" Point : hasPoint
+        OutdoorSpace --> "*" Point : hasPoint
         click Point href "../Point/"
     
 
         
-      Architecture : id
+      OutdoorSpace : id
         
-      Architecture : identifiers
+      OutdoorSpace : identifiers
         
           
     
         
         
-        Architecture --> "*" KeyStringMapEntry : identifiers
+        OutdoorSpace --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
         
-      Architecture : intersectingElement
+      OutdoorSpace : intersectingElement
         
           
     
         
         
-        Architecture --> "*" BuildingElement : intersectingElement
+        OutdoorSpace --> "*" BuildingElement : intersectingElement
         click BuildingElement href "../BuildingElement/"
     
 
         
-      Architecture : isFedBy
+      OutdoorSpace : isFedBy
         
           
     
         
         
-        Architecture --> "*" Resource : isFedBy
+        OutdoorSpace --> "*" Resource : isFedBy
         click Resource href "../Resource/"
     
 
         
-      Architecture : isLocationOf
+      OutdoorSpace : isLocationOf
         
           
     
         
         
-        Architecture --> "*" EquipmentExt : isLocationOf
+        OutdoorSpace --> "*" EquipmentExt : isLocationOf
         click EquipmentExt href "../EquipmentExt/"
     
 
         
-      Architecture : isPartOf
+      OutdoorSpace : isPartOf
         
           
     
         
         
-        Architecture --> "0..1" Any : isPartOf
+        OutdoorSpace --> "0..1" Any : isPartOf
         click Any href "../Any/"
     
 
         
-      Architecture : name
+      OutdoorSpace : name
         
-      Architecture : operatedBy
+      OutdoorSpace : operatedBy
         
           
     
         
         
-        Architecture --> "*" Agent : operatedBy
+        OutdoorSpace --> "*" Agent : operatedBy
         click Agent href "../Agent/"
     
 
         
-      Architecture : ownedBy
+      OutdoorSpace : ownedBy
         
           
     
         
         
-        Architecture --> "*" Agent : ownedBy
+        OutdoorSpace --> "*" Agent : ownedBy
         click Agent href "../Agent/"
     
 
@@ -285,13 +268,8 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 ## Inheritance
 * [Space](Space.md)
-    * **Architecture**
-        * [Site](Site.md)
-        * [Building](Building.md)
-        * [Level](Level.md)
-        * [Room](Room.md)
-        * [Zone](Zone.md)
-        * [OutdoorSpace](OutdoorSpace.md)
+    * [Architecture](Architecture.md)
+        * **OutdoorSpace**
 
 
 
@@ -299,19 +277,19 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [area](area.md) | 0..1 <br/> [ArchitectureArea](ArchitectureArea.md) | Area of the architecture | direct |
-| [capacity](capacity.md) | 0..1 <br/> [ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | direct |
-| [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | direct |
-| [adjacentElement](adjacentElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | direct |
-| [architectedBy](architectedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that architected this structure | direct |
-| [constructedBy](constructedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that constructed this architecture | direct |
-| [containsElement](containsElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element contained within this architecture | direct |
-| [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | direct |
-| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | direct |
-| [intersectingElement](intersectingElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | direct |
-| [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | direct |
-| [operatedBy](operatedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that operates this architecture | direct |
-| [ownedBy](ownedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that owns this architecture | direct |
+| [area](area.md) | 0..1 <br/> [ArchitectureArea](ArchitectureArea.md) | Area of the architecture | [Architecture](Architecture.md) |
+| [capacity](capacity.md) | 0..1 <br/> [ArchitectureCapacity](ArchitectureCapacity.md) | Capacity of the architecture | [Architecture](Architecture.md) |
+| [address](address.md) | * <br/> [PostalAddress](PostalAddress.md) | Address of the architecture | [Architecture](Architecture.md) |
+| [adjacentElement](adjacentElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element adjacent to this architecture | [Architecture](Architecture.md) |
+| [architectedBy](architectedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that architected this structure | [Architecture](Architecture.md) |
+| [constructedBy](constructedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that constructed this architecture | [Architecture](Architecture.md) |
+| [containsElement](containsElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element contained within this architecture | [Architecture](Architecture.md) |
+| [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | [Architecture](Architecture.md) |
+| [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | [Architecture](Architecture.md) |
+| [intersectingElement](intersectingElement.md) | * <br/> [BuildingElement](BuildingElement.md) | Building element intersecting with this architecture | [Architecture](Architecture.md) |
+| [isFedBy](isFedBy.md) | * <br/> [Resource](Resource.md) | Resource that feeds this architecture | [Architecture](Architecture.md) |
+| [operatedBy](operatedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that operates this architecture | [Architecture](Architecture.md) |
+| [ownedBy](ownedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that owns this architecture | [Architecture](Architecture.md) |
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
@@ -326,6 +304,26 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Level](Level.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Room](Room.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Zone](Zone.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Asset](Asset.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Asset](Asset.md) | [locatedIn](locatedIn.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [Equipment](Equipment.md) | [locatedIn](locatedIn.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
+| [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | any_of[range] | [OutdoorSpace](OutdoorSpace.md) |
 
 
 
@@ -352,9 +350,9 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | rec:Architecture |
-| native | sbco:Architecture |
-| exact | rec:Architecture |
+| self | rec:OutdoorSpace |
+| native | sbco:OutdoorSpace |
+| exact | rec:OutdoorSpace |
 
 
 
@@ -369,36 +367,13 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
 <details>
 ```yaml
-name: Architecture
-description: A designed/landscaped (or potentially designed/landscaped) part of the
-  physical world that has a 3D spatial extent. E.g., a building site, a building,
-  levels within the building, rooms, etc.
+name: OutdoorSpace
+description: An outdoor space associated with a site or building.
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:Architecture
-is_a: Space
-abstract: true
-slots:
-- area
-- capacity
-- address
-- adjacentElement
-- architectedBy
-- constructedBy
-- containsElement
-- documentation
-- hasPoint
-- intersectingElement
-- isFedBy
-- operatedBy
-- ownedBy
-slot_usage:
-  hasPoint:
-    name: hasPoint
-    any_of:
-    - range: Point
-    - range: PointExt
-class_uri: rec:Architecture
+- rec:OutdoorSpace
+is_a: Architecture
+class_uri: rec:OutdoorSpace
 
 ```
 </details>
@@ -407,21 +382,12 @@ class_uri: rec:Architecture
 
 <details>
 ```yaml
-name: Architecture
-description: A designed/landscaped (or potentially designed/landscaped) part of the
-  physical world that has a 3D spatial extent. E.g., a building site, a building,
-  levels within the building, rooms, etc.
+name: OutdoorSpace
+description: An outdoor space associated with a site or building.
 from_schema: https://www.sbco.or.jp/ont/schema
 exact_mappings:
-- rec:Architecture
-is_a: Space
-abstract: true
-slot_usage:
-  hasPoint:
-    name: hasPoint
-    any_of:
-    - range: Point
-    - range: PointExt
+- rec:OutdoorSpace
+is_a: Architecture
 attributes:
   area:
     name: area
@@ -430,7 +396,7 @@ attributes:
     rank: 1000
     slot_uri: rec:area
     alias: area
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: ArchitectureArea
@@ -441,7 +407,7 @@ attributes:
     rank: 1000
     slot_uri: rec:capacity
     alias: capacity
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: ArchitectureCapacity
@@ -452,7 +418,7 @@ attributes:
     rank: 1000
     slot_uri: rec:address
     alias: address
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: PostalAddress
@@ -464,7 +430,7 @@ attributes:
     rank: 1000
     slot_uri: rec:adjacentElement
     alias: adjacentElement
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: BuildingElement
@@ -476,7 +442,7 @@ attributes:
     rank: 1000
     slot_uri: rec:architectedBy
     alias: architectedBy
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: Agent
@@ -488,7 +454,7 @@ attributes:
     rank: 1000
     slot_uri: rec:constructedBy
     alias: constructedBy
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: Agent
@@ -500,7 +466,7 @@ attributes:
     rank: 1000
     slot_uri: rec:containsElement
     alias: containsElement
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: BuildingElement
@@ -512,7 +478,7 @@ attributes:
     rank: 1000
     slot_uri: rec:documentation
     alias: documentation
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     - Asset
@@ -525,7 +491,7 @@ attributes:
     rank: 1000
     slot_uri: rec:hasPoint
     alias: hasPoint
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     - Asset
@@ -541,7 +507,7 @@ attributes:
     rank: 1000
     slot_uri: rec:intersectingElement
     alias: intersectingElement
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: BuildingElement
@@ -557,7 +523,7 @@ attributes:
     rank: 1000
     slot_uri: rec:isFedBy
     alias: isFedBy
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     - Equipment
@@ -570,7 +536,7 @@ attributes:
     rank: 1000
     slot_uri: rec:operatedBy
     alias: operatedBy
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: Agent
@@ -582,7 +548,7 @@ attributes:
     rank: 1000
     slot_uri: rec:ownedBy
     alias: ownedBy
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Architecture
     range: Agent
@@ -603,7 +569,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -622,7 +588,7 @@ attributes:
     rank: 1000
     slot_uri: rec:geometry
     alias: geometry
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -638,7 +604,7 @@ attributes:
     rank: 1000
     slot_uri: rec:georeference
     alias: georeference
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     range: Georeference
@@ -650,7 +616,7 @@ attributes:
     rank: 1000
     slot_uri: rec:hasPart
     alias: hasPart
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -665,7 +631,7 @@ attributes:
     rank: 1000
     slot_uri: rec:isLocationOf
     alias: isLocationOf
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     range: EquipmentExt
@@ -676,7 +642,7 @@ attributes:
     rank: 1000
     slot_uri: rec:isPartOf
     alias: isPartOf
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -697,7 +663,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customProperties
     alias: customProperties
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -720,7 +686,7 @@ attributes:
     rank: 1000
     slot_uri: rec:customTags
     alias: customTags
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -743,7 +709,7 @@ attributes:
     rank: 1000
     slot_uri: rec:identifiers
     alias: identifiers
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -767,7 +733,7 @@ attributes:
     rank: 1000
     slot_uri: rec:name
     alias: name
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
@@ -792,13 +758,13 @@ attributes:
     rank: 1000
     slot_uri: rec:description
     alias: description
-    owner: Architecture
+    owner: OutdoorSpace
     domain_of:
     - Space
     - Asset
     - Information
     range: string
-class_uri: rec:Architecture
+class_uri: rec:OutdoorSpace
 
 ```
 </details>

@@ -186,7 +186,7 @@ URI: [rec:Site](https://w3id.org/rec/Site)
     
         
         
-        Site --> "1..*" KeyStringMapEntry : identifiers
+        Site --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -219,8 +219,8 @@ URI: [rec:Site](https://w3id.org/rec/Site)
     
         
         
-        Site --> "*" Resource : isLocationOf
-        click Resource href "../Resource/"
+        Site --> "*" EquipmentExt : isLocationOf
+        click EquipmentExt href "../EquipmentExt/"
     
 
         
@@ -230,8 +230,8 @@ URI: [rec:Site](https://w3id.org/rec/Site)
     
         
         
-        Site --> "0..1" Space : isPartOf
-        click Space href "../Space/"
+        Site --> "0..1" Any : isPartOf
+        click Any href "../Any/"
     
 
         
@@ -294,16 +294,36 @@ URI: [rec:Site](https://w3id.org/rec/Site)
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
 | [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
-| [isLocationOf](isLocationOf.md) | * <br/> [Resource](Resource.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
-| [isPartOf](isPartOf.md) | 0..1 <br/> [Space](Space.md) |  | [Space](Space.md) |
+| [isLocationOf](isLocationOf.md) | * <br/> [EquipmentExt](EquipmentExt.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
+| [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | [Space](Space.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Space](Space.md) |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Space](Space.md) |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Space](Space.md) |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Space](Space.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Space](Space.md) |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Level](Level.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Room](Room.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Zone](Zone.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Asset](Asset.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Asset](Asset.md) | [locatedIn](locatedIn.md) | any_of[range] | [Site](Site.md) |
+| [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [Equipment](Equipment.md) | [locatedIn](locatedIn.md) | any_of[range] | [Site](Site.md) |
+| [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Site](Site.md) |
+| [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | any_of[range] | [Site](Site.md) |
 
 
 
@@ -617,6 +637,8 @@ attributes:
     - Asset
     range: Space
     multivalued: true
+    inlined: true
+    inlined_as_list: true
   isLocationOf:
     name: isLocationOf
     description: Subject is the physical location encapsulating the object.
@@ -627,7 +649,7 @@ attributes:
     owner: Site
     domain_of:
     - Space
-    range: Resource
+    range: EquipmentExt
     multivalued: true
   isPartOf:
     name: isPartOf
@@ -639,8 +661,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: false
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   customProperties:
     name: customProperties
     description: map(string -> map(string -> string))
@@ -707,7 +737,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true

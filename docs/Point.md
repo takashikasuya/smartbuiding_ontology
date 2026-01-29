@@ -85,7 +85,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
     
         
         
-        Point --> "1..*" KeyStringMapEntry : identifiers
+        Point --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -127,7 +127,7 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | direct |
 | [hasQuantity](hasQuantity.md) | 0..1 <br/> [QuantityEnum](QuantityEnum.md) | Physical quantity measured by this point | direct |
 | [hasSubstance](hasSubstance.md) | 0..1 <br/> [SubstanceEnum](SubstanceEnum.md) | Substance associated with this point | direct |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | direct |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | direct |
 
 
@@ -146,6 +146,12 @@ URI: [brick:Point](https://brickschema.org/schema/Brick#Point)
 | [Building](Building.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
 | [Level](Level.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 | [Level](Level.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Room](Room.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Room](Room.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [Zone](Zone.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [Zone](Zone.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
 | [Asset](Asset.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
 | [Asset](Asset.md) | [hasPoint](hasPoint.md) | any_of[range] | [Point](Point.md) |
 | [Equipment](Equipment.md) | [hasPoint](hasPoint.md) | range | [Point](Point.md) |
@@ -397,7 +403,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true

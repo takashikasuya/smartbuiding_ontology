@@ -1,987 +1,129 @@
-id: https://www.sbco.or.jp/ont/building/buildingA/instance
-name: buildingA_instance
-description: Building A instance data
-
-# Site インスタンス（トップレベル）
-site_tokyo_001:
-  id: site_tokyo_001
-  name: 東京第1サイト
-  hasPart:
-    - building_A
-
-building_A:
-  id: building_A
+id: sbco:site_tokyo_001
+name: 東京第1サイト
+hasPart:
+- id: sbco:building_A
   name: Aビル
   hasPart:
-    - level_1F
-    - level_2F
-    - level_3F
-
-level_1F:
-  id: level_1F
-  name: 1階
-  hasPart:
-    - room_101
-    - room_102
-    - room_103
-    - room_104
-    - room_105
-    - room_106
-
-level_2F:
-  id: level_2F
-  name: 2階
-  hasPart:
-    - room_201
-    - room_202
-    - room_203
-    - room_204
-    - room_205
-
-level_3F:
-  id: level_3F
-  name: 3階
-  hasPart:
-    - room_301
-    - room_302
-    - room_303
-    - room_304
-
-room_101:
-  id: room_101
-  name: 会議室101
-  isLocationOf:
-    - pac_001
-    - lighting_001
-    - lighting_002
-    - sensor_001
-    - sensor_002
-
-room_102:
-  id: room_102
-  name: 事務室102
-  isLocationOf:
-    - pac_002
-    - pac_003
-    - lighting_003
-    - lighting_004
-    - lighting_005
-    - sensor_003
-    - sensor_004
-    - sensor_005
-
-room_103:
-  id: room_103
-  name: 受付103
-  isLocationOf:
-    - lighting_006
-    - sensor_006
-
-room_104:
-  id: room_104
-  name: 倉庫104
-  isLocationOf:
-    - lighting_007
-    - sensor_007
-
-room_105:
-  id: room_105
-  name: サーバー室105
-  isLocationOf:
-    - pac_004
-    - pac_005
-    - lighting_008
-    - sensor_008
-    - sensor_009
-    - sensor_010
-    - sensor_011
-
-room_106:
-  id: room_106
-  name: 休憩室106
-  isLocationOf:
-    - pac_006
-    - lighting_009
-    - sensor_012
-    - sensor_013
-
-room_201:
-  id: room_201
-  name: 大会議室201
-  isLocationOf:
-    - pac_007
-    - pac_008
-    - pac_009
-    - lighting_010
-    - lighting_011
-    - lighting_012
-    - sensor_014
-    - sensor_015
-    - sensor_016
-
-room_202:
-  id: room_202
-  name: 事務室202
-  isLocationOf:
-    - pac_010
-    - lighting_013
-    - lighting_014
-    - sensor_017
-    - sensor_018
-
-room_203:
-  id: room_203
-  name: 事務室203
-  isLocationOf:
-    - pac_011
-    - lighting_015
-    - lighting_016
-    - sensor_019
-    - sensor_020
-
-room_204:
-  id: room_204
-  name: 応接室204
-  isLocationOf:
-    - pac_012
-    - lighting_017
-    - lighting_018
-    - sensor_021
-    - sensor_022
-
-room_205:
-  id: room_205
-  name: 資料室205
-  isLocationOf:
-    - lighting_019
-    - sensor_023
-    - sensor_024
-
-room_301:
-  id: room_301
-  name: 役員室301
-  isLocationOf:
-    - pac_013
-    - lighting_020
-    - lighting_021
-    - lighting_022
-    - sensor_025
-    - sensor_026
-
-room_302:
-  id: room_302
-  name: 秘書室302
-  isLocationOf:
-    - pac_014
-    - lighting_023
-    - sensor_027
-
-room_303:
-  id: room_303
-  name: 会議室303
-  isLocationOf:
-    - pac_015
-    - lighting_024
-    - lighting_025
-    - sensor_028
-    - sensor_029
-
-room_304:
-  id: room_304
-  name: ラウンジ304
-  isLocationOf:
-    - lighting_026
-    - lighting_027
-    - sensor_030
-    - sensor_031
-    - sensor_032
-
-pac_001:
-  id: pac_001
-  name: 会議室101 PackageAirConditioner 001
-  description: 会議室101に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_001_power
-    - pac_001_mode
-    - pac_001_setpoint_temp
-    - pac_001_return_temp
-    - pac_001_status
-  locatedIn: room_101
-  customProperties: &id003
-    - key: manufacturer
-      entries:
-      - key: name
-        value: 空調メーカーA社
-    - key: specifications
-      entries:
-      - key: cooling_capacity
-        value: 2.8kW
-      - key: heating_capacity
-        value: 3.2kW
-      - key: rated_power_consumption
-        value: 0.8kW
-      - key: voltage
-        value: 単相200V
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '5'
-      - key: command_points
-        value: '2'
-      - key: setpoint_points
-        value: '1'
-      - key: measurement_points
-        value: '1'
-      - key: status_points
-        value: '1'
-  customTags: &id004
-    - key: is_template
-      flag: true
-
-lighting_001:
-  id: lighting_001
-  name: 会議室101 LightingFixture 001
-  description: 会議室101に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_001_switch
-    - lighting_001_dimmer
-    - lighting_001_status
-  locatedIn: room_101
-  customProperties: &id001
-    - key: manufacturer
-      entries:
-      - key: name
-        value: 照明メーカーB社
-    - key: specifications
-      entries:
-      - key: power_consumption
-        value: 40W
-      - key: luminous_flux
-        value: 4000lm
-      - key: color_temperature
-        value: 5000K
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '3'
-  customTags: &id002
-    - key: is_template
-      flag: true
-
-lighting_002:
-  id: lighting_002
-  name: 会議室101 LightingFixture 002
-  description: 会議室101に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_002_switch
-    - lighting_002_dimmer
-    - lighting_002_status
-  locatedIn: room_101
-  customProperties: *id001
-  customTags: *id002
-
-sensor_001:
-  id: sensor_001
-  name: 会議室101 EnvironmentalSensor 001
-  description: 会議室101に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_001_temp
-    - sensor_001_humidity
-    - sensor_001_co2
-    - sensor_001_status
-  locatedIn: room_101
-  customProperties: &id005
-    - key: manufacturer
-      entries:
-      - key: name
-        value: センサーメーカーC社
-    - key: specifications
-      entries:
-      - key: power_supply
-        value: PoE
-      - key: communication
-        value: Modbus TCP
-      - key: measurement_interval
-        value: 10s
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '4'
-      - key: measurement_points
-        value: '3'
-      - key: status_points
-        value: '1'
-  customTags: &id006
-    - key: is_template
-      flag: true
-
-sensor_002:
-  id: sensor_002
-  name: 会議室101 EnvironmentalSensor 002
-  description: 会議室101に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:TEMP_ONLY_01:1
-  hasPoint:
-    - sensor_002_temp
-    - sensor_002_status
-  locatedIn: room_101
-  customProperties: &id007
-    - key: manufacturer
-      entries:
-      - key: name
-        value: センサーメーカーC社
-      - key: country
-        value: Japan
-    - key: specifications
-      entries:
-      - key: sensor_type
-        value: thermistor
-      - key: measurement_range
-        value: -40°C to +85°C
-      - key: accuracy
-        value: ±0.5°C
-      - key: resolution
-        value: 0.1°C
-      - key: response_time
-        value: 30s
-      - key: power_supply
-        value: 3.6V lithium battery
-      - key: battery_life
-        value: 5 years
-      - key: communication
-        value: LoRaWAN
-      - key: transmission_interval
-        value: 10min
-      - key: operating_temperature
-        value: -20°C to +60°C
-      - key: operating_humidity
-        value: 0-95%RH
-      - key: ip_rating
-        value: IP65
-      - key: dimensions
-        value: 80x60x25mm
-      - key: weight
-        value: 120g
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '2'
-      - key: measurement_points
-        value: '1'
-      - key: status_points
-        value: '1'
-    - key: wireless_info
-      entries:
-      - key: frequency
-        value: 920MHz
-      - key: transmission_power
-        value: 20mW
-      - key: range_indoor
-        value: 100m
-      - key: range_outdoor
-        value: 1km
-    - key: installation
-      entries:
-      - key: mounting_type
-        value: wall_mount
-      - key: mounting_height
-        value: 1.5-2.0m
-      - key: avoid_direct_sunlight
-        value: true
-  customTags: &id008
-    - key: is_template
-      flag: true
-    - key: wireless
-      flag: true
-
-pac_002:
-  id: pac_002
-  name: 事務室102 PackageAirConditioner 002
-  description: 事務室102に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_002_power
-    - pac_002_mode
-    - pac_002_setpoint_temp
-    - pac_002_return_temp
-    - pac_002_status
-  locatedIn: room_102
-  customProperties: *id003
-  customTags: *id004
-
-pac_003:
-  id: pac_003
-  name: 事務室102 PackageAirConditioner 003
-  description: 事務室102に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_003_power
-    - pac_003_mode
-    - pac_003_setpoint_temp
-    - pac_003_return_temp
-    - pac_003_status
-  locatedIn: room_102
-  customProperties: *id003
-  customTags: *id004
-
-lighting_003:
-  id: lighting_003
-  name: 事務室102 LightingFixture 003
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_003_switch
-    - lighting_003_dimmer
-    - lighting_003_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-lighting_004:
-  id: lighting_004
-  name: 事務室102 LightingFixture 004
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_004_switch
-    - lighting_004_dimmer
-    - lighting_004_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-lighting_005:
-  id: lighting_005
-  name: 事務室102 LightingFixture 005
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_005_switch
-    - lighting_005_dimmer
-    - lighting_005_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-sensor_003:
-  id: sensor_003
-  name: 事務室102 EnvironmentalSensor 003
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_003_temp
-    - sensor_003_humidity
-    - sensor_003_co2
-    - sensor_003_status
-  locatedIn: room_102
-  customProperties: *id005
-  customTags: *id006
-
-sensor_004:
-  id: sensor_004
-  name: 事務室102 EnvironmentalSensor 004
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_004_temp
-    - sensor_004_humidity
-    - sensor_004_co2
-    - sensor_004_status
-  locatedIn: room_102
-  customProperties: *id005
-  customTags: *id006
-
-sensor_005:
-  id: sensor_005
-  name: 事務室102 EnvironmentalSensor 005
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:TEMP_ONLY_01:1
-  hasPoint:
-    - sensor_005_temp
-    - sensor_005_status
-  locatedIn: room_102
-  customProperties: *id007
-  customTags: *id008
-
-room_103:
-  id: room_103
-  name: 受付103
-  isLocationOf:
-    - lighting_006
-    - sensor_006
-
-room_104:
-  id: room_104
-  name: 倉庫104
-  isLocationOf:
-    - lighting_007
-    - sensor_007
-
-room_105:
-  id: room_105
-  name: サーバー室105
-  isLocationOf:
-    - pac_004
-    - pac_005
-    - lighting_008
-    - sensor_008
-    - sensor_009
-    - sensor_010
-    - sensor_011
-
-room_106:
-  id: room_106
-  name: 休憩室106
-  isLocationOf:
-    - pac_006
-    - lighting_009
-    - sensor_012
-    - sensor_013
-
-room_201:
-  id: room_201
-  name: 大会議室201
-  isLocationOf:
-    - pac_007
-    - pac_008
-    - pac_009
-    - lighting_010
-    - lighting_011
-    - lighting_012
-    - sensor_014
-    - sensor_015
-    - sensor_016
-
-room_202:
-  id: room_202
-  name: 事務室202
-  isLocationOf:
-    - pac_010
-    - lighting_013
-    - lighting_014
-    - sensor_017
-    - sensor_018
-
-room_203:
-  id: room_203
-  name: 事務室203
-  isLocationOf:
-    - pac_011
-    - lighting_015
-    - lighting_016
-    - sensor_019
-    - sensor_020
-
-room_204:
-  id: room_204
-  name: 応接室204
-  isLocationOf:
-    - pac_012
-    - lighting_017
-    - lighting_018
-    - sensor_021
-    - sensor_022
-
-room_205:
-  id: room_205
-  name: 資料室205
-  isLocationOf:
-    - lighting_019
-    - sensor_023
-    - sensor_024
-
-room_301:
-  id: room_301
-  name: 役員室301
-  isLocationOf:
-    - pac_013
-    - lighting_020
-    - lighting_021
-    - lighting_022
-    - sensor_025
-    - sensor_026
-
-room_302:
-  id: room_302
-  name: 秘書室302
-  isLocationOf:
-    - pac_014
-    - lighting_023
-    - sensor_027
-
-room_303:
-  id: room_303
-  name: 会議室303
-  isLocationOf:
-    - pac_015
-    - lighting_024
-    - lighting_025
-    - sensor_028
-    - sensor_029
-
-room_304:
-  id: room_304
-  name: ラウンジ304
-  isLocationOf:
-    - lighting_026
-    - lighting_027
-    - sensor_030
-    - sensor_031
-    - sensor_032
-
-pac_001:
-  id: pac_001
-  name: 会議室101 PackageAirConditioner 001
-  description: 会議室101に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_001_power
-    - pac_001_mode
-    - pac_001_setpoint_temp
-    - pac_001_return_temp
-    - pac_001_status
-  locatedIn: room_101
-  customProperties: &id003
-    - key: manufacturer
-      entries:
-      - key: name
-        value: 空調メーカーA社
-    - key: specifications
-      entries:
-      - key: cooling_capacity
-        value: 2.8kW
-      - key: heating_capacity
-        value: 3.2kW
-      - key: rated_power_consumption
-        value: 0.8kW
-      - key: voltage
-        value: 単相200V
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '5'
-      - key: command_points
-        value: '2'
-      - key: setpoint_points
-        value: '1'
-      - key: measurement_points
-        value: '1'
-      - key: status_points
-        value: '1'
-  customTags: &id004
-    - key: is_template
-      flag: true
-
-lighting_001:
-  id: lighting_001
-  name: 会議室101 LightingFixture 001
-  description: 会議室101に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_001_switch
-    - lighting_001_dimmer
-    - lighting_001_status
-  locatedIn: room_101
-  customProperties: &id001
-    - key: manufacturer
-      entries:
-      - key: name
-        value: 照明メーカーB社
-    - key: specifications
-      entries:
-      - key: power_consumption
-        value: 40W
-      - key: luminous_flux
-        value: 4000lm
-      - key: color_temperature
-        value: 5000K
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '3'
-  customTags: &id002
-    - key: is_template
-      flag: true
-
-lighting_002:
-  id: lighting_002
-  name: 会議室101 LightingFixture 002
-  description: 会議室101に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_002_switch
-    - lighting_002_dimmer
-    - lighting_002_status
-  locatedIn: room_101
-  customProperties: *id001
-  customTags: *id002
-
-sensor_001:
-  id: sensor_001
-  name: 会議室101 EnvironmentalSensor 001
-  description: 会議室101に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_001_temp
-    - sensor_001_humidity
-    - sensor_001_co2
-    - sensor_001_status
-  locatedIn: room_101
-  customProperties: &id005
-    - key: manufacturer
-      entries:
-      - key: name
-        value: センサーメーカーC社
-    - key: specifications
-      entries:
-      - key: power_supply
-        value: PoE
-      - key: communication
-        value: Modbus TCP
-      - key: measurement_interval
-        value: 10s
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '4'
-      - key: measurement_points
-        value: '3'
-      - key: status_points
-        value: '1'
-  customTags: &id006
-    - key: is_template
-      flag: true
-
-sensor_002:
-  id: sensor_002
-  name: 会議室101 EnvironmentalSensor 002
-  description: 会議室101に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:TEMP_ONLY_01:1
-  hasPoint:
-    - sensor_002_temp
-    - sensor_002_status
-  locatedIn: room_101
-  customProperties: &id007
-    - key: manufacturer
-      entries:
-      - key: name
-        value: センサーメーカーC社
-      - key: country
-        value: Japan
-    - key: specifications
-      entries:
-      - key: sensor_type
-        value: thermistor
-      - key: measurement_range
-        value: -40°C to +85°C
-      - key: accuracy
-        value: ±0.5°C
-      - key: resolution
-        value: 0.1°C
-      - key: response_time
-        value: 30s
-      - key: power_supply
-        value: 3.6V lithium battery
-      - key: battery_life
-        value: 5 years
-      - key: communication
-        value: LoRaWAN
-      - key: transmission_interval
-        value: 10min
-      - key: operating_temperature
-        value: -20°C to +60°C
-      - key: operating_humidity
-        value: 0-95%RH
-      - key: ip_rating
-        value: IP65
-      - key: dimensions
-        value: 80x60x25mm
-      - key: weight
-        value: 120g
-    - key: point_configuration
-      entries:
-      - key: total_points
-        value: '2'
-      - key: measurement_points
-        value: '1'
-      - key: status_points
-        value: '1'
-    - key: wireless_info
-      entries:
-      - key: frequency
-        value: 920MHz
-      - key: transmission_power
-        value: 20mW
-      - key: range_indoor
-        value: 100m
-      - key: range_outdoor
-        value: 1km
-    - key: installation
-      entries:
-      - key: mounting_type
-        value: wall_mount
-      - key: mounting_height
-        value: 1.5-2.0m
-      - key: avoid_direct_sunlight
-        value: true
-  customTags: &id008
-    - key: is_template
-      flag: true
-    - key: wireless
-      flag: true
-
-pac_002:
-  id: pac_002
-  name: 事務室102 PackageAirConditioner 002
-  description: 事務室102に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_002_power
-    - pac_002_mode
-    - pac_002_setpoint_temp
-    - pac_002_return_temp
-    - pac_002_status
-  locatedIn: room_102
-  customProperties: *id003
-  customTags: *id004
-
-pac_003:
-  id: pac_003
-  name: 事務室102 PackageAirConditioner 003
-  description: 事務室102に設置されたPackageAirConditioner
-  deviceType: dtmi:sbco:equipment:PackageAirConditioner:PAC_28GV:1
-  hasPoint:
-    - pac_003_power
-    - pac_003_mode
-    - pac_003_setpoint_temp
-    - pac_003_return_temp
-    - pac_003_status
-  locatedIn: room_102
-  customProperties: *id003
-  customTags: *id004
-
-lighting_003:
-  id: lighting_003
-  name: 事務室102 LightingFixture 003
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_003_switch
-    - lighting_003_dimmer
-    - lighting_003_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-lighting_004:
-  id: lighting_004
-  name: 事務室102 LightingFixture 004
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_004_switch
-    - lighting_004_dimmer
-    - lighting_004_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-lighting_005:
-  id: lighting_005
-  name: 事務室102 LightingFixture 005
-  description: 事務室102に設置されたLightingFixture
-  deviceType: dtmi:sbco:equipment:LightingFixture:LED_PNL_40W:1
-  hasPoint:
-    - lighting_005_switch
-    - lighting_005_dimmer
-    - lighting_005_status
-  locatedIn: room_102
-  customProperties: *id001
-  customTags: *id002
-
-sensor_003:
-  id: sensor_003
-  name: 事務室102 EnvironmentalSensor 003
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_003_temp
-    - sensor_003_humidity
-    - sensor_003_co2
-    - sensor_003_status
-  locatedIn: room_102
-  customProperties: *id005
-  customTags: *id006
-
-sensor_004:
-  id: sensor_004
-  name: 事務室102 EnvironmentalSensor 004
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:ENV_MULTI_01:1
-  hasPoint:
-    - sensor_004_temp
-    - sensor_004_humidity
-    - sensor_004_co2
-    - sensor_004_status
-  locatedIn: room_102
-  customProperties: *id005
-  customTags: *id006
-
-sensor_005:
-  id: sensor_005
-  name: 事務室102 EnvironmentalSensor 005
-  description: 事務室102に設置されたEnvironmentalSensor
-  deviceType: dtmi:sbco:equipment:EnvironmentalSensor:TEMP_ONLY_01:1
-  hasPoint:
-    - sensor_005_temp
-    - sensor_005_status
-  locatedIn: room_102
-  customProperties: *id007
-  customTags: *id008
-
-room_103:
-  id: room_103
-  name: 受付103
-  isLocationOf:
-    - lighting_006
-    - sensor_006
-
-room_104:
-  id: room_104
-  name: 倉庫104
-  isLocationOf:
-    - lighting_007
-    - sensor_007
-
-room_105:
-  id: room_105
-  name: サーバー室105
-  isLocationOf:
-    - pac_004
-    - pac_005
-    - lighting_008
-    - sensor_008
-    - sensor_009
-    - sensor_010
-    - sensor_011
-
-room_106:
-  id: room_106
-  name: 休憩室106
-  isLocationOf:
-    - pac_006
-    - lighting_009
-    - sensor_012
-    - sensor_013
-
-room_201:
-  id: room_201
-  name: 大会議室201
-  isLocationOf:
-    - pac_007
-    - pac_008
-    - pac_009
-    - lighting_10
+  - id: sbco:level_1F
+    name: 1階
+    hasPart:
+    - id: sbco:room_101
+      name: 会議室101
+      isLocationOf:
+      - sbco:pac_001
+      - sbco:lighting_001
+      - sbco:lighting_002
+      - sbco:sensor_001
+      - sbco:sensor_002
+    - id: sbco:room_102
+      name: 事務室102
+      isLocationOf:
+      - sbco:pac_002
+      - sbco:pac_003
+      - sbco:lighting_003
+      - sbco:lighting_004
+      - sbco:lighting_005
+      - sbco:sensor_003
+      - sbco:sensor_004
+      - sbco:sensor_005
+    - id: sbco:room_103
+      name: 受付103
+      isLocationOf:
+      - sbco:lighting_006
+      - sbco:sensor_006
+    - id: sbco:room_104
+      name: 倉庫104
+      isLocationOf:
+      - sbco:lighting_007
+      - sbco:sensor_007
+    - id: sbco:room_105
+      name: サーバー室105
+      isLocationOf:
+      - sbco:pac_004
+      - sbco:pac_005
+      - sbco:lighting_008
+      - sbco:sensor_008
+      - sbco:sensor_009
+      - sbco:sensor_010
+      - sbco:sensor_011
+    - id: sbco:room_106
+      name: 休憩室106
+      isLocationOf:
+      - sbco:pac_006
+      - sbco:lighting_009
+      - sbco:sensor_012
+      - sbco:sensor_013
+  - id: sbco:level_2F
+    name: 2階
+    hasPart:
+    - id: sbco:room_201
+      name: 大会議室201
+      isLocationOf:
+      - sbco:pac_007
+      - sbco:pac_008
+      - sbco:pac_009
+      - sbco:lighting_10
+    - id: sbco:room_202
+      name: 事務室202
+      isLocationOf:
+      - sbco:pac_010
+      - sbco:lighting_013
+      - sbco:lighting_014
+      - sbco:sensor_017
+      - sbco:sensor_018
+    - id: sbco:room_203
+      name: 事務室203
+      isLocationOf:
+      - sbco:pac_011
+      - sbco:lighting_015
+      - sbco:lighting_016
+      - sbco:sensor_019
+      - sbco:sensor_020
+    - id: sbco:room_204
+      name: 応接室204
+      isLocationOf:
+      - sbco:pac_012
+      - sbco:lighting_017
+      - sbco:lighting_018
+      - sbco:sensor_021
+      - sbco:sensor_022
+    - id: sbco:room_205
+      name: 資料室205
+      isLocationOf:
+      - sbco:lighting_019
+      - sbco:sensor_023
+      - sbco:sensor_024
+  - id: sbco:level_3F
+    name: 3階
+    hasPart:
+    - id: sbco:room_301
+      name: 役員室301
+      isLocationOf:
+      - sbco:pac_013
+      - sbco:lighting_020
+      - sbco:lighting_021
+      - sbco:lighting_022
+      - sbco:sensor_025
+      - sbco:sensor_026
+    - id: sbco:room_302
+      name: 秘書室302
+      isLocationOf:
+      - sbco:pac_014
+      - sbco:lighting_023
+      - sbco:sensor_027
+    - id: sbco:room_303
+      name: 会議室303
+      isLocationOf:
+      - sbco:pac_015
+      - sbco:lighting_024
+      - sbco:lighting_025
+      - sbco:sensor_028
+      - sbco:sensor_029
+    - id: sbco:room_304
+      name: ラウンジ304
+      isLocationOf:
+      - sbco:lighting_026
+      - sbco:lighting_027
+      - sbco:sensor_030
+      - sbco:sensor_031
+      - sbco:sensor_032

@@ -56,7 +56,7 @@ URI: [rec:Geometry](https://w3id.org/rec/Geometry)
     
         
         
-        Geometry --> "1..*" KeyStringMapEntry : identifiers
+        Geometry --> "*" KeyStringMapEntry : identifiers
         click KeyStringMapEntry href "../KeyStringMapEntry/"
     
 
@@ -91,7 +91,7 @@ URI: [rec:Geometry](https://w3id.org/rec/Geometry)
 | ---  | --- | --- | --- |
 | [name](name.md) | 1 <br/> [String](String.md) | Machine or Human-readable name | [Information](Information.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Information](Information.md) |
-| [identifiers](identifiers.md) | 1..* <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Information](Information.md) |
+| [identifiers](identifiers.md) | * <br/> [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) | [Information](Information.md) |
 | [customTags](customTags.md) | * <br/> [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) | [Information](Information.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Information](Information.md) |
 | [format](format.md) | 0..1 <br/> [String](String.md) | MIME type or format identifier for the information | [Information](Information.md) |
@@ -114,6 +114,9 @@ URI: [rec:Geometry](https://w3id.org/rec/Geometry)
 | [Site](Site.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
 | [Building](Building.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
 | [Level](Level.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
+| [Room](Room.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
+| [Zone](Zone.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
 | [Asset](Asset.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
 | [Equipment](Equipment.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
 | [EquipmentExt](EquipmentExt.md) | [geometry](geometry.md) | range | [Geometry](Geometry.md) |
@@ -255,7 +258,7 @@ attributes:
     - ArchitectureArea
     - ArchitectureCapacity
     range: KeyStringMapEntry
-    required: true
+    required: false
     multivalued: true
     inlined: true
     inlined_as_list: true
