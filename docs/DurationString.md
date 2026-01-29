@@ -7,11 +7,11 @@ _ISO 8601 duration format_
 
 
 
-URI: [sbco:DurationString](https://www.sbco.or.jp/ont/DurationString)
+URI: [xsd:duration](http://www.w3.org/2001/XMLSchema#duration)
 
 * [base](https://w3id.org/linkml/base): str
 
-* [uri](https://w3id.org/linkml/uri): sbco:DurationString
+* [uri](https://w3id.org/linkml/uri): xsd:duration
 
 
 * [typeof](https://w3id.org/linkml/typeof): string
@@ -41,7 +41,7 @@ URI: [sbco:DurationString](https://www.sbco.or.jp/ont/DurationString)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | sbco:DurationString |
+| self | xsd:duration |
 | native | sbco:DurationString |
 
 

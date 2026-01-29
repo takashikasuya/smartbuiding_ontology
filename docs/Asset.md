@@ -92,15 +92,6 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
         
       Asset : hasPart
         
-          
-    
-        
-        
-        Asset --> "*" Space : hasPart
-        click Space href "../Space/"
-    
-
-        
       Asset : hasPoint
         
           
@@ -144,25 +135,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
         
       Asset : isPartOf
         
-          
-    
-        
-        
-        Asset --> "0..1" Any : isPartOf
-        click Any href "../Any/"
-    
-
-        
       Asset : locatedIn
-        
-          
-    
-        
-        
-        Asset --> "*" Any : locatedIn
-        click Any href "../Any/"
-    
-
         
       Asset : MACAddress
         
@@ -234,7 +207,7 @@ URI: [rec:Asset](https://w3id.org/rec/Asset)
 | [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | direct |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | direct |
-| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | direct |
+| [hasPart](hasPart.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | The subject is composed in part of the entity given by the object | direct |
 | [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | direct |
 | [installedBy](installedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that installed this asset | direct |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | direct |
@@ -479,10 +452,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: true
-    inlined: true
-    inlined_as_list: true
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   hasPoint:
     name: hasPoint
     description: Point associated with this architecture

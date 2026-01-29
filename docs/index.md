@@ -13,7 +13,6 @@ Name: building_model
 
 | Class | Description |
 | --- | --- |
-| [Any](Any.md) | Any resource or value |
 | [KeyBoolMapEntry](KeyBoolMapEntry.md) | map(string -> boolean) の1エントリ |
 | [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) の1エントリ |
 | [KeyStringMapEntry](KeyStringMapEntry.md) | map(string -> string) の1エントリ |
@@ -142,6 +141,7 @@ Name: building_model
 
 | Type | Description |
 | --- | --- |
+| [Any](Any.md) | Any resource or value |
 | [Boolean](Boolean.md) | A binary (true or false) value |
 | [Curie](Curie.md) | a compact URI |
 | [Date](Date.md) | a date (year, month and day) in an idealized calendar |

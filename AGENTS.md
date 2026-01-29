@@ -3,17 +3,18 @@
 ## 1. Repository Overview
 
 - **Purpose**: Manage a LinkML-based smart building ontology and publish the derived OWL, SHACL, JSON Schema, and MkDocs outputs for the Smart Building Co-creation Organization standard discussions.【F:README.md†L1-L37】
-- **Data flow**: Schema edits live in `schema/building_model.yaml`, LinkML generates RDF/JSON artifacts into `output/`, and `gen-doc`/MkDocs render the schema docs under `docs/`.【F:README.md†L6-L25】【F:Makefile†L1-L30】【F:schema/building_model.yaml†L1-L33】
-- **Schema focus**: `schema/building_model.yaml` defines prefixes, enums, custom types, and the cardinal hierarchy (Site → Building → Level → Space → Equipment → Point) that drives all downstream outputs; keep it synced with the documentation pages.【F:README.md†L38-L44】【F:schema/building_model.yaml†L1-L33】
+- **Data flow**: Schema edits live in `schema/building_model_shacl.yaml` (SHACL/JSON Schema/Docs) and `schema/building_model_owl.yaml` (OWL); LinkML generates RDF/JSON artifacts into `output/`, and `gen-doc`/MkDocs render the schema docs under `docs/`.【F:README.md†L6-L25】【F:Makefile†L1-L30】
+- **Schema focus**: `schema/building_model_shacl.yaml` defines prefixes, enums, custom types, and the cardinal hierarchy (Site → Building → Level → Space → Equipment → Point) that drives SHACL/Docs outputs; keep it synced with the documentation pages.【F:README.md†L38-L44】
 - **Documentation**: `docs/index.md` (plus the class/slot/type pages it links) is the generated portal that lists every class, slot, enumeration, and type defined in the schema, so treat `docs/` as a derived artifact.【F:docs/index.md†L1-L167】
 - **Dependencies/environment**: Python packages are pinned in `requirements.txt` (LinkML, LinkML runtime, MkDocs + Material, PySHACL) and consumed via the provided `Makefile` targets or the Quick Start commands in README.【F:requirements.txt†L1-L5】【F:Makefile†L1-L30】【F:README.md†L13-L25】
 
 ## 2. Operating Principles
 
-- **Single source of truth**: Modify `schema/building_model.yaml` for any structural, slot, or enumeration change; run the prescribed LinkML commands to regenerate OWL, SHACL, JSON Schema, and MkDocs docs so everything stays in lockstep.【F:README.md†L17-L25】【F:Makefile†L1-L30】
-- **SHACL generation**: The LinkML CLI currently does not accept `--include-range-class-descendants` or `--schema`/`--output`, so list descendant classes explicitly in the schema (e.g., include `PointExt`/`EquipmentExt`) and run `linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl` to keep shapes open, append `Shape`, and redirect stdout into the SHACL file.【F:README.md†L17-L32】【F:schema/building_model.yaml†L729-L828】
-- **Docs & preview**: The `gen-doc --directory docs schema/building_model.yaml` command feeds MkDocs (`mkdocs serve`, `mkdocs build`, `mkdocs gh-deploy`) so reader-friendly docs always match the schema surface.【F:README.md†L22-L28】【F:Makefile†L14-L28】
+- **Single source of truth**: Modify `schema/building_model_shacl.yaml` for SHACL/JSON Schema/Docs changes and `schema/building_model_owl.yaml` for OWL changes; run the prescribed LinkML commands to regenerate outputs so everything stays in lockstep.【F:README.md†L17-L25】【F:Makefile†L1-L30】
+- **SHACL generation**: The LinkML CLI currently does not accept `--include-range-class-descendants` or `--schema`/`--output`, so list descendant classes explicitly in the schema (e.g., include `PointExt`/`EquipmentExt`) and run `linkml generate shacl --non-closed --suffix Shape schema/building_model_shacl.yaml > output/building_model.shacl.ttl` to keep shapes open, append `Shape`, and redirect stdout into the SHACL file.【F:README.md†L17-L32】
+- **Docs & preview**: The `gen-doc --directory docs schema/building_model_shacl.yaml` command feeds MkDocs (`mkdocs serve`, `mkdocs build`, `mkdocs gh-deploy`) so reader-friendly docs always match the schema surface.【F:README.md†L22-L28】【F:Makefile†L14-L28】
 
+- **Schema sync (OWL/SHACL)**: Keep `schema/building_model_owl.yaml` and `schema/building_model_shacl.yaml` synchronized to reflect the same content. Differences are limited to OWL vs SHACL output requirements, and `any_of` / `SPACE_UNION` usage should be confined to that scope.
 ## 3. Safety & Security Guardrails
 
 - **No secrets**: This repo has no `.env` files; avoid adding secrets or environment configs—everything is driven by static schema/docs and the Python toolkit.【F:README.md†L1-L44】
@@ -24,12 +25,12 @@
 
 - **Environment setup**: `python -m venv .venv && source .venv/bin/activate` then `pip install -r requirements.txt` (these are also the first steps in the README Quick Start).【F:README.md†L13-L16】
 - **LinkML generation**:
-  - `linkml generate owl schema/building_model.yaml > output/building_model.owl.ttl`
-  - `linkml generate shacl --non-closed --suffix Shape schema/building_model.yaml > output/building_model.shacl.ttl`
-  - `linkml generate json-schema schema/building_model.yaml > output/building_model.schema.json`
-  - `linkml generate doc --directory docs schema/building_model.yaml`
+  - `linkml generate owl schema/building_model_owl.yaml > output/building_model.owl.ttl`
+  - `linkml generate shacl --non-closed --suffix Shape schema/building_model_shacl.yaml > output/building_model.shacl.ttl`
+  - `linkml generate json-schema schema/building_model_shacl.yaml > output/building_model.schema.json`
+  - `linkml generate doc --directory docs schema/building_model_shacl.yaml`
   (the exact command list is reified in both the README and the `gen` Makefile target).【F:README.md†L17-L24】【F:Makefile†L14-L19】
-- **Docs/preview/deploy**: `gen-doc --directory docs schema/building_model.yaml`, `mkdocs serve`, `mkdocs build`, and `mkdocs gh-deploy --force --clean` capture the workflow for running and publishing documentation; `Makefile` exposes shorthand targets (`docs`, `serve`, `deploy`, `clean`).【F:README.md†L22-L25】【F:Makefile†L14-L30】
+- **Docs/preview/deploy**: `gen-doc --directory docs schema/building_model_shacl.yaml`, `mkdocs serve`, `mkdocs build`, and `mkdocs gh-deploy --force --clean` capture the workflow for running and publishing documentation; `Makefile` exposes shorthand targets (`docs`, `serve`, `deploy`, `clean`).【F:README.md†L22-L25】【F:Makefile†L14-L30】
 - **Cleanup**: `make clean` removes the `site/` directory generated by MkDocs (`rm -rf site`).【F:Makefile†L29-L30】
 
 ## 5. Change Workflow
@@ -41,5 +42,5 @@
 ## 6. MUST NOT List
 
 - MUST NOT commit manual edits to `output/*.ttl` or `docs/*.md` without first regenerating them from the schema; treat these files as build artifacts.【F:README.md†L6-L25】【F:Makefile†L14-L28】
-- MUST NOT skip enumerating descendants such as `PointExt`/`EquipmentExt` in the schema and using `--non-closed --suffix Shape` with stdout redirection so the SHACL output stays consistent with the documented workflow.【F:README.md†L17-L32】【F:schema/building_model.yaml†L729-L828】
+- MUST NOT skip enumerating descendants such as `PointExt`/`EquipmentExt` in the schema and using `--non-closed --suffix Shape` with stdout redirection so the SHACL output stays consistent with the documented workflow.【F:README.md†L17-L32】
 - MUST NOT forget to mention any schema change’s downstream impact on OWL/SHACL/JSON Schema/docs in GitHub PR notes so reviewers know why regenerations were required.【F:README.md†L17-L44】

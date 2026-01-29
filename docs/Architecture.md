@@ -175,15 +175,6 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
         
       Architecture : hasPart
         
-          
-    
-        
-        
-        Architecture --> "*" Space : hasPart
-        click Space href "../Space/"
-    
-
-        
       Architecture : hasPoint
         
           
@@ -242,15 +233,6 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 
         
       Architecture : isPartOf
-        
-          
-    
-        
-        
-        Architecture --> "0..1" Any : isPartOf
-        click Any href "../Any/"
-    
-
         
       Architecture : name
         
@@ -315,7 +297,7 @@ URI: [rec:Architecture](https://w3id.org/rec/Architecture)
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
-| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
+| [hasPart](hasPart.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
 | [isLocationOf](isLocationOf.md) | * <br/> [EquipmentExt](EquipmentExt.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | [Space](Space.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
@@ -654,10 +636,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: true
-    inlined: true
-    inlined_as_list: true
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   isLocationOf:
     name: isLocationOf
     description: Subject is the physical location encapsulating the object.

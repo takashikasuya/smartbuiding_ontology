@@ -158,15 +158,6 @@ URI: [rec:Zone](https://w3id.org/rec/Zone)
         
       Zone : hasPart
         
-          
-    
-        
-        
-        Zone --> "*" Space : hasPart
-        click Space href "../Space/"
-    
-
-        
       Zone : hasPoint
         
           
@@ -226,15 +217,6 @@ URI: [rec:Zone](https://w3id.org/rec/Zone)
         
       Zone : isPartOf
         
-          
-    
-        
-        
-        Zone --> "0..1" Any : isPartOf
-        click Any href "../Any/"
-    
-
-        
       Zone : name
         
       Zone : operatedBy
@@ -293,7 +275,7 @@ URI: [rec:Zone](https://w3id.org/rec/Zone)
 | [id](id.md) | 1 <br/> [String](String.md) | Unique identifier within the schema | [Space](Space.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Space](Space.md) |
 | [georeference](georeference.md) | 0..1 <br/> [Georeference](Georeference.md) | A georeference creates a relationship between the local coordinate system use... | [Space](Space.md) |
-| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
+| [hasPart](hasPart.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | The subject is composed in part of the entity given by the object | [Space](Space.md) |
 | [isLocationOf](isLocationOf.md) | * <br/> [EquipmentExt](EquipmentExt.md) | Subject is the physical location encapsulating the object | [Space](Space.md) |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | [Space](Space.md) |
 | [customProperties](customProperties.md) | * <br/> [KeyMapOfStringMapEntry](KeyMapOfStringMapEntry.md) | map(string -> map(string -> string)) | [Space](Space.md) |
@@ -310,18 +292,29 @@ URI: [rec:Zone](https://w3id.org/rec/Zone)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Space](Space.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Space](Space.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Architecture](Architecture.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Architecture](Architecture.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Site](Site.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Site](Site.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Building](Building.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Building](Building.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Level](Level.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Level](Level.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Room](Room.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Room](Room.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Zone](Zone.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Zone](Zone.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [OutdoorSpace](OutdoorSpace.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [OutdoorSpace](OutdoorSpace.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
+| [Asset](Asset.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Asset](Asset.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
 | [Asset](Asset.md) | [locatedIn](locatedIn.md) | any_of[range] | [Zone](Zone.md) |
+| [Equipment](Equipment.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [Equipment](Equipment.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
 | [Equipment](Equipment.md) | [locatedIn](locatedIn.md) | any_of[range] | [Zone](Zone.md) |
+| [EquipmentExt](EquipmentExt.md) | [hasPart](hasPart.md) | any_of[range] | [Zone](Zone.md) |
 | [EquipmentExt](EquipmentExt.md) | [isPartOf](isPartOf.md) | any_of[range] | [Zone](Zone.md) |
 | [EquipmentExt](EquipmentExt.md) | [locatedIn](locatedIn.md) | any_of[range] | [Zone](Zone.md) |
 
@@ -622,10 +615,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: true
-    inlined: true
-    inlined_as_list: true
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   isLocationOf:
     name: isLocationOf
     description: Subject is the physical location encapsulating the object.

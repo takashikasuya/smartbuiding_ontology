@@ -26,7 +26,7 @@ function Ensure-Dir([string]$Path) {
 
 function Invoke-Docgen {
   Ensure-Venv
-  & $GEN_DOC --directory docs schema/building_model.yaml
+  & $GEN_DOC --directory docs schema/building_model_shacl.yaml
 }
 
 switch ($Target) {
@@ -49,13 +49,13 @@ switch ($Target) {
     Ensure-Dir "output"
 
     # stdout リダイレクトが PowerShell でも効くように Out-File を使用
-    & $LINKML generate owl --metadata-profile rdfs schema/building_model.yaml -f ttl |
+    & $LINKML generate owl --metadata-profile rdfs schema/building_model_owl.yaml -f ttl |
       Out-File -Encoding utf8 "output/building_model.owl.ttl"
 
-    & $LINKML generate shacl --non-closed --suffix Shape schema/building_model.yaml |
+    & $LINKML generate shacl --non-closed --suffix Shape schema/building_model_shacl.yaml |
       Out-File -Encoding utf8 "output/building_model.shacl.ttl"
 
-    & $LINKML generate json-schema schema/building_model.yaml |
+    & $LINKML generate json-schema schema/building_model_shacl.yaml |
       Out-File -Encoding utf8 "output/building_model.schema.json"
 
     Invoke-Docgen
@@ -93,7 +93,7 @@ Usage:
 Targets:
   venv     : create .venv if missing
   install  : venv + pip upgrade + install requirements.txt
-  docgen   : gen-doc --directory docs schema/building_model.yaml
+  docgen   : gen-doc --directory docs schema/building_model_shacl.yaml
   gen      : linkml generate (owl/shacl/json-schema) + docgen
   docs     : docgen + mkdocs build
   serve    : docgen + mkdocs serve

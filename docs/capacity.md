@@ -23,12 +23,12 @@ Alias: capacity
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Architecture](Architecture.md) | A designed/landscaped (or potentially designed/landscaped) part of the physic... |  no  |
-| [Level](Level.md) | A building storey |  no  |
-| [Room](Room.md) | A room within a building |  no  |
-| [OutdoorSpace](OutdoorSpace.md) | An outdoor space associated with a site or building |  no  |
 | [Building](Building.md) | A building which is part of a site |  no  |
-| [Zone](Zone.md) | A sub-zone within or outside of a building defined to support some technology... |  no  |
+| [Room](Room.md) | A room within a building |  no  |
+| [Level](Level.md) | A building storey |  no  |
 | [Site](Site.md) | A piece of land upon which zero or more buildings may be situated |  no  |
+| [OutdoorSpace](OutdoorSpace.md) | An outdoor space associated with a site or building |  no  |
+| [Zone](Zone.md) | A sub-zone within or outside of a building defined to support some technology... |  no  |
 
 
 

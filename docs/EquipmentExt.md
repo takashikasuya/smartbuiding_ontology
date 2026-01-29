@@ -98,15 +98,6 @@ URI: [sbco:EquipmentExt](https://www.sbco.or.jp/ont/EquipmentExt)
         
       EquipmentExt : hasPart
         
-          
-    
-        
-        
-        EquipmentExt --> "*" Space : hasPart
-        click Space href "../Space/"
-    
-
-        
       EquipmentExt : hasPoint
         
           
@@ -163,25 +154,7 @@ URI: [sbco:EquipmentExt](https://www.sbco.or.jp/ont/EquipmentExt)
         
       EquipmentExt : isPartOf
         
-          
-    
-        
-        
-        EquipmentExt --> "0..1" Any : isPartOf
-        click Any href "../Any/"
-    
-
-        
       EquipmentExt : locatedIn
-        
-          
-    
-        
-        
-        EquipmentExt --> "*" Space : locatedIn
-        click Space href "../Space/"
-    
-
         
       EquipmentExt : MACAddress
         
@@ -267,11 +240,11 @@ URI: [sbco:EquipmentExt](https://www.sbco.or.jp/ont/EquipmentExt)
 | [documentation](documentation.md) | * <br/> [Document](Document.md) | Documentation related to this asset | [Asset](Asset.md) |
 | [description](description.md) | 0..1 <br/> [String](String.md) | A textual description of the resource | [Asset](Asset.md) |
 | [geometry](geometry.md) | 0..1 <br/> [Geometry](Geometry.md) | Polygon representing the spatial extent of this Space | [Asset](Asset.md) |
-| [hasPart](hasPart.md) | * <br/> [Space](Space.md) | The subject is composed in part of the entity given by the object | [Asset](Asset.md) |
+| [hasPart](hasPart.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | The subject is composed in part of the entity given by the object | [Asset](Asset.md) |
 | [hasPoint](hasPoint.md) | * <br/> [Point](Point.md)&nbsp;or&nbsp;<br />[Point](Point.md)&nbsp;or&nbsp;<br />[PointExt](PointExt.md) | Point associated with this architecture | [Asset](Asset.md) |
 | [installedBy](installedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that installed this asset | [Asset](Asset.md) |
 | [isPartOf](isPartOf.md) | 0..1 <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) |  | [Asset](Asset.md) |
-| [locatedIn](locatedIn.md) | * <br/> [Space](Space.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | Space where this asset is located | [Asset](Asset.md) |
+| [locatedIn](locatedIn.md) | * <br/> [Any](Any.md)&nbsp;or&nbsp;<br />[Space](Space.md)&nbsp;or&nbsp;<br />[Site](Site.md)&nbsp;or&nbsp;<br />[Building](Building.md)&nbsp;or&nbsp;<br />[Level](Level.md)&nbsp;or&nbsp;<br />[Room](Room.md)&nbsp;or&nbsp;<br />[Zone](Zone.md)&nbsp;or&nbsp;<br />[OutdoorSpace](OutdoorSpace.md) | Space where this asset is located | [Asset](Asset.md) |
 | [manufacturedBy](manufacturedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that manufactured this asset | [Asset](Asset.md) |
 | [mountedOn](mountedOn.md) | 0..1 <br/> [BuildingElement](BuildingElement.md) | Building element on which this asset is mounted | [Asset](Asset.md) |
 | [servicedBy](servicedBy.md) | * <br/> [Agent](Agent.md) | Agent or resource that services this asset | [Asset](Asset.md) |
@@ -373,7 +346,15 @@ slots:
 slot_usage:
   locatedIn:
     name: locatedIn
-    range: Space
+    range: Any
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
 class_uri: sbco:EquipmentExt
 
 ```
@@ -394,7 +375,15 @@ is_a: Equipment
 slot_usage:
   locatedIn:
     name: locatedIn
-    range: Space
+    range: Any
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
 attributes:
   deviceType:
     name: deviceType
@@ -574,10 +563,16 @@ attributes:
     domain_of:
     - Space
     - Asset
-    range: Space
+    range: Any
     multivalued: true
-    inlined: true
-    inlined_as_list: true
+    any_of:
+    - range: Space
+    - range: Site
+    - range: Building
+    - range: Level
+    - range: Room
+    - range: Zone
+    - range: OutdoorSpace
   hasPoint:
     name: hasPoint
     description: Point associated with this architecture
@@ -636,7 +631,7 @@ attributes:
     owner: EquipmentExt
     domain_of:
     - Asset
-    range: Space
+    range: Any
     multivalued: true
     any_of:
     - range: Space

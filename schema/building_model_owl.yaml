@@ -19,10 +19,14 @@ imports:
 - linkml:types
 
 types:
+  Any:
+    typeof: string
+    description: Any resource or value.
+    uri: linkml:Any
   DurationString:
     typeof: string
     description: ISO 8601 duration format
-    uri: sbco:DurationString
+    uri: xsd:duration
     pattern: "^P(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
     
 enums:
@@ -520,22 +524,12 @@ slots:
     description: The subject is composed in part of the entity given by the object.
     range: Space
     multivalued: true
-    inlined: true
-    inlined_as_list: true
     slot_uri: rec:hasPart
 
   isPartOf:
-    range: Any
+    range: Space
     multivalued: false
     slot_uri: rec:isPartOf
-    any_of:
-      - range: Space
-      - range: Site
-      - range: Building
-      - range: Level
-      - range: Room
-      - range: Zone
-      - range: OutdoorSpace
 
   isLocationOf:
     description: Subject is the physical location encapsulating the object.
@@ -594,17 +588,9 @@ slots:
     
   locatedIn:
     description: "Space where this asset is located"
-    range: Any
+    range: Space
     multivalued: true
     slot_uri: rec:locatedIn
-    any_of:
-      - range: Space
-      - range: Site
-      - range: Building
-      - range: Level
-      - range: Room
-      - range: Zone
-      - range: OutdoorSpace
     
   MACAddress:  
     description: "MAC address of the asset"
@@ -940,6 +926,7 @@ classes:
 
   Site:
     is_a: Architecture
+    tree_root: true
     class_uri: rec:Site
     description: A piece of land upon which zero or more buildings may be situated.
     exact_mappings:
@@ -1000,10 +987,6 @@ classes:
     description: "Base class for all resources"
     exact_mappings:
       - rdfs:Resource
-
-  Any:
-    class_uri: linkml:Any
-    description: "Any resource or value."
 
   # Asset class
   Asset:
@@ -1067,7 +1050,7 @@ classes:
     
     slot_usage:
       locatedIn:
-        range: Space  # Equipment is specifically located in spaces
+        range: Space
 
   EquipmentExt:
     is_a: Equipment
@@ -1084,7 +1067,7 @@ classes:
     
     slot_usage:
       locatedIn:
-        range: Space  # Equipment is specifically located in spaces
+        range: Space
 
 
   Point:
