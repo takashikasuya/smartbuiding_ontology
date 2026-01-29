@@ -630,15 +630,6 @@
 
       Zone : hasPart
 
-
-
-
-
-        Zone --&gt; "*" Space : hasPart
-        click Space href "../Space/"
-
-
-
       Zone : hasPoint
 
 
@@ -697,15 +688,6 @@
 
 
       Zone : isPartOf
-
-
-
-
-
-        Zone --&gt; "0..1" Any : isPartOf
-        click Any href "../Any/"
-
-
 
       Zone : name
 
@@ -851,7 +833,7 @@
 </tr>
 <tr>
 <td><a href="../hasPart/">hasPart</a></td>
-<td>* <br/> <a href="../Space/">Space</a></td>
+<td>* <br/> <a href="../Any/">Any</a>&nbsp;or&nbsp;<br /><a href="../Space/">Space</a>&nbsp;or&nbsp;<br /><a href="../Site/">Site</a>&nbsp;or&nbsp;<br /><a href="../Building/">Building</a>&nbsp;or&nbsp;<br /><a href="../Level/">Level</a>&nbsp;or&nbsp;<br /><a href="../Room/">Room</a>&nbsp;or&nbsp;<br /><a href="./">Zone</a>&nbsp;or&nbsp;<br /><a href="../OutdoorSpace/">OutdoorSpace</a></td>
 <td>The subject is composed in part of the entity given by the object</td>
 <td><a href="../Space/">Space</a></td>
 </tr>
@@ -912,7 +894,19 @@
 <tbody>
 <tr>
 <td><a href="../Space/">Space</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Space/">Space</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
 </tr>
@@ -924,7 +918,19 @@
 </tr>
 <tr>
 <td><a href="../Site/">Site</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Building/">Building</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
 </tr>
@@ -936,7 +942,19 @@
 </tr>
 <tr>
 <td><a href="../Level/">Level</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Level/">Level</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Room/">Room</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
 </tr>
@@ -948,7 +966,19 @@
 </tr>
 <tr>
 <td><a href="./">Zone</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="./">Zone</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
 </tr>
@@ -960,6 +990,12 @@
 </tr>
 <tr>
 <td><a href="../Asset/">Asset</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
@@ -972,6 +1008,12 @@
 </tr>
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../isPartOf/">isPartOf</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
@@ -979,6 +1021,12 @@
 <tr>
 <td><a href="../Equipment/">Equipment</a></td>
 <td><a href="../locatedIn/">locatedIn</a></td>
+<td>any_of[range]</td>
+<td><a href="./">Zone</a></td>
+</tr>
+<tr>
+<td><a href="../EquipmentExt/">EquipmentExt</a></td>
+<td><a href="../hasPart/">hasPart</a></td>
 <td>any_of[range]</td>
 <td><a href="./">Zone</a></td>
 </tr>
@@ -1281,10 +1329,16 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Any</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">any_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Space</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Site</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Building</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Level</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Room</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zone</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OutdoorSpace</span>
 <span class="w">  </span><span class="nt">isLocationOf</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isLocationOf</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subject is the physical location encapsulating the object.</span>

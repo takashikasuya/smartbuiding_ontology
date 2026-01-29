@@ -463,18 +463,13 @@ Alias: name</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../Image/">Image</a></td>
+<td>An image file containing visual information</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Schema/">Schema</a></td>
 <td>A schema definition file</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Media/">Media</a></td>
-<td>A media file such as audio or video content</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Document/">Document</a></td>
-<td>A document providing information about a building element or asset</td>
 <td>no</td>
 </tr>
 <tr>
@@ -483,48 +478,8 @@ Alias: name</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Site/">Site</a></td>
-<td>A piece of land upon which zero or more buildings may be situated</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Space/">Space</a></td>
-<td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
-<td>Describes business-relevant area measurements typically associated with archi...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Level/">Level</a></td>
 <td>A building storey</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Equipment/">Equipment</a></td>
-<td>An equipment asset installed in a space</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Architecture/">Architecture</a></td>
-<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Georeference/">Georeference</a></td>
-<td>REC Georeference のプレースホルダ（詳細は別途拡張）</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Something which is placed inside of a building, but is not an integral part o...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EquipmentExt/">EquipmentExt</a></td>
-<td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
 <tr>
@@ -533,13 +488,8 @@ Alias: name</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ArchitectureCapacity/">ArchitectureCapacity</a></td>
-<td>Describes business-relevant capacity measurements typically associated with a...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PointExt/">PointExt</a></td>
-<td>A point (sensor/actuator) in a smart building context</td>
+<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
+<td>An outdoor space associated with a site or building</td>
 <td>no</td>
 </tr>
 <tr>
@@ -548,38 +498,18 @@ Alias: name</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Agent/">Agent</a></td>
-<td>An entity that can act or be acted upon</td>
+<td><a href="../Space/">Space</a></td>
+<td>A contiguous part of the physical world that contains or can contain sub-spac...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../OutdoorSpace/">OutdoorSpace</a></td>
-<td>An outdoor space associated with a site or building</td>
+<td><a href="../PointExt/">PointExt</a></td>
+<td>A point (sensor/actuator) in a smart building context</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Information/">Information</a></td>
-<td>Abstract base class for information resources such as documents, images, medi...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Geometry/">Geometry</a></td>
-<td>REC Geometry のプレースホルダ（詳細は別途拡張）</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Zone/">Zone</a></td>
-<td>A sub-zone within or outside of a building defined to support some technology...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Organization/">Organization</a></td>
-<td>An organization such as a company, institution, or association</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Image/">Image</a></td>
-<td>An image file containing visual information</td>
+<td><a href="../Georeference/">Georeference</a></td>
+<td>REC Georeference のプレースホルダ（詳細は別途拡張）</td>
 <td>no</td>
 </tr>
 <tr>
@@ -590,6 +520,76 @@ Alias: name</p>
 <tr>
 <td><a href="../Point/">Point</a></td>
 <td>A sensor, actuator, or data point associated with equipment</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Organization/">Organization</a></td>
+<td>An organization such as a company, institution, or association</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ArchitectureArea/">ArchitectureArea</a></td>
+<td>Describes business-relevant area measurements typically associated with archi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Document/">Document</a></td>
+<td>A document providing information about a building element or asset</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Equipment/">Equipment</a></td>
+<td>An equipment asset installed in a space</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Zone/">Zone</a></td>
+<td>A sub-zone within or outside of a building defined to support some technology...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Agent/">Agent</a></td>
+<td>An entity that can act or be acted upon</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Media/">Media</a></td>
+<td>A media file such as audio or video content</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Geometry/">Geometry</a></td>
+<td>REC Geometry のプレースホルダ（詳細は別途拡張）</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Site/">Site</a></td>
+<td>A piece of land upon which zero or more buildings may be situated</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Information/">Information</a></td>
+<td>Abstract base class for information resources such as documents, images, medi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td>Something which is placed inside of a building, but is not an integral part o...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ArchitectureCapacity/">ArchitectureCapacity</a></td>
+<td>Describes business-relevant capacity measurements typically associated with a...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Architecture/">Architecture</a></td>
+<td>A designed/landscaped (or potentially designed/landscaped) part of the physic...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EquipmentExt/">EquipmentExt</a></td>
+<td>An equipment asset installed in a space</td>
 <td>no</td>
 </tr>
 </tbody>
