@@ -2,550 +2,550 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.github.io/smart-building-ontology/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Agent/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/AggregateEnum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Any/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Architecture/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/ArchitectureArea/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/ArchitectureCapacity/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Asset/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Boolean/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Building/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/BuildingElement/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Curie/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Date/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/DateOrDatetime/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Datetime/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Decimal/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Document/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Double/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Dtmi/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Duration/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/DurationString/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Entity/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Equipment/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/EquipmentExt/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Float/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Geometry/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Georeference/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/IPAddress/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/IdString/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Image/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Information/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Integer/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Jsonpath/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Jsonpointer/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/KeyBoolMapEntry/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/KeyMapOfStringMapEntry/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/KeyStringMapEntry/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Level/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/MACAddress/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Media/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Ncname/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Nodeidentifier/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Objectidentifier/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Organization/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/OutdoorSpace/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Point/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/PointExt/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/PointSpecificationEnum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/PostalAddress/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/QuantityEnum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Resource/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Room/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Schema/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Site/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Space/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Sparqlpath/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/String/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/SubstanceEnum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Time/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/UnitEnum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Uri/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Uriorcurie/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/Zone/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/address/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/adjacentElement/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/aggregate/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/altitude/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/architectedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/area/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/assetTag/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/building_model/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/capacity/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/checksum/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/commissionedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/commissioningDate/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/constructedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/containsElement/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/coordinates/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/customProperties/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/customTags/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/description/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/deviceType/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/documentation/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/dtmi/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/entries/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/feeds/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/flag/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/format/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/geometry/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/georeference/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/hasPart/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/hasPoint/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/hasQuantity/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/hasSubstance/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/id/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/identifiers/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/initialCost/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/installationArea/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/installationDate/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/installedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/intersectingElement/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/intervalCapability/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/isFedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/isLocationOf/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/isPartOf/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/isPointOf/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/key/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/language/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/levelNumber/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/locatedIn/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/maintenanceInterval/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/manufacturedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/maxPresValue/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/memberOf/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/minPresValue/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/modelNumber/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/mountedOn/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/name/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/operatedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/operationalStageCount/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/ownedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/owns/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/panel/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/pointSpecification/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/pointType/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/radius/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/scale/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/serialNumber/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/servicedBy/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/size/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/targetArea/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/turnoverDate/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/unit/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/url/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/value/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/version/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://example.github.io/smart-building-ontology/weight/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
 </urlset>
