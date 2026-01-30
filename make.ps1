@@ -1,6 +1,6 @@
 param(
   [Parameter(Position=0)]
-  [ValidateSet("venv","install","gen","docgen","docs","serve","build","deploy","clean","help")]
+  [ValidateSet("venv","install","gen","docgen","docs","serve","build","deploy","validate","clean","help")]
   [string]$Target = "help"
 )
 
@@ -81,6 +81,14 @@ switch ($Target) {
     & $MKDOCS gh-deploy --force --clean
   }
 
+  "validate" {
+    Ensure-Venv
+    Ensure-Dir "output"
+
+    & $PY scripts/generate_validation_ttl.py --schema schema/building_model_shacl.yaml --cases sample/validation/cases.yaml
+    & $PY scripts/validate_rdf.py --schema schema/building_model_shacl.yaml --ontology output/building_model.owl.ttl --shacl output/building_model.shacl.ttl --cases sample/validation/cases.yaml --use-output-ttl
+  }
+
   "clean" {
     if (Test-Path "site") { Remove-Item -Recurse -Force "site" }
   }
@@ -99,6 +107,7 @@ Targets:
   serve    : docgen + mkdocs serve
   build    : same as docs
   deploy   : docgen + mkdocs gh-deploy --force --clean
+  validate : gen + convert_yaml_to_ttl.py outputs + scripts/validate_rdf.py (sample/validation)
   clean    : remove site/
 "@ | Write-Host
   }

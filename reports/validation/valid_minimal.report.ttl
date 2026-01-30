@@ -1,0 +1,85 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sbco: <https://www.sbco.or.jp/ont/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode sbco:site_demo_001 ;
+            sh:resultMessage "Less than 1 values on sbco:site_demo_001->sbco:id" ;
+            sh:resultPath sbco:id ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:description "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example." ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:order 13 ;
+                    sh:path sbco:id ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode sbco:level_demo_1f ;
+            sh:resultMessage "Less than 1 values on sbco:level_demo_1f->sbco:id" ;
+            sh:resultPath sbco:id ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:description "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example." ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:order 14 ;
+                    sh:path sbco:id ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode sbco:room_demo_101 ;
+            sh:resultMessage "Less than 1 values on sbco:room_demo_101->sbco:id" ;
+            sh:resultPath sbco:id ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:description "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example." ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:order 13 ;
+                    sh:path sbco:id ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode sbco:building_demo_001 ;
+            sh:resultMessage "Less than 1 values on sbco:building_demo_001->sbco:id" ;
+            sh:resultPath sbco:id ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:description "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example." ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:order 13 ;
+                    sh:path sbco:id ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode sbco:point_temp_001 ;
+            sh:resultMessage "Less than 1 values on sbco:point_temp_001->sbco:id" ;
+            sh:resultPath sbco:id ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:description "Unique identifier within the schema. Must start with a letter and contain only letters, digits, underscores, hyphens, colons, semicolons, or periods. DTMI is one acceptable example." ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:order 6 ;
+                    sh:path sbco:id ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode sbco:point_temp_001 ;
+            sh:resultMessage "Value <https://www.sbco.or.jp/ont/UnitEnum#celsius> not in list ['Literal(\"ppm\")', 'Literal(\"percent\")', 'Literal(\"celsius\")']" ;
+            sh:resultPath sbco:unit ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:InConstraintComponent ;
+            sh:sourceShape [ sh:description "Measurement unit (enum key; symbol can be taken from annotations)" ;
+                    sh:in ( "celsius" "percent" "ppm" ) ;
+                    sh:maxCount 1 ;
+                    sh:order 2 ;
+                    sh:path sbco:unit ] ;
+            sh:value <https://www.sbco.or.jp/ont/UnitEnum#celsius> ] .
+

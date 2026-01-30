@@ -20,6 +20,8 @@ class ConversionConfig:
     root_class: str
     class_chain: list[str]
     inject_is_part_of: bool
+    instance_prefix: str
+    instance_base: str
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
@@ -56,9 +58,18 @@ def expand_uri(prefix_map: dict[str, str], value: str) -> URIRef:
 
 def slot_predicate(schema_view: SchemaView, prefix_map: dict[str, str], slot_name: str) -> URIRef:
     slot = schema_view.get_slot(slot_name)
-    if slot is None or slot.slot_uri is None:
-        raise KeyError(f"Slot '{slot_name}' missing slot_uri in schema")
-    return expand_uri(prefix_map, str(slot.slot_uri))
+    if slot is None:
+        raise KeyError(f"Slot '{slot_name}' missing from schema")
+    if slot.slot_uri:
+        return expand_uri(prefix_map, str(slot.slot_uri))
+    default_prefix = schema_view.schema.default_prefix
+    if not default_prefix:
+        raise KeyError(f"Slot '{slot_name}' missing slot_uri and schema default_prefix is not set")
+    if default_prefix not in prefix_map:
+        raise KeyError(
+            f"Slot '{slot_name}' missing slot_uri and default prefix '{default_prefix}' is not in prefixes"
+        )
+    return URIRef(prefix_map[default_prefix] + slot_name)
 
 
 def slot_range(schema_view: SchemaView, slot_name: str) -> str | None:
@@ -93,8 +104,26 @@ def class_uri(schema_view: SchemaView, prefix_map: dict[str, str], class_name: s
     return expand_uri(prefix_map, str(class_def.class_uri))
 
 
+def normalize_instance_id(prefix_map: dict[str, str], value: str, config: ConversionConfig) -> str:
+    if value.startswith("http://") or value.startswith("https://") or ":" in value:
+        return value
+    if config.instance_prefix not in prefix_map:
+        raise KeyError(f"Instance prefix '{config.instance_prefix}' is not defined in prefixes")
+    return f"{config.instance_prefix}:{value}"
+
+
 def add_literal(graph: Graph, subject: URIRef, predicate: URIRef, value: Any) -> None:
     graph.add((subject, predicate, Literal(value)))
+
+
+def enum_literal(value: str) -> str:
+    if "#" in value:
+        return value.rsplit("#", 1)[-1]
+    if "/" in value:
+        return value.rsplit("/", 1)[-1]
+    if ":" in value:
+        return value.rsplit(":", 1)[-1]
+    return value
 
 
 def resolve_class_name(
@@ -143,10 +172,14 @@ def convert_node(
     node_id = node.get("id")
     if not node_id:
         raise ValueError("Each node must include an 'id' field")
-    subject = curie_to_uri(prefix_map, node_id)
+    normalized_id = normalize_instance_id(prefix_map, node_id, config)
+    subject = curie_to_uri(prefix_map, normalized_id)
 
     class_name = resolve_class_name(node, depth, config, class_override=class_override)
     graph.add((subject, RDF.type, class_uri(schema_view, prefix_map, class_name)))
+
+    if schema_view.get_slot("id") is not None:
+        add_literal(graph, subject, slot_predicate(schema_view, prefix_map, "id"), node_id)
 
     if parent is not None and parent_predicate is not None:
         graph.add((parent, parent_predicate, subject))
@@ -214,15 +247,15 @@ def convert_node(
                     raise ValueError(f"Slot '{key}' expects literal(s), got mapping")
                 if slot_range_is_class(schema_view, key):
                     graph.add((subject, predicate, expand_uri(prefix_map, str(item))))
-                elif slot_range_is_enum(schema_view, key) and isinstance(item, str) and is_curie_or_uri(item):
-                    graph.add((subject, predicate, expand_uri(prefix_map, item)))
+                elif slot_range_is_enum(schema_view, key) and isinstance(item, str):
+                    add_literal(graph, subject, predicate, enum_literal(item))
                 else:
                     add_literal(graph, subject, predicate, item)
         else:
             if slot_range_is_class(schema_view, key) and isinstance(value, str):
                 graph.add((subject, predicate, expand_uri(prefix_map, value)))
-            elif slot_range_is_enum(schema_view, key) and isinstance(value, str) and is_curie_or_uri(value):
-                graph.add((subject, predicate, expand_uri(prefix_map, value)))
+            elif slot_range_is_enum(schema_view, key) and isinstance(value, str):
+                add_literal(graph, subject, predicate, enum_literal(value))
             else:
                 add_literal(graph, subject, predicate, value)
 
@@ -236,6 +269,7 @@ def build_graph(
 ) -> Graph:
     schema_view = SchemaView(str(schema_path))
     prefix_map = normalize_prefix_map(schema_view)
+    prefix_map.setdefault(config.instance_prefix, config.instance_base)
 
     graph = Graph()
     for prefix, uri in prefix_map.items():
@@ -269,6 +303,16 @@ def parse_args() -> argparse.Namespace:
         help="Add inverse isPartOf triples for hasPart relationships.",
     )
     parser.add_argument(
+        "--instance-prefix",
+        default="ex",
+        help="Prefix to use when instance ids omit an explicit prefix.",
+    )
+    parser.add_argument(
+        "--instance-base",
+        default="https://example.com/",
+        help="Base URI for the instance prefix.",
+    )
+    parser.add_argument(
         "--shacl",
         type=Path,
         help="Optional SHACL shapes graph for validation.",
@@ -293,6 +337,8 @@ def main() -> None:
         root_class=args.root_class,
         class_chain=[item.strip() for item in args.class_chain.split(",") if item.strip()],
         inject_is_part_of=args.inject_is_part_of,
+        instance_prefix=args.instance_prefix,
+        instance_base=args.instance_base,
     )
     if not config.class_chain:
         raise ValueError("class-chain must include at least one class name")

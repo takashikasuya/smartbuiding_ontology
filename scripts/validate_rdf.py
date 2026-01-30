@@ -11,11 +11,12 @@ import yaml
 from linkml_runtime.utils.schemaview import SchemaView
 from owlrl import DeductiveClosure, OWLRL_Semantics
 from pyshacl import validate
-from rdflib import Graph, RDF
+from rdflib import Graph, Namespace, OWL, RDF, RDFS, URIRef
 
 from convert_yaml_to_ttl import ConversionConfig, build_graph, expand_uri, normalize_prefix_map
 
 LOGGER = logging.getLogger(__name__)
+SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
 
 @dataclass(frozen=True)
@@ -104,15 +105,69 @@ def run_inference_checks(
         combined.add(triple)
     DeductiveClosure(OWLRL_Semantics).expand(combined)
 
+    equivalence_map = build_equivalence_map(ontology)
+    superclass_map = build_superclass_map(ontology)
+
     for expectation in expectations:
         subject_uri = expand_uri(prefix_map, expectation.subject)
+        subject_types = set(combined.objects(subject_uri, RDF.type))
+        available_types = expand_supertypes(subject_types, superclass_map, equivalence_map)
         for type_curie in expectation.types:
             type_uri = expand_uri(prefix_map, type_curie)
-            if (subject_uri, RDF.type, type_uri) not in combined:
+            if type_uri not in available_types:
                 errors.append(
                     f"Expected inferred type missing for {expectation.subject}: {type_curie}"
                 )
     return errors
+
+
+def build_equivalence_map(ontology: Graph) -> dict[URIRef, set[URIRef]]:
+    eq_map: dict[URIRef, set[URIRef]] = {}
+    for predicate in (SKOS.exactMatch, OWL.equivalentClass):
+        for subject, _, obj in ontology.triples((None, predicate, None)):
+            if not isinstance(subject, URIRef) or not isinstance(obj, URIRef):
+                continue
+            eq_map.setdefault(subject, set()).add(obj)
+            eq_map.setdefault(obj, set()).add(subject)
+    return eq_map
+
+
+def expand_equivalence(types: set[URIRef], eq_map: dict[URIRef, set[URIRef]]) -> set[URIRef]:
+    expanded = set(types)
+    stack = list(types)
+    while stack:
+        current = stack.pop()
+        for eq in eq_map.get(current, set()):
+            if eq not in expanded:
+                expanded.add(eq)
+                stack.append(eq)
+    return expanded
+
+
+def build_superclass_map(ontology: Graph) -> dict[URIRef, set[URIRef]]:
+    super_map: dict[URIRef, set[URIRef]] = {}
+    for subject, _, obj in ontology.triples((None, RDFS.subClassOf, None)):
+        if not isinstance(subject, URIRef) or not isinstance(obj, URIRef):
+            continue
+        super_map.setdefault(subject, set()).add(obj)
+    return super_map
+
+
+def expand_supertypes(
+    types: set[URIRef],
+    superclass_map: dict[URIRef, set[URIRef]],
+    eq_map: dict[URIRef, set[URIRef]],
+) -> set[URIRef]:
+    expanded = expand_equivalence(types, eq_map)
+    stack = list(expanded)
+    while stack:
+        current = stack.pop()
+        for parent in superclass_map.get(current, set()):
+            for parent_eq in expand_equivalence({parent}, eq_map):
+                if parent_eq not in expanded:
+                    expanded.add(parent_eq)
+                    stack.append(parent_eq)
+    return expanded
 
 
 def run_case(
@@ -120,17 +175,25 @@ def run_case(
     schema_path: Path,
     shacl_path: Path,
     ontology_path: Path,
+    use_output_ttl: bool,
 ) -> list[str]:
     errors: list[str] = []
-    config = ConversionConfig(
-        root_class=case.root_class,
-        class_chain=case.class_chain,
-        inject_is_part_of=case.inject_is_part_of,
-    )
-    graph = build_graph(schema_path, case.input_path, config)
-    if case.output_ttl:
-        case.output_ttl.parent.mkdir(parents=True, exist_ok=True)
-        graph.serialize(destination=str(case.output_ttl), format="turtle")
+    if use_output_ttl:
+        if not case.output_ttl:
+            return [f"Case {case.name} is missing output_ttl for --use-output-ttl"]
+        if not case.output_ttl.exists():
+            return [f"Case {case.name} output_ttl not found: {case.output_ttl}"]
+        graph = Graph().parse(str(case.output_ttl), format="turtle")
+    else:
+        config = ConversionConfig(
+            root_class=case.root_class,
+            class_chain=case.class_chain,
+            inject_is_part_of=case.inject_is_part_of,
+        )
+        graph = build_graph(schema_path, case.input_path, config)
+        if case.output_ttl:
+            case.output_ttl.parent.mkdir(parents=True, exist_ok=True)
+            graph.serialize(destination=str(case.output_ttl), format="turtle")
 
     shacl_graph = Graph().parse(shacl_path, format="turtle")
     ont_graph = Graph().parse(ontology_path, format="turtle")
@@ -191,6 +254,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="YAML file describing validation cases.",
     )
+    parser.add_argument(
+        "--use-output-ttl",
+        action="store_true",
+        help="Validate using pre-generated output_ttl files instead of converting YAML.",
+    )
     return parser.parse_args()
 
 
@@ -204,7 +272,7 @@ def main() -> None:
     all_errors: list[str] = []
     for case in cases:
         LOGGER.info("Running case %s", case.name)
-        errors = run_case(case, args.schema, args.shacl, args.ontology)
+        errors = run_case(case, args.schema, args.shacl, args.ontology, args.use_output_ttl)
         all_errors.extend(errors)
 
     if all_errors:
